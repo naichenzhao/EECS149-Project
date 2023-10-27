@@ -1,0 +1,18 @@
+#ifndef _MAIN_MAIN_H
+#define _MAIN_MAIN_H
+#include "include/core/reactor.h"
+#ifndef TOP_LEVEL_PREAMBLE_42158278_H
+#include <stdio.h>
+#define TOP_LEVEL_PREAMBLE_42158278_H
+#endif
+typedef struct {
+    struct self_base_t base;
+    
+    
+    #line 18 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src/Main.lf"
+    reaction_t _lf__reaction_0;
+    trigger_t _lf__startup;
+    reaction_t* _lf__startup_reactions[1];
+} _main_main_main_self_t;
+_main_main_main_self_t* new__main_main();
+#endif // _MAIN_MAIN_H

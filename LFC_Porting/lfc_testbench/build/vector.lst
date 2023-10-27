@@ -1,0 +1,1154 @@
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"vector.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "src-gen/Main/core/utils/vector.c"
+  20              		.section	.rodata.vector_resize.str1.4,"aMS",%progbits,1
+  21              		.align	2
+  22              	.LC0:
+  23 0000 73697A65 		.ascii	"size <= new_capacity\000"
+  23      203C3D20 
+  23      6E65775F 
+  23      63617061 
+  23      63697479 
+  24 0015 000000   		.align	2
+  25              	.LC1:
+  26 0018 7372632D 		.ascii	"src-gen/Main/core/utils/vector.c\000"
+  26      67656E2F 
+  26      4D61696E 
+  26      2F636F72 
+  26      652F7574 
+  27 0039 000000   		.align	2
+  28              	.LC2:
+  29 003c 73746172 		.ascii	"start\000"
+  29      7400
+  30              		.section	.text.vector_resize,"ax",%progbits
+  31              		.align	1
+  32              		.syntax unified
+  33              		.thumb
+  34              		.thumb_func
+  36              	vector_resize:
+  37              	.LVL0:
+  38              	.LFB8:
+   1:src-gen/Main/core/utils/vector.c **** /**
+   2:src-gen/Main/core/utils/vector.c ****  * @author Peter Donovan (peterdonovan@berkeley.edu)
+   3:src-gen/Main/core/utils/vector.c ****  * @author Soroush Bateni (soroush@utdallas.edu)
+   4:src-gen/Main/core/utils/vector.c ****  */
+   5:src-gen/Main/core/utils/vector.c **** 
+   6:src-gen/Main/core/utils/vector.c **** #include <stddef.h>
+   7:src-gen/Main/core/utils/vector.c **** #include <stdlib.h>
+   8:src-gen/Main/core/utils/vector.c **** #include <assert.h>
+   9:src-gen/Main/core/utils/vector.c **** #include "vector.h"
+  10:src-gen/Main/core/utils/vector.c **** 
+  11:src-gen/Main/core/utils/vector.c **** #define REQUIRED_VOTES_TO_SHRINK 15
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 2
+
+
+  12:src-gen/Main/core/utils/vector.c **** #define CAPACITY_TO_SIZE_RATIO_FOR_SHRINK_VOTE 4
+  13:src-gen/Main/core/utils/vector.c **** #define SCALE_FACTOR 2
+  14:src-gen/Main/core/utils/vector.c **** 
+  15:src-gen/Main/core/utils/vector.c **** static void vector_resize(vector_t* v, size_t new_capacity);
+  16:src-gen/Main/core/utils/vector.c **** 
+  17:src-gen/Main/core/utils/vector.c **** /**
+  18:src-gen/Main/core/utils/vector.c ****  * Allocate and initialize a new vector.
+  19:src-gen/Main/core/utils/vector.c ****  * @param initial_capacity The desired initial capacity to allocate.
+  20:src-gen/Main/core/utils/vector.c ****  */
+  21:src-gen/Main/core/utils/vector.c **** vector_t vector_new(size_t initial_capacity) {
+  22:src-gen/Main/core/utils/vector.c ****     void** start = (void**) malloc(initial_capacity * sizeof(void*));
+  23:src-gen/Main/core/utils/vector.c ****     assert(start);
+  24:src-gen/Main/core/utils/vector.c ****     return (vector_t) {
+  25:src-gen/Main/core/utils/vector.c ****         .start = start,
+  26:src-gen/Main/core/utils/vector.c ****         .next = start,
+  27:src-gen/Main/core/utils/vector.c ****         .end = start + initial_capacity,
+  28:src-gen/Main/core/utils/vector.c ****         .votes_required = REQUIRED_VOTES_TO_SHRINK,
+  29:src-gen/Main/core/utils/vector.c ****         .votes = 0
+  30:src-gen/Main/core/utils/vector.c ****     };
+  31:src-gen/Main/core/utils/vector.c **** }
+  32:src-gen/Main/core/utils/vector.c **** 
+  33:src-gen/Main/core/utils/vector.c **** /**
+  34:src-gen/Main/core/utils/vector.c ****  * Free the memory held by the given vector, invalidating it.
+  35:src-gen/Main/core/utils/vector.c ****  * @param v Any vector.
+  36:src-gen/Main/core/utils/vector.c ****  */
+  37:src-gen/Main/core/utils/vector.c **** void vector_free(vector_t* v) {
+  38:src-gen/Main/core/utils/vector.c ****     assert(v);
+  39:src-gen/Main/core/utils/vector.c ****     free(v->start);
+  40:src-gen/Main/core/utils/vector.c **** }
+  41:src-gen/Main/core/utils/vector.c **** 
+  42:src-gen/Main/core/utils/vector.c **** /**
+  43:src-gen/Main/core/utils/vector.c ****  * Add the given element to the vector.
+  44:src-gen/Main/core/utils/vector.c ****  * @param v A vector that is to grow.
+  45:src-gen/Main/core/utils/vector.c ****  * @param element An element that the vector should contain.
+  46:src-gen/Main/core/utils/vector.c ****  */
+  47:src-gen/Main/core/utils/vector.c **** void vector_push(vector_t* v, void* element) {
+  48:src-gen/Main/core/utils/vector.c ****     if (v->next == v->end) {
+  49:src-gen/Main/core/utils/vector.c ****         v->votes_required++;
+  50:src-gen/Main/core/utils/vector.c ****         vector_resize(v, (v->end - v->start) * SCALE_FACTOR);
+  51:src-gen/Main/core/utils/vector.c ****     }
+  52:src-gen/Main/core/utils/vector.c ****     *(v->next++) = element;
+  53:src-gen/Main/core/utils/vector.c **** }
+  54:src-gen/Main/core/utils/vector.c **** 
+  55:src-gen/Main/core/utils/vector.c **** /**
+  56:src-gen/Main/core/utils/vector.c ****  * Add all elements of the given array to the vector. Elements should be
+  57:src-gen/Main/core/utils/vector.c ****  * non-null.
+  58:src-gen/Main/core/utils/vector.c ****  * @param v A vector that is to grow.
+  59:src-gen/Main/core/utils/vector.c ****  * @param array An array of items to be added to the vector.
+  60:src-gen/Main/core/utils/vector.c ****  * @param size The size of the given array.
+  61:src-gen/Main/core/utils/vector.c ****  */
+  62:src-gen/Main/core/utils/vector.c **** void vector_pushall(vector_t* v, void** array, size_t size) {
+  63:src-gen/Main/core/utils/vector.c ****     void** required_end = v->next + size;
+  64:src-gen/Main/core/utils/vector.c ****     if (required_end > v->end) {
+  65:src-gen/Main/core/utils/vector.c ****         vector_resize(v, (required_end - v->start) * SCALE_FACTOR);
+  66:src-gen/Main/core/utils/vector.c ****     }
+  67:src-gen/Main/core/utils/vector.c ****     for (size_t i = 0; i < size; i++) {
+  68:src-gen/Main/core/utils/vector.c ****         assert(array[i]);
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 3
+
+
+  69:src-gen/Main/core/utils/vector.c ****         v->next[i] = array[i];
+  70:src-gen/Main/core/utils/vector.c ****     }
+  71:src-gen/Main/core/utils/vector.c ****     v->next += size;
+  72:src-gen/Main/core/utils/vector.c **** }
+  73:src-gen/Main/core/utils/vector.c **** 
+  74:src-gen/Main/core/utils/vector.c **** /**
+  75:src-gen/Main/core/utils/vector.c ****  * Remove and return some pointer that is contained in the given vector,
+  76:src-gen/Main/core/utils/vector.c ****  * or return NULL if the given vector is empty.
+  77:src-gen/Main/core/utils/vector.c ****  * @param v Any vector.
+  78:src-gen/Main/core/utils/vector.c ****  */
+  79:src-gen/Main/core/utils/vector.c **** void* vector_pop(vector_t* v) {
+  80:src-gen/Main/core/utils/vector.c ****     if (v->next == v->start) {
+  81:src-gen/Main/core/utils/vector.c ****         if (v->votes >= v->votes_required) {
+  82:src-gen/Main/core/utils/vector.c ****             size_t new_capacity = (v->end - v->start) / SCALE_FACTOR;
+  83:src-gen/Main/core/utils/vector.c ****             if (new_capacity > 0) {
+  84:src-gen/Main/core/utils/vector.c ****                 vector_resize(v, new_capacity);
+  85:src-gen/Main/core/utils/vector.c ****             }
+  86:src-gen/Main/core/utils/vector.c ****         }
+  87:src-gen/Main/core/utils/vector.c ****         return NULL;
+  88:src-gen/Main/core/utils/vector.c ****     }
+  89:src-gen/Main/core/utils/vector.c ****     return *(--v->next);
+  90:src-gen/Main/core/utils/vector.c **** }
+  91:src-gen/Main/core/utils/vector.c **** 
+  92:src-gen/Main/core/utils/vector.c **** /**
+  93:src-gen/Main/core/utils/vector.c ****  * Return a pointer to where the vector element at 'idx' is stored.
+  94:src-gen/Main/core/utils/vector.c ****  * This can be used to set the value of the element or to read it.
+  95:src-gen/Main/core/utils/vector.c ****  * If the index is past the end of the vector, then the vector
+  96:src-gen/Main/core/utils/vector.c ****  * is automatically expanded and filled with NULL pointers as needed.
+  97:src-gen/Main/core/utils/vector.c ****  * If no element at `idx` has been previously set, then the value
+  98:src-gen/Main/core/utils/vector.c ****  * pointed to by the returned pointer will be NULL.
+  99:src-gen/Main/core/utils/vector.c ****  * 
+ 100:src-gen/Main/core/utils/vector.c ****  * @param v The vector.
+ 101:src-gen/Main/core/utils/vector.c ****  * @param idx The index into the vector.
+ 102:src-gen/Main/core/utils/vector.c ****  * 
+ 103:src-gen/Main/core/utils/vector.c ****  * @return A pointer to the element at 'idx', which is itself a pointer.
+ 104:src-gen/Main/core/utils/vector.c ****  */
+ 105:src-gen/Main/core/utils/vector.c **** void** vector_at(vector_t* v, size_t idx) {
+ 106:src-gen/Main/core/utils/vector.c ****     void** vector_position = v->start + idx;
+ 107:src-gen/Main/core/utils/vector.c ****     if ((vector_position + 1) > v->next) {
+ 108:src-gen/Main/core/utils/vector.c ****         v->next = vector_position + 1;
+ 109:src-gen/Main/core/utils/vector.c ****     }
+ 110:src-gen/Main/core/utils/vector.c ****     if (v->next >= v->end) {
+ 111:src-gen/Main/core/utils/vector.c ****         v->votes_required++;
+ 112:src-gen/Main/core/utils/vector.c ****         size_t new_size = (v->end - v->start) * SCALE_FACTOR;
+ 113:src-gen/Main/core/utils/vector.c ****         // Find a size that includes idx
+ 114:src-gen/Main/core/utils/vector.c ****         while (new_size <= idx) {
+ 115:src-gen/Main/core/utils/vector.c ****             new_size *= SCALE_FACTOR;
+ 116:src-gen/Main/core/utils/vector.c ****         }
+ 117:src-gen/Main/core/utils/vector.c ****         vector_resize(v, new_size);
+ 118:src-gen/Main/core/utils/vector.c ****     }
+ 119:src-gen/Main/core/utils/vector.c ****     // Note: Can't re-use vector_position because v->start can move after
+ 120:src-gen/Main/core/utils/vector.c ****     // resizing.
+ 121:src-gen/Main/core/utils/vector.c ****     return v->start + idx;
+ 122:src-gen/Main/core/utils/vector.c **** }
+ 123:src-gen/Main/core/utils/vector.c **** 
+ 124:src-gen/Main/core/utils/vector.c **** /**
+ 125:src-gen/Main/core/utils/vector.c ****  * @brief Return the size of the vector.
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 4
+
+
+ 126:src-gen/Main/core/utils/vector.c ****  * 
+ 127:src-gen/Main/core/utils/vector.c ****  * @param v Any vector
+ 128:src-gen/Main/core/utils/vector.c ****  * @return size_t  The size of the vector.
+ 129:src-gen/Main/core/utils/vector.c ****  */
+ 130:src-gen/Main/core/utils/vector.c **** size_t vector_size(vector_t* v) {
+ 131:src-gen/Main/core/utils/vector.c ****     return (v->next - v->start);
+ 132:src-gen/Main/core/utils/vector.c **** }
+ 133:src-gen/Main/core/utils/vector.c **** 
+ 134:src-gen/Main/core/utils/vector.c **** /**
+ 135:src-gen/Main/core/utils/vector.c ****  * Vote on whether this vector should be given less memory.
+ 136:src-gen/Main/core/utils/vector.c ****  * If `v` contains few elements, it becomes more likely to shrink.
+ 137:src-gen/Main/core/utils/vector.c ****  *
+ 138:src-gen/Main/core/utils/vector.c ****  * It is suggested that this function be called when the number of
+ 139:src-gen/Main/core/utils/vector.c ****  * elements in `v` reaches a local maximum.
+ 140:src-gen/Main/core/utils/vector.c ****  * @param v Any vector.
+ 141:src-gen/Main/core/utils/vector.c ****  */
+ 142:src-gen/Main/core/utils/vector.c **** void vector_vote(vector_t* v) {
+ 143:src-gen/Main/core/utils/vector.c ****     size_t size = v->next - v->start;
+ 144:src-gen/Main/core/utils/vector.c ****     int vote = size * CAPACITY_TO_SIZE_RATIO_FOR_SHRINK_VOTE <= (size_t) (v->end - v->start);
+ 145:src-gen/Main/core/utils/vector.c ****     v->votes = vote * v->votes + vote;
+ 146:src-gen/Main/core/utils/vector.c **** }
+ 147:src-gen/Main/core/utils/vector.c **** 
+ 148:src-gen/Main/core/utils/vector.c **** /**
+ 149:src-gen/Main/core/utils/vector.c ****  * Resets the capacity of the given vector without otherwise altering its
+ 150:src-gen/Main/core/utils/vector.c ****  * observable state.
+ 151:src-gen/Main/core/utils/vector.c ****  * @param v A vector that should have a different capacity.
+ 152:src-gen/Main/core/utils/vector.c ****  */
+ 153:src-gen/Main/core/utils/vector.c **** static void vector_resize(vector_t* v, size_t new_capacity) {
+  39              		.loc 1 153 61 view -0
+  40              		.cfi_startproc
+  41              		@ args = 0, pretend = 0, frame = 0
+  42              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154:src-gen/Main/core/utils/vector.c ****     if (new_capacity == 0) {
+  43              		.loc 1 154 5 view .LVU1
+  44              		.loc 1 154 8 is_stmt 0 view .LVU2
+  45 0000 09B3     		cbz	r1, .L6
+ 153:src-gen/Main/core/utils/vector.c ****     if (new_capacity == 0) {
+  46              		.loc 1 153 61 view .LVU3
+  47 0002 70B5     		push	{r4, r5, r6, lr}
+  48              	.LCFI0:
+  49              		.cfi_def_cfa_offset 16
+  50              		.cfi_offset 4, -16
+  51              		.cfi_offset 5, -12
+  52              		.cfi_offset 6, -8
+  53              		.cfi_offset 14, -4
+  54 0004 0446     		mov	r4, r0
+ 155:src-gen/Main/core/utils/vector.c ****         // Don't shrink the queue further
+ 156:src-gen/Main/core/utils/vector.c ****         return;
+ 157:src-gen/Main/core/utils/vector.c ****     }
+ 158:src-gen/Main/core/utils/vector.c ****     size_t size = v->next - v->start;
+  55              		.loc 1 158 5 is_stmt 1 view .LVU4
+  56              		.loc 1 158 20 is_stmt 0 view .LVU5
+  57 0006 4568     		ldr	r5, [r0, #4]
+  58              		.loc 1 158 30 view .LVU6
+  59 0008 0068     		ldr	r0, [r0]
+  60              	.LVL1:
+  61              		.loc 1 158 27 view .LVU7
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 5
+
+
+  62 000a 2D1A     		subs	r5, r5, r0
+  63              	.LVL2:
+ 159:src-gen/Main/core/utils/vector.c ****     assert(size <= new_capacity);
+  64              		.loc 1 159 5 is_stmt 1 view .LVU8
+  65 000c B1EBA50F 		cmp	r1, r5, asr #2
+  66 0010 0DD3     		bcc	.L9
+ 160:src-gen/Main/core/utils/vector.c ****     void** start = (void**) realloc(v->start, new_capacity * sizeof(void*));
+  67              		.loc 1 160 5 view .LVU9
+  68              		.loc 1 160 29 is_stmt 0 view .LVU10
+  69 0012 8E00     		lsls	r6, r1, #2
+  70 0014 3146     		mov	r1, r6
+  71              	.LVL3:
+  72              		.loc 1 160 29 view .LVU11
+  73 0016 FFF7FEFF 		bl	realloc
+  74              	.LVL4:
+ 161:src-gen/Main/core/utils/vector.c ****     assert(start);
+  75              		.loc 1 161 5 is_stmt 1 view .LVU12
+  76 001a 0346     		mov	r3, r0
+  77 001c 68B1     		cbz	r0, .L10
+ 162:src-gen/Main/core/utils/vector.c ****     v->votes = 0;
+  78              		.loc 1 162 5 view .LVU13
+  79              		.loc 1 162 14 is_stmt 0 view .LVU14
+  80 001e 0022     		movs	r2, #0
+  81 0020 2261     		str	r2, [r4, #16]
+ 163:src-gen/Main/core/utils/vector.c ****     v->start = start;
+  82              		.loc 1 163 5 is_stmt 1 view .LVU15
+  83              		.loc 1 163 14 is_stmt 0 view .LVU16
+  84 0022 2060     		str	r0, [r4]
+ 164:src-gen/Main/core/utils/vector.c ****     v->next = start + size;
+  85              		.loc 1 164 5 is_stmt 1 view .LVU17
+  86              		.loc 1 164 21 is_stmt 0 view .LVU18
+  87 0024 0544     		add	r5, r5, r0
+  88              	.LVL5:
+  89              		.loc 1 164 13 view .LVU19
+  90 0026 6560     		str	r5, [r4, #4]
+ 165:src-gen/Main/core/utils/vector.c ****     v->end = start + new_capacity;
+  91              		.loc 1 165 5 is_stmt 1 view .LVU20
+  92              		.loc 1 165 20 is_stmt 0 view .LVU21
+  93 0028 3344     		add	r3, r3, r6
+  94              		.loc 1 165 12 view .LVU22
+  95 002a A360     		str	r3, [r4, #8]
+ 166:src-gen/Main/core/utils/vector.c **** }
+  96              		.loc 1 166 1 view .LVU23
+  97 002c 70BD     		pop	{r4, r5, r6, pc}
+  98              	.LVL6:
+  99              	.L9:
+ 159:src-gen/Main/core/utils/vector.c ****     void** start = (void**) realloc(v->start, new_capacity * sizeof(void*));
+ 100              		.loc 1 159 5 discriminator 1 view .LVU24
+ 101 002e 064B     		ldr	r3, .L11
+ 102 0030 064A     		ldr	r2, .L11+4
+ 103 0032 9F21     		movs	r1, #159
+ 104              	.LVL7:
+ 159:src-gen/Main/core/utils/vector.c ****     void** start = (void**) realloc(v->start, new_capacity * sizeof(void*));
+ 105              		.loc 1 159 5 discriminator 1 view .LVU25
+ 106 0034 0648     		ldr	r0, .L11+8
+ 107 0036 FFF7FEFF 		bl	__assert_func
+ 108              	.LVL8:
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 6
+
+
+ 109              	.L10:
+ 161:src-gen/Main/core/utils/vector.c ****     v->votes = 0;
+ 110              		.loc 1 161 5 discriminator 1 view .LVU26
+ 111 003a 064B     		ldr	r3, .L11+12
+ 112 003c 034A     		ldr	r2, .L11+4
+ 113 003e A121     		movs	r1, #161
+ 114 0040 0348     		ldr	r0, .L11+8
+ 115              	.LVL9:
+ 161:src-gen/Main/core/utils/vector.c ****     v->votes = 0;
+ 116              		.loc 1 161 5 discriminator 1 view .LVU27
+ 117 0042 FFF7FEFF 		bl	__assert_func
+ 118              	.LVL10:
+ 119              	.L6:
+ 120              	.LCFI1:
+ 121              		.cfi_def_cfa_offset 0
+ 122              		.cfi_restore 4
+ 123              		.cfi_restore 5
+ 124              		.cfi_restore 6
+ 125              		.cfi_restore 14
+ 161:src-gen/Main/core/utils/vector.c ****     v->votes = 0;
+ 126              		.loc 1 161 5 discriminator 1 view .LVU28
+ 127 0046 7047     		bx	lr
+ 128              	.L12:
+ 129              		.align	2
+ 130              	.L11:
+ 131 0048 00000000 		.word	.LC0
+ 132 004c 00000000 		.word	__func__.1
+ 133 0050 18000000 		.word	.LC1
+ 134 0054 3C000000 		.word	.LC2
+ 135              		.cfi_endproc
+ 136              	.LFE8:
+ 138              		.section	.text.vector_new,"ax",%progbits
+ 139              		.align	1
+ 140              		.global	vector_new
+ 141              		.syntax unified
+ 142              		.thumb
+ 143              		.thumb_func
+ 145              	vector_new:
+ 146              	.LVL11:
+ 147              	.LFB0:
+  21:src-gen/Main/core/utils/vector.c ****     void** start = (void**) malloc(initial_capacity * sizeof(void*));
+ 148              		.loc 1 21 46 is_stmt 1 view -0
+ 149              		.cfi_startproc
+ 150              		@ args = 0, pretend = 0, frame = 0
+ 151              		@ frame_needed = 0, uses_anonymous_args = 0
+  21:src-gen/Main/core/utils/vector.c ****     void** start = (void**) malloc(initial_capacity * sizeof(void*));
+ 152              		.loc 1 21 46 is_stmt 0 view .LVU30
+ 153 0000 38B5     		push	{r3, r4, r5, lr}
+ 154              	.LCFI2:
+ 155              		.cfi_def_cfa_offset 16
+ 156              		.cfi_offset 3, -16
+ 157              		.cfi_offset 4, -12
+ 158              		.cfi_offset 5, -8
+ 159              		.cfi_offset 14, -4
+ 160 0002 0446     		mov	r4, r0
+  22:src-gen/Main/core/utils/vector.c ****     assert(start);
+ 161              		.loc 1 22 5 is_stmt 1 view .LVU31
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 7
+
+
+  22:src-gen/Main/core/utils/vector.c ****     assert(start);
+ 162              		.loc 1 22 29 is_stmt 0 view .LVU32
+ 163 0004 8D00     		lsls	r5, r1, #2
+ 164 0006 2846     		mov	r0, r5
+ 165              	.LVL12:
+  22:src-gen/Main/core/utils/vector.c ****     assert(start);
+ 166              		.loc 1 22 29 view .LVU33
+ 167 0008 FFF7FEFF 		bl	malloc
+ 168              	.LVL13:
+  23:src-gen/Main/core/utils/vector.c ****     return (vector_t) {
+ 169              		.loc 1 23 5 is_stmt 1 view .LVU34
+ 170 000c 48B1     		cbz	r0, .L16
+  24:src-gen/Main/core/utils/vector.c ****         .start = start,
+ 171              		.loc 1 24 5 view .LVU35
+  27:src-gen/Main/core/utils/vector.c ****         .votes_required = REQUIRED_VOTES_TO_SHRINK,
+ 172              		.loc 1 27 22 is_stmt 0 view .LVU36
+ 173 000e 0544     		add	r5, r5, r0
+  24:src-gen/Main/core/utils/vector.c ****         .start = start,
+ 174              		.loc 1 24 12 view .LVU37
+ 175 0010 2060     		str	r0, [r4]
+ 176 0012 6060     		str	r0, [r4, #4]
+ 177 0014 A560     		str	r5, [r4, #8]
+ 178 0016 0F23     		movs	r3, #15
+ 179 0018 E360     		str	r3, [r4, #12]
+ 180 001a 0023     		movs	r3, #0
+ 181 001c 2361     		str	r3, [r4, #16]
+  31:src-gen/Main/core/utils/vector.c **** 
+ 182              		.loc 1 31 1 view .LVU38
+ 183 001e 2046     		mov	r0, r4
+ 184              	.LVL14:
+  31:src-gen/Main/core/utils/vector.c **** 
+ 185              		.loc 1 31 1 view .LVU39
+ 186 0020 38BD     		pop	{r3, r4, r5, pc}
+ 187              	.LVL15:
+ 188              	.L16:
+  23:src-gen/Main/core/utils/vector.c ****     return (vector_t) {
+ 189              		.loc 1 23 5 discriminator 1 view .LVU40
+ 190 0022 034B     		ldr	r3, .L17
+ 191 0024 034A     		ldr	r2, .L17+4
+ 192 0026 1721     		movs	r1, #23
+ 193 0028 0348     		ldr	r0, .L17+8
+ 194              	.LVL16:
+  23:src-gen/Main/core/utils/vector.c ****     return (vector_t) {
+ 195              		.loc 1 23 5 discriminator 1 view .LVU41
+ 196 002a FFF7FEFF 		bl	__assert_func
+ 197              	.LVL17:
+ 198              	.L18:
+ 199 002e 00BF     		.align	2
+ 200              	.L17:
+ 201 0030 3C000000 		.word	.LC2
+ 202 0034 00000000 		.word	__func__.3
+ 203 0038 18000000 		.word	.LC1
+ 204              		.cfi_endproc
+ 205              	.LFE0:
+ 207              		.section	.rodata.vector_free.str1.4,"aMS",%progbits,1
+ 208              		.align	2
+ 209              	.LC3:
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 8
+
+
+ 210 0000 7600     		.ascii	"v\000"
+ 211              		.section	.text.vector_free,"ax",%progbits
+ 212              		.align	1
+ 213              		.global	vector_free
+ 214              		.syntax unified
+ 215              		.thumb
+ 216              		.thumb_func
+ 218              	vector_free:
+ 219              	.LVL18:
+ 220              	.LFB1:
+  37:src-gen/Main/core/utils/vector.c ****     assert(v);
+ 221              		.loc 1 37 31 is_stmt 1 view -0
+ 222              		.cfi_startproc
+ 223              		@ args = 0, pretend = 0, frame = 0
+ 224              		@ frame_needed = 0, uses_anonymous_args = 0
+  37:src-gen/Main/core/utils/vector.c ****     assert(v);
+ 225              		.loc 1 37 31 is_stmt 0 view .LVU43
+ 226 0000 08B5     		push	{r3, lr}
+ 227              	.LCFI3:
+ 228              		.cfi_def_cfa_offset 8
+ 229              		.cfi_offset 3, -8
+ 230              		.cfi_offset 14, -4
+  38:src-gen/Main/core/utils/vector.c ****     free(v->start);
+ 231              		.loc 1 38 5 is_stmt 1 view .LVU44
+ 232 0002 18B1     		cbz	r0, .L22
+  39:src-gen/Main/core/utils/vector.c **** }
+ 233              		.loc 1 39 5 view .LVU45
+ 234 0004 0068     		ldr	r0, [r0]
+ 235              	.LVL19:
+  39:src-gen/Main/core/utils/vector.c **** }
+ 236              		.loc 1 39 5 is_stmt 0 view .LVU46
+ 237 0006 FFF7FEFF 		bl	free
+ 238              	.LVL20:
+  40:src-gen/Main/core/utils/vector.c **** 
+ 239              		.loc 1 40 1 view .LVU47
+ 240 000a 08BD     		pop	{r3, pc}
+ 241              	.LVL21:
+ 242              	.L22:
+  38:src-gen/Main/core/utils/vector.c ****     free(v->start);
+ 243              		.loc 1 38 5 discriminator 1 view .LVU48
+ 244 000c 024B     		ldr	r3, .L23
+ 245 000e 034A     		ldr	r2, .L23+4
+ 246 0010 2621     		movs	r1, #38
+ 247 0012 0348     		ldr	r0, .L23+8
+ 248              	.LVL22:
+  38:src-gen/Main/core/utils/vector.c ****     free(v->start);
+ 249              		.loc 1 38 5 discriminator 1 view .LVU49
+ 250 0014 FFF7FEFF 		bl	__assert_func
+ 251              	.LVL23:
+ 252              	.L24:
+ 253              		.align	2
+ 254              	.L23:
+ 255 0018 00000000 		.word	.LC3
+ 256 001c 00000000 		.word	__func__.2
+ 257 0020 18000000 		.word	.LC1
+ 258              		.cfi_endproc
+ 259              	.LFE1:
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 9
+
+
+ 261              		.section	.text.vector_push,"ax",%progbits
+ 262              		.align	1
+ 263              		.global	vector_push
+ 264              		.syntax unified
+ 265              		.thumb
+ 266              		.thumb_func
+ 268              	vector_push:
+ 269              	.LVL24:
+ 270              	.LFB2:
+  47:src-gen/Main/core/utils/vector.c ****     if (v->next == v->end) {
+ 271              		.loc 1 47 46 is_stmt 1 view -0
+ 272              		.cfi_startproc
+ 273              		@ args = 0, pretend = 0, frame = 0
+ 274              		@ frame_needed = 0, uses_anonymous_args = 0
+  47:src-gen/Main/core/utils/vector.c ****     if (v->next == v->end) {
+ 275              		.loc 1 47 46 is_stmt 0 view .LVU51
+ 276 0000 38B5     		push	{r3, r4, r5, lr}
+ 277              	.LCFI4:
+ 278              		.cfi_def_cfa_offset 16
+ 279              		.cfi_offset 3, -16
+ 280              		.cfi_offset 4, -12
+ 281              		.cfi_offset 5, -8
+ 282              		.cfi_offset 14, -4
+ 283 0002 0446     		mov	r4, r0
+ 284 0004 0D46     		mov	r5, r1
+  48:src-gen/Main/core/utils/vector.c ****         v->votes_required++;
+ 285              		.loc 1 48 5 is_stmt 1 view .LVU52
+  48:src-gen/Main/core/utils/vector.c ****         v->votes_required++;
+ 286              		.loc 1 48 10 is_stmt 0 view .LVU53
+ 287 0006 4368     		ldr	r3, [r0, #4]
+  48:src-gen/Main/core/utils/vector.c ****         v->votes_required++;
+ 288              		.loc 1 48 21 view .LVU54
+ 289 0008 8168     		ldr	r1, [r0, #8]
+ 290              	.LVL25:
+  48:src-gen/Main/core/utils/vector.c ****         v->votes_required++;
+ 291              		.loc 1 48 8 view .LVU55
+ 292 000a 8B42     		cmp	r3, r1
+ 293 000c 04D0     		beq	.L28
+ 294              	.LVL26:
+ 295              	.L26:
+  52:src-gen/Main/core/utils/vector.c **** }
+ 296              		.loc 1 52 5 is_stmt 1 view .LVU56
+  52:src-gen/Main/core/utils/vector.c **** }
+ 297              		.loc 1 52 8 is_stmt 0 view .LVU57
+ 298 000e 6368     		ldr	r3, [r4, #4]
+  52:src-gen/Main/core/utils/vector.c **** }
+ 299              		.loc 1 52 14 view .LVU58
+ 300 0010 1A1D     		adds	r2, r3, #4
+ 301 0012 6260     		str	r2, [r4, #4]
+  52:src-gen/Main/core/utils/vector.c **** }
+ 302              		.loc 1 52 18 view .LVU59
+ 303 0014 1D60     		str	r5, [r3]
+  53:src-gen/Main/core/utils/vector.c **** 
+ 304              		.loc 1 53 1 view .LVU60
+ 305 0016 38BD     		pop	{r3, r4, r5, pc}
+ 306              	.LVL27:
+ 307              	.L28:
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 10
+
+
+  49:src-gen/Main/core/utils/vector.c ****         vector_resize(v, (v->end - v->start) * SCALE_FACTOR);
+ 308              		.loc 1 49 9 is_stmt 1 view .LVU61
+  49:src-gen/Main/core/utils/vector.c ****         vector_resize(v, (v->end - v->start) * SCALE_FACTOR);
+ 309              		.loc 1 49 10 is_stmt 0 view .LVU62
+ 310 0018 C368     		ldr	r3, [r0, #12]
+  49:src-gen/Main/core/utils/vector.c ****         vector_resize(v, (v->end - v->start) * SCALE_FACTOR);
+ 311              		.loc 1 49 26 view .LVU63
+ 312 001a 0133     		adds	r3, r3, #1
+ 313 001c C360     		str	r3, [r0, #12]
+  50:src-gen/Main/core/utils/vector.c ****     }
+ 314              		.loc 1 50 9 is_stmt 1 view .LVU64
+  50:src-gen/Main/core/utils/vector.c ****     }
+ 315              		.loc 1 50 37 is_stmt 0 view .LVU65
+ 316 001e 0368     		ldr	r3, [r0]
+  50:src-gen/Main/core/utils/vector.c ****     }
+ 317              		.loc 1 50 34 view .LVU66
+ 318 0020 C91A     		subs	r1, r1, r3
+  50:src-gen/Main/core/utils/vector.c ****     }
+ 319              		.loc 1 50 9 view .LVU67
+ 320 0022 4910     		asrs	r1, r1, #1
+ 321 0024 FFF7FEFF 		bl	vector_resize
+ 322              	.LVL28:
+  50:src-gen/Main/core/utils/vector.c ****     }
+ 323              		.loc 1 50 9 view .LVU68
+ 324 0028 F1E7     		b	.L26
+ 325              		.cfi_endproc
+ 326              	.LFE2:
+ 328              		.section	.rodata.vector_pushall.str1.4,"aMS",%progbits,1
+ 329              		.align	2
+ 330              	.LC4:
+ 331 0000 61727261 		.ascii	"array[i]\000"
+ 331      795B695D 
+ 331      00
+ 332              		.section	.text.vector_pushall,"ax",%progbits
+ 333              		.align	1
+ 334              		.global	vector_pushall
+ 335              		.syntax unified
+ 336              		.thumb
+ 337              		.thumb_func
+ 339              	vector_pushall:
+ 340              	.LVL29:
+ 341              	.LFB3:
+  62:src-gen/Main/core/utils/vector.c ****     void** required_end = v->next + size;
+ 342              		.loc 1 62 61 is_stmt 1 view -0
+ 343              		.cfi_startproc
+ 344              		@ args = 0, pretend = 0, frame = 0
+ 345              		@ frame_needed = 0, uses_anonymous_args = 0
+  62:src-gen/Main/core/utils/vector.c ****     void** required_end = v->next + size;
+ 346              		.loc 1 62 61 is_stmt 0 view .LVU70
+ 347 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 348              	.LCFI5:
+ 349              		.cfi_def_cfa_offset 24
+ 350              		.cfi_offset 4, -24
+ 351              		.cfi_offset 5, -20
+ 352              		.cfi_offset 6, -16
+ 353              		.cfi_offset 7, -12
+ 354              		.cfi_offset 8, -8
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 11
+
+
+ 355              		.cfi_offset 14, -4
+ 356 0004 0546     		mov	r5, r0
+ 357 0006 0F46     		mov	r7, r1
+ 358 0008 1646     		mov	r6, r2
+  63:src-gen/Main/core/utils/vector.c ****     if (required_end > v->end) {
+ 359              		.loc 1 63 5 is_stmt 1 view .LVU71
+  63:src-gen/Main/core/utils/vector.c ****     if (required_end > v->end) {
+ 360              		.loc 1 63 28 is_stmt 0 view .LVU72
+ 361 000a 4168     		ldr	r1, [r0, #4]
+ 362              	.LVL30:
+  63:src-gen/Main/core/utils/vector.c ****     if (required_end > v->end) {
+ 363              		.loc 1 63 35 view .LVU73
+ 364 000c 4FEA8208 		lsl	r8, r2, #2
+  63:src-gen/Main/core/utils/vector.c ****     if (required_end > v->end) {
+ 365              		.loc 1 63 12 view .LVU74
+ 366 0010 01EB8201 		add	r1, r1, r2, lsl #2
+ 367              	.LVL31:
+  64:src-gen/Main/core/utils/vector.c ****         vector_resize(v, (required_end - v->start) * SCALE_FACTOR);
+ 368              		.loc 1 64 5 is_stmt 1 view .LVU75
+  64:src-gen/Main/core/utils/vector.c ****         vector_resize(v, (required_end - v->start) * SCALE_FACTOR);
+ 369              		.loc 1 64 25 is_stmt 0 view .LVU76
+ 370 0014 8368     		ldr	r3, [r0, #8]
+  64:src-gen/Main/core/utils/vector.c ****         vector_resize(v, (required_end - v->start) * SCALE_FACTOR);
+ 371              		.loc 1 64 8 view .LVU77
+ 372 0016 8B42     		cmp	r3, r1
+ 373 0018 0AD3     		bcc	.L35
+ 374              	.LVL32:
+ 375              	.L30:
+  62:src-gen/Main/core/utils/vector.c ****     void** required_end = v->next + size;
+ 376              		.loc 1 62 61 discriminator 1 view .LVU78
+ 377 001a 0023     		movs	r3, #0
+ 378              	.L31:
+ 379              	.LVL33:
+ 380              	.LBB2:
+  67:src-gen/Main/core/utils/vector.c ****         assert(array[i]);
+ 381              		.loc 1 67 26 is_stmt 1 discriminator 1 view .LVU79
+ 382 001c B342     		cmp	r3, r6
+ 383 001e 13D2     		bcs	.L36
+  68:src-gen/Main/core/utils/vector.c ****         v->next[i] = array[i];
+ 384              		.loc 1 68 9 view .LVU80
+ 385 0020 57F82340 		ldr	r4, [r7, r3, lsl #2]
+ 386 0024 54B1     		cbz	r4, .L37
+  69:src-gen/Main/core/utils/vector.c ****     }
+ 387              		.loc 1 69 9 discriminator 2 view .LVU81
+  69:src-gen/Main/core/utils/vector.c ****     }
+ 388              		.loc 1 69 20 is_stmt 0 discriminator 2 view .LVU82
+ 389 0026 6A68     		ldr	r2, [r5, #4]
+ 390 0028 42F82340 		str	r4, [r2, r3, lsl #2]
+  67:src-gen/Main/core/utils/vector.c ****         assert(array[i]);
+ 391              		.loc 1 67 35 is_stmt 1 discriminator 2 view .LVU83
+ 392 002c 0133     		adds	r3, r3, #1
+ 393              	.LVL34:
+  67:src-gen/Main/core/utils/vector.c ****         assert(array[i]);
+ 394              		.loc 1 67 35 is_stmt 0 discriminator 2 view .LVU84
+ 395 002e F5E7     		b	.L31
+ 396              	.LVL35:
+ 397              	.L35:
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 12
+
+
+  67:src-gen/Main/core/utils/vector.c ****         assert(array[i]);
+ 398              		.loc 1 67 35 discriminator 2 view .LVU85
+ 399              	.LBE2:
+  65:src-gen/Main/core/utils/vector.c ****     }
+ 400              		.loc 1 65 9 is_stmt 1 view .LVU86
+  65:src-gen/Main/core/utils/vector.c ****     }
+ 401              		.loc 1 65 43 is_stmt 0 view .LVU87
+ 402 0030 0368     		ldr	r3, [r0]
+  65:src-gen/Main/core/utils/vector.c ****     }
+ 403              		.loc 1 65 40 view .LVU88
+ 404 0032 C91A     		subs	r1, r1, r3
+ 405              	.LVL36:
+  65:src-gen/Main/core/utils/vector.c ****     }
+ 406              		.loc 1 65 9 view .LVU89
+ 407 0034 4910     		asrs	r1, r1, #1
+ 408 0036 FFF7FEFF 		bl	vector_resize
+ 409              	.LVL37:
+  65:src-gen/Main/core/utils/vector.c ****     }
+ 410              		.loc 1 65 9 view .LVU90
+ 411 003a EEE7     		b	.L30
+ 412              	.LVL38:
+ 413              	.L37:
+ 414              	.LBB3:
+  68:src-gen/Main/core/utils/vector.c ****         v->next[i] = array[i];
+ 415              		.loc 1 68 9 discriminator 1 view .LVU91
+ 416 003c 054B     		ldr	r3, .L38
+ 417              	.LVL39:
+  68:src-gen/Main/core/utils/vector.c ****         v->next[i] = array[i];
+ 418              		.loc 1 68 9 discriminator 1 view .LVU92
+ 419 003e 064A     		ldr	r2, .L38+4
+ 420 0040 4421     		movs	r1, #68
+ 421 0042 0648     		ldr	r0, .L38+8
+ 422 0044 FFF7FEFF 		bl	__assert_func
+ 423              	.LVL40:
+ 424              	.L36:
+  68:src-gen/Main/core/utils/vector.c ****         v->next[i] = array[i];
+ 425              		.loc 1 68 9 discriminator 1 view .LVU93
+ 426              	.LBE3:
+  71:src-gen/Main/core/utils/vector.c **** }
+ 427              		.loc 1 71 5 is_stmt 1 view .LVU94
+  71:src-gen/Main/core/utils/vector.c **** }
+ 428              		.loc 1 71 6 is_stmt 0 view .LVU95
+ 429 0048 6B68     		ldr	r3, [r5, #4]
+ 430              	.LVL41:
+  71:src-gen/Main/core/utils/vector.c **** }
+ 431              		.loc 1 71 13 view .LVU96
+ 432 004a 4344     		add	r3, r3, r8
+ 433 004c 6B60     		str	r3, [r5, #4]
+  72:src-gen/Main/core/utils/vector.c **** 
+ 434              		.loc 1 72 1 view .LVU97
+ 435 004e BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 436              	.LVL42:
+ 437              	.L39:
+  72:src-gen/Main/core/utils/vector.c **** 
+ 438              		.loc 1 72 1 view .LVU98
+ 439 0052 00BF     		.align	2
+ 440              	.L38:
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 13
+
+
+ 441 0054 00000000 		.word	.LC4
+ 442 0058 00000000 		.word	__func__.0
+ 443 005c 18000000 		.word	.LC1
+ 444              		.cfi_endproc
+ 445              	.LFE3:
+ 447              		.section	.text.vector_pop,"ax",%progbits
+ 448              		.align	1
+ 449              		.global	vector_pop
+ 450              		.syntax unified
+ 451              		.thumb
+ 452              		.thumb_func
+ 454              	vector_pop:
+ 455              	.LVL43:
+ 456              	.LFB4:
+  79:src-gen/Main/core/utils/vector.c ****     if (v->next == v->start) {
+ 457              		.loc 1 79 31 is_stmt 1 view -0
+ 458              		.cfi_startproc
+ 459              		@ args = 0, pretend = 0, frame = 0
+ 460              		@ frame_needed = 0, uses_anonymous_args = 0
+  79:src-gen/Main/core/utils/vector.c ****     if (v->next == v->start) {
+ 461              		.loc 1 79 31 is_stmt 0 view .LVU100
+ 462 0000 08B5     		push	{r3, lr}
+ 463              	.LCFI6:
+ 464              		.cfi_def_cfa_offset 8
+ 465              		.cfi_offset 3, -8
+ 466              		.cfi_offset 14, -4
+  80:src-gen/Main/core/utils/vector.c ****         if (v->votes >= v->votes_required) {
+ 467              		.loc 1 80 5 is_stmt 1 view .LVU101
+  80:src-gen/Main/core/utils/vector.c ****         if (v->votes >= v->votes_required) {
+ 468              		.loc 1 80 10 is_stmt 0 view .LVU102
+ 469 0002 4368     		ldr	r3, [r0, #4]
+  80:src-gen/Main/core/utils/vector.c ****         if (v->votes >= v->votes_required) {
+ 470              		.loc 1 80 21 view .LVU103
+ 471 0004 0268     		ldr	r2, [r0]
+  80:src-gen/Main/core/utils/vector.c ****         if (v->votes >= v->votes_required) {
+ 472              		.loc 1 80 8 view .LVU104
+ 473 0006 9342     		cmp	r3, r2
+ 474 0008 04D0     		beq	.L45
+  89:src-gen/Main/core/utils/vector.c **** }
+ 475              		.loc 1 89 5 is_stmt 1 view .LVU105
+  89:src-gen/Main/core/utils/vector.c **** }
+ 476              		.loc 1 89 14 is_stmt 0 view .LVU106
+ 477 000a 1A1F     		subs	r2, r3, #4
+  89:src-gen/Main/core/utils/vector.c **** }
+ 478              		.loc 1 89 12 view .LVU107
+ 479 000c 4260     		str	r2, [r0, #4]
+ 480 000e 53F8040C 		ldr	r0, [r3, #-4]
+ 481              	.LVL44:
+ 482              	.L40:
+  90:src-gen/Main/core/utils/vector.c **** 
+ 483              		.loc 1 90 1 view .LVU108
+ 484 0012 08BD     		pop	{r3, pc}
+ 485              	.LVL45:
+ 486              	.L45:
+  81:src-gen/Main/core/utils/vector.c ****             size_t new_capacity = (v->end - v->start) / SCALE_FACTOR;
+ 487              		.loc 1 81 9 is_stmt 1 view .LVU109
+  81:src-gen/Main/core/utils/vector.c ****             size_t new_capacity = (v->end - v->start) / SCALE_FACTOR;
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 14
+
+
+ 488              		.loc 1 81 14 is_stmt 0 view .LVU110
+ 489 0014 0169     		ldr	r1, [r0, #16]
+  81:src-gen/Main/core/utils/vector.c ****             size_t new_capacity = (v->end - v->start) / SCALE_FACTOR;
+ 490              		.loc 1 81 26 view .LVU111
+ 491 0016 C368     		ldr	r3, [r0, #12]
+  81:src-gen/Main/core/utils/vector.c ****             size_t new_capacity = (v->end - v->start) / SCALE_FACTOR;
+ 492              		.loc 1 81 12 view .LVU112
+ 493 0018 9942     		cmp	r1, r3
+ 494 001a 06DB     		blt	.L42
+ 495              	.LBB4:
+  82:src-gen/Main/core/utils/vector.c ****             if (new_capacity > 0) {
+ 496              		.loc 1 82 13 is_stmt 1 view .LVU113
+  82:src-gen/Main/core/utils/vector.c ****             if (new_capacity > 0) {
+ 497              		.loc 1 82 37 is_stmt 0 view .LVU114
+ 498 001c 8368     		ldr	r3, [r0, #8]
+  82:src-gen/Main/core/utils/vector.c ****             if (new_capacity > 0) {
+ 499              		.loc 1 82 43 view .LVU115
+ 500 001e 9B1A     		subs	r3, r3, r2
+  82:src-gen/Main/core/utils/vector.c ****             if (new_capacity > 0) {
+ 501              		.loc 1 82 55 view .LVU116
+ 502 0020 D90F     		lsrs	r1, r3, #31
+ 503 0022 01EBA301 		add	r1, r1, r3, asr #2
+ 504              	.LVL46:
+  83:src-gen/Main/core/utils/vector.c ****                 vector_resize(v, new_capacity);
+ 505              		.loc 1 83 13 is_stmt 1 view .LVU117
+  83:src-gen/Main/core/utils/vector.c ****                 vector_resize(v, new_capacity);
+ 506              		.loc 1 83 16 is_stmt 0 view .LVU118
+ 507 0026 4910     		asrs	r1, r1, #1
+ 508              	.LVL47:
+  83:src-gen/Main/core/utils/vector.c ****                 vector_resize(v, new_capacity);
+ 509              		.loc 1 83 16 view .LVU119
+ 510 0028 01D1     		bne	.L46
+ 511              	.LVL48:
+ 512              	.L42:
+  83:src-gen/Main/core/utils/vector.c ****                 vector_resize(v, new_capacity);
+ 513              		.loc 1 83 16 view .LVU120
+ 514              	.LBE4:
+  87:src-gen/Main/core/utils/vector.c ****     }
+ 515              		.loc 1 87 9 is_stmt 1 view .LVU121
+  87:src-gen/Main/core/utils/vector.c ****     }
+ 516              		.loc 1 87 16 is_stmt 0 view .LVU122
+ 517 002a 0020     		movs	r0, #0
+ 518 002c F1E7     		b	.L40
+ 519              	.LVL49:
+ 520              	.L46:
+ 521              	.LBB5:
+  84:src-gen/Main/core/utils/vector.c ****             }
+ 522              		.loc 1 84 17 is_stmt 1 view .LVU123
+ 523 002e FFF7FEFF 		bl	vector_resize
+ 524              	.LVL50:
+  84:src-gen/Main/core/utils/vector.c ****             }
+ 525              		.loc 1 84 17 is_stmt 0 view .LVU124
+ 526 0032 FAE7     		b	.L42
+ 527              	.LBE5:
+ 528              		.cfi_endproc
+ 529              	.LFE4:
+ 531              		.section	.text.vector_at,"ax",%progbits
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 15
+
+
+ 532              		.align	1
+ 533              		.global	vector_at
+ 534              		.syntax unified
+ 535              		.thumb
+ 536              		.thumb_func
+ 538              	vector_at:
+ 539              	.LVL51:
+ 540              	.LFB5:
+ 105:src-gen/Main/core/utils/vector.c ****     void** vector_position = v->start + idx;
+ 541              		.loc 1 105 43 is_stmt 1 view -0
+ 542              		.cfi_startproc
+ 543              		@ args = 0, pretend = 0, frame = 0
+ 544              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105:src-gen/Main/core/utils/vector.c ****     void** vector_position = v->start + idx;
+ 545              		.loc 1 105 43 is_stmt 0 view .LVU126
+ 546 0000 38B5     		push	{r3, r4, r5, lr}
+ 547              	.LCFI7:
+ 548              		.cfi_def_cfa_offset 16
+ 549              		.cfi_offset 3, -16
+ 550              		.cfi_offset 4, -12
+ 551              		.cfi_offset 5, -8
+ 552              		.cfi_offset 14, -4
+ 553 0002 0446     		mov	r4, r0
+ 554 0004 0A46     		mov	r2, r1
+ 106:src-gen/Main/core/utils/vector.c ****     if ((vector_position + 1) > v->next) {
+ 555              		.loc 1 106 5 is_stmt 1 view .LVU127
+ 106:src-gen/Main/core/utils/vector.c ****     if ((vector_position + 1) > v->next) {
+ 556              		.loc 1 106 31 is_stmt 0 view .LVU128
+ 557 0006 0168     		ldr	r1, [r0]
+ 558              	.LVL52:
+ 106:src-gen/Main/core/utils/vector.c ****     if ((vector_position + 1) > v->next) {
+ 559              		.loc 1 106 39 view .LVU129
+ 560 0008 9500     		lsls	r5, r2, #2
+ 106:src-gen/Main/core/utils/vector.c ****     if ((vector_position + 1) > v->next) {
+ 561              		.loc 1 106 12 view .LVU130
+ 562 000a 01EB8203 		add	r3, r1, r2, lsl #2
+ 563              	.LVL53:
+ 107:src-gen/Main/core/utils/vector.c ****         v->next = vector_position + 1;
+ 564              		.loc 1 107 5 is_stmt 1 view .LVU131
+ 107:src-gen/Main/core/utils/vector.c ****         v->next = vector_position + 1;
+ 565              		.loc 1 107 26 is_stmt 0 view .LVU132
+ 566 000e 0433     		adds	r3, r3, #4
+ 567              	.LVL54:
+ 107:src-gen/Main/core/utils/vector.c ****         v->next = vector_position + 1;
+ 568              		.loc 1 107 34 view .LVU133
+ 569 0010 4068     		ldr	r0, [r0, #4]
+ 570              	.LVL55:
+ 107:src-gen/Main/core/utils/vector.c ****         v->next = vector_position + 1;
+ 571              		.loc 1 107 8 view .LVU134
+ 572 0012 8342     		cmp	r3, r0
+ 573 0014 00D9     		bls	.L48
+ 108:src-gen/Main/core/utils/vector.c ****     }
+ 574              		.loc 1 108 9 is_stmt 1 view .LVU135
+ 108:src-gen/Main/core/utils/vector.c ****     }
+ 575              		.loc 1 108 17 is_stmt 0 view .LVU136
+ 576 0016 6360     		str	r3, [r4, #4]
+ 577              	.L48:
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 16
+
+
+ 110:src-gen/Main/core/utils/vector.c ****         v->votes_required++;
+ 578              		.loc 1 110 5 is_stmt 1 view .LVU137
+ 110:src-gen/Main/core/utils/vector.c ****         v->votes_required++;
+ 579              		.loc 1 110 10 is_stmt 0 view .LVU138
+ 580 0018 6068     		ldr	r0, [r4, #4]
+ 110:src-gen/Main/core/utils/vector.c ****         v->votes_required++;
+ 581              		.loc 1 110 21 view .LVU139
+ 582 001a A368     		ldr	r3, [r4, #8]
+ 583              	.LVL56:
+ 110:src-gen/Main/core/utils/vector.c ****         v->votes_required++;
+ 584              		.loc 1 110 8 view .LVU140
+ 585 001c 9842     		cmp	r0, r3
+ 586 001e 0BD3     		bcc	.L49
+ 587              	.LBB6:
+ 111:src-gen/Main/core/utils/vector.c ****         size_t new_size = (v->end - v->start) * SCALE_FACTOR;
+ 588              		.loc 1 111 9 is_stmt 1 view .LVU141
+ 111:src-gen/Main/core/utils/vector.c ****         size_t new_size = (v->end - v->start) * SCALE_FACTOR;
+ 589              		.loc 1 111 10 is_stmt 0 view .LVU142
+ 590 0020 E068     		ldr	r0, [r4, #12]
+ 111:src-gen/Main/core/utils/vector.c ****         size_t new_size = (v->end - v->start) * SCALE_FACTOR;
+ 591              		.loc 1 111 26 view .LVU143
+ 592 0022 0130     		adds	r0, r0, #1
+ 593 0024 E060     		str	r0, [r4, #12]
+ 112:src-gen/Main/core/utils/vector.c ****         // Find a size that includes idx
+ 594              		.loc 1 112 9 is_stmt 1 view .LVU144
+ 112:src-gen/Main/core/utils/vector.c ****         // Find a size that includes idx
+ 595              		.loc 1 112 35 is_stmt 0 view .LVU145
+ 596 0026 5B1A     		subs	r3, r3, r1
+ 112:src-gen/Main/core/utils/vector.c ****         // Find a size that includes idx
+ 597              		.loc 1 112 16 view .LVU146
+ 598 0028 5910     		asrs	r1, r3, #1
+ 599              	.LVL57:
+ 114:src-gen/Main/core/utils/vector.c ****             new_size *= SCALE_FACTOR;
+ 600              		.loc 1 114 9 is_stmt 1 view .LVU147
+ 114:src-gen/Main/core/utils/vector.c ****             new_size *= SCALE_FACTOR;
+ 601              		.loc 1 114 15 is_stmt 0 view .LVU148
+ 602 002a 00E0     		b	.L50
+ 603              	.L51:
+ 115:src-gen/Main/core/utils/vector.c ****         }
+ 604              		.loc 1 115 13 is_stmt 1 view .LVU149
+ 115:src-gen/Main/core/utils/vector.c ****         }
+ 605              		.loc 1 115 22 is_stmt 0 view .LVU150
+ 606 002c 4900     		lsls	r1, r1, #1
+ 607              	.LVL58:
+ 608              	.L50:
+ 114:src-gen/Main/core/utils/vector.c ****             new_size *= SCALE_FACTOR;
+ 609              		.loc 1 114 25 is_stmt 1 view .LVU151
+ 610 002e 9142     		cmp	r1, r2
+ 611 0030 FCD9     		bls	.L51
+ 117:src-gen/Main/core/utils/vector.c ****     }
+ 612              		.loc 1 117 9 view .LVU152
+ 613 0032 2046     		mov	r0, r4
+ 614 0034 FFF7FEFF 		bl	vector_resize
+ 615              	.LVL59:
+ 616              	.L49:
+ 117:src-gen/Main/core/utils/vector.c ****     }
+ 617              		.loc 1 117 9 is_stmt 0 view .LVU153
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 17
+
+
+ 618              	.LBE6:
+ 121:src-gen/Main/core/utils/vector.c **** }
+ 619              		.loc 1 121 5 is_stmt 1 view .LVU154
+ 121:src-gen/Main/core/utils/vector.c **** }
+ 620              		.loc 1 121 13 is_stmt 0 view .LVU155
+ 621 0038 2068     		ldr	r0, [r4]
+ 122:src-gen/Main/core/utils/vector.c **** 
+ 622              		.loc 1 122 1 view .LVU156
+ 623 003a 2844     		add	r0, r0, r5
+ 624 003c 38BD     		pop	{r3, r4, r5, pc}
+ 122:src-gen/Main/core/utils/vector.c **** 
+ 625              		.loc 1 122 1 view .LVU157
+ 626              		.cfi_endproc
+ 627              	.LFE5:
+ 629              		.section	.text.vector_size,"ax",%progbits
+ 630              		.align	1
+ 631              		.global	vector_size
+ 632              		.syntax unified
+ 633              		.thumb
+ 634              		.thumb_func
+ 636              	vector_size:
+ 637              	.LVL60:
+ 638              	.LFB6:
+ 130:src-gen/Main/core/utils/vector.c ****     return (v->next - v->start);
+ 639              		.loc 1 130 33 is_stmt 1 view -0
+ 640              		.cfi_startproc
+ 641              		@ args = 0, pretend = 0, frame = 0
+ 642              		@ frame_needed = 0, uses_anonymous_args = 0
+ 643              		@ link register save eliminated.
+ 131:src-gen/Main/core/utils/vector.c **** }
+ 644              		.loc 1 131 5 view .LVU159
+ 131:src-gen/Main/core/utils/vector.c **** }
+ 645              		.loc 1 131 14 is_stmt 0 view .LVU160
+ 646 0000 4368     		ldr	r3, [r0, #4]
+ 131:src-gen/Main/core/utils/vector.c **** }
+ 647              		.loc 1 131 24 view .LVU161
+ 648 0002 0068     		ldr	r0, [r0]
+ 649              	.LVL61:
+ 131:src-gen/Main/core/utils/vector.c **** }
+ 650              		.loc 1 131 21 view .LVU162
+ 651 0004 181A     		subs	r0, r3, r0
+ 132:src-gen/Main/core/utils/vector.c **** 
+ 652              		.loc 1 132 1 view .LVU163
+ 653 0006 8010     		asrs	r0, r0, #2
+ 654 0008 7047     		bx	lr
+ 655              		.cfi_endproc
+ 656              	.LFE6:
+ 658              		.section	.text.vector_vote,"ax",%progbits
+ 659              		.align	1
+ 660              		.global	vector_vote
+ 661              		.syntax unified
+ 662              		.thumb
+ 663              		.thumb_func
+ 665              	vector_vote:
+ 666              	.LVL62:
+ 667              	.LFB7:
+ 142:src-gen/Main/core/utils/vector.c ****     size_t size = v->next - v->start;
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 18
+
+
+ 668              		.loc 1 142 31 is_stmt 1 view -0
+ 669              		.cfi_startproc
+ 670              		@ args = 0, pretend = 0, frame = 0
+ 671              		@ frame_needed = 0, uses_anonymous_args = 0
+ 672              		@ link register save eliminated.
+ 143:src-gen/Main/core/utils/vector.c ****     int vote = size * CAPACITY_TO_SIZE_RATIO_FOR_SHRINK_VOTE <= (size_t) (v->end - v->start);
+ 673              		.loc 1 143 5 view .LVU165
+ 143:src-gen/Main/core/utils/vector.c ****     int vote = size * CAPACITY_TO_SIZE_RATIO_FOR_SHRINK_VOTE <= (size_t) (v->end - v->start);
+ 674              		.loc 1 143 20 is_stmt 0 view .LVU166
+ 675 0000 4368     		ldr	r3, [r0, #4]
+ 143:src-gen/Main/core/utils/vector.c ****     int vote = size * CAPACITY_TO_SIZE_RATIO_FOR_SHRINK_VOTE <= (size_t) (v->end - v->start);
+ 676              		.loc 1 143 30 view .LVU167
+ 677 0002 0168     		ldr	r1, [r0]
+ 143:src-gen/Main/core/utils/vector.c ****     int vote = size * CAPACITY_TO_SIZE_RATIO_FOR_SHRINK_VOTE <= (size_t) (v->end - v->start);
+ 678              		.loc 1 143 27 view .LVU168
+ 679 0004 5B1A     		subs	r3, r3, r1
+ 680              	.LVL63:
+ 144:src-gen/Main/core/utils/vector.c ****     v->votes = vote * v->votes + vote;
+ 681              		.loc 1 144 5 is_stmt 1 view .LVU169
+ 144:src-gen/Main/core/utils/vector.c ****     v->votes = vote * v->votes + vote;
+ 682              		.loc 1 144 76 is_stmt 0 view .LVU170
+ 683 0006 8268     		ldr	r2, [r0, #8]
+ 144:src-gen/Main/core/utils/vector.c ****     v->votes = vote * v->votes + vote;
+ 684              		.loc 1 144 82 view .LVU171
+ 685 0008 521A     		subs	r2, r2, r1
+ 144:src-gen/Main/core/utils/vector.c ****     v->votes = vote * v->votes + vote;
+ 686              		.loc 1 144 62 view .LVU172
+ 687 000a B3EBA20F 		cmp	r3, r2, asr #2
+ 688 000e 94BF     		ite	ls
+ 689 0010 0123     		movls	r3, #1
+ 690              	.LVL64:
+ 144:src-gen/Main/core/utils/vector.c ****     v->votes = vote * v->votes + vote;
+ 691              		.loc 1 144 62 view .LVU173
+ 692 0012 0023     		movhi	r3, #0
+ 693              	.LVL65:
+ 145:src-gen/Main/core/utils/vector.c **** }
+ 694              		.loc 1 145 5 is_stmt 1 view .LVU174
+ 145:src-gen/Main/core/utils/vector.c **** }
+ 695              		.loc 1 145 24 is_stmt 0 view .LVU175
+ 696 0014 0269     		ldr	r2, [r0, #16]
+ 145:src-gen/Main/core/utils/vector.c **** }
+ 697              		.loc 1 145 32 view .LVU176
+ 698 0016 03FB0233 		mla	r3, r3, r2, r3
+ 699              	.LVL66:
+ 145:src-gen/Main/core/utils/vector.c **** }
+ 700              		.loc 1 145 14 view .LVU177
+ 701 001a 0361     		str	r3, [r0, #16]
+ 146:src-gen/Main/core/utils/vector.c **** 
+ 702              		.loc 1 146 1 view .LVU178
+ 703 001c 7047     		bx	lr
+ 704              		.cfi_endproc
+ 705              	.LFE7:
+ 707              		.section	.rodata.__func__.0,"a"
+ 708              		.align	2
+ 711              	__func__.0:
+ 712 0000 76656374 		.ascii	"vector_pushall\000"
+ 712      6F725F70 
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 19
+
+
+ 712      75736861 
+ 712      6C6C00
+ 713              		.section	.rodata.__func__.1,"a"
+ 714              		.align	2
+ 717              	__func__.1:
+ 718 0000 76656374 		.ascii	"vector_resize\000"
+ 718      6F725F72 
+ 718      6573697A 
+ 718      6500
+ 719              		.section	.rodata.__func__.2,"a"
+ 720              		.align	2
+ 723              	__func__.2:
+ 724 0000 76656374 		.ascii	"vector_free\000"
+ 724      6F725F66 
+ 724      72656500 
+ 725              		.section	.rodata.__func__.3,"a"
+ 726              		.align	2
+ 729              	__func__.3:
+ 730 0000 76656374 		.ascii	"vector_new\000"
+ 730      6F725F6E 
+ 730      657700
+ 731              		.text
+ 732              	.Letext0:
+ 733              		.file 2 "src-gen/Main/include/core/utils/vector.h"
+ 734              		.file 3 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/includ
+ 735              		.file 4 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdlib.h"
+ 736              		.file 5 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/assert.h"
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s 			page 20
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 vector.c
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:21     .rodata.vector_resize.str1.4:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:31     .text.vector_resize:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:36     .text.vector_resize:00000000 vector_resize
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:131    .text.vector_resize:00000048 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:717    .rodata.__func__.1:00000000 __func__.1
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:139    .text.vector_new:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:145    .text.vector_new:00000000 vector_new
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:201    .text.vector_new:00000030 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:729    .rodata.__func__.3:00000000 __func__.3
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:208    .rodata.vector_free.str1.4:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:212    .text.vector_free:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:218    .text.vector_free:00000000 vector_free
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:255    .text.vector_free:00000018 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:723    .rodata.__func__.2:00000000 __func__.2
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:262    .text.vector_push:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:268    .text.vector_push:00000000 vector_push
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:329    .rodata.vector_pushall.str1.4:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:333    .text.vector_pushall:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:339    .text.vector_pushall:00000000 vector_pushall
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:441    .text.vector_pushall:00000054 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:711    .rodata.__func__.0:00000000 __func__.0
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:448    .text.vector_pop:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:454    .text.vector_pop:00000000 vector_pop
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:532    .text.vector_at:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:538    .text.vector_at:00000000 vector_at
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:630    .text.vector_size:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:636    .text.vector_size:00000000 vector_size
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:659    .text.vector_vote:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:665    .text.vector_vote:00000000 vector_vote
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:708    .rodata.__func__.0:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:714    .rodata.__func__.1:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:720    .rodata.__func__.2:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccN2xQw3.s:726    .rodata.__func__.3:00000000 $d
+
+UNDEFINED SYMBOLS
+realloc
+__assert_func
+malloc
+free

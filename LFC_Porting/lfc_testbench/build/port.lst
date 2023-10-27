@@ -1,0 +1,595 @@
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"port.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "src-gen/Main/core/port.c"
+  20              		.section	.text.compare_sizes,"ax",%progbits
+  21              		.align	1
+  22              		.global	compare_sizes
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	compare_sizes:
+  28              	.LVL0:
+  29              	.LFB3:
+   1:src-gen/Main/core/port.c **** /**
+   2:src-gen/Main/core/port.c ****  * @file
+   3:src-gen/Main/core/port.c ****  * @author Edward A. Lee (eal@berkeley.edu)
+   4:src-gen/Main/core/port.c ****  *
+   5:src-gen/Main/core/port.c ****  * @section LICENSE
+   6:src-gen/Main/core/port.c ****  * Copyright (c) 2022, The University of California at Berkeley.
+   7:src-gen/Main/core/port.c ****  *
+   8:src-gen/Main/core/port.c ****  * Redistribution and use in source and binary forms, with or without modification,
+   9:src-gen/Main/core/port.c ****  * are permitted provided that the following conditions are met:
+  10:src-gen/Main/core/port.c ****  *
+  11:src-gen/Main/core/port.c ****  * 1. Redistributions of source code must retain the above copyright notice,
+  12:src-gen/Main/core/port.c ****  *    this list of conditions and the following disclaimer.
+  13:src-gen/Main/core/port.c ****  *
+  14:src-gen/Main/core/port.c ****  * 2. Redistributions in binary form must reproduce the above copyright notice,
+  15:src-gen/Main/core/port.c ****  *    this list of conditions and the following disclaimer in the documentation
+  16:src-gen/Main/core/port.c ****  *    and/or other materials provided with the distribution.
+  17:src-gen/Main/core/port.c ****  *
+  18:src-gen/Main/core/port.c ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+  19:src-gen/Main/core/port.c ****  * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  20:src-gen/Main/core/port.c ****  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+  21:src-gen/Main/core/port.c ****  * THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  22:src-gen/Main/core/port.c ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  23:src-gen/Main/core/port.c ****  * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  24:src-gen/Main/core/port.c ****  * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+  25:src-gen/Main/core/port.c ****  * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
+  26:src-gen/Main/core/port.c ****  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  27:src-gen/Main/core/port.c ****  *
+  28:src-gen/Main/core/port.c ****  * @section DESCRIPTION
+  29:src-gen/Main/core/port.c ****  *
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s 			page 2
+
+
+  30:src-gen/Main/core/port.c ****  * Header file for macros, functions, and structs for optimized sparse I/O
+  31:src-gen/Main/core/port.c ****  * through multiports.
+  32:src-gen/Main/core/port.c ****  */
+  33:src-gen/Main/core/port.c **** #include <stdio.h>
+  34:src-gen/Main/core/port.c **** 
+  35:src-gen/Main/core/port.c **** #include "port.h"
+  36:src-gen/Main/core/port.c **** #include "vector.h"
+  37:src-gen/Main/core/port.c **** 
+  38:src-gen/Main/core/port.c **** /**
+  39:src-gen/Main/core/port.c ****  * Compare two non-negative integers pointed to. Return -1 if a < b, 0 if a == b,
+  40:src-gen/Main/core/port.c ****  * and 1 if a > b.
+  41:src-gen/Main/core/port.c ****  * @param a Pointer to the first integer.
+  42:src-gen/Main/core/port.c ****  * @param b Pointer to the second integer.
+  43:src-gen/Main/core/port.c ****  */
+  44:src-gen/Main/core/port.c **** int compare_sizes(const void* a, const void* b) {
+  30              		.loc 1 44 49 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  45:src-gen/Main/core/port.c **** 	if (*(size_t*)a < *(size_t*)b) {
+  35              		.loc 1 45 2 view .LVU1
+  36              		.loc 1 45 6 is_stmt 0 view .LVU2
+  37 0000 0268     		ldr	r2, [r0]
+  38              		.loc 1 45 20 view .LVU3
+  39 0002 0B68     		ldr	r3, [r1]
+  40              		.loc 1 45 5 view .LVU4
+  41 0004 9A42     		cmp	r2, r3
+  42 0006 02D3     		bcc	.L3
+  46:src-gen/Main/core/port.c **** 		return -1;
+  47:src-gen/Main/core/port.c **** 	} else if (*(size_t*)a > *(size_t*)b) {
+  43              		.loc 1 47 9 is_stmt 1 view .LVU5
+  44              		.loc 1 47 12 is_stmt 0 view .LVU6
+  45 0008 04D9     		bls	.L4
+  48:src-gen/Main/core/port.c **** 		return 1;
+  46              		.loc 1 48 10 view .LVU7
+  47 000a 0120     		movs	r0, #1
+  48              	.LVL1:
+  49              		.loc 1 48 10 view .LVU8
+  50 000c 7047     		bx	lr
+  51              	.LVL2:
+  52              	.L3:
+  46:src-gen/Main/core/port.c **** 		return -1;
+  53              		.loc 1 46 10 view .LVU9
+  54 000e 4FF0FF30 		mov	r0, #-1
+  55              	.LVL3:
+  46:src-gen/Main/core/port.c **** 		return -1;
+  56              		.loc 1 46 10 view .LVU10
+  57 0012 7047     		bx	lr
+  58              	.LVL4:
+  59              	.L4:
+  49:src-gen/Main/core/port.c **** 	} else {
+  50:src-gen/Main/core/port.c **** 		return 0;
+  60              		.loc 1 50 10 view .LVU11
+  61 0014 0020     		movs	r0, #0
+  62              	.LVL5:
+  51:src-gen/Main/core/port.c **** 	}
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s 			page 3
+
+
+  52:src-gen/Main/core/port.c **** }
+  63              		.loc 1 52 1 view .LVU12
+  64 0016 7047     		bx	lr
+  65              		.cfi_endproc
+  66              	.LFE3:
+  68              		.section	.text._lf_multiport_iterator_impl,"ax",%progbits
+  69              		.align	1
+  70              		.global	_lf_multiport_iterator_impl
+  71              		.syntax unified
+  72              		.thumb
+  73              		.thumb_func
+  75              	_lf_multiport_iterator_impl:
+  76              	.LVL6:
+  77              	.LFB4:
+  53:src-gen/Main/core/port.c **** 
+  54:src-gen/Main/core/port.c **** /**
+  55:src-gen/Main/core/port.c ****  * Given an array of pointers to port structs, return an iterator
+  56:src-gen/Main/core/port.c ****  * that can be used to iterate over the present channels.
+  57:src-gen/Main/core/port.c ****  * @param port An array of pointers to port structs.
+  58:src-gen/Main/core/port.c ****  * @param width The width of the multiport (or a negative number if not
+  59:src-gen/Main/core/port.c ****  *  a multiport).
+  60:src-gen/Main/core/port.c ****  */
+  61:src-gen/Main/core/port.c **** lf_multiport_iterator_t _lf_multiport_iterator_impl(lf_port_base_t** port, int width) {
+  78              		.loc 1 61 87 is_stmt 1 view -0
+  79              		.cfi_startproc
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  82              		.loc 1 61 87 is_stmt 0 view .LVU14
+  83 0000 38B5     		push	{r3, r4, r5, lr}
+  84              	.LCFI0:
+  85              		.cfi_def_cfa_offset 16
+  86              		.cfi_offset 3, -16
+  87              		.cfi_offset 4, -12
+  88              		.cfi_offset 5, -8
+  89              		.cfi_offset 14, -4
+  90 0002 0546     		mov	r5, r0
+  62:src-gen/Main/core/port.c **** 	// NOTE: Synchronization is not required because all writers must have
+  63:src-gen/Main/core/port.c **** 	// completed by the time this is invoked.
+  64:src-gen/Main/core/port.c **** 	struct lf_multiport_iterator_t result = (lf_multiport_iterator_t) {
+  91              		.loc 1 64 2 is_stmt 1 view .LVU15
+  92              		.loc 1 64 33 is_stmt 0 view .LVU16
+  93 0004 4FF0FF33 		mov	r3, #-1
+  94 0008 0360     		str	r3, [r0]
+  95 000a 4360     		str	r3, [r0, #4]
+  96 000c 8160     		str	r1, [r0, #8]
+  97 000e C260     		str	r2, [r0, #12]
+  65:src-gen/Main/core/port.c **** 			.next = -1,
+  66:src-gen/Main/core/port.c **** 			.idx = -1, // Indicate that lf_multiport_next() has not been called.
+  67:src-gen/Main/core/port.c **** 			.port = port,
+  68:src-gen/Main/core/port.c **** 			.width = width
+  69:src-gen/Main/core/port.c **** 	};
+  70:src-gen/Main/core/port.c **** 	if (width <= 0) return result;
+  98              		.loc 1 70 2 is_stmt 1 view .LVU17
+  99              		.loc 1 70 5 is_stmt 0 view .LVU18
+ 100 0010 002A     		cmp	r2, #0
+ 101 0012 1EDD     		ble	.L5
+ 102 0014 0C46     		mov	r4, r1
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s 			page 4
+
+
+  71:src-gen/Main/core/port.c **** 	if (port[0]->sparse_record && port[0]->sparse_record->size >= 0) {
+ 103              		.loc 1 71 2 is_stmt 1 view .LVU19
+ 104              		.loc 1 71 10 is_stmt 0 view .LVU20
+ 105 0016 0B68     		ldr	r3, [r1]
+ 106              		.loc 1 71 13 view .LVU21
+ 107 0018 9869     		ldr	r0, [r3, #24]
+ 108              	.LVL7:
+ 109              		.loc 1 71 5 view .LVU22
+ 110 001a E0B1     		cbz	r0, .L13
+ 111              		.loc 1 71 54 discriminator 1 view .LVU23
+ 112 001c 0168     		ldr	r1, [r0]
+ 113              	.LVL8:
+ 114              		.loc 1 71 29 discriminator 1 view .LVU24
+ 115 001e 0029     		cmp	r1, #0
+ 116 0020 08DA     		bge	.L16
+ 117 0022 0023     		movs	r3, #0
+ 118              	.L11:
+ 119              	.LVL9:
+  72:src-gen/Main/core/port.c **** 		// Sparse record is enabled and ready to use.
+  73:src-gen/Main/core/port.c **** 		if (port[0]->sparse_record->size > 0) {
+  74:src-gen/Main/core/port.c **** 			// Need to sort it first (if the length is greater than 1).
+  75:src-gen/Main/core/port.c **** 			if (port[0]->sparse_record->size > 1) {
+  76:src-gen/Main/core/port.c **** 				qsort(
+  77:src-gen/Main/core/port.c **** 						&port[0]->sparse_record->present_channels[0],
+  78:src-gen/Main/core/port.c **** 						(size_t)port[0]->sparse_record->size,
+  79:src-gen/Main/core/port.c **** 						sizeof(size_t),
+  80:src-gen/Main/core/port.c **** 						&compare_sizes
+  81:src-gen/Main/core/port.c **** 				);
+  82:src-gen/Main/core/port.c **** 			}
+  83:src-gen/Main/core/port.c **** 			// NOTE: Following cast is unsafe if there more than 2^31 channels.
+  84:src-gen/Main/core/port.c **** 			result.next = (int)port[0]->sparse_record->present_channels[0];
+  85:src-gen/Main/core/port.c **** 		}
+  86:src-gen/Main/core/port.c **** 		return result;
+  87:src-gen/Main/core/port.c **** 	}
+  88:src-gen/Main/core/port.c **** 	// Fallback is to iterate over all port structs representing channels.
+  89:src-gen/Main/core/port.c **** 	int start = 0;
+  90:src-gen/Main/core/port.c **** 	while(start < width) {
+ 120              		.loc 1 90 14 is_stmt 1 view .LVU25
+ 121 0024 9342     		cmp	r3, r2
+ 122 0026 14DA     		bge	.L5
+  91:src-gen/Main/core/port.c **** 		if (port[start]->is_present) {
+ 123              		.loc 1 91 3 view .LVU26
+ 124              		.loc 1 91 11 is_stmt 0 view .LVU27
+ 125 0028 54F82310 		ldr	r1, [r4, r3, lsl #2]
+ 126              		.loc 1 91 18 view .LVU28
+ 127 002c 097D     		ldrb	r1, [r1, #20]	@ zero_extendqisi2
+ 128              		.loc 1 91 6 view .LVU29
+ 129 002e 79B9     		cbnz	r1, .L17
+  92:src-gen/Main/core/port.c **** 			result.next = start;
+  93:src-gen/Main/core/port.c **** 			return result;
+  94:src-gen/Main/core/port.c **** 		}
+  95:src-gen/Main/core/port.c **** 		start++;
+ 130              		.loc 1 95 3 is_stmt 1 view .LVU30
+ 131              		.loc 1 95 8 is_stmt 0 view .LVU31
+ 132 0030 0133     		adds	r3, r3, #1
+ 133              	.LVL10:
+ 134              		.loc 1 95 8 view .LVU32
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s 			page 5
+
+
+ 135 0032 F7E7     		b	.L11
+ 136              	.LVL11:
+ 137              	.L16:
+  73:src-gen/Main/core/port.c **** 			// Need to sort it first (if the length is greater than 1).
+ 138              		.loc 1 73 3 is_stmt 1 view .LVU33
+  73:src-gen/Main/core/port.c **** 			// Need to sort it first (if the length is greater than 1).
+ 139              		.loc 1 73 6 is_stmt 0 view .LVU34
+ 140 0034 0DDD     		ble	.L5
+  75:src-gen/Main/core/port.c **** 				qsort(
+ 141              		.loc 1 75 4 is_stmt 1 view .LVU35
+  75:src-gen/Main/core/port.c **** 				qsort(
+ 142              		.loc 1 75 7 is_stmt 0 view .LVU36
+ 143 0036 0129     		cmp	r1, #1
+ 144 0038 04DC     		bgt	.L18
+ 145              	.LVL12:
+ 146              	.L9:
+  84:src-gen/Main/core/port.c **** 		}
+ 147              		.loc 1 84 4 is_stmt 1 view .LVU37
+  84:src-gen/Main/core/port.c **** 		}
+ 148              		.loc 1 84 27 is_stmt 0 view .LVU38
+ 149 003a 2368     		ldr	r3, [r4]
+  84:src-gen/Main/core/port.c **** 		}
+ 150              		.loc 1 84 30 view .LVU39
+ 151 003c 9B69     		ldr	r3, [r3, #24]
+  84:src-gen/Main/core/port.c **** 		}
+ 152              		.loc 1 84 63 view .LVU40
+ 153 003e 9B68     		ldr	r3, [r3, #8]
+  84:src-gen/Main/core/port.c **** 		}
+ 154              		.loc 1 84 16 view .LVU41
+ 155 0040 2B60     		str	r3, [r5]
+  86:src-gen/Main/core/port.c **** 	}
+ 156              		.loc 1 86 3 is_stmt 1 view .LVU42
+  86:src-gen/Main/core/port.c **** 	}
+ 157              		.loc 1 86 10 is_stmt 0 view .LVU43
+ 158 0042 06E0     		b	.L5
+ 159              	.LVL13:
+ 160              	.L18:
+  76:src-gen/Main/core/port.c **** 						&port[0]->sparse_record->present_channels[0],
+ 161              		.loc 1 76 5 is_stmt 1 view .LVU44
+ 162 0044 054B     		ldr	r3, .L19
+ 163 0046 0422     		movs	r2, #4
+ 164              	.LVL14:
+  76:src-gen/Main/core/port.c **** 						&port[0]->sparse_record->present_channels[0],
+ 165              		.loc 1 76 5 is_stmt 0 view .LVU45
+ 166 0048 0830     		adds	r0, r0, #8
+ 167 004a FFF7FEFF 		bl	qsort
+ 168              	.LVL15:
+ 169 004e F4E7     		b	.L9
+ 170              	.LVL16:
+ 171              	.L17:
+  92:src-gen/Main/core/port.c **** 			return result;
+ 172              		.loc 1 92 4 is_stmt 1 view .LVU46
+  92:src-gen/Main/core/port.c **** 			return result;
+ 173              		.loc 1 92 16 is_stmt 0 view .LVU47
+ 174 0050 2B60     		str	r3, [r5]
+  93:src-gen/Main/core/port.c **** 		}
+ 175              		.loc 1 93 4 is_stmt 1 view .LVU48
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s 			page 6
+
+
+ 176              	.LVL17:
+ 177              	.L5:
+  96:src-gen/Main/core/port.c **** 	}
+  97:src-gen/Main/core/port.c **** 	return result;
+  98:src-gen/Main/core/port.c **** }
+ 178              		.loc 1 98 1 is_stmt 0 view .LVU49
+ 179 0052 2846     		mov	r0, r5
+ 180 0054 38BD     		pop	{r3, r4, r5, pc}
+ 181              	.LVL18:
+ 182              	.L13:
+ 183              		.loc 1 98 1 view .LVU50
+ 184 0056 0023     		movs	r3, #0
+ 185 0058 E4E7     		b	.L11
+ 186              	.L20:
+ 187 005a 00BF     		.align	2
+ 188              	.L19:
+ 189 005c 00000000 		.word	compare_sizes
+ 190              		.cfi_endproc
+ 191              	.LFE4:
+ 193              		.section	.text.lf_multiport_next,"ax",%progbits
+ 194              		.align	1
+ 195              		.global	lf_multiport_next
+ 196              		.syntax unified
+ 197              		.thumb
+ 198              		.thumb_func
+ 200              	lf_multiport_next:
+ 201              	.LVL19:
+ 202              	.LFB5:
+  99:src-gen/Main/core/port.c **** 
+ 100:src-gen/Main/core/port.c **** /**
+ 101:src-gen/Main/core/port.c ****  * Return the channel number of the next present input on the multiport
+ 102:src-gen/Main/core/port.c ****  * or -1 if there are no more present channels.
+ 103:src-gen/Main/core/port.c ****  * @param iterator The iterator.
+ 104:src-gen/Main/core/port.c ****  */
+ 105:src-gen/Main/core/port.c **** int lf_multiport_next(lf_multiport_iterator_t* iterator) {
+ 203              		.loc 1 105 58 is_stmt 1 view -0
+ 204              		.cfi_startproc
+ 205              		@ args = 0, pretend = 0, frame = 0
+ 206              		@ frame_needed = 0, uses_anonymous_args = 0
+ 207              		@ link register save eliminated.
+ 208              		.loc 1 105 58 is_stmt 0 view .LVU52
+ 209 0000 0246     		mov	r2, r0
+ 106:src-gen/Main/core/port.c **** 	// If the iterator has not been used, return next.
+ 107:src-gen/Main/core/port.c **** 	if (iterator->idx < 0) {
+ 210              		.loc 1 107 2 is_stmt 1 view .LVU53
+ 211              		.loc 1 107 14 is_stmt 0 view .LVU54
+ 212 0002 4068     		ldr	r0, [r0, #4]
+ 213              	.LVL20:
+ 214              		.loc 1 107 5 view .LVU55
+ 215 0004 0028     		cmp	r0, #0
+ 216 0006 17DB     		blt	.L36
+ 108:src-gen/Main/core/port.c **** 		iterator->idx = 0;
+ 109:src-gen/Main/core/port.c **** 		return iterator->next;
+ 110:src-gen/Main/core/port.c **** 	}
+ 111:src-gen/Main/core/port.c **** 	// If the iterator is already exhausted, return.
+ 112:src-gen/Main/core/port.c **** 	if (iterator->next < 0 || iterator->width <= 0) {
+ 217              		.loc 1 112 2 is_stmt 1 view .LVU56
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s 			page 7
+
+
+ 218              		.loc 1 112 14 is_stmt 0 view .LVU57
+ 219 0008 1368     		ldr	r3, [r2]
+ 220              		.loc 1 112 5 view .LVU58
+ 221 000a 002B     		cmp	r3, #0
+ 222 000c 2EDB     		blt	.L30
+ 223              		.loc 1 112 36 discriminator 1 view .LVU59
+ 224 000e D168     		ldr	r1, [r2, #12]
+ 225              		.loc 1 112 25 discriminator 1 view .LVU60
+ 226 0010 0029     		cmp	r1, #0
+ 227 0012 2EDD     		ble	.L31
+ 105:src-gen/Main/core/port.c **** 	// If the iterator has not been used, return next.
+ 228              		.loc 1 105 58 view .LVU61
+ 229 0014 70B4     		push	{r4, r5, r6}
+ 230              	.LCFI1:
+ 231              		.cfi_def_cfa_offset 12
+ 232              		.cfi_offset 4, -12
+ 233              		.cfi_offset 5, -8
+ 234              		.cfi_offset 6, -4
+ 113:src-gen/Main/core/port.c **** 		return -1;
+ 114:src-gen/Main/core/port.c **** 	}
+ 115:src-gen/Main/core/port.c **** 	struct lf_sparse_io_record_t* sparse_record
+ 235              		.loc 1 115 2 is_stmt 1 view .LVU62
+ 116:src-gen/Main/core/port.c **** 			= iterator->port[iterator->idx]->sparse_record;
+ 236              		.loc 1 116 14 is_stmt 0 view .LVU63
+ 237 0016 9468     		ldr	r4, [r2, #8]
+ 238              		.loc 1 116 20 view .LVU64
+ 239 0018 54F82050 		ldr	r5, [r4, r0, lsl #2]
+ 115:src-gen/Main/core/port.c **** 			= iterator->port[iterator->idx]->sparse_record;
+ 240              		.loc 1 115 32 view .LVU65
+ 241 001c AD69     		ldr	r5, [r5, #24]
+ 242              	.LVL21:
+ 117:src-gen/Main/core/port.c **** 	if (sparse_record && sparse_record->size >= 0) {
+ 243              		.loc 1 117 2 is_stmt 1 view .LVU66
+ 244              		.loc 1 117 5 is_stmt 0 view .LVU67
+ 245 001e 15B1     		cbz	r5, .L24
+ 246              		.loc 1 117 20 discriminator 1 view .LVU68
+ 247 0020 2E68     		ldr	r6, [r5]
+ 248 0022 002E     		cmp	r6, #0
+ 249 0024 0CDA     		bge	.L37
+ 250              	.L24:
+ 251              	.LBB2:
+ 118:src-gen/Main/core/port.c **** 		// Sparse record is enabled and ready to use.
+ 119:src-gen/Main/core/port.c **** 		iterator->idx++;
+ 120:src-gen/Main/core/port.c **** 		if (iterator->idx >= sparse_record->size) {
+ 121:src-gen/Main/core/port.c **** 			// No more present channels.
+ 122:src-gen/Main/core/port.c **** 			iterator->next = -1;
+ 123:src-gen/Main/core/port.c **** 		} else {
+ 124:src-gen/Main/core/port.c **** 			// NOTE: Following cast is unsafe if there more than 2^31 channels.
+ 125:src-gen/Main/core/port.c **** 			iterator->next = (int)sparse_record->present_channels[iterator->idx];
+ 126:src-gen/Main/core/port.c **** 		}
+ 127:src-gen/Main/core/port.c **** 		return iterator->next;
+ 128:src-gen/Main/core/port.c **** 	} else {
+ 129:src-gen/Main/core/port.c **** 		// Fall back to iterate over all port structs representing channels.
+ 130:src-gen/Main/core/port.c **** 		int start = iterator->next + 1;
+ 252              		.loc 1 130 3 is_stmt 1 view .LVU69
+ 253              		.loc 1 130 7 is_stmt 0 view .LVU70
+ 254 0026 581C     		adds	r0, r3, #1
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s 			page 8
+
+
+ 255              	.LVL22:
+ 131:src-gen/Main/core/port.c **** 		while(start < iterator->width) {
+ 256              		.loc 1 131 3 is_stmt 1 view .LVU71
+ 257              	.L27:
+ 258              		.loc 1 131 15 view .LVU72
+ 259 0028 8142     		cmp	r1, r0
+ 260 002a 1ADD     		ble	.L38
+ 132:src-gen/Main/core/port.c **** 			if (iterator->port[start]->is_present) {
+ 261              		.loc 1 132 4 view .LVU73
+ 262              		.loc 1 132 22 is_stmt 0 view .LVU74
+ 263 002c 54F82030 		ldr	r3, [r4, r0, lsl #2]
+ 264              		.loc 1 132 29 view .LVU75
+ 265 0030 1B7D     		ldrb	r3, [r3, #20]	@ zero_extendqisi2
+ 266              		.loc 1 132 7 view .LVU76
+ 267 0032 A3B9     		cbnz	r3, .L39
+ 133:src-gen/Main/core/port.c **** 				iterator->next = start;
+ 134:src-gen/Main/core/port.c **** 				return iterator->next;
+ 135:src-gen/Main/core/port.c **** 			}
+ 136:src-gen/Main/core/port.c **** 			start++;
+ 268              		.loc 1 136 4 is_stmt 1 view .LVU77
+ 269              		.loc 1 136 9 is_stmt 0 view .LVU78
+ 270 0034 0130     		adds	r0, r0, #1
+ 271              	.LVL23:
+ 272              		.loc 1 136 9 view .LVU79
+ 273 0036 F7E7     		b	.L27
+ 274              	.LVL24:
+ 275              	.L36:
+ 276              	.LCFI2:
+ 277              		.cfi_def_cfa_offset 0
+ 278              		.cfi_restore 4
+ 279              		.cfi_restore 5
+ 280              		.cfi_restore 6
+ 281              		.loc 1 136 9 view .LVU80
+ 282              	.LBE2:
+ 108:src-gen/Main/core/port.c **** 		return iterator->next;
+ 283              		.loc 1 108 3 is_stmt 1 view .LVU81
+ 108:src-gen/Main/core/port.c **** 		return iterator->next;
+ 284              		.loc 1 108 17 is_stmt 0 view .LVU82
+ 285 0038 0023     		movs	r3, #0
+ 286 003a 5360     		str	r3, [r2, #4]
+ 109:src-gen/Main/core/port.c **** 	}
+ 287              		.loc 1 109 3 is_stmt 1 view .LVU83
+ 109:src-gen/Main/core/port.c **** 	}
+ 288              		.loc 1 109 18 is_stmt 0 view .LVU84
+ 289 003c 1068     		ldr	r0, [r2]
+ 290 003e 7047     		bx	lr
+ 291              	.LVL25:
+ 292              	.L37:
+ 293              	.LCFI3:
+ 294              		.cfi_def_cfa_offset 12
+ 295              		.cfi_offset 4, -12
+ 296              		.cfi_offset 5, -8
+ 297              		.cfi_offset 6, -4
+ 119:src-gen/Main/core/port.c **** 		if (iterator->idx >= sparse_record->size) {
+ 298              		.loc 1 119 3 is_stmt 1 view .LVU85
+ 119:src-gen/Main/core/port.c **** 		if (iterator->idx >= sparse_record->size) {
+ 299              		.loc 1 119 16 is_stmt 0 view .LVU86
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s 			page 9
+
+
+ 300 0040 0130     		adds	r0, r0, #1
+ 301 0042 5060     		str	r0, [r2, #4]
+ 120:src-gen/Main/core/port.c **** 			// No more present channels.
+ 302              		.loc 1 120 3 is_stmt 1 view .LVU87
+ 120:src-gen/Main/core/port.c **** 			// No more present channels.
+ 303              		.loc 1 120 37 is_stmt 0 view .LVU88
+ 304 0044 2B68     		ldr	r3, [r5]
+ 120:src-gen/Main/core/port.c **** 			// No more present channels.
+ 305              		.loc 1 120 6 view .LVU89
+ 306 0046 9842     		cmp	r0, r3
+ 307 0048 04DB     		blt	.L25
+ 122:src-gen/Main/core/port.c **** 		} else {
+ 308              		.loc 1 122 4 is_stmt 1 view .LVU90
+ 122:src-gen/Main/core/port.c **** 		} else {
+ 309              		.loc 1 122 19 is_stmt 0 view .LVU91
+ 310 004a 4FF0FF33 		mov	r3, #-1
+ 311 004e 1360     		str	r3, [r2]
+ 312              	.L26:
+ 127:src-gen/Main/core/port.c **** 	} else {
+ 313              		.loc 1 127 3 is_stmt 1 view .LVU92
+ 127:src-gen/Main/core/port.c **** 	} else {
+ 314              		.loc 1 127 18 is_stmt 0 view .LVU93
+ 315 0050 1068     		ldr	r0, [r2]
+ 316 0052 09E0     		b	.L21
+ 317              	.L25:
+ 125:src-gen/Main/core/port.c **** 		}
+ 318              		.loc 1 125 4 is_stmt 1 view .LVU94
+ 125:src-gen/Main/core/port.c **** 		}
+ 319              		.loc 1 125 57 is_stmt 0 view .LVU95
+ 320 0054 0230     		adds	r0, r0, #2
+ 321 0056 55F82030 		ldr	r3, [r5, r0, lsl #2]
+ 125:src-gen/Main/core/port.c **** 		}
+ 322              		.loc 1 125 19 view .LVU96
+ 323 005a 1360     		str	r3, [r2]
+ 324 005c F8E7     		b	.L26
+ 325              	.LVL26:
+ 326              	.L39:
+ 327              	.LBB3:
+ 133:src-gen/Main/core/port.c **** 				return iterator->next;
+ 328              		.loc 1 133 5 is_stmt 1 view .LVU97
+ 133:src-gen/Main/core/port.c **** 				return iterator->next;
+ 329              		.loc 1 133 20 is_stmt 0 view .LVU98
+ 330 005e 1060     		str	r0, [r2]
+ 134:src-gen/Main/core/port.c **** 			}
+ 331              		.loc 1 134 5 is_stmt 1 view .LVU99
+ 134:src-gen/Main/core/port.c **** 			}
+ 332              		.loc 1 134 20 is_stmt 0 view .LVU100
+ 333 0060 02E0     		b	.L21
+ 334              	.L38:
+ 137:src-gen/Main/core/port.c **** 		}
+ 138:src-gen/Main/core/port.c **** 		// No more present channels found.
+ 139:src-gen/Main/core/port.c **** 		iterator->next = -1;
+ 335              		.loc 1 139 3 is_stmt 1 view .LVU101
+ 336              		.loc 1 139 18 is_stmt 0 view .LVU102
+ 337 0062 4FF0FF30 		mov	r0, #-1
+ 338              	.LVL27:
+ 339              		.loc 1 139 18 view .LVU103
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s 			page 10
+
+
+ 340 0066 1060     		str	r0, [r2]
+ 140:src-gen/Main/core/port.c **** 		return iterator->next;
+ 341              		.loc 1 140 3 is_stmt 1 view .LVU104
+ 342              	.LVL28:
+ 343              	.L21:
+ 344              		.loc 1 140 3 is_stmt 0 view .LVU105
+ 345              	.LBE3:
+ 141:src-gen/Main/core/port.c **** 	}
+ 142:src-gen/Main/core/port.c **** }
+ 346              		.loc 1 142 1 view .LVU106
+ 347 0068 70BC     		pop	{r4, r5, r6}
+ 348              	.LCFI4:
+ 349              		.cfi_restore 6
+ 350              		.cfi_restore 5
+ 351              		.cfi_restore 4
+ 352              		.cfi_def_cfa_offset 0
+ 353              	.LVL29:
+ 354              		.loc 1 142 1 view .LVU107
+ 355 006a 7047     		bx	lr
+ 356              	.LVL30:
+ 357              	.L30:
+ 113:src-gen/Main/core/port.c **** 	}
+ 358              		.loc 1 113 10 view .LVU108
+ 359 006c 4FF0FF30 		mov	r0, #-1
+ 360 0070 7047     		bx	lr
+ 361              	.L31:
+ 362 0072 4FF0FF30 		mov	r0, #-1
+ 363              		.loc 1 142 1 view .LVU109
+ 364 0076 7047     		bx	lr
+ 365              		.cfi_endproc
+ 366              	.LFE5:
+ 368              		.text
+ 369              	.Letext0:
+ 370              		.file 2 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/includ
+ 371              		.file 3 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdlib.h"
+ 372              		.file 4 "src-gen/Main/include/core/lf_token.h"
+ 373              		.file 5 "src-gen/Main/include/core/port.h"
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 port.c
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s:21     .text.compare_sizes:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s:27     .text.compare_sizes:00000000 compare_sizes
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s:69     .text._lf_multiport_iterator_impl:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s:75     .text._lf_multiport_iterator_impl:00000000 _lf_multiport_iterator_impl
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s:189    .text._lf_multiport_iterator_impl:0000005c $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s:194    .text.lf_multiport_next:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccrGpOwY.s:200    .text.lf_multiport_next:00000000 lf_multiport_next
+
+UNDEFINED SYMBOLS
+qsort

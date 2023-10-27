@@ -1,0 +1,523 @@
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"mixed_radix.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "src-gen/Main/core/mixed_radix.c"
+  20              		.section	.rodata.mixed_radix_incr.str1.4,"aMS",%progbits,1
+  21              		.align	2
+  22              	.LC0:
+  23 0000 6D697865 		.ascii	"mixed != NULL\000"
+  23      6420213D 
+  23      204E554C 
+  23      4C00
+  24 000e 0000     		.align	2
+  25              	.LC1:
+  26 0010 7372632D 		.ascii	"src-gen/Main/core/mixed_radix.c\000"
+  26      67656E2F 
+  26      4D61696E 
+  26      2F636F72 
+  26      652F6D69 
+  27              		.align	2
+  28              	.LC2:
+  29 0030 6D697865 		.ascii	"mixed->size > 0\000"
+  29      642D3E73 
+  29      697A6520 
+  29      3E203000 
+  30              		.align	2
+  31              	.LC3:
+  32 0040 64696769 		.ascii	"digit_to_increment >= 0\000"
+  32      745F746F 
+  32      5F696E63 
+  32      72656D65 
+  32      6E74203E 
+  33              		.section	.text.mixed_radix_incr,"ax",%progbits
+  34              		.align	1
+  35              		.global	mixed_radix_incr
+  36              		.syntax unified
+  37              		.thumb
+  38              		.thumb_func
+  40              	mixed_radix_incr:
+  41              	.LVL0:
+  42              	.LFB0:
+   1:src-gen/Main/core/mixed_radix.c **** /**
+   2:src-gen/Main/core/mixed_radix.c ****  * @file
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s 			page 2
+
+
+   3:src-gen/Main/core/mixed_radix.c ****  * @author Edward A. Lee (eal@berkeley.edu)
+   4:src-gen/Main/core/mixed_radix.c ****  *
+   5:src-gen/Main/core/mixed_radix.c ****  * @section LICENSE
+   6:src-gen/Main/core/mixed_radix.c **** Copyright (c) 2022, The University of California at Berkeley.
+   7:src-gen/Main/core/mixed_radix.c **** 
+   8:src-gen/Main/core/mixed_radix.c **** Redistribution and use in source and binary forms, with or without modification,
+   9:src-gen/Main/core/mixed_radix.c **** are permitted provided that the following conditions are met:
+  10:src-gen/Main/core/mixed_radix.c **** 
+  11:src-gen/Main/core/mixed_radix.c **** 1. Redistributions of source code must retain the above copyright notice,
+  12:src-gen/Main/core/mixed_radix.c ****    this list of conditions and the following disclaimer.
+  13:src-gen/Main/core/mixed_radix.c **** 
+  14:src-gen/Main/core/mixed_radix.c **** 2. Redistributions in binary form must reproduce the above copyright notice,
+  15:src-gen/Main/core/mixed_radix.c ****    this list of conditions and the following disclaimer in the documentation
+  16:src-gen/Main/core/mixed_radix.c ****    and/or other materials provided with the distribution.
+  17:src-gen/Main/core/mixed_radix.c **** 
+  18:src-gen/Main/core/mixed_radix.c **** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+  19:src-gen/Main/core/mixed_radix.c **** EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  20:src-gen/Main/core/mixed_radix.c **** MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+  21:src-gen/Main/core/mixed_radix.c **** THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  22:src-gen/Main/core/mixed_radix.c **** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  23:src-gen/Main/core/mixed_radix.c **** PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  24:src-gen/Main/core/mixed_radix.c **** INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+  25:src-gen/Main/core/mixed_radix.c **** STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
+  26:src-gen/Main/core/mixed_radix.c **** THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  27:src-gen/Main/core/mixed_radix.c **** 
+  28:src-gen/Main/core/mixed_radix.c ****  * @section DESCRIPTION
+  29:src-gen/Main/core/mixed_radix.c ****  * Functions for permuted mixed-radix numbers used in Lingua Franca programs.
+  30:src-gen/Main/core/mixed_radix.c ****  * @see mixed_radix.h
+  31:src-gen/Main/core/mixed_radix.c ****  */
+  32:src-gen/Main/core/mixed_radix.c **** 
+  33:src-gen/Main/core/mixed_radix.c **** #include <assert.h>
+  34:src-gen/Main/core/mixed_radix.c **** #include <stdlib.h>  // defines NULL
+  35:src-gen/Main/core/mixed_radix.c **** 
+  36:src-gen/Main/core/mixed_radix.c **** #include "mixed_radix.h"
+  37:src-gen/Main/core/mixed_radix.c **** 
+  38:src-gen/Main/core/mixed_radix.c **** /**
+  39:src-gen/Main/core/mixed_radix.c ****  * Increment the mixed radix number by one according to the permutation matrix.
+  40:src-gen/Main/core/mixed_radix.c ****  * @param mixed A pointer to the mixed-radix number.
+  41:src-gen/Main/core/mixed_radix.c ****  */
+  42:src-gen/Main/core/mixed_radix.c **** void mixed_radix_incr(mixed_radix_int_t* mixed) {
+  43              		.loc 1 42 49 view -0
+  44              		.cfi_startproc
+  45              		@ args = 0, pretend = 0, frame = 0
+  46              		@ frame_needed = 0, uses_anonymous_args = 0
+  47              		.loc 1 42 49 is_stmt 0 view .LVU1
+  48 0000 38B5     		push	{r3, r4, r5, lr}
+  49              	.LCFI0:
+  50              		.cfi_def_cfa_offset 16
+  51              		.cfi_offset 3, -16
+  52              		.cfi_offset 4, -12
+  53              		.cfi_offset 5, -8
+  54              		.cfi_offset 14, -4
+  43:src-gen/Main/core/mixed_radix.c **** 	int i = 0;
+  55              		.loc 1 43 2 is_stmt 1 view .LVU2
+  56              	.LVL1:
+  44:src-gen/Main/core/mixed_radix.c **** 	assert(mixed != NULL);
+  57              		.loc 1 44 2 view .LVU3
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s 			page 3
+
+
+  58 0002 F8B1     		cbz	r0, .L9
+  59 0004 0246     		mov	r2, r0
+  45:src-gen/Main/core/mixed_radix.c **** 	assert(mixed->size > 0);
+  60              		.loc 1 45 2 view .LVU4
+  61 0006 0368     		ldr	r3, [r0]
+  62 0008 002B     		cmp	r3, #0
+  63 000a 21DD     		ble	.L10
+  43:src-gen/Main/core/mixed_radix.c **** 	int i = 0;
+  64              		.loc 1 43 6 is_stmt 0 view .LVU5
+  65 000c 0021     		movs	r1, #0
+  66              	.LVL2:
+  67              	.L3:
+  46:src-gen/Main/core/mixed_radix.c **** 	while (i < mixed->size) {
+  68              		.loc 1 46 11 is_stmt 1 view .LVU6
+  69              		.loc 1 46 18 is_stmt 0 view .LVU7
+  70 000e 1368     		ldr	r3, [r2]
+  71              		.loc 1 46 11 view .LVU8
+  72 0010 8B42     		cmp	r3, r1
+  73 0012 29DD     		ble	.L11
+  74              	.LBB2:
+  47:src-gen/Main/core/mixed_radix.c **** 		int digit_to_increment = mixed->permutation[i];
+  75              		.loc 1 47 3 is_stmt 1 view .LVU9
+  76              		.loc 1 47 33 is_stmt 0 view .LVU10
+  77 0014 D368     		ldr	r3, [r2, #12]
+  78              		.loc 1 47 7 view .LVU11
+  79 0016 53F82130 		ldr	r3, [r3, r1, lsl #2]
+  80              	.LVL3:
+  48:src-gen/Main/core/mixed_radix.c **** 		assert(digit_to_increment >= 0);
+  81              		.loc 1 48 3 is_stmt 1 view .LVU12
+  82 001a 002B     		cmp	r3, #0
+  83 001c 1EDB     		blt	.L12
+  49:src-gen/Main/core/mixed_radix.c **** 		mixed->digits[digit_to_increment]++;
+  84              		.loc 1 49 3 view .LVU13
+  85              		.loc 1 49 8 is_stmt 0 view .LVU14
+  86 001e 5468     		ldr	r4, [r2, #4]
+  87              		.loc 1 49 16 view .LVU15
+  88 0020 54F82300 		ldr	r0, [r4, r3, lsl #2]
+  89              		.loc 1 49 36 view .LVU16
+  90 0024 0130     		adds	r0, r0, #1
+  91 0026 44F82300 		str	r0, [r4, r3, lsl #2]
+  50:src-gen/Main/core/mixed_radix.c **** 		if (mixed->digits[digit_to_increment] >= mixed->radixes[digit_to_increment]) {
+  92              		.loc 1 50 3 is_stmt 1 view .LVU17
+  93              		.loc 1 50 12 is_stmt 0 view .LVU18
+  94 002a 5068     		ldr	r0, [r2, #4]
+  95              		.loc 1 50 49 view .LVU19
+  96 002c 9468     		ldr	r4, [r2, #8]
+  97              		.loc 1 50 58 view .LVU20
+  98 002e 54F82340 		ldr	r4, [r4, r3, lsl #2]
+  99              		.loc 1 50 6 view .LVU21
+ 100 0032 50F82350 		ldr	r5, [r0, r3, lsl #2]
+ 101 0036 A542     		cmp	r5, r4
+ 102 0038 1DDB     		blt	.L1
+  51:src-gen/Main/core/mixed_radix.c **** 			mixed->digits[digit_to_increment] = 0;
+ 103              		.loc 1 51 4 is_stmt 1 view .LVU22
+ 104              		.loc 1 51 38 is_stmt 0 view .LVU23
+ 105 003a 0024     		movs	r4, #0
+ 106 003c 40F82340 		str	r4, [r0, r3, lsl #2]
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s 			page 4
+
+
+  52:src-gen/Main/core/mixed_radix.c **** 			i++;
+ 107              		.loc 1 52 4 is_stmt 1 view .LVU24
+ 108              		.loc 1 52 5 is_stmt 0 view .LVU25
+ 109 0040 0131     		adds	r1, r1, #1
+ 110              	.LVL4:
+ 111              		.loc 1 52 5 view .LVU26
+ 112 0042 E4E7     		b	.L3
+ 113              	.LVL5:
+ 114              	.L9:
+ 115              		.loc 1 52 5 view .LVU27
+ 116              	.LBE2:
+  44:src-gen/Main/core/mixed_radix.c **** 	assert(mixed->size > 0);
+ 117              		.loc 1 44 2 discriminator 1 view .LVU28
+ 118 0044 0C4B     		ldr	r3, .L13
+ 119 0046 0D4A     		ldr	r2, .L13+4
+ 120 0048 2C21     		movs	r1, #44
+ 121 004a 0D48     		ldr	r0, .L13+8
+ 122              	.LVL6:
+  44:src-gen/Main/core/mixed_radix.c **** 	assert(mixed->size > 0);
+ 123              		.loc 1 44 2 discriminator 1 view .LVU29
+ 124 004c FFF7FEFF 		bl	__assert_func
+ 125              	.LVL7:
+ 126              	.L10:
+  45:src-gen/Main/core/mixed_radix.c **** 	while (i < mixed->size) {
+ 127              		.loc 1 45 2 discriminator 1 view .LVU30
+ 128 0050 0C4B     		ldr	r3, .L13+12
+ 129 0052 0A4A     		ldr	r2, .L13+4
+ 130 0054 2D21     		movs	r1, #45
+ 131 0056 0A48     		ldr	r0, .L13+8
+ 132              	.LVL8:
+  45:src-gen/Main/core/mixed_radix.c **** 	while (i < mixed->size) {
+ 133              		.loc 1 45 2 discriminator 1 view .LVU31
+ 134 0058 FFF7FEFF 		bl	__assert_func
+ 135              	.LVL9:
+ 136              	.L12:
+ 137              	.LBB3:
+  48:src-gen/Main/core/mixed_radix.c **** 		mixed->digits[digit_to_increment]++;
+ 138              		.loc 1 48 3 discriminator 1 view .LVU32
+ 139 005c 0A4B     		ldr	r3, .L13+16
+ 140              	.LVL10:
+  48:src-gen/Main/core/mixed_radix.c **** 		mixed->digits[digit_to_increment]++;
+ 141              		.loc 1 48 3 discriminator 1 view .LVU33
+ 142 005e 074A     		ldr	r2, .L13+4
+ 143              	.LVL11:
+  48:src-gen/Main/core/mixed_radix.c **** 		mixed->digits[digit_to_increment]++;
+ 144              		.loc 1 48 3 discriminator 1 view .LVU34
+ 145 0060 3021     		movs	r1, #48
+ 146              	.LVL12:
+  48:src-gen/Main/core/mixed_radix.c **** 		mixed->digits[digit_to_increment]++;
+ 147              		.loc 1 48 3 discriminator 1 view .LVU35
+ 148 0062 0748     		ldr	r0, .L13+8
+ 149 0064 FFF7FEFF 		bl	__assert_func
+ 150              	.LVL13:
+ 151              	.L11:
+  48:src-gen/Main/core/mixed_radix.c **** 		mixed->digits[digit_to_increment]++;
+ 152              		.loc 1 48 3 discriminator 1 view .LVU36
+ 153              	.LBE3:
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s 			page 5
+
+
+  53:src-gen/Main/core/mixed_radix.c **** 		} else {
+  54:src-gen/Main/core/mixed_radix.c **** 			return; // All done.
+  55:src-gen/Main/core/mixed_radix.c **** 		}
+  56:src-gen/Main/core/mixed_radix.c **** 	}
+  57:src-gen/Main/core/mixed_radix.c **** 	// If we get here, the number has overflowed. Wrap to zero.
+  58:src-gen/Main/core/mixed_radix.c **** 	mixed->digits[i - 1] = 0;
+ 154              		.loc 1 58 2 is_stmt 1 view .LVU37
+ 155              		.loc 1 58 7 is_stmt 0 view .LVU38
+ 156 0068 5368     		ldr	r3, [r2, #4]
+ 157              		.loc 1 58 15 view .LVU39
+ 158 006a 01F18041 		add	r1, r1, #1073741824
+ 159              	.LVL14:
+ 160              		.loc 1 58 15 view .LVU40
+ 161 006e 0139     		subs	r1, r1, #1
+ 162              	.LVL15:
+ 163              		.loc 1 58 23 view .LVU41
+ 164 0070 0022     		movs	r2, #0
+ 165              	.LVL16:
+ 166              		.loc 1 58 23 view .LVU42
+ 167 0072 43F82120 		str	r2, [r3, r1, lsl #2]
+ 168              	.LVL17:
+ 169              	.L1:
+  59:src-gen/Main/core/mixed_radix.c **** }
+ 170              		.loc 1 59 1 view .LVU43
+ 171 0076 38BD     		pop	{r3, r4, r5, pc}
+ 172              	.L14:
+ 173              		.align	2
+ 174              	.L13:
+ 175 0078 00000000 		.word	.LC0
+ 176 007c 00000000 		.word	__func__.1
+ 177 0080 10000000 		.word	.LC1
+ 178 0084 30000000 		.word	.LC2
+ 179 0088 40000000 		.word	.LC3
+ 180              		.cfi_endproc
+ 181              	.LFE0:
+ 183              		.section	.rodata.mixed_radix_parent.str1.4,"aMS",%progbits,1
+ 184              		.align	2
+ 185              	.LC4:
+ 186 0000 6E203E3D 		.ascii	"n >= 0\000"
+ 186      203000
+ 187              		.section	.text.mixed_radix_parent,"ax",%progbits
+ 188              		.align	1
+ 189              		.global	mixed_radix_parent
+ 190              		.syntax unified
+ 191              		.thumb
+ 192              		.thumb_func
+ 194              	mixed_radix_parent:
+ 195              	.LVL18:
+ 196              	.LFB1:
+  60:src-gen/Main/core/mixed_radix.c **** 
+  61:src-gen/Main/core/mixed_radix.c **** /**
+  62:src-gen/Main/core/mixed_radix.c ****  * Return the int value of a mixed-radix number after dropping
+  63:src-gen/Main/core/mixed_radix.c ****  * the first n digits. If n is larger than or equal to the size
+  64:src-gen/Main/core/mixed_radix.c ****  * of the mixed-radix number, then return 0.
+  65:src-gen/Main/core/mixed_radix.c ****  * @param mixed A pointer to the mixed-radix number.
+  66:src-gen/Main/core/mixed_radix.c ****  * @param n The number of digits to drop, which is assumed to
+  67:src-gen/Main/core/mixed_radix.c ****  *  be greater than or equal to 0.
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s 			page 6
+
+
+  68:src-gen/Main/core/mixed_radix.c ****  */
+  69:src-gen/Main/core/mixed_radix.c **** int mixed_radix_parent(mixed_radix_int_t* mixed, int n) {
+ 197              		.loc 1 69 57 is_stmt 1 view -0
+ 198              		.cfi_startproc
+ 199              		@ args = 0, pretend = 0, frame = 0
+ 200              		@ frame_needed = 0, uses_anonymous_args = 0
+ 201              		.loc 1 69 57 is_stmt 0 view .LVU45
+ 202 0000 38B5     		push	{r3, r4, r5, lr}
+ 203              	.LCFI1:
+ 204              		.cfi_def_cfa_offset 16
+ 205              		.cfi_offset 3, -16
+ 206              		.cfi_offset 4, -12
+ 207              		.cfi_offset 5, -8
+ 208              		.cfi_offset 14, -4
+  70:src-gen/Main/core/mixed_radix.c **** 	assert(mixed != NULL);
+ 209              		.loc 1 70 2 is_stmt 1 view .LVU46
+ 210 0002 40B1     		cbz	r0, .L22
+ 211 0004 0246     		mov	r2, r0
+  71:src-gen/Main/core/mixed_radix.c **** 	assert(mixed->size > 0);
+ 212              		.loc 1 71 2 view .LVU47
+ 213 0006 0568     		ldr	r5, [r0]
+ 214 0008 002D     		cmp	r5, #0
+ 215 000a 0ADD     		ble	.L23
+  72:src-gen/Main/core/mixed_radix.c **** 	assert(n >= 0);
+ 216              		.loc 1 72 2 view .LVU48
+ 217 000c 0029     		cmp	r1, #0
+ 218 000e 0EDB     		blt	.L24
+  73:src-gen/Main/core/mixed_radix.c **** 	int result = 0;
+  74:src-gen/Main/core/mixed_radix.c **** 	int factor = 1;
+ 219              		.loc 1 74 6 is_stmt 0 view .LVU49
+ 220 0010 0123     		movs	r3, #1
+  73:src-gen/Main/core/mixed_radix.c **** 	int result = 0;
+ 221              		.loc 1 73 6 view .LVU50
+ 222 0012 0020     		movs	r0, #0
+ 223              	.LVL19:
+  73:src-gen/Main/core/mixed_radix.c **** 	int result = 0;
+ 224              		.loc 1 73 6 view .LVU51
+ 225 0014 1CE0     		b	.L18
+ 226              	.LVL20:
+ 227              	.L22:
+  70:src-gen/Main/core/mixed_radix.c **** 	assert(mixed->size > 0);
+ 228              		.loc 1 70 2 discriminator 1 view .LVU52
+ 229 0016 104B     		ldr	r3, .L25
+ 230 0018 104A     		ldr	r2, .L25+4
+ 231 001a 4621     		movs	r1, #70
+ 232              	.LVL21:
+  70:src-gen/Main/core/mixed_radix.c **** 	assert(mixed->size > 0);
+ 233              		.loc 1 70 2 discriminator 1 view .LVU53
+ 234 001c 1048     		ldr	r0, .L25+8
+ 235              	.LVL22:
+  70:src-gen/Main/core/mixed_radix.c **** 	assert(mixed->size > 0);
+ 236              		.loc 1 70 2 discriminator 1 view .LVU54
+ 237 001e FFF7FEFF 		bl	__assert_func
+ 238              	.LVL23:
+ 239              	.L23:
+  71:src-gen/Main/core/mixed_radix.c **** 	assert(n >= 0);
+ 240              		.loc 1 71 2 discriminator 1 view .LVU55
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s 			page 7
+
+
+ 241 0022 104B     		ldr	r3, .L25+12
+ 242 0024 0D4A     		ldr	r2, .L25+4
+ 243 0026 4721     		movs	r1, #71
+ 244              	.LVL24:
+  71:src-gen/Main/core/mixed_radix.c **** 	assert(n >= 0);
+ 245              		.loc 1 71 2 discriminator 1 view .LVU56
+ 246 0028 0D48     		ldr	r0, .L25+8
+ 247              	.LVL25:
+  71:src-gen/Main/core/mixed_radix.c **** 	assert(n >= 0);
+ 248              		.loc 1 71 2 discriminator 1 view .LVU57
+ 249 002a FFF7FEFF 		bl	__assert_func
+ 250              	.LVL26:
+ 251              	.L24:
+  72:src-gen/Main/core/mixed_radix.c **** 	int result = 0;
+ 252              		.loc 1 72 2 discriminator 1 view .LVU58
+ 253 002e 0E4B     		ldr	r3, .L25+16
+ 254 0030 0A4A     		ldr	r2, .L25+4
+ 255 0032 4821     		movs	r1, #72
+ 256              	.LVL27:
+  72:src-gen/Main/core/mixed_radix.c **** 	int result = 0;
+ 257              		.loc 1 72 2 discriminator 1 view .LVU59
+ 258 0034 0A48     		ldr	r0, .L25+8
+ 259              	.LVL28:
+  72:src-gen/Main/core/mixed_radix.c **** 	int result = 0;
+ 260              		.loc 1 72 2 discriminator 1 view .LVU60
+ 261 0036 FFF7FEFF 		bl	__assert_func
+ 262              	.LVL29:
+ 263              	.L19:
+ 264              	.LBB4:
+  75:src-gen/Main/core/mixed_radix.c **** 	for (int i = n; i < mixed->size; i++) {
+  76:src-gen/Main/core/mixed_radix.c **** 		result += factor * mixed->digits[i];
+ 265              		.loc 1 76 3 is_stmt 1 discriminator 3 view .LVU61
+ 266              		.loc 1 76 27 is_stmt 0 discriminator 3 view .LVU62
+ 267 003a 5468     		ldr	r4, [r2, #4]
+ 268              		.loc 1 76 35 discriminator 3 view .LVU63
+ 269 003c 54F82140 		ldr	r4, [r4, r1, lsl #2]
+ 270              		.loc 1 76 10 discriminator 3 view .LVU64
+ 271 0040 03FB0400 		mla	r0, r3, r4, r0
+ 272              	.LVL30:
+  77:src-gen/Main/core/mixed_radix.c **** 		factor *= mixed->radixes[i];
+ 273              		.loc 1 77 3 is_stmt 1 discriminator 3 view .LVU65
+ 274              		.loc 1 77 18 is_stmt 0 discriminator 3 view .LVU66
+ 275 0044 9468     		ldr	r4, [r2, #8]
+ 276              		.loc 1 77 27 discriminator 3 view .LVU67
+ 277 0046 54F82140 		ldr	r4, [r4, r1, lsl #2]
+ 278              		.loc 1 77 10 discriminator 3 view .LVU68
+ 279 004a 04FB03F3 		mul	r3, r4, r3
+ 280              	.LVL31:
+  75:src-gen/Main/core/mixed_radix.c **** 	for (int i = n; i < mixed->size; i++) {
+ 281              		.loc 1 75 36 is_stmt 1 discriminator 3 view .LVU69
+ 282 004e 0131     		adds	r1, r1, #1
+ 283              	.LVL32:
+ 284              	.L18:
+  75:src-gen/Main/core/mixed_radix.c **** 	for (int i = n; i < mixed->size; i++) {
+ 285              		.loc 1 75 20 discriminator 1 view .LVU70
+ 286 0050 8D42     		cmp	r5, r1
+ 287 0052 F2DC     		bgt	.L19
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s 			page 8
+
+
+ 288              	.LBE4:
+  78:src-gen/Main/core/mixed_radix.c **** 	}
+  79:src-gen/Main/core/mixed_radix.c **** 	return result;
+ 289              		.loc 1 79 2 view .LVU71
+  80:src-gen/Main/core/mixed_radix.c **** }
+ 290              		.loc 1 80 1 is_stmt 0 view .LVU72
+ 291 0054 38BD     		pop	{r3, r4, r5, pc}
+ 292              	.LVL33:
+ 293              	.L26:
+ 294              		.loc 1 80 1 view .LVU73
+ 295 0056 00BF     		.align	2
+ 296              	.L25:
+ 297 0058 00000000 		.word	.LC0
+ 298 005c 00000000 		.word	__func__.0
+ 299 0060 10000000 		.word	.LC1
+ 300 0064 30000000 		.word	.LC2
+ 301 0068 00000000 		.word	.LC4
+ 302              		.cfi_endproc
+ 303              	.LFE1:
+ 305              		.section	.text.mixed_radix_to_int,"ax",%progbits
+ 306              		.align	1
+ 307              		.global	mixed_radix_to_int
+ 308              		.syntax unified
+ 309              		.thumb
+ 310              		.thumb_func
+ 312              	mixed_radix_to_int:
+ 313              	.LVL34:
+ 314              	.LFB2:
+  81:src-gen/Main/core/mixed_radix.c **** 
+  82:src-gen/Main/core/mixed_radix.c **** /**
+  83:src-gen/Main/core/mixed_radix.c ****  * Return the int value of a mixed-radix number.
+  84:src-gen/Main/core/mixed_radix.c ****  * @param mixed A pointer to the mixed-radix number.
+  85:src-gen/Main/core/mixed_radix.c ****  */
+  86:src-gen/Main/core/mixed_radix.c **** int mixed_radix_to_int(mixed_radix_int_t* mixed) {
+ 315              		.loc 1 86 50 is_stmt 1 view -0
+ 316              		.cfi_startproc
+ 317              		@ args = 0, pretend = 0, frame = 0
+ 318              		@ frame_needed = 0, uses_anonymous_args = 0
+ 319              		.loc 1 86 50 is_stmt 0 view .LVU75
+ 320 0000 08B5     		push	{r3, lr}
+ 321              	.LCFI2:
+ 322              		.cfi_def_cfa_offset 8
+ 323              		.cfi_offset 3, -8
+ 324              		.cfi_offset 14, -4
+  87:src-gen/Main/core/mixed_radix.c **** 	return mixed_radix_parent(mixed, 0);
+ 325              		.loc 1 87 2 is_stmt 1 view .LVU76
+ 326              		.loc 1 87 9 is_stmt 0 view .LVU77
+ 327 0002 0021     		movs	r1, #0
+ 328 0004 FFF7FEFF 		bl	mixed_radix_parent
+ 329              	.LVL35:
+  88:src-gen/Main/core/mixed_radix.c **** }
+ 330              		.loc 1 88 1 view .LVU78
+ 331 0008 08BD     		pop	{r3, pc}
+ 332              		.cfi_endproc
+ 333              	.LFE2:
+ 335              		.section	.rodata.__func__.0,"a"
+ 336              		.align	2
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s 			page 9
+
+
+ 339              	__func__.0:
+ 340 0000 6D697865 		.ascii	"mixed_radix_parent\000"
+ 340      645F7261 
+ 340      6469785F 
+ 340      70617265 
+ 340      6E7400
+ 341              		.section	.rodata.__func__.1,"a"
+ 342              		.align	2
+ 345              	__func__.1:
+ 346 0000 6D697865 		.ascii	"mixed_radix_incr\000"
+ 346      645F7261 
+ 346      6469785F 
+ 346      696E6372 
+ 346      00
+ 347              		.text
+ 348              	.Letext0:
+ 349              		.file 2 "src-gen/Main/include/core/mixed_radix.h"
+ 350              		.file 3 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/assert.h"
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 mixed_radix.c
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:21     .rodata.mixed_radix_incr.str1.4:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:34     .text.mixed_radix_incr:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:40     .text.mixed_radix_incr:00000000 mixed_radix_incr
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:175    .text.mixed_radix_incr:00000078 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:345    .rodata.__func__.1:00000000 __func__.1
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:184    .rodata.mixed_radix_parent.str1.4:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:188    .text.mixed_radix_parent:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:194    .text.mixed_radix_parent:00000000 mixed_radix_parent
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:297    .text.mixed_radix_parent:00000058 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:339    .rodata.__func__.0:00000000 __func__.0
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:306    .text.mixed_radix_to_int:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:312    .text.mixed_radix_to_int:00000000 mixed_radix_to_int
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:336    .rodata.__func__.0:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccuKj66g.s:342    .rodata.__func__.1:00000000 $d
+
+UNDEFINED SYMBOLS
+__assert_func

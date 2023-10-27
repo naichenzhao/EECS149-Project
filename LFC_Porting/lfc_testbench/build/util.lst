@@ -1,0 +1,1499 @@
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"util.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "src-gen/Main/core/utils/util.c"
+  20              		.section	.text.lf_fed_id,"ax",%progbits
+  21              		.align	1
+  22              		.global	lf_fed_id
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	lf_fed_id:
+  28              	.LFB3:
+   1:src-gen/Main/core/utils/util.c **** /**
+   2:src-gen/Main/core/utils/util.c ****  * @file
+   3:src-gen/Main/core/utils/util.c ****  * @author Edward A. Lee (eal@berkeley.edu)
+   4:src-gen/Main/core/utils/util.c ****  *
+   5:src-gen/Main/core/utils/util.c ****  * @section LICENSE
+   6:src-gen/Main/core/utils/util.c **** Copyright (c) 2020, The University of California at Berkeley.
+   7:src-gen/Main/core/utils/util.c **** 
+   8:src-gen/Main/core/utils/util.c **** Redistribution and use in source and binary forms, with or without modification,
+   9:src-gen/Main/core/utils/util.c **** are permitted provided that the following conditions are met:
+  10:src-gen/Main/core/utils/util.c **** 
+  11:src-gen/Main/core/utils/util.c **** 1. Redistributions of source code must retain the above copyright notice,
+  12:src-gen/Main/core/utils/util.c ****    this list of conditions and the following disclaimer.
+  13:src-gen/Main/core/utils/util.c **** 
+  14:src-gen/Main/core/utils/util.c **** 2. Redistributions in binary form must reproduce the above copyright notice,
+  15:src-gen/Main/core/utils/util.c ****    this list of conditions and the following disclaimer in the documentation
+  16:src-gen/Main/core/utils/util.c ****    and/or other materials provided with the distribution.
+  17:src-gen/Main/core/utils/util.c **** 
+  18:src-gen/Main/core/utils/util.c **** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+  19:src-gen/Main/core/utils/util.c **** EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  20:src-gen/Main/core/utils/util.c **** MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+  21:src-gen/Main/core/utils/util.c **** THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  22:src-gen/Main/core/utils/util.c **** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  23:src-gen/Main/core/utils/util.c **** PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  24:src-gen/Main/core/utils/util.c **** INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+  25:src-gen/Main/core/utils/util.c **** STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
+  26:src-gen/Main/core/utils/util.c **** THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  27:src-gen/Main/core/utils/util.c **** 
+  28:src-gen/Main/core/utils/util.c ****  * @section DESCRIPTION
+  29:src-gen/Main/core/utils/util.c ****  * Utility functions for managing output the user, error and warning
+  30:src-gen/Main/core/utils/util.c ****  * messages, logging, and debug messages. Outputs are filtered based on
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 2
+
+
+  31:src-gen/Main/core/utils/util.c ****  * the target "logging" parameter.
+  32:src-gen/Main/core/utils/util.c ****  */
+  33:src-gen/Main/core/utils/util.c **** 
+  34:src-gen/Main/core/utils/util.c **** #include "util.h"
+  35:src-gen/Main/core/utils/util.c **** #include <errno.h>
+  36:src-gen/Main/core/utils/util.c **** #include <stdio.h>
+  37:src-gen/Main/core/utils/util.c **** #include <stdlib.h>
+  38:src-gen/Main/core/utils/util.c **** #include <assert.h>
+  39:src-gen/Main/core/utils/util.c **** #include <string.h>     // Defines memcpy()
+  40:src-gen/Main/core/utils/util.c **** #include <stdarg.h>     // Defines va_list
+  41:src-gen/Main/core/utils/util.c **** #include <time.h>       // Defines nanosleep()
+  42:src-gen/Main/core/utils/util.c **** #include <stdbool.h>      
+  43:src-gen/Main/core/utils/util.c **** 
+  44:src-gen/Main/core/utils/util.c **** #ifndef NUMBER_OF_FEDERATES
+  45:src-gen/Main/core/utils/util.c **** #define NUMBER_OF_FEDERATES 1
+  46:src-gen/Main/core/utils/util.c **** #endif
+  47:src-gen/Main/core/utils/util.c **** 
+  48:src-gen/Main/core/utils/util.c **** /** Number of nanoseconds to sleep before retrying a socket read. */
+  49:src-gen/Main/core/utils/util.c **** #define SOCKET_READ_RETRY_INTERVAL 1000000
+  50:src-gen/Main/core/utils/util.c **** 
+  51:src-gen/Main/core/utils/util.c **** /**
+  52:src-gen/Main/core/utils/util.c ****  * The ID of this federate. For a non-federated execution, this will
+  53:src-gen/Main/core/utils/util.c ****  * be -1.  For a federated execution, it will be assigned when the generated function
+  54:src-gen/Main/core/utils/util.c ****  * _lf_initialize_trigger_objects() is called.
+  55:src-gen/Main/core/utils/util.c ****  * @see xtext/org.icyphy.linguafranca/src/org/icyphy/generator/CGenerator.xtend.
+  56:src-gen/Main/core/utils/util.c ****  */
+  57:src-gen/Main/core/utils/util.c **** int _lf_my_fed_id = -1;
+  58:src-gen/Main/core/utils/util.c **** 
+  59:src-gen/Main/core/utils/util.c **** /**
+  60:src-gen/Main/core/utils/util.c ****  * If non-null, this function will be used instead of the printf to
+  61:src-gen/Main/core/utils/util.c ****  * print messages.
+  62:src-gen/Main/core/utils/util.c ****  */
+  63:src-gen/Main/core/utils/util.c **** print_message_function_t* print_message_function = NULL;
+  64:src-gen/Main/core/utils/util.c **** 
+  65:src-gen/Main/core/utils/util.c **** /** The level of messages to redirect to print_message_function. */
+  66:src-gen/Main/core/utils/util.c **** int print_message_level = -1;
+  67:src-gen/Main/core/utils/util.c **** 
+  68:src-gen/Main/core/utils/util.c **** /**
+  69:src-gen/Main/core/utils/util.c ****  * Return the federate ID or -1 if this program is not part of a federation.
+  70:src-gen/Main/core/utils/util.c ****  */
+  71:src-gen/Main/core/utils/util.c **** int lf_fed_id() {
+  29              		.loc 1 71 17 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  72:src-gen/Main/core/utils/util.c **** 	return _lf_my_fed_id;
+  34              		.loc 1 72 2 view .LVU1
+  73:src-gen/Main/core/utils/util.c **** }
+  35              		.loc 1 73 1 is_stmt 0 view .LVU2
+  36 0000 014B     		ldr	r3, .L2
+  37 0002 1868     		ldr	r0, [r3]
+  38 0004 7047     		bx	lr
+  39              	.L3:
+  40 0006 00BF     		.align	2
+  41              	.L2:
+  42 0008 00000000 		.word	_lf_my_fed_id
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 3
+
+
+  43              		.cfi_endproc
+  44              	.LFE3:
+  46              		.section	.rodata._lf_message_print.str1.4,"aMS",%progbits,1
+  47              		.align	2
+  48              	.LC0:
+  49 0000 25732573 		.ascii	"%s%s\012\000"
+  49      0A00
+  50 0006 0000     		.align	2
+  51              	.LC1:
+  52 0008 46656465 		.ascii	"Federate %d: %s%s\012\000"
+  52      72617465 
+  52      2025643A 
+  52      20257325 
+  52      730A00
+  53              		.section	.text._lf_message_print,"ax",%progbits
+  54              		.align	1
+  55              		.global	_lf_message_print
+  56              		.syntax unified
+  57              		.thumb
+  58              		.thumb_func
+  60              	_lf_message_print:
+  61              	.LVL0:
+  62              	.LFB4:
+  74:src-gen/Main/core/utils/util.c **** 
+  75:src-gen/Main/core/utils/util.c **** // Declaration needed to attach attributes to suppress warnings of the form:
+  76:src-gen/Main/core/utils/util.c **** // "warning: function '_lf_message_print' might be a candidate for 'gnu_printf'
+  77:src-gen/Main/core/utils/util.c **** // format attribute [-Wsuggest-attribute=format]"
+  78:src-gen/Main/core/utils/util.c **** void _lf_message_print(
+  79:src-gen/Main/core/utils/util.c **** 		int is_error, const char* prefix, const char* format, va_list args, int log_level
+  80:src-gen/Main/core/utils/util.c **** ) ATTRIBUTE_FORMAT_PRINTF(3, 0);
+  81:src-gen/Main/core/utils/util.c **** 
+  82:src-gen/Main/core/utils/util.c **** /**
+  83:src-gen/Main/core/utils/util.c ****  * Internal implementation of the next few reporting functions.
+  84:src-gen/Main/core/utils/util.c ****  */
+  85:src-gen/Main/core/utils/util.c **** void _lf_message_print(
+  86:src-gen/Main/core/utils/util.c **** 		int is_error, const char* prefix, const char* format, va_list args, int log_level
+  87:src-gen/Main/core/utils/util.c **** ) {  // Disable warnings about format check.
+  63              		.loc 1 87 3 is_stmt 1 view -0
+  64              		.cfi_startproc
+  65              		@ args = 4, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67              		.loc 1 87 3 is_stmt 0 view .LVU4
+  68 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+  69              	.LCFI0:
+  70              		.cfi_def_cfa_offset 28
+  71              		.cfi_offset 4, -28
+  72              		.cfi_offset 5, -24
+  73              		.cfi_offset 6, -20
+  74              		.cfi_offset 7, -16
+  75              		.cfi_offset 8, -12
+  76              		.cfi_offset 9, -8
+  77              		.cfi_offset 14, -4
+  78 0004 83B0     		sub	sp, sp, #12
+  79              	.LCFI1:
+  80              		.cfi_def_cfa_offset 40
+  81 0006 8046     		mov	r8, r0
+  82 0008 0D46     		mov	r5, r1
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 4
+
+
+  83 000a 1646     		mov	r6, r2
+  84 000c 1F46     		mov	r7, r3
+  85              	.LVL1:
+  88:src-gen/Main/core/utils/util.c **** 	// The logging level may be set either by a LOG_LEVEL #define
+  89:src-gen/Main/core/utils/util.c **** 	// (which is code generated based on the logging target property)
+  90:src-gen/Main/core/utils/util.c **** 	// or by a lf_register_print_function() call. Honor both. If neither
+  91:src-gen/Main/core/utils/util.c **** 	// has been set, then assume LOG_LEVEL_INFO. If both have been set,
+  92:src-gen/Main/core/utils/util.c **** 	// then honor the maximum.
+  93:src-gen/Main/core/utils/util.c **** 	int print_level = -1;
+  86              		.loc 1 93 2 is_stmt 1 view .LVU5
+  94:src-gen/Main/core/utils/util.c **** #ifdef LOG_LEVEL
+  95:src-gen/Main/core/utils/util.c **** 	print_level = LOG_LEVEL;
+  87              		.loc 1 95 2 view .LVU6
+  96:src-gen/Main/core/utils/util.c **** #endif
+  97:src-gen/Main/core/utils/util.c **** 	if (print_level < print_message_level) {
+  88              		.loc 1 97 2 view .LVU7
+  89              		.loc 1 97 18 is_stmt 0 view .LVU8
+  90 000e 254B     		ldr	r3, .L18
+  91 0010 1C68     		ldr	r4, [r3]
+  92              		.loc 1 97 5 view .LVU9
+  93 0012 022C     		cmp	r4, #2
+  94 0014 03DD     		ble	.L12
+  98:src-gen/Main/core/utils/util.c **** 		print_level = print_message_level;
+  95              		.loc 1 98 3 is_stmt 1 view .LVU10
+  96              	.LVL2:
+  99:src-gen/Main/core/utils/util.c **** 	}
+ 100:src-gen/Main/core/utils/util.c **** 	if (print_level < 0) {
+  97              		.loc 1 100 2 view .LVU11
+  98              		.loc 1 100 5 is_stmt 0 view .LVU12
+  99 0016 002C     		cmp	r4, #0
+ 100 0018 02DA     		bge	.L5
+ 101:src-gen/Main/core/utils/util.c **** 		// Neither has been set.
+ 102:src-gen/Main/core/utils/util.c **** 		print_level = LOG_LEVEL_INFO;
+ 101              		.loc 1 102 15 view .LVU13
+ 102 001a 0224     		movs	r4, #2
+ 103              	.LVL3:
+ 104              		.loc 1 102 15 view .LVU14
+ 105 001c 00E0     		b	.L5
+ 106              	.LVL4:
+ 107              	.L12:
+  95:src-gen/Main/core/utils/util.c **** #endif
+ 108              		.loc 1 95 14 view .LVU15
+ 109 001e 0224     		movs	r4, #2
+ 110              	.LVL5:
+ 111              	.L5:
+ 103:src-gen/Main/core/utils/util.c **** 	}
+ 104:src-gen/Main/core/utils/util.c **** 	if (log_level <= print_level) {
+ 112              		.loc 1 104 2 is_stmt 1 view .LVU16
+ 113              		.loc 1 104 5 is_stmt 0 view .LVU17
+ 114 0020 0A9B     		ldr	r3, [sp, #40]
+ 115 0022 9C42     		cmp	r4, r3
+ 116 0024 02DA     		bge	.L15
+ 117              	.LVL6:
+ 118              	.L4:
+ 105:src-gen/Main/core/utils/util.c **** 		// Rather than calling printf() multiple times, we need to call it just
+ 106:src-gen/Main/core/utils/util.c **** 		// once because this function is invoked by multiple threads.
+ 107:src-gen/Main/core/utils/util.c **** 		// If we make multiple calls to printf(), then the results could be
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 5
+
+
+ 108:src-gen/Main/core/utils/util.c **** 		// interleaved between threads.
+ 109:src-gen/Main/core/utils/util.c **** 		// vprintf() is a version that takes an arg list rather than multiple args.
+ 110:src-gen/Main/core/utils/util.c **** 		size_t length = strlen(prefix) + strlen(format) + 32;
+ 111:src-gen/Main/core/utils/util.c **** 		char* message = (char*) malloc(length + 1);
+ 112:src-gen/Main/core/utils/util.c **** 		if (_lf_my_fed_id < 0) {
+ 113:src-gen/Main/core/utils/util.c **** 			snprintf(message, length, "%s%s\n",
+ 114:src-gen/Main/core/utils/util.c **** 					prefix, format);
+ 115:src-gen/Main/core/utils/util.c **** 		} else {
+ 116:src-gen/Main/core/utils/util.c **** 			snprintf(message, length, "Federate %d: %s%s\n",
+ 117:src-gen/Main/core/utils/util.c **** 					_lf_my_fed_id, prefix, format);
+ 118:src-gen/Main/core/utils/util.c **** 		}
+ 119:src-gen/Main/core/utils/util.c **** 		if (print_message_function == NULL) {
+ 120:src-gen/Main/core/utils/util.c **** 			if (is_error) {
+ 121:src-gen/Main/core/utils/util.c **** 				vfprintf(stderr, message, args);
+ 122:src-gen/Main/core/utils/util.c **** 			} else {
+ 123:src-gen/Main/core/utils/util.c **** 				vfprintf(stdout, message, args);
+ 124:src-gen/Main/core/utils/util.c **** 			}
+ 125:src-gen/Main/core/utils/util.c **** 		} else {
+ 126:src-gen/Main/core/utils/util.c **** 			(*print_message_function)(message, args);
+ 127:src-gen/Main/core/utils/util.c **** 		}
+ 128:src-gen/Main/core/utils/util.c **** 		free(message);
+ 129:src-gen/Main/core/utils/util.c **** 	}
+ 130:src-gen/Main/core/utils/util.c **** }
+ 119              		.loc 1 130 1 view .LVU18
+ 120 0026 03B0     		add	sp, sp, #12
+ 121              	.LCFI2:
+ 122              		.cfi_remember_state
+ 123              		.cfi_def_cfa_offset 28
+ 124              		@ sp needed
+ 125 0028 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 126              	.LVL7:
+ 127              	.L15:
+ 128              	.LCFI3:
+ 129              		.cfi_restore_state
+ 130              	.LBB2:
+ 110:src-gen/Main/core/utils/util.c **** 		char* message = (char*) malloc(length + 1);
+ 131              		.loc 1 110 3 is_stmt 1 view .LVU19
+ 110:src-gen/Main/core/utils/util.c **** 		char* message = (char*) malloc(length + 1);
+ 132              		.loc 1 110 19 is_stmt 0 view .LVU20
+ 133 002c 2846     		mov	r0, r5
+ 134              	.LVL8:
+ 110:src-gen/Main/core/utils/util.c **** 		char* message = (char*) malloc(length + 1);
+ 135              		.loc 1 110 19 view .LVU21
+ 136 002e FFF7FEFF 		bl	strlen
+ 137              	.LVL9:
+ 110:src-gen/Main/core/utils/util.c **** 		char* message = (char*) malloc(length + 1);
+ 138              		.loc 1 110 19 view .LVU22
+ 139 0032 0446     		mov	r4, r0
+ 140              	.LVL10:
+ 110:src-gen/Main/core/utils/util.c **** 		char* message = (char*) malloc(length + 1);
+ 141              		.loc 1 110 36 view .LVU23
+ 142 0034 3046     		mov	r0, r6
+ 143 0036 FFF7FEFF 		bl	strlen
+ 144              	.LVL11:
+ 110:src-gen/Main/core/utils/util.c **** 		char* message = (char*) malloc(length + 1);
+ 145              		.loc 1 110 34 view .LVU24
+ 146 003a 2044     		add	r0, r0, r4
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 6
+
+
+ 110:src-gen/Main/core/utils/util.c **** 		char* message = (char*) malloc(length + 1);
+ 147              		.loc 1 110 10 view .LVU25
+ 148 003c 00F12009 		add	r9, r0, #32
+ 149              	.LVL12:
+ 111:src-gen/Main/core/utils/util.c **** 		if (_lf_my_fed_id < 0) {
+ 150              		.loc 1 111 3 is_stmt 1 view .LVU26
+ 111:src-gen/Main/core/utils/util.c **** 		if (_lf_my_fed_id < 0) {
+ 151              		.loc 1 111 27 is_stmt 0 view .LVU27
+ 152 0040 2130     		adds	r0, r0, #33
+ 153 0042 FFF7FEFF 		bl	malloc
+ 154              	.LVL13:
+ 155 0046 0446     		mov	r4, r0
+ 156              	.LVL14:
+ 112:src-gen/Main/core/utils/util.c **** 			snprintf(message, length, "%s%s\n",
+ 157              		.loc 1 112 3 is_stmt 1 view .LVU28
+ 112:src-gen/Main/core/utils/util.c **** 			snprintf(message, length, "%s%s\n",
+ 158              		.loc 1 112 21 is_stmt 0 view .LVU29
+ 159 0048 174B     		ldr	r3, .L18+4
+ 160 004a 1B68     		ldr	r3, [r3]
+ 112:src-gen/Main/core/utils/util.c **** 			snprintf(message, length, "%s%s\n",
+ 161              		.loc 1 112 6 view .LVU30
+ 162 004c 002B     		cmp	r3, #0
+ 163 004e 0FDB     		blt	.L16
+ 116:src-gen/Main/core/utils/util.c **** 					_lf_my_fed_id, prefix, format);
+ 164              		.loc 1 116 4 is_stmt 1 view .LVU31
+ 165 0050 0196     		str	r6, [sp, #4]
+ 166 0052 0095     		str	r5, [sp]
+ 167 0054 154A     		ldr	r2, .L18+8
+ 168 0056 4946     		mov	r1, r9
+ 169 0058 FFF7FEFF 		bl	snprintf
+ 170              	.LVL15:
+ 171              	.L8:
+ 119:src-gen/Main/core/utils/util.c **** 			if (is_error) {
+ 172              		.loc 1 119 3 view .LVU32
+ 119:src-gen/Main/core/utils/util.c **** 			if (is_error) {
+ 173              		.loc 1 119 30 is_stmt 0 view .LVU33
+ 174 005c 144B     		ldr	r3, .L18+12
+ 175 005e 1B68     		ldr	r3, [r3]
+ 119:src-gen/Main/core/utils/util.c **** 			if (is_error) {
+ 176              		.loc 1 119 6 view .LVU34
+ 177 0060 6BB1     		cbz	r3, .L17
+ 126:src-gen/Main/core/utils/util.c **** 		}
+ 178              		.loc 1 126 4 is_stmt 1 view .LVU35
+ 179              	.LVL16:
+ 126:src-gen/Main/core/utils/util.c **** 		}
+ 180              		.loc 1 126 5 is_stmt 0 view .LVU36
+ 181 0062 3946     		mov	r1, r7
+ 182 0064 2046     		mov	r0, r4
+ 183 0066 9847     		blx	r3
+ 184              	.LVL17:
+ 185              	.L11:
+ 128:src-gen/Main/core/utils/util.c **** 	}
+ 186              		.loc 1 128 3 is_stmt 1 view .LVU37
+ 187 0068 2046     		mov	r0, r4
+ 188 006a FFF7FEFF 		bl	free
+ 189              	.LVL18:
+ 190              	.LBE2:
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 7
+
+
+ 191              		.loc 1 130 1 is_stmt 0 view .LVU38
+ 192 006e DAE7     		b	.L4
+ 193              	.LVL19:
+ 194              	.L16:
+ 195              	.LBB3:
+ 113:src-gen/Main/core/utils/util.c **** 					prefix, format);
+ 196              		.loc 1 113 4 is_stmt 1 view .LVU39
+ 197 0070 0096     		str	r6, [sp]
+ 198 0072 2B46     		mov	r3, r5
+ 199 0074 0F4A     		ldr	r2, .L18+16
+ 200 0076 4946     		mov	r1, r9
+ 201 0078 FFF7FEFF 		bl	snprintf
+ 202              	.LVL20:
+ 113:src-gen/Main/core/utils/util.c **** 					prefix, format);
+ 203              		.loc 1 113 4 is_stmt 0 view .LVU40
+ 204 007c EEE7     		b	.L8
+ 205              	.L17:
+ 120:src-gen/Main/core/utils/util.c **** 				vfprintf(stderr, message, args);
+ 206              		.loc 1 120 4 is_stmt 1 view .LVU41
+ 120:src-gen/Main/core/utils/util.c **** 				vfprintf(stderr, message, args);
+ 207              		.loc 1 120 7 is_stmt 0 view .LVU42
+ 208 007e B8F1000F 		cmp	r8, #0
+ 209 0082 07D0     		beq	.L10
+ 121:src-gen/Main/core/utils/util.c **** 			} else {
+ 210              		.loc 1 121 5 is_stmt 1 view .LVU43
+ 121:src-gen/Main/core/utils/util.c **** 			} else {
+ 211              		.loc 1 121 14 is_stmt 0 view .LVU44
+ 212 0084 0C4B     		ldr	r3, .L18+20
+ 213 0086 1B68     		ldr	r3, [r3]
+ 214              	.LVL21:
+ 121:src-gen/Main/core/utils/util.c **** 			} else {
+ 215              		.loc 1 121 5 view .LVU45
+ 216 0088 3A46     		mov	r2, r7
+ 217 008a 2146     		mov	r1, r4
+ 218 008c D868     		ldr	r0, [r3, #12]
+ 219 008e FFF7FEFF 		bl	vfprintf
+ 220              	.LVL22:
+ 221 0092 E9E7     		b	.L11
+ 222              	.LVL23:
+ 223              	.L10:
+ 123:src-gen/Main/core/utils/util.c **** 			}
+ 224              		.loc 1 123 5 is_stmt 1 view .LVU46
+ 123:src-gen/Main/core/utils/util.c **** 			}
+ 225              		.loc 1 123 14 is_stmt 0 view .LVU47
+ 226 0094 084B     		ldr	r3, .L18+20
+ 227 0096 1B68     		ldr	r3, [r3]
+ 228              	.LVL24:
+ 123:src-gen/Main/core/utils/util.c **** 			}
+ 229              		.loc 1 123 5 view .LVU48
+ 230 0098 3A46     		mov	r2, r7
+ 231 009a 2146     		mov	r1, r4
+ 232 009c 9868     		ldr	r0, [r3, #8]
+ 233 009e FFF7FEFF 		bl	vfprintf
+ 234              	.LVL25:
+ 235 00a2 E1E7     		b	.L11
+ 236              	.L19:
+ 237              		.align	2
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 8
+
+
+ 238              	.L18:
+ 239 00a4 00000000 		.word	print_message_level
+ 240 00a8 00000000 		.word	_lf_my_fed_id
+ 241 00ac 08000000 		.word	.LC1
+ 242 00b0 00000000 		.word	print_message_function
+ 243 00b4 00000000 		.word	.LC0
+ 244 00b8 00000000 		.word	_impure_ptr
+ 245              	.LBE3:
+ 246              		.cfi_endproc
+ 247              	.LFE4:
+ 249              		.section	.rodata.lf_vprint.str1.4,"aMS",%progbits,1
+ 250              		.align	2
+ 251              	.LC2:
+ 252 0000 00       		.ascii	"\000"
+ 253              		.section	.text.lf_vprint,"ax",%progbits
+ 254              		.align	1
+ 255              		.global	lf_vprint
+ 256              		.syntax unified
+ 257              		.thumb
+ 258              		.thumb_func
+ 260              	lf_vprint:
+ 261              	.LVL26:
+ 262              	.LFB6:
+ 131:src-gen/Main/core/utils/util.c **** 
+ 132:src-gen/Main/core/utils/util.c **** /**
+ 133:src-gen/Main/core/utils/util.c ****  * Report an informational message on stdout with
+ 134:src-gen/Main/core/utils/util.c ****  * a newline appended at the end.
+ 135:src-gen/Main/core/utils/util.c ****  * If this execution is federated, then
+ 136:src-gen/Main/core/utils/util.c ****  * the message will be prefaced by "Federate n: ",
+ 137:src-gen/Main/core/utils/util.c ****  * where n is the federate ID.
+ 138:src-gen/Main/core/utils/util.c ****  * The arguments are just like printf().
+ 139:src-gen/Main/core/utils/util.c ****  */
+ 140:src-gen/Main/core/utils/util.c **** void lf_print(const char* format, ...) {
+ 141:src-gen/Main/core/utils/util.c **** 	va_list args;
+ 142:src-gen/Main/core/utils/util.c ****     va_start (args, format);
+ 143:src-gen/Main/core/utils/util.c ****     lf_vprint(format, args);
+ 144:src-gen/Main/core/utils/util.c **** 	va_end (args);
+ 145:src-gen/Main/core/utils/util.c **** }
+ 146:src-gen/Main/core/utils/util.c **** 
+ 147:src-gen/Main/core/utils/util.c **** /**
+ 148:src-gen/Main/core/utils/util.c ****  * varargs alternative of "lf_print"
+ 149:src-gen/Main/core/utils/util.c ****  */
+ 150:src-gen/Main/core/utils/util.c **** void lf_vprint(const char* format, va_list args) {
+ 263              		.loc 1 150 50 is_stmt 1 view -0
+ 264              		.cfi_startproc
+ 265              		@ args = 0, pretend = 0, frame = 0
+ 266              		@ frame_needed = 0, uses_anonymous_args = 0
+ 267              		.loc 1 150 50 is_stmt 0 view .LVU50
+ 268 0000 00B5     		push	{lr}
+ 269              	.LCFI4:
+ 270              		.cfi_def_cfa_offset 4
+ 271              		.cfi_offset 14, -4
+ 272 0002 83B0     		sub	sp, sp, #12
+ 273              	.LCFI5:
+ 274              		.cfi_def_cfa_offset 16
+ 275 0004 0246     		mov	r2, r0
+ 276 0006 0B46     		mov	r3, r1
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 9
+
+
+ 151:src-gen/Main/core/utils/util.c ****     _lf_message_print(0, "", format, args, LOG_LEVEL_INFO);
+ 277              		.loc 1 151 5 is_stmt 1 view .LVU51
+ 278 0008 0221     		movs	r1, #2
+ 279              	.LVL27:
+ 280              		.loc 1 151 5 is_stmt 0 view .LVU52
+ 281 000a 0091     		str	r1, [sp]
+ 282 000c 0349     		ldr	r1, .L22
+ 283 000e 0020     		movs	r0, #0
+ 284              	.LVL28:
+ 285              		.loc 1 151 5 view .LVU53
+ 286 0010 FFF7FEFF 		bl	_lf_message_print
+ 287              	.LVL29:
+ 152:src-gen/Main/core/utils/util.c **** }
+ 288              		.loc 1 152 1 view .LVU54
+ 289 0014 03B0     		add	sp, sp, #12
+ 290              	.LCFI6:
+ 291              		.cfi_def_cfa_offset 4
+ 292              		@ sp needed
+ 293 0016 5DF804FB 		ldr	pc, [sp], #4
+ 294              	.L23:
+ 295 001a 00BF     		.align	2
+ 296              	.L22:
+ 297 001c 00000000 		.word	.LC2
+ 298              		.cfi_endproc
+ 299              	.LFE6:
+ 301              		.section	.text.lf_print,"ax",%progbits
+ 302              		.align	1
+ 303              		.global	lf_print
+ 304              		.syntax unified
+ 305              		.thumb
+ 306              		.thumb_func
+ 308              	lf_print:
+ 309              	.LVL30:
+ 310              	.LFB5:
+ 140:src-gen/Main/core/utils/util.c **** 	va_list args;
+ 311              		.loc 1 140 40 is_stmt 1 view -0
+ 312              		.cfi_startproc
+ 313              		@ args = 4, pretend = 16, frame = 8
+ 314              		@ frame_needed = 0, uses_anonymous_args = 1
+ 140:src-gen/Main/core/utils/util.c **** 	va_list args;
+ 315              		.loc 1 140 40 is_stmt 0 view .LVU56
+ 316 0000 0FB4     		push	{r0, r1, r2, r3}
+ 317              	.LCFI7:
+ 318              		.cfi_def_cfa_offset 16
+ 319              		.cfi_offset 0, -16
+ 320              		.cfi_offset 1, -12
+ 321              		.cfi_offset 2, -8
+ 322              		.cfi_offset 3, -4
+ 323 0002 00B5     		push	{lr}
+ 324              	.LCFI8:
+ 325              		.cfi_def_cfa_offset 20
+ 326              		.cfi_offset 14, -20
+ 327 0004 83B0     		sub	sp, sp, #12
+ 328              	.LCFI9:
+ 329              		.cfi_def_cfa_offset 32
+ 330 0006 04A9     		add	r1, sp, #16
+ 331 0008 51F8040B 		ldr	r0, [r1], #4
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 10
+
+
+ 141:src-gen/Main/core/utils/util.c ****     va_start (args, format);
+ 332              		.loc 1 141 2 is_stmt 1 view .LVU57
+ 142:src-gen/Main/core/utils/util.c ****     lf_vprint(format, args);
+ 333              		.loc 1 142 5 view .LVU58
+ 334 000c 0191     		str	r1, [sp, #4]
+ 143:src-gen/Main/core/utils/util.c **** 	va_end (args);
+ 335              		.loc 1 143 5 view .LVU59
+ 336 000e FFF7FEFF 		bl	lf_vprint
+ 337              	.LVL31:
+ 144:src-gen/Main/core/utils/util.c **** }
+ 338              		.loc 1 144 2 view .LVU60
+ 145:src-gen/Main/core/utils/util.c **** 
+ 339              		.loc 1 145 1 is_stmt 0 view .LVU61
+ 340 0012 03B0     		add	sp, sp, #12
+ 341              	.LCFI10:
+ 342              		.cfi_def_cfa_offset 20
+ 343              		@ sp needed
+ 344 0014 5DF804EB 		ldr	lr, [sp], #4
+ 345              	.LCFI11:
+ 346              		.cfi_restore 14
+ 347              		.cfi_def_cfa_offset 16
+ 348 0018 04B0     		add	sp, sp, #16
+ 349              	.LCFI12:
+ 350              		.cfi_restore 3
+ 351              		.cfi_restore 2
+ 352              		.cfi_restore 1
+ 353              		.cfi_restore 0
+ 354              		.cfi_def_cfa_offset 0
+ 355 001a 7047     		bx	lr
+ 356              		.cfi_endproc
+ 357              	.LFE5:
+ 359              		.section	.rodata.lf_vprint_log.str1.4,"aMS",%progbits,1
+ 360              		.align	2
+ 361              	.LC3:
+ 362 0000 4C4F473A 		.ascii	"LOG: \000"
+ 362      2000
+ 363              		.section	.text.lf_vprint_log,"ax",%progbits
+ 364              		.align	1
+ 365              		.global	lf_vprint_log
+ 366              		.syntax unified
+ 367              		.thumb
+ 368              		.thumb_func
+ 370              	lf_vprint_log:
+ 371              	.LVL32:
+ 372              	.LFB8:
+ 153:src-gen/Main/core/utils/util.c **** 
+ 154:src-gen/Main/core/utils/util.c **** /**
+ 155:src-gen/Main/core/utils/util.c ****  * Report an log message on stdout with the prefix
+ 156:src-gen/Main/core/utils/util.c ****  * "LOG: " and a newline appended
+ 157:src-gen/Main/core/utils/util.c ****  * at the end. If this execution is federated, then
+ 158:src-gen/Main/core/utils/util.c ****  * the message will be prefaced by "Federate n: ",
+ 159:src-gen/Main/core/utils/util.c ****  * where n is the federate ID.
+ 160:src-gen/Main/core/utils/util.c ****  * The arguments are just like printf().
+ 161:src-gen/Main/core/utils/util.c ****  */
+ 162:src-gen/Main/core/utils/util.c **** void lf_print_log(const char* format, ...) {
+ 163:src-gen/Main/core/utils/util.c **** 	va_list args;
+ 164:src-gen/Main/core/utils/util.c ****     va_start (args, format);
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 11
+
+
+ 165:src-gen/Main/core/utils/util.c **** 	lf_vprint_log(format, args);
+ 166:src-gen/Main/core/utils/util.c **** 	va_end (args);
+ 167:src-gen/Main/core/utils/util.c **** }
+ 168:src-gen/Main/core/utils/util.c **** 
+ 169:src-gen/Main/core/utils/util.c **** /**
+ 170:src-gen/Main/core/utils/util.c ****  * varargs alternative of "lf_print_log"
+ 171:src-gen/Main/core/utils/util.c ****  */
+ 172:src-gen/Main/core/utils/util.c **** void lf_vprint_log(const char* format, va_list args) {
+ 373              		.loc 1 172 54 is_stmt 1 view -0
+ 374              		.cfi_startproc
+ 375              		@ args = 0, pretend = 0, frame = 0
+ 376              		@ frame_needed = 0, uses_anonymous_args = 0
+ 377              		.loc 1 172 54 is_stmt 0 view .LVU63
+ 378 0000 00B5     		push	{lr}
+ 379              	.LCFI13:
+ 380              		.cfi_def_cfa_offset 4
+ 381              		.cfi_offset 14, -4
+ 382 0002 83B0     		sub	sp, sp, #12
+ 383              	.LCFI14:
+ 384              		.cfi_def_cfa_offset 16
+ 385 0004 0246     		mov	r2, r0
+ 386 0006 0B46     		mov	r3, r1
+ 173:src-gen/Main/core/utils/util.c ****     _lf_message_print(0, "LOG: ", format, args, LOG_LEVEL_LOG);
+ 387              		.loc 1 173 5 is_stmt 1 view .LVU64
+ 388 0008 0321     		movs	r1, #3
+ 389              	.LVL33:
+ 390              		.loc 1 173 5 is_stmt 0 view .LVU65
+ 391 000a 0091     		str	r1, [sp]
+ 392 000c 0349     		ldr	r1, .L28
+ 393 000e 0020     		movs	r0, #0
+ 394              	.LVL34:
+ 395              		.loc 1 173 5 view .LVU66
+ 396 0010 FFF7FEFF 		bl	_lf_message_print
+ 397              	.LVL35:
+ 174:src-gen/Main/core/utils/util.c **** }
+ 398              		.loc 1 174 1 view .LVU67
+ 399 0014 03B0     		add	sp, sp, #12
+ 400              	.LCFI15:
+ 401              		.cfi_def_cfa_offset 4
+ 402              		@ sp needed
+ 403 0016 5DF804FB 		ldr	pc, [sp], #4
+ 404              	.L29:
+ 405 001a 00BF     		.align	2
+ 406              	.L28:
+ 407 001c 00000000 		.word	.LC3
+ 408              		.cfi_endproc
+ 409              	.LFE8:
+ 411              		.section	.text.lf_print_log,"ax",%progbits
+ 412              		.align	1
+ 413              		.global	lf_print_log
+ 414              		.syntax unified
+ 415              		.thumb
+ 416              		.thumb_func
+ 418              	lf_print_log:
+ 419              	.LVL36:
+ 420              	.LFB7:
+ 162:src-gen/Main/core/utils/util.c **** 	va_list args;
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 12
+
+
+ 421              		.loc 1 162 44 is_stmt 1 view -0
+ 422              		.cfi_startproc
+ 423              		@ args = 4, pretend = 16, frame = 8
+ 424              		@ frame_needed = 0, uses_anonymous_args = 1
+ 162:src-gen/Main/core/utils/util.c **** 	va_list args;
+ 425              		.loc 1 162 44 is_stmt 0 view .LVU69
+ 426 0000 0FB4     		push	{r0, r1, r2, r3}
+ 427              	.LCFI16:
+ 428              		.cfi_def_cfa_offset 16
+ 429              		.cfi_offset 0, -16
+ 430              		.cfi_offset 1, -12
+ 431              		.cfi_offset 2, -8
+ 432              		.cfi_offset 3, -4
+ 433 0002 00B5     		push	{lr}
+ 434              	.LCFI17:
+ 435              		.cfi_def_cfa_offset 20
+ 436              		.cfi_offset 14, -20
+ 437 0004 83B0     		sub	sp, sp, #12
+ 438              	.LCFI18:
+ 439              		.cfi_def_cfa_offset 32
+ 440 0006 04A9     		add	r1, sp, #16
+ 441 0008 51F8040B 		ldr	r0, [r1], #4
+ 163:src-gen/Main/core/utils/util.c ****     va_start (args, format);
+ 442              		.loc 1 163 2 is_stmt 1 view .LVU70
+ 164:src-gen/Main/core/utils/util.c **** 	lf_vprint_log(format, args);
+ 443              		.loc 1 164 5 view .LVU71
+ 444 000c 0191     		str	r1, [sp, #4]
+ 165:src-gen/Main/core/utils/util.c **** 	va_end (args);
+ 445              		.loc 1 165 2 view .LVU72
+ 446 000e FFF7FEFF 		bl	lf_vprint_log
+ 447              	.LVL37:
+ 166:src-gen/Main/core/utils/util.c **** }
+ 448              		.loc 1 166 2 view .LVU73
+ 167:src-gen/Main/core/utils/util.c **** 
+ 449              		.loc 1 167 1 is_stmt 0 view .LVU74
+ 450 0012 03B0     		add	sp, sp, #12
+ 451              	.LCFI19:
+ 452              		.cfi_def_cfa_offset 20
+ 453              		@ sp needed
+ 454 0014 5DF804EB 		ldr	lr, [sp], #4
+ 455              	.LCFI20:
+ 456              		.cfi_restore 14
+ 457              		.cfi_def_cfa_offset 16
+ 458 0018 04B0     		add	sp, sp, #16
+ 459              	.LCFI21:
+ 460              		.cfi_restore 3
+ 461              		.cfi_restore 2
+ 462              		.cfi_restore 1
+ 463              		.cfi_restore 0
+ 464              		.cfi_def_cfa_offset 0
+ 465 001a 7047     		bx	lr
+ 466              		.cfi_endproc
+ 467              	.LFE7:
+ 469              		.section	.rodata.lf_vprint_debug.str1.4,"aMS",%progbits,1
+ 470              		.align	2
+ 471              	.LC4:
+ 472 0000 44454255 		.ascii	"DEBUG: \000"
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 13
+
+
+ 472      473A2000 
+ 473              		.section	.text.lf_vprint_debug,"ax",%progbits
+ 474              		.align	1
+ 475              		.global	lf_vprint_debug
+ 476              		.syntax unified
+ 477              		.thumb
+ 478              		.thumb_func
+ 480              	lf_vprint_debug:
+ 481              	.LVL38:
+ 482              	.LFB10:
+ 175:src-gen/Main/core/utils/util.c **** 
+ 176:src-gen/Main/core/utils/util.c **** 
+ 177:src-gen/Main/core/utils/util.c **** /**
+ 178:src-gen/Main/core/utils/util.c ****  * Report an debug message on stdout with the prefix
+ 179:src-gen/Main/core/utils/util.c ****  * "DEBUG: " and a newline appended
+ 180:src-gen/Main/core/utils/util.c ****  * at the end. If this execution is federated, then
+ 181:src-gen/Main/core/utils/util.c ****  * the message will be prefaced by "Federate n: ",
+ 182:src-gen/Main/core/utils/util.c ****  * where n is the federate ID.
+ 183:src-gen/Main/core/utils/util.c ****  * The arguments are just like printf().
+ 184:src-gen/Main/core/utils/util.c ****  */
+ 185:src-gen/Main/core/utils/util.c **** void lf_print_debug(const char* format, ...) {
+ 186:src-gen/Main/core/utils/util.c ****     va_list args;
+ 187:src-gen/Main/core/utils/util.c ****     va_start (args, format);
+ 188:src-gen/Main/core/utils/util.c ****     lf_vprint_debug(format, args);
+ 189:src-gen/Main/core/utils/util.c ****     va_end (args);
+ 190:src-gen/Main/core/utils/util.c **** }
+ 191:src-gen/Main/core/utils/util.c **** 
+ 192:src-gen/Main/core/utils/util.c **** /**
+ 193:src-gen/Main/core/utils/util.c ****  * varargs alternative of "lf_print_debug"
+ 194:src-gen/Main/core/utils/util.c ****  */
+ 195:src-gen/Main/core/utils/util.c **** void lf_vprint_debug(const char* format, va_list args) {
+ 483              		.loc 1 195 56 is_stmt 1 view -0
+ 484              		.cfi_startproc
+ 485              		@ args = 0, pretend = 0, frame = 0
+ 486              		@ frame_needed = 0, uses_anonymous_args = 0
+ 487              		.loc 1 195 56 is_stmt 0 view .LVU76
+ 488 0000 00B5     		push	{lr}
+ 489              	.LCFI22:
+ 490              		.cfi_def_cfa_offset 4
+ 491              		.cfi_offset 14, -4
+ 492 0002 83B0     		sub	sp, sp, #12
+ 493              	.LCFI23:
+ 494              		.cfi_def_cfa_offset 16
+ 495 0004 0246     		mov	r2, r0
+ 496 0006 0B46     		mov	r3, r1
+ 196:src-gen/Main/core/utils/util.c ****     _lf_message_print(0, "DEBUG: ", format, args, LOG_LEVEL_DEBUG);
+ 497              		.loc 1 196 5 is_stmt 1 view .LVU77
+ 498 0008 0421     		movs	r1, #4
+ 499              	.LVL39:
+ 500              		.loc 1 196 5 is_stmt 0 view .LVU78
+ 501 000a 0091     		str	r1, [sp]
+ 502 000c 0349     		ldr	r1, .L34
+ 503 000e 0020     		movs	r0, #0
+ 504              	.LVL40:
+ 505              		.loc 1 196 5 view .LVU79
+ 506 0010 FFF7FEFF 		bl	_lf_message_print
+ 507              	.LVL41:
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 14
+
+
+ 197:src-gen/Main/core/utils/util.c **** }
+ 508              		.loc 1 197 1 view .LVU80
+ 509 0014 03B0     		add	sp, sp, #12
+ 510              	.LCFI24:
+ 511              		.cfi_def_cfa_offset 4
+ 512              		@ sp needed
+ 513 0016 5DF804FB 		ldr	pc, [sp], #4
+ 514              	.L35:
+ 515 001a 00BF     		.align	2
+ 516              	.L34:
+ 517 001c 00000000 		.word	.LC4
+ 518              		.cfi_endproc
+ 519              	.LFE10:
+ 521              		.section	.text.lf_print_debug,"ax",%progbits
+ 522              		.align	1
+ 523              		.global	lf_print_debug
+ 524              		.syntax unified
+ 525              		.thumb
+ 526              		.thumb_func
+ 528              	lf_print_debug:
+ 529              	.LVL42:
+ 530              	.LFB9:
+ 185:src-gen/Main/core/utils/util.c ****     va_list args;
+ 531              		.loc 1 185 46 is_stmt 1 view -0
+ 532              		.cfi_startproc
+ 533              		@ args = 4, pretend = 16, frame = 8
+ 534              		@ frame_needed = 0, uses_anonymous_args = 1
+ 185:src-gen/Main/core/utils/util.c ****     va_list args;
+ 535              		.loc 1 185 46 is_stmt 0 view .LVU82
+ 536 0000 0FB4     		push	{r0, r1, r2, r3}
+ 537              	.LCFI25:
+ 538              		.cfi_def_cfa_offset 16
+ 539              		.cfi_offset 0, -16
+ 540              		.cfi_offset 1, -12
+ 541              		.cfi_offset 2, -8
+ 542              		.cfi_offset 3, -4
+ 543 0002 00B5     		push	{lr}
+ 544              	.LCFI26:
+ 545              		.cfi_def_cfa_offset 20
+ 546              		.cfi_offset 14, -20
+ 547 0004 83B0     		sub	sp, sp, #12
+ 548              	.LCFI27:
+ 549              		.cfi_def_cfa_offset 32
+ 550 0006 04A9     		add	r1, sp, #16
+ 551 0008 51F8040B 		ldr	r0, [r1], #4
+ 186:src-gen/Main/core/utils/util.c ****     va_start (args, format);
+ 552              		.loc 1 186 5 is_stmt 1 view .LVU83
+ 187:src-gen/Main/core/utils/util.c ****     lf_vprint_debug(format, args);
+ 553              		.loc 1 187 5 view .LVU84
+ 554 000c 0191     		str	r1, [sp, #4]
+ 188:src-gen/Main/core/utils/util.c ****     va_end (args);
+ 555              		.loc 1 188 5 view .LVU85
+ 556 000e FFF7FEFF 		bl	lf_vprint_debug
+ 557              	.LVL43:
+ 189:src-gen/Main/core/utils/util.c **** }
+ 558              		.loc 1 189 5 view .LVU86
+ 190:src-gen/Main/core/utils/util.c **** 
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 15
+
+
+ 559              		.loc 1 190 1 is_stmt 0 view .LVU87
+ 560 0012 03B0     		add	sp, sp, #12
+ 561              	.LCFI28:
+ 562              		.cfi_def_cfa_offset 20
+ 563              		@ sp needed
+ 564 0014 5DF804EB 		ldr	lr, [sp], #4
+ 565              	.LCFI29:
+ 566              		.cfi_restore 14
+ 567              		.cfi_def_cfa_offset 16
+ 568 0018 04B0     		add	sp, sp, #16
+ 569              	.LCFI30:
+ 570              		.cfi_restore 3
+ 571              		.cfi_restore 2
+ 572              		.cfi_restore 1
+ 573              		.cfi_restore 0
+ 574              		.cfi_def_cfa_offset 0
+ 575 001a 7047     		bx	lr
+ 576              		.cfi_endproc
+ 577              	.LFE9:
+ 579              		.section	.rodata.lf_vprint_error.str1.4,"aMS",%progbits,1
+ 580              		.align	2
+ 581              	.LC5:
+ 582 0000 4552524F 		.ascii	"ERROR: \000"
+ 582      523A2000 
+ 583              		.section	.text.lf_vprint_error,"ax",%progbits
+ 584              		.align	1
+ 585              		.global	lf_vprint_error
+ 586              		.syntax unified
+ 587              		.thumb
+ 588              		.thumb_func
+ 590              	lf_vprint_error:
+ 591              	.LVL44:
+ 592              	.LFB12:
+ 198:src-gen/Main/core/utils/util.c **** 
+ 199:src-gen/Main/core/utils/util.c **** /**
+ 200:src-gen/Main/core/utils/util.c ****  * Report an error with the prefix "ERROR: " and a newline appended
+ 201:src-gen/Main/core/utils/util.c ****  * at the end.  The arguments are just like printf().
+ 202:src-gen/Main/core/utils/util.c ****  */
+ 203:src-gen/Main/core/utils/util.c **** void lf_print_error(const char* format, ...) {
+ 204:src-gen/Main/core/utils/util.c ****     va_list args;
+ 205:src-gen/Main/core/utils/util.c ****     va_start (args, format);
+ 206:src-gen/Main/core/utils/util.c ****     lf_vprint_error(format, args);
+ 207:src-gen/Main/core/utils/util.c ****     va_end (args);
+ 208:src-gen/Main/core/utils/util.c **** }
+ 209:src-gen/Main/core/utils/util.c **** 
+ 210:src-gen/Main/core/utils/util.c **** /**
+ 211:src-gen/Main/core/utils/util.c ****  * varargs alternative of "lf_print_error"
+ 212:src-gen/Main/core/utils/util.c ****  */
+ 213:src-gen/Main/core/utils/util.c **** void lf_vprint_error(const char* format, va_list args) {
+ 593              		.loc 1 213 56 is_stmt 1 view -0
+ 594              		.cfi_startproc
+ 595              		@ args = 0, pretend = 0, frame = 0
+ 596              		@ frame_needed = 0, uses_anonymous_args = 0
+ 597              		.loc 1 213 56 is_stmt 0 view .LVU89
+ 598 0000 00B5     		push	{lr}
+ 599              	.LCFI31:
+ 600              		.cfi_def_cfa_offset 4
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 16
+
+
+ 601              		.cfi_offset 14, -4
+ 602 0002 83B0     		sub	sp, sp, #12
+ 603              	.LCFI32:
+ 604              		.cfi_def_cfa_offset 16
+ 605 0004 0246     		mov	r2, r0
+ 606 0006 0B46     		mov	r3, r1
+ 214:src-gen/Main/core/utils/util.c ****     _lf_message_print(1, "ERROR: ", format, args, LOG_LEVEL_ERROR);
+ 607              		.loc 1 214 5 is_stmt 1 view .LVU90
+ 608 0008 0021     		movs	r1, #0
+ 609              	.LVL45:
+ 610              		.loc 1 214 5 is_stmt 0 view .LVU91
+ 611 000a 0091     		str	r1, [sp]
+ 612 000c 0349     		ldr	r1, .L40
+ 613 000e 0120     		movs	r0, #1
+ 614              	.LVL46:
+ 615              		.loc 1 214 5 view .LVU92
+ 616 0010 FFF7FEFF 		bl	_lf_message_print
+ 617              	.LVL47:
+ 215:src-gen/Main/core/utils/util.c **** }
+ 618              		.loc 1 215 1 view .LVU93
+ 619 0014 03B0     		add	sp, sp, #12
+ 620              	.LCFI33:
+ 621              		.cfi_def_cfa_offset 4
+ 622              		@ sp needed
+ 623 0016 5DF804FB 		ldr	pc, [sp], #4
+ 624              	.L41:
+ 625 001a 00BF     		.align	2
+ 626              	.L40:
+ 627 001c 00000000 		.word	.LC5
+ 628              		.cfi_endproc
+ 629              	.LFE12:
+ 631              		.section	.text.lf_print_error,"ax",%progbits
+ 632              		.align	1
+ 633              		.global	lf_print_error
+ 634              		.syntax unified
+ 635              		.thumb
+ 636              		.thumb_func
+ 638              	lf_print_error:
+ 639              	.LVL48:
+ 640              	.LFB11:
+ 203:src-gen/Main/core/utils/util.c ****     va_list args;
+ 641              		.loc 1 203 46 is_stmt 1 view -0
+ 642              		.cfi_startproc
+ 643              		@ args = 4, pretend = 16, frame = 8
+ 644              		@ frame_needed = 0, uses_anonymous_args = 1
+ 203:src-gen/Main/core/utils/util.c ****     va_list args;
+ 645              		.loc 1 203 46 is_stmt 0 view .LVU95
+ 646 0000 0FB4     		push	{r0, r1, r2, r3}
+ 647              	.LCFI34:
+ 648              		.cfi_def_cfa_offset 16
+ 649              		.cfi_offset 0, -16
+ 650              		.cfi_offset 1, -12
+ 651              		.cfi_offset 2, -8
+ 652              		.cfi_offset 3, -4
+ 653 0002 00B5     		push	{lr}
+ 654              	.LCFI35:
+ 655              		.cfi_def_cfa_offset 20
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 17
+
+
+ 656              		.cfi_offset 14, -20
+ 657 0004 83B0     		sub	sp, sp, #12
+ 658              	.LCFI36:
+ 659              		.cfi_def_cfa_offset 32
+ 660 0006 04A9     		add	r1, sp, #16
+ 661 0008 51F8040B 		ldr	r0, [r1], #4
+ 204:src-gen/Main/core/utils/util.c ****     va_start (args, format);
+ 662              		.loc 1 204 5 is_stmt 1 view .LVU96
+ 205:src-gen/Main/core/utils/util.c ****     lf_vprint_error(format, args);
+ 663              		.loc 1 205 5 view .LVU97
+ 664 000c 0191     		str	r1, [sp, #4]
+ 206:src-gen/Main/core/utils/util.c ****     va_end (args);
+ 665              		.loc 1 206 5 view .LVU98
+ 666 000e FFF7FEFF 		bl	lf_vprint_error
+ 667              	.LVL49:
+ 207:src-gen/Main/core/utils/util.c **** }
+ 668              		.loc 1 207 5 view .LVU99
+ 208:src-gen/Main/core/utils/util.c **** 
+ 669              		.loc 1 208 1 is_stmt 0 view .LVU100
+ 670 0012 03B0     		add	sp, sp, #12
+ 671              	.LCFI37:
+ 672              		.cfi_def_cfa_offset 20
+ 673              		@ sp needed
+ 674 0014 5DF804EB 		ldr	lr, [sp], #4
+ 675              	.LCFI38:
+ 676              		.cfi_restore 14
+ 677              		.cfi_def_cfa_offset 16
+ 678 0018 04B0     		add	sp, sp, #16
+ 679              	.LCFI39:
+ 680              		.cfi_restore 3
+ 681              		.cfi_restore 2
+ 682              		.cfi_restore 1
+ 683              		.cfi_restore 0
+ 684              		.cfi_def_cfa_offset 0
+ 685 001a 7047     		bx	lr
+ 686              		.cfi_endproc
+ 687              	.LFE11:
+ 689              		.section	.rodata.lf_vprint_warning.str1.4,"aMS",%progbits,1
+ 690              		.align	2
+ 691              	.LC6:
+ 692 0000 5741524E 		.ascii	"WARNING: \000"
+ 692      494E473A 
+ 692      2000
+ 693              		.section	.text.lf_vprint_warning,"ax",%progbits
+ 694              		.align	1
+ 695              		.global	lf_vprint_warning
+ 696              		.syntax unified
+ 697              		.thumb
+ 698              		.thumb_func
+ 700              	lf_vprint_warning:
+ 701              	.LVL50:
+ 702              	.LFB14:
+ 216:src-gen/Main/core/utils/util.c **** 
+ 217:src-gen/Main/core/utils/util.c **** /**
+ 218:src-gen/Main/core/utils/util.c ****  * Report a warning with the prefix "WARNING: " and a newline appended
+ 219:src-gen/Main/core/utils/util.c ****  * at the end.  The arguments are just like printf().
+ 220:src-gen/Main/core/utils/util.c ****  */
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 18
+
+
+ 221:src-gen/Main/core/utils/util.c **** void lf_print_warning(const char* format, ...) {
+ 222:src-gen/Main/core/utils/util.c ****     va_list args;
+ 223:src-gen/Main/core/utils/util.c ****     va_start (args, format);
+ 224:src-gen/Main/core/utils/util.c ****     lf_vprint_warning(format, args);
+ 225:src-gen/Main/core/utils/util.c ****     va_end (args);
+ 226:src-gen/Main/core/utils/util.c **** }
+ 227:src-gen/Main/core/utils/util.c **** 
+ 228:src-gen/Main/core/utils/util.c **** /**
+ 229:src-gen/Main/core/utils/util.c ****  * varargs alternative of "lf_print_warning"
+ 230:src-gen/Main/core/utils/util.c ****  */
+ 231:src-gen/Main/core/utils/util.c **** void lf_vprint_warning(const char* format, va_list args) {
+ 703              		.loc 1 231 58 is_stmt 1 view -0
+ 704              		.cfi_startproc
+ 705              		@ args = 0, pretend = 0, frame = 0
+ 706              		@ frame_needed = 0, uses_anonymous_args = 0
+ 707              		.loc 1 231 58 is_stmt 0 view .LVU102
+ 708 0000 00B5     		push	{lr}
+ 709              	.LCFI40:
+ 710              		.cfi_def_cfa_offset 4
+ 711              		.cfi_offset 14, -4
+ 712 0002 83B0     		sub	sp, sp, #12
+ 713              	.LCFI41:
+ 714              		.cfi_def_cfa_offset 16
+ 715 0004 0246     		mov	r2, r0
+ 716 0006 0B46     		mov	r3, r1
+ 232:src-gen/Main/core/utils/util.c ****     _lf_message_print(1, "WARNING: ", format, args, LOG_LEVEL_WARNING);
+ 717              		.loc 1 232 5 is_stmt 1 view .LVU103
+ 718 0008 0120     		movs	r0, #1
+ 719              	.LVL51:
+ 720              		.loc 1 232 5 is_stmt 0 view .LVU104
+ 721 000a 0090     		str	r0, [sp]
+ 722 000c 0249     		ldr	r1, .L46
+ 723              	.LVL52:
+ 724              		.loc 1 232 5 view .LVU105
+ 725 000e FFF7FEFF 		bl	_lf_message_print
+ 726              	.LVL53:
+ 233:src-gen/Main/core/utils/util.c **** }
+ 727              		.loc 1 233 1 view .LVU106
+ 728 0012 03B0     		add	sp, sp, #12
+ 729              	.LCFI42:
+ 730              		.cfi_def_cfa_offset 4
+ 731              		@ sp needed
+ 732 0014 5DF804FB 		ldr	pc, [sp], #4
+ 733              	.L47:
+ 734              		.align	2
+ 735              	.L46:
+ 736 0018 00000000 		.word	.LC6
+ 737              		.cfi_endproc
+ 738              	.LFE14:
+ 740              		.section	.text.lf_print_warning,"ax",%progbits
+ 741              		.align	1
+ 742              		.global	lf_print_warning
+ 743              		.syntax unified
+ 744              		.thumb
+ 745              		.thumb_func
+ 747              	lf_print_warning:
+ 748              	.LVL54:
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 19
+
+
+ 749              	.LFB13:
+ 221:src-gen/Main/core/utils/util.c ****     va_list args;
+ 750              		.loc 1 221 48 is_stmt 1 view -0
+ 751              		.cfi_startproc
+ 752              		@ args = 4, pretend = 16, frame = 8
+ 753              		@ frame_needed = 0, uses_anonymous_args = 1
+ 221:src-gen/Main/core/utils/util.c ****     va_list args;
+ 754              		.loc 1 221 48 is_stmt 0 view .LVU108
+ 755 0000 0FB4     		push	{r0, r1, r2, r3}
+ 756              	.LCFI43:
+ 757              		.cfi_def_cfa_offset 16
+ 758              		.cfi_offset 0, -16
+ 759              		.cfi_offset 1, -12
+ 760              		.cfi_offset 2, -8
+ 761              		.cfi_offset 3, -4
+ 762 0002 00B5     		push	{lr}
+ 763              	.LCFI44:
+ 764              		.cfi_def_cfa_offset 20
+ 765              		.cfi_offset 14, -20
+ 766 0004 83B0     		sub	sp, sp, #12
+ 767              	.LCFI45:
+ 768              		.cfi_def_cfa_offset 32
+ 769 0006 04A9     		add	r1, sp, #16
+ 770 0008 51F8040B 		ldr	r0, [r1], #4
+ 222:src-gen/Main/core/utils/util.c ****     va_start (args, format);
+ 771              		.loc 1 222 5 is_stmt 1 view .LVU109
+ 223:src-gen/Main/core/utils/util.c ****     lf_vprint_warning(format, args);
+ 772              		.loc 1 223 5 view .LVU110
+ 773 000c 0191     		str	r1, [sp, #4]
+ 224:src-gen/Main/core/utils/util.c ****     va_end (args);
+ 774              		.loc 1 224 5 view .LVU111
+ 775 000e FFF7FEFF 		bl	lf_vprint_warning
+ 776              	.LVL55:
+ 225:src-gen/Main/core/utils/util.c **** }
+ 777              		.loc 1 225 5 view .LVU112
+ 226:src-gen/Main/core/utils/util.c **** 
+ 778              		.loc 1 226 1 is_stmt 0 view .LVU113
+ 779 0012 03B0     		add	sp, sp, #12
+ 780              	.LCFI46:
+ 781              		.cfi_def_cfa_offset 20
+ 782              		@ sp needed
+ 783 0014 5DF804EB 		ldr	lr, [sp], #4
+ 784              	.LCFI47:
+ 785              		.cfi_restore 14
+ 786              		.cfi_def_cfa_offset 16
+ 787 0018 04B0     		add	sp, sp, #16
+ 788              	.LCFI48:
+ 789              		.cfi_restore 3
+ 790              		.cfi_restore 2
+ 791              		.cfi_restore 1
+ 792              		.cfi_restore 0
+ 793              		.cfi_def_cfa_offset 0
+ 794 001a 7047     		bx	lr
+ 795              		.cfi_endproc
+ 796              	.LFE13:
+ 798              		.section	.rodata.lf_vprint_error_and_exit.str1.4,"aMS",%progbits,1
+ 799              		.align	2
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 20
+
+
+ 800              	.LC7:
+ 801 0000 46415441 		.ascii	"FATAL ERROR: \000"
+ 801      4C204552 
+ 801      524F523A 
+ 801      2000
+ 802              		.section	.text.lf_vprint_error_and_exit,"ax",%progbits
+ 803              		.align	1
+ 804              		.global	lf_vprint_error_and_exit
+ 805              		.syntax unified
+ 806              		.thumb
+ 807              		.thumb_func
+ 809              	lf_vprint_error_and_exit:
+ 810              	.LVL56:
+ 811              	.LFB17:
+ 234:src-gen/Main/core/utils/util.c **** 
+ 235:src-gen/Main/core/utils/util.c **** /**
+ 236:src-gen/Main/core/utils/util.c ****  * Report an error with the prefix "ERROR: " and a newline appended
+ 237:src-gen/Main/core/utils/util.c ****  * at the end, then exit with the failure code EXIT_FAILURE.
+ 238:src-gen/Main/core/utils/util.c ****  * The arguments are just like printf().
+ 239:src-gen/Main/core/utils/util.c ****  */
+ 240:src-gen/Main/core/utils/util.c **** void lf_print_error_and_exit(const char* format, ...) {
+ 241:src-gen/Main/core/utils/util.c ****     va_list args;
+ 242:src-gen/Main/core/utils/util.c ****     va_start (args, format);
+ 243:src-gen/Main/core/utils/util.c ****     lf_vprint_error_and_exit(format, args);
+ 244:src-gen/Main/core/utils/util.c ****     va_end (args);
+ 245:src-gen/Main/core/utils/util.c ****     exit(EXIT_FAILURE);
+ 246:src-gen/Main/core/utils/util.c **** }
+ 247:src-gen/Main/core/utils/util.c **** 
+ 248:src-gen/Main/core/utils/util.c **** /**
+ 249:src-gen/Main/core/utils/util.c ****  * Report an error with the prefix "ERROR: " and a newline appended
+ 250:src-gen/Main/core/utils/util.c ****  * at the end, then exit with the failure code EXIT_FAILURE.
+ 251:src-gen/Main/core/utils/util.c ****  * The arguments are just like printf().
+ 252:src-gen/Main/core/utils/util.c ****  */
+ 253:src-gen/Main/core/utils/util.c **** void lf_assert(bool condition, const char* format, ...) {
+ 254:src-gen/Main/core/utils/util.c **** 	if (!condition) {
+ 255:src-gen/Main/core/utils/util.c ****     	va_list args;
+ 256:src-gen/Main/core/utils/util.c ****     	va_start (args, format);
+ 257:src-gen/Main/core/utils/util.c ****     	lf_vprint_error_and_exit(format, args);
+ 258:src-gen/Main/core/utils/util.c ****     	va_end (args);
+ 259:src-gen/Main/core/utils/util.c ****     	exit(EXIT_FAILURE);
+ 260:src-gen/Main/core/utils/util.c **** 	}
+ 261:src-gen/Main/core/utils/util.c **** }
+ 262:src-gen/Main/core/utils/util.c **** 
+ 263:src-gen/Main/core/utils/util.c **** /**
+ 264:src-gen/Main/core/utils/util.c ****  * varargs alternative of "lf_print_error_and_exit"
+ 265:src-gen/Main/core/utils/util.c ****  */
+ 266:src-gen/Main/core/utils/util.c **** void lf_vprint_error_and_exit(const char* format, va_list args) {
+ 812              		.loc 1 266 65 is_stmt 1 view -0
+ 813              		.cfi_startproc
+ 814              		@ args = 0, pretend = 0, frame = 0
+ 815              		@ frame_needed = 0, uses_anonymous_args = 0
+ 816              		.loc 1 266 65 is_stmt 0 view .LVU115
+ 817 0000 00B5     		push	{lr}
+ 818              	.LCFI49:
+ 819              		.cfi_def_cfa_offset 4
+ 820              		.cfi_offset 14, -4
+ 821 0002 83B0     		sub	sp, sp, #12
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 21
+
+
+ 822              	.LCFI50:
+ 823              		.cfi_def_cfa_offset 16
+ 824 0004 0246     		mov	r2, r0
+ 825 0006 0B46     		mov	r3, r1
+ 267:src-gen/Main/core/utils/util.c ****     _lf_message_print(1, "FATAL ERROR: ", format, args, LOG_LEVEL_ERROR);
+ 826              		.loc 1 267 5 is_stmt 1 view .LVU116
+ 827 0008 0021     		movs	r1, #0
+ 828              	.LVL57:
+ 829              		.loc 1 267 5 is_stmt 0 view .LVU117
+ 830 000a 0091     		str	r1, [sp]
+ 831 000c 0349     		ldr	r1, .L52
+ 832 000e 0120     		movs	r0, #1
+ 833              	.LVL58:
+ 834              		.loc 1 267 5 view .LVU118
+ 835 0010 FFF7FEFF 		bl	_lf_message_print
+ 836              	.LVL59:
+ 268:src-gen/Main/core/utils/util.c **** }
+ 837              		.loc 1 268 1 view .LVU119
+ 838 0014 03B0     		add	sp, sp, #12
+ 839              	.LCFI51:
+ 840              		.cfi_def_cfa_offset 4
+ 841              		@ sp needed
+ 842 0016 5DF804FB 		ldr	pc, [sp], #4
+ 843              	.L53:
+ 844 001a 00BF     		.align	2
+ 845              	.L52:
+ 846 001c 00000000 		.word	.LC7
+ 847              		.cfi_endproc
+ 848              	.LFE17:
+ 850              		.section	.text.lf_print_error_and_exit,"ax",%progbits
+ 851              		.align	1
+ 852              		.global	lf_print_error_and_exit
+ 853              		.syntax unified
+ 854              		.thumb
+ 855              		.thumb_func
+ 857              	lf_print_error_and_exit:
+ 858              	.LVL60:
+ 859              	.LFB15:
+ 240:src-gen/Main/core/utils/util.c ****     va_list args;
+ 860              		.loc 1 240 55 is_stmt 1 view -0
+ 861              		.cfi_startproc
+ 862              		@ Volatile: function does not return.
+ 863              		@ args = 4, pretend = 16, frame = 8
+ 864              		@ frame_needed = 0, uses_anonymous_args = 1
+ 240:src-gen/Main/core/utils/util.c ****     va_list args;
+ 865              		.loc 1 240 55 is_stmt 0 view .LVU121
+ 866 0000 0FB4     		push	{r0, r1, r2, r3}
+ 867              	.LCFI52:
+ 868              		.cfi_def_cfa_offset 16
+ 869              		.cfi_offset 0, -16
+ 870              		.cfi_offset 1, -12
+ 871              		.cfi_offset 2, -8
+ 872              		.cfi_offset 3, -4
+ 873 0002 00B5     		push	{lr}
+ 874              	.LCFI53:
+ 875              		.cfi_def_cfa_offset 20
+ 876              		.cfi_offset 14, -20
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 22
+
+
+ 877 0004 83B0     		sub	sp, sp, #12
+ 878              	.LCFI54:
+ 879              		.cfi_def_cfa_offset 32
+ 880 0006 04A9     		add	r1, sp, #16
+ 881 0008 51F8040B 		ldr	r0, [r1], #4
+ 241:src-gen/Main/core/utils/util.c ****     va_start (args, format);
+ 882              		.loc 1 241 5 is_stmt 1 view .LVU122
+ 242:src-gen/Main/core/utils/util.c ****     lf_vprint_error_and_exit(format, args);
+ 883              		.loc 1 242 5 view .LVU123
+ 884 000c 0191     		str	r1, [sp, #4]
+ 243:src-gen/Main/core/utils/util.c ****     va_end (args);
+ 885              		.loc 1 243 5 view .LVU124
+ 886 000e FFF7FEFF 		bl	lf_vprint_error_and_exit
+ 887              	.LVL61:
+ 244:src-gen/Main/core/utils/util.c ****     exit(EXIT_FAILURE);
+ 888              		.loc 1 244 5 view .LVU125
+ 245:src-gen/Main/core/utils/util.c **** }
+ 889              		.loc 1 245 5 view .LVU126
+ 890 0012 0120     		movs	r0, #1
+ 891 0014 FFF7FEFF 		bl	exit
+ 892              	.LVL62:
+ 893              		.cfi_endproc
+ 894              	.LFE15:
+ 896              		.section	.text.lf_assert,"ax",%progbits
+ 897              		.align	1
+ 898              		.global	lf_assert
+ 899              		.syntax unified
+ 900              		.thumb
+ 901              		.thumb_func
+ 903              	lf_assert:
+ 904              	.LVL63:
+ 905              	.LFB16:
+ 253:src-gen/Main/core/utils/util.c **** 	if (!condition) {
+ 906              		.loc 1 253 57 view -0
+ 907              		.cfi_startproc
+ 908              		@ args = 4, pretend = 12, frame = 8
+ 909              		@ frame_needed = 0, uses_anonymous_args = 1
+ 254:src-gen/Main/core/utils/util.c ****     	va_list args;
+ 910              		.loc 1 254 2 view .LVU128
+ 254:src-gen/Main/core/utils/util.c ****     	va_list args;
+ 911              		.loc 1 254 5 is_stmt 0 view .LVU129
+ 912 0000 00B1     		cbz	r0, .L61
+ 913 0002 7047     		bx	lr
+ 914              	.L61:
+ 253:src-gen/Main/core/utils/util.c **** 	if (!condition) {
+ 915              		.loc 1 253 57 view .LVU130
+ 916 0004 0EB4     		push	{r1, r2, r3}
+ 917              	.LCFI55:
+ 918              		.cfi_def_cfa_offset 12
+ 919              		.cfi_offset 1, -12
+ 920              		.cfi_offset 2, -8
+ 921              		.cfi_offset 3, -4
+ 922 0006 00B5     		push	{lr}
+ 923              	.LCFI56:
+ 924              		.cfi_def_cfa_offset 16
+ 925              		.cfi_offset 14, -16
+ 926 0008 82B0     		sub	sp, sp, #8
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 23
+
+
+ 927              	.LCFI57:
+ 928              		.cfi_def_cfa_offset 24
+ 929              	.LBB4:
+ 255:src-gen/Main/core/utils/util.c ****     	va_start (args, format);
+ 930              		.loc 1 255 6 is_stmt 1 view .LVU131
+ 256:src-gen/Main/core/utils/util.c ****     	lf_vprint_error_and_exit(format, args);
+ 931              		.loc 1 256 6 view .LVU132
+ 932 000a 04A9     		add	r1, sp, #16
+ 933 000c 0191     		str	r1, [sp, #4]
+ 257:src-gen/Main/core/utils/util.c ****     	va_end (args);
+ 934              		.loc 1 257 6 view .LVU133
+ 935 000e 0398     		ldr	r0, [sp, #12]
+ 936              	.LVL64:
+ 257:src-gen/Main/core/utils/util.c ****     	va_end (args);
+ 937              		.loc 1 257 6 is_stmt 0 view .LVU134
+ 938 0010 FFF7FEFF 		bl	lf_vprint_error_and_exit
+ 939              	.LVL65:
+ 258:src-gen/Main/core/utils/util.c ****     	exit(EXIT_FAILURE);
+ 940              		.loc 1 258 6 is_stmt 1 view .LVU135
+ 259:src-gen/Main/core/utils/util.c **** 	}
+ 941              		.loc 1 259 6 view .LVU136
+ 942 0014 0120     		movs	r0, #1
+ 943 0016 FFF7FEFF 		bl	exit
+ 944              	.LVL66:
+ 945              	.LBE4:
+ 946              		.cfi_endproc
+ 947              	.LFE16:
+ 949              		.section	.text.lf_register_print_function,"ax",%progbits
+ 950              		.align	1
+ 951              		.global	lf_register_print_function
+ 952              		.syntax unified
+ 953              		.thumb
+ 954              		.thumb_func
+ 956              	lf_register_print_function:
+ 957              	.LVL67:
+ 958              	.LFB18:
+ 269:src-gen/Main/core/utils/util.c **** 
+ 270:src-gen/Main/core/utils/util.c **** /**
+ 271:src-gen/Main/core/utils/util.c ****  * Register a function to display messages. After calling this,
+ 272:src-gen/Main/core/utils/util.c ****  * all messages passed to the above print functions will be
+ 273:src-gen/Main/core/utils/util.c ****  * printed using the specified function rather than printf
+ 274:src-gen/Main/core/utils/util.c ****  * if their log level is greater than the specified level.
+ 275:src-gen/Main/core/utils/util.c ****  * The level should be one of LOG_LEVEL_ERROR, LOG_LEVEL_WARNING,
+ 276:src-gen/Main/core/utils/util.c ****  * LOG_LEVEL_INFO, LOG_LEVEL_LOG, or LOG_LEVEL_DEBUG.
+ 277:src-gen/Main/core/utils/util.c ****  *
+ 278:src-gen/Main/core/utils/util.c ****  * @param function The print message function or NULL to revert
+ 279:src-gen/Main/core/utils/util.c ****  *  to using printf.
+ 280:src-gen/Main/core/utils/util.c ****  * @param log_level The level of messages to redirect.
+ 281:src-gen/Main/core/utils/util.c ****  */
+ 282:src-gen/Main/core/utils/util.c **** void lf_register_print_function(print_message_function_t* function, int log_level) {
+ 959              		.loc 1 282 84 view -0
+ 960              		.cfi_startproc
+ 961              		@ args = 0, pretend = 0, frame = 0
+ 962              		@ frame_needed = 0, uses_anonymous_args = 0
+ 963              		@ link register save eliminated.
+ 283:src-gen/Main/core/utils/util.c ****     print_message_function = function;
+ 964              		.loc 1 283 5 view .LVU138
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 24
+
+
+ 965              		.loc 1 283 28 is_stmt 0 view .LVU139
+ 966 0000 024B     		ldr	r3, .L63
+ 967 0002 1860     		str	r0, [r3]
+ 284:src-gen/Main/core/utils/util.c ****     print_message_level = log_level;
+ 968              		.loc 1 284 5 is_stmt 1 view .LVU140
+ 969              		.loc 1 284 25 is_stmt 0 view .LVU141
+ 970 0004 024B     		ldr	r3, .L63+4
+ 971 0006 1960     		str	r1, [r3]
+ 285:src-gen/Main/core/utils/util.c **** }
+ 972              		.loc 1 285 1 view .LVU142
+ 973 0008 7047     		bx	lr
+ 974              	.L64:
+ 975 000a 00BF     		.align	2
+ 976              	.L63:
+ 977 000c 00000000 		.word	print_message_function
+ 978 0010 00000000 		.word	print_message_level
+ 979              		.cfi_endproc
+ 980              	.LFE18:
+ 982              		.global	print_message_level
+ 983              		.section	.data.print_message_level,"aw"
+ 984              		.align	2
+ 987              	print_message_level:
+ 988 0000 FFFFFFFF 		.word	-1
+ 989              		.global	print_message_function
+ 990              		.section	.bss.print_message_function,"aw",%nobits
+ 991              		.align	2
+ 994              	print_message_function:
+ 995 0000 00000000 		.space	4
+ 996              		.global	_lf_my_fed_id
+ 997              		.section	.data._lf_my_fed_id,"aw"
+ 998              		.align	2
+ 1001              	_lf_my_fed_id:
+ 1002 0000 FFFFFFFF 		.word	-1
+ 1003              		.text
+ 1004              	.Letext0:
+ 1005              		.file 2 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/includ
+ 1006              		.file 3 "src-gen/Main/include/core/utils/util.h"
+ 1007              		.file 4 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/includ
+ 1008              		.file 5 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/_types.h"
+ 1009              		.file 6 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/reent.h"
+ 1010              		.file 7 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/lock.h"
+ 1011              		.file 8 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdio.h"
+ 1012              		.file 9 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdlib.h"
+ 1013              		.file 10 "/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/string.h"
+ 1014              		.file 11 "<built-in>"
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 25
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 util.c
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:21     .text.lf_fed_id:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:27     .text.lf_fed_id:00000000 lf_fed_id
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:42     .text.lf_fed_id:00000008 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:1001   .data._lf_my_fed_id:00000000 _lf_my_fed_id
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:47     .rodata._lf_message_print.str1.4:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:54     .text._lf_message_print:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:60     .text._lf_message_print:00000000 _lf_message_print
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:239    .text._lf_message_print:000000a4 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:987    .data.print_message_level:00000000 print_message_level
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:994    .bss.print_message_function:00000000 print_message_function
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:250    .rodata.lf_vprint.str1.4:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:254    .text.lf_vprint:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:260    .text.lf_vprint:00000000 lf_vprint
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:297    .text.lf_vprint:0000001c $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:302    .text.lf_print:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:308    .text.lf_print:00000000 lf_print
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:360    .rodata.lf_vprint_log.str1.4:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:364    .text.lf_vprint_log:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:370    .text.lf_vprint_log:00000000 lf_vprint_log
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:407    .text.lf_vprint_log:0000001c $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:412    .text.lf_print_log:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:418    .text.lf_print_log:00000000 lf_print_log
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:470    .rodata.lf_vprint_debug.str1.4:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:474    .text.lf_vprint_debug:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:480    .text.lf_vprint_debug:00000000 lf_vprint_debug
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:517    .text.lf_vprint_debug:0000001c $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:522    .text.lf_print_debug:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:528    .text.lf_print_debug:00000000 lf_print_debug
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:580    .rodata.lf_vprint_error.str1.4:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:584    .text.lf_vprint_error:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:590    .text.lf_vprint_error:00000000 lf_vprint_error
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:627    .text.lf_vprint_error:0000001c $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:632    .text.lf_print_error:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:638    .text.lf_print_error:00000000 lf_print_error
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:690    .rodata.lf_vprint_warning.str1.4:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:694    .text.lf_vprint_warning:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:700    .text.lf_vprint_warning:00000000 lf_vprint_warning
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:736    .text.lf_vprint_warning:00000018 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:741    .text.lf_print_warning:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:747    .text.lf_print_warning:00000000 lf_print_warning
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:799    .rodata.lf_vprint_error_and_exit.str1.4:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:803    .text.lf_vprint_error_and_exit:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:809    .text.lf_vprint_error_and_exit:00000000 lf_vprint_error_and_exit
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:846    .text.lf_vprint_error_and_exit:0000001c $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:851    .text.lf_print_error_and_exit:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:857    .text.lf_print_error_and_exit:00000000 lf_print_error_and_exit
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:897    .text.lf_assert:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:903    .text.lf_assert:00000000 lf_assert
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:950    .text.lf_register_print_function:00000000 $t
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:956    .text.lf_register_print_function:00000000 lf_register_print_function
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:977    .text.lf_register_print_function:0000000c $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:984    .data.print_message_level:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:991    .bss.print_message_function:00000000 $d
+/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s:998    .data._lf_my_fed_id:00000000 $d
+
+ARM GAS  /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccE1ckqw.s 			page 26
+
+
+UNDEFINED SYMBOLS
+strlen
+malloc
+snprintf
+free
+vfprintf
+_impure_ptr
+exit
