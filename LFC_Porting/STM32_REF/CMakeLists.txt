@@ -11,7 +11,7 @@ set(CPU_PARAMETERS
     -mcpu=cortex-m4
     -mthumb
     -mfpu=fpv4-sp-d16
-    -mfloat-abi=hard)
+    -mfloat-abi=softfp)
 
 set(STARTUP_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/CubeMX/startup_stm32f446xx.s)
 set(MCU_LINKER_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/CubeMX/STM32F446RETx_FLASH.ld)

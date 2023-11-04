@@ -409,4 +409,6 @@ int lf_critical_section_enter(environment_t* env) {
 int lf_critical_section_exit(environment_t* env) {
     return lf_enable_interrupts_nested();
 }
+#else
+    #error "Reactor not defined. Something fucked up"
 #endif

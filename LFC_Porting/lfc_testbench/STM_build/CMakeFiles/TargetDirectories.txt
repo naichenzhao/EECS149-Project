@@ -1,6 +1,14 @@
-/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles/STM32_REF.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles/Main.dir
 /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles/edit_cache.dir
 /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles/rebuild_cache.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles/list_install_components.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles/install.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles/install/local.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles/install/strip.dir
 /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/Main/core/CMakeFiles/core.dir
 /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/Main/core/CMakeFiles/edit_cache.dir
 /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/Main/core/CMakeFiles/rebuild_cache.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/Main/core/CMakeFiles/list_install_components.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/Main/core/CMakeFiles/install.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/Main/core/CMakeFiles/install/local.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/Main/core/CMakeFiles/install/strip.dir

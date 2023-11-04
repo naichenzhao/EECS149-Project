@@ -12,8 +12,9 @@
 #include "include/core/port.h"
 #include "include/core/environment.h"
 int lf_reactor_c_main(int argc, const char* argv[]);
-int main(void) {
-   return lf_reactor_c_main(0, NULL);
+int main(void)
+{
+    return lf_reactor_c_main(0, NULL);
 }
 void _lf_set_default_command_line_options() {}
 #include "_main_main.h"

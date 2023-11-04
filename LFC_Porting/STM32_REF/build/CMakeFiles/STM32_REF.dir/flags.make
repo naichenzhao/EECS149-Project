@@ -7,11 +7,11 @@ ASM_DEFINES = -DSTM32F446xx -DUSE_HAL_DRIVER
 
 ASM_INCLUDES = -I/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF/Core/Inc -I/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF/Drivers/STM32F4xx_HAL_Driver/Inc -I/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF/Drivers/CMSIS/Include -I/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF
 
-ASM_FLAGS = -g -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb
+ASM_FLAGS = -g -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb
 
 C_DEFINES = -DSTM32F446xx -DUSE_HAL_DRIVER
 
 C_INCLUDES = -I/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF/Core/Inc -I/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF/Drivers/STM32F4xx_HAL_Driver/Inc -I/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF/Drivers/CMSIS/Include -I/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF
 
-C_FLAGS = -g -std=gnu11 -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb
+C_FLAGS = -g -std=gnu11 -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb
 

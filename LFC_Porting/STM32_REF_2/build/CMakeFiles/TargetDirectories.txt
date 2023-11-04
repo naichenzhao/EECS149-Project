@@ -1,0 +1,6 @@
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF_2/build/CMakeFiles/STM32_REF.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF_2/build/CMakeFiles/edit_cache.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF_2/build/CMakeFiles/rebuild_cache.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF_2/build/STM32_SDK/CMakeFiles/STM32_SDK.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF_2/build/STM32_SDK/CMakeFiles/edit_cache.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/STM32_REF_2/build/STM32_SDK/CMakeFiles/rebuild_cache.dir

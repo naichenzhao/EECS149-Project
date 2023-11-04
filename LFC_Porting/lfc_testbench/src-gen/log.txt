@@ -1,0 +1,81 @@
+rm -fR ../STM_build
+cmake -B../STM_build -DCMAKE_TOOLCHAIN_FILE=arm-none-eabi-gcc.cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=true
+-- The C compiler identification is GNU 12.3.1
+-- The CXX compiler identification is GNU 12.3.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/local/bin/arm-none-eabi-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/local/bin/arm-none-eabi-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/local/bin/arm-none-eabi-gcc
+-- Including sources for unthreaded runtime.
+-- CURRENT SYSTEM NAME: STM32f4
+-- CORRECT PLATFORM HAS BEEN DEFINED
+ 
+-- Including the following sources: tag.c, port.c, mixed_radix.c, reactor_common.c, lf_token.c, environment.c, reactor.c, vector.c, pqueue.c, util.c, semaphore.c, hashset.c, hashset_itr.c, modes.c, lf_unix_clock_support.c, lf_unix_syscall_support.c, lf_linux_support.c, lf_macos_support.c, lf_windows_support.c, lf_nrf52_support.c, lf_zephyr_support.c, lf_rp2040_support.c, lf_STM32f4_support.c
+-- Applying preprocessor definitions...
+-- Configuring done (0.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build
+cd ../STM_build && make -j8
+[  3%] Building C object Main/core/CMakeFiles/core.dir/tag.c.obj
+[  3%] Building C object Main/core/CMakeFiles/core.dir/lf_token.c.obj
+[  5%] Building C object Main/core/CMakeFiles/core.dir/mixed_radix.c.obj
+[ 11%] Building C object Main/core/CMakeFiles/core.dir/port.c.obj
+[ 11%] Building C object Main/core/CMakeFiles/core.dir/reactor_common.c.obj
+[ 11%] Building C object Main/core/CMakeFiles/core.dir/environment.c.obj
+[ 13%] Building C object Main/core/CMakeFiles/core.dir/reactor.c.obj
+[ 15%] Building C object Main/core/CMakeFiles/core.dir/utils/vector.c.obj
+[ 17%] Building C object Main/core/CMakeFiles/core.dir/utils/pqueue.c.obj
+[ 19%] Building C object Main/core/CMakeFiles/core.dir/utils/util.c.obj
+[ 21%] Building C object Main/core/CMakeFiles/core.dir/utils/semaphore.c.obj
+[ 23%] Building C object Main/core/CMakeFiles/core.dir/utils/hashset/hashset.c.obj
+[ 25%] Building C object Main/core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.obj
+[ 27%] Building C object Main/core/CMakeFiles/core.dir/modal_models/modes.c.obj
+[ 29%] Building C object Main/core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.obj
+[ 31%] Building C object Main/core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.obj
+[ 33%] Building C object Main/core/CMakeFiles/core.dir/platform/lf_macos_support.c.obj
+[ 35%] Building C object Main/core/CMakeFiles/core.dir/platform/lf_linux_support.c.obj
+[ 37%] Building C object Main/core/CMakeFiles/core.dir/platform/lf_windows_support.c.obj
+[ 39%] Building C object Main/core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.obj
+[ 43%] Building C object Main/core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.obj
+[ 43%] Building C object Main/core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.obj
+[ 45%] Building C object Main/core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.obj
+[ 47%] Linking C static library libcore.a
+[ 47%] Built target core
+[ 49%] Building C object CMakeFiles/STM32_REF.dir/Core/Src/STM_main.c.obj
+[ 50%] Building C object CMakeFiles/STM32_REF.dir/Core/Src/stm32f4xx_it.c.obj
+[ 52%] Building C object CMakeFiles/STM32_REF.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+[ 56%] Building C object CMakeFiles/STM32_REF.dir/Core/Src/system_stm32f4xx.c.obj
+[ 58%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+[ 58%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+[ 60%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+[ 62%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
+[ 64%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
+[ 66%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
+[ 68%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
+[ 70%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
+[ 72%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
+[ 74%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+[ 76%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
+[ 78%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+[ 80%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+[ 82%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj
+[ 84%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj
+[ 86%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+[ 88%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+[ 90%] Building C object CMakeFiles/STM32_REF.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+[ 92%] Building ASM object CMakeFiles/STM32_REF.dir/CubeMX/startup_stm32f446xx.s.obj
+[ 94%] Building C object CMakeFiles/STM32_REF.dir/Main/_main_main.c.obj
+[ 96%] Building C object CMakeFiles/STM32_REF.dir/Main/lib/schedule.c.obj
+[ 98%] Building C object CMakeFiles/STM32_REF.dir/Main/Main.c.obj
+[100%] Linking C executable STM32_REF.elf
+Memory region         Used Size  Region Size  %age Used
+             RAM:        2080 B       128 KB      1.59%
+           FLASH:        9856 B       512 KB      1.88%

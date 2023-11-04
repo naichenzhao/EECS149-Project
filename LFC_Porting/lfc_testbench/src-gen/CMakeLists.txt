@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.12)
 # ##############################################################################
 # Edit your MCU information up to the next border
-project(STM32_REF)
+project(Main)
 set(PROJECT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Main)
 
 
@@ -11,10 +11,21 @@ set(PROJECT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Main)
 # ==============================================================================
 
 # do not print install messages
-set(CMAKE_INSTALL_MESSAGE NEVER)
+# set(CMAKE_INSTALL_MESSAGE NEVER)
 
 # LF set system name
 set(CMAKE_SYSTEM_NAME STM32f4)
+
+# Set default values for build parameters
+if (NOT DEFINED LF_REACTION_GRAPH_BREADTH)
+    set(LF_REACTION_GRAPH_BREADTH 1)
+endif()
+if (NOT DEFINED LF_THREADED AND NOT DEFINED LF_UNTHREADED)
+    set(LF_UNTHREADED 1)
+endif()
+if (NOT DEFINED LOG_LEVEL)
+    set(LOG_LEVEL 2)
+endif()
 
 # ==============================================================================
 #
@@ -28,12 +39,12 @@ set(CPU_PARAMETERS
     -mcpu=cortex-m4
     -mthumb
     -mfpu=fpv4-sp-d16
-    -mfloat-abi=hard)
+    -mfloat-abi=softfp)
 
 set(STARTUP_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/CubeMX/startup_stm32f446xx.s)
 set(MCU_LINKER_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/CubeMX/STM32F446RETx_FLASH.ld)
 # ##############################################################################
-set(EXECUTABLE ${CMAKE_PROJECT_NAME})
+set(EXECUTABLE Main)
 enable_language(C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
@@ -53,12 +64,12 @@ set(PROJECT_INCLUDE_DIRECTORIES
     ${PROJECT_DIR}
     ${PROJECT_DIR}/include/api
     # ${PROJECT_DIR}/include/Main
-    ${PROJECT_DIR}/include/core
-    # ${PROJECT_DIR}/include/core/federated
-    ${PROJECT_DIR}/include/core/modal_models
-    ${PROJECT_DIR}/include/core/platform
-    # ${PROJECT_DIR}/include/core/threaded
-    ${PROJECT_DIR}/include/core/utils
+    # ${PROJECT_DIR}/include/core
+    # # ${PROJECT_DIR}/include/core/federated
+    # ${PROJECT_DIR}/include/core/modal_models
+    # ${PROJECT_DIR}/include/core/platform
+    # # ${PROJECT_DIR}/include/core/threaded
+    # ${PROJECT_DIR}/include/core/utils
 )
 
 # Sources
@@ -82,7 +93,11 @@ file(GLOB_RECURSE PROJECT_SOURCES FOLLOW_SYMLINKS
 add_executable(${EXECUTABLE}
     ${STM32CUBEMX_SOURCES} 
     # ${PROJECT_SOURCES}
-    ${STARTUP_SCRIPT})
+    ${STARTUP_SCRIPT}
+    ${PROJECT_DIR}/lib/schedule.c
+    ${PROJECT_DIR}/_main_main.c
+    ${PROJECT_DIR}/Main.c
+    )
 
 # Embedded macros(defines)
 target_compile_definitions(${EXECUTABLE} PRIVATE
@@ -92,7 +107,7 @@ target_compile_definitions(${EXECUTABLE} PRIVATE
 # Add header directories (AFTER add_executable !!)
 target_include_directories(${EXECUTABLE} PRIVATE
     ${CUBEMX_INCLUDE_DIRECTORIES}
-    ${PROJECT_INCLUDE_DIRECTORIES}
+    # ${PROJECT_INCLUDE_DIRECTORIES}
 )
 
 # Compiler and linker options
@@ -140,18 +155,23 @@ add_custom_command(TARGET ${EXECUTABLE} POST_BUILD
 
 # LF add subdirectory
 add_subdirectory(${PROJECT_DIR}/core)
-target_link_libraries(${EXECUTABLE} PRIVATE core)
+target_link_libraries(${EXECUTABLE} PUBLIC core)
+target_include_directories(${EXECUTABLE} PUBLIC ${PROJECT_DIR})
+target_include_directories(${EXECUTABLE} PUBLIC ${PROJECT_DIR}/include/)
+target_include_directories(${EXECUTABLE} PUBLIC ${PROJECT_DIR}/include/api)
+target_include_directories(${EXECUTABLE} PUBLIC ${PROJECT_DIR}/include/core)
+target_include_directories(${EXECUTABLE} PUBLIC ${PROJECT_DIR}/include/core/platform)
+target_include_directories(${EXECUTABLE} PUBLIC ${PROJECT_DIR}/include/core/modal_models)
+target_include_directories(${EXECUTABLE} PUBLIC ${PROJECT_DIR}/include/core/utils)
 
-# Set default values for build parameters
-if (NOT DEFINED LF_REACTION_GRAPH_BREADTH)
-    set(LF_REACTION_GRAPH_BREADTH 1)
-endif()
-if (NOT DEFINED LF_THREADED AND NOT DEFINED LF_UNTHREADED)
-    set(LF_UNTHREADED 1)
-endif()
-if (NOT DEFINED LOG_LEVEL)
-    set(LOG_LEVEL 2)
-endif()
+
+
+target_compile_definitions( ${EXECUTABLE} PUBLIC LF_UNTHREADED=1)
+    install(
+        TARGETS ${EXECUTABLE}
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    )
+
 # ==============================================================================
 #
 # ==============================================================================

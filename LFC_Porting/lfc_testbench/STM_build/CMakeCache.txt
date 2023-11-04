@@ -162,7 +162,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=STM32_REF
+CMAKE_PROJECT_NAME:STATIC=Main
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/local/bin/arm-none-eabi-ranlib
@@ -233,13 +233,13 @@ CMAKE_TOOLCHAIN_FILE:FILEPATH=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Por
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-STM32_REF_BINARY_DIR:STATIC=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build
+Main_BINARY_DIR:STATIC=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build
 
 //Value Computed by CMake
-STM32_REF_IS_TOP_LEVEL:STATIC=ON
+Main_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-STM32_REF_SOURCE_DIR:STATIC=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen
+Main_SOURCE_DIR:STATIC=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen
 
 
 ########################

@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_te
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/STM32_REF.dir/all
+all: CMakeFiles/Main.dir/all
 all: Main/core/all
 .PHONY : all
 
@@ -72,7 +72,7 @@ preinstall: Main/core/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/STM32_REF.dir/clean
+clean: CMakeFiles/Main.dir/clean
 clean: Main/core/clean
 .PHONY : clean
 
@@ -92,30 +92,30 @@ Main/core/clean: Main/core/CMakeFiles/core.dir/clean
 .PHONY : Main/core/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/STM32_REF.dir
+# Target rules for target CMakeFiles/Main.dir
 
 # All Build rule for target.
-CMakeFiles/STM32_REF.dir/all: Main/core/CMakeFiles/core.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/STM32_REF.dir/build.make CMakeFiles/STM32_REF.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/STM32_REF.dir/build.make CMakeFiles/STM32_REF.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 "Built target STM32_REF"
-.PHONY : CMakeFiles/STM32_REF.dir/all
+CMakeFiles/Main.dir/all: Main/core/CMakeFiles/core.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 "Built target Main"
+.PHONY : CMakeFiles/Main.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/STM32_REF.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles 48
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/STM32_REF.dir/all
+CMakeFiles/Main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles 51
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles 0
-.PHONY : CMakeFiles/STM32_REF.dir/rule
+.PHONY : CMakeFiles/Main.dir/rule
 
 # Convenience name for target.
-STM32_REF: CMakeFiles/STM32_REF.dir/rule
-.PHONY : STM32_REF
+Main: CMakeFiles/Main.dir/rule
+.PHONY : Main
 
 # clean rule for target.
-CMakeFiles/STM32_REF.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/STM32_REF.dir/build.make CMakeFiles/STM32_REF.dir/clean
-.PHONY : CMakeFiles/STM32_REF.dir/clean
+CMakeFiles/Main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/clean
+.PHONY : CMakeFiles/Main.dir/clean
 
 #=============================================================================
 # Target rules for target Main/core/CMakeFiles/core.dir
@@ -124,7 +124,7 @@ CMakeFiles/STM32_REF.dir/clean:
 Main/core/CMakeFiles/core.dir/all:
 	$(MAKE) $(MAKESILENT) -f Main/core/CMakeFiles/core.dir/build.make Main/core/CMakeFiles/core.dir/depend
 	$(MAKE) $(MAKESILENT) -f Main/core/CMakeFiles/core.dir/build.make Main/core/CMakeFiles/core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48 "Built target core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51 "Built target core"
 .PHONY : Main/core/CMakeFiles/core.dir/all
 
 # Build rule for subdir invocation for target.

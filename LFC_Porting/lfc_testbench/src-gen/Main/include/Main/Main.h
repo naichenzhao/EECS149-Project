@@ -19,3 +19,5 @@ typedef struct main_self_t{
     int end[0]; // placeholder; MSVC does not compile empty structs
 } main_self_t;
 #endif
+
+int main(void);
