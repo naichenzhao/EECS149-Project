@@ -13,6 +13,8 @@ lf_rp2040_support.c
 lf_STM32f4_support.c
 )
 
+message(STATUS "CURRENT SYSTEM NAME: " ${CMAKE_SYSTEM_NAME})
+
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
     set(CMAKE_SYSTEM_VERSION 10.0)
     message("Using Windows SDK version ${CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION}")
@@ -24,6 +26,7 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Rp2040")
     target_compile_definitions(core PUBLIC PLATFORM_RP2040)
 elseif(${CMAKE_SYSTEM_NAME} STREQUAL "STM32f4")
     target_compile_definitions(core PUBLIC PLATFORM_STM32F4)
+    message(STATUS "CORRECT PLATFORM HAS BEEN DEFINED\n ")
 endif()
 
 # Add sources to the list for debug info

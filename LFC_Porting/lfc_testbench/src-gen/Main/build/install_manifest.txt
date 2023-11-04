@@ -1,1 +1,0 @@
-/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/bin/Main.elf

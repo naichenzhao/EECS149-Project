@@ -6,7 +6,11 @@
 // I have no idea what the fuck TTY is so i guess we dont support it
 #define NO_TTY
 
+// #include <../../../STM_Core/Inc/main.h>
+// #include <../../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h>
 #include <stm32f4xx_hal.h>
+
+// src-gen/Main/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 
 // Defines for formatting time in printf for pico
 #define PRINTF_TAG "(" PRINTF_TIME ", " PRINTF_MICROSTEP ")"
@@ -20,4 +24,4 @@
 #error "I have no idea how to support threading"
 #endif // LF_THREADED
 
-#endif // LF_nRF52832_SUPPORT_H
+#endif
