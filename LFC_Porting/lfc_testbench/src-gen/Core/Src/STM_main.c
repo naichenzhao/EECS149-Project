@@ -67,56 +67,56 @@ int _write(int file, char *ptr, int len) {
   return len;
 }
 
-void _lf_initialize_clock(void) {
-  // Configure TIM5 as our clock timer
-  // TIM5 is set as a 32-bit timer
+// void _lf_initialize_clock(void) {
+//   // Configure TIM5 as our clock timer
+//   // TIM5 is set as a 32-bit timer
   
-  __HAL_RCC_TIM5_CLK_ENABLE();
-  TIM5->CR1 = TIM_CR1_CEN;
-  TIM5->PSC = 15;
-  // TIM5->ARR = 5000000 * 16;
-  // TIM5->PSC = 16;
-  TIM5->DIER |= TIM_DIER_CC1IE;
-  NVIC_EnableIRQ(TIM5_IRQn);      // Enable timer 3 ISR
+//   __HAL_RCC_TIM5_CLK_ENABLE();
+//   TIM5->CR1 = TIM_CR1_CEN;
+//   TIM5->PSC = 15;
+//   // TIM5->ARR = 5000000 * 16;
+//   // TIM5->PSC = 16;
+//   TIM5->DIER |= TIM_DIER_CC1IE;
+//   NVIC_EnableIRQ(TIM5_IRQn);      // Enable timer 3 ISR
 
-  TIM5->CNT = 0xFFFFFFFE;
-}
-/**
- * Write the time since boot into time variable
- */
-uint32_t _lf_clock_now() {
-  uint32_t ns_from_boot;
+//   TIM5->CNT = 0xFFFFFFFE;
+// }
+// /**
+//  * Write the time since boot into time variable
+//  */
+// uint32_t _lf_clock_now() {
+//   uint32_t ns_from_boot;
 
-  // Get the current microseconds from TIM5
-  //      and convert that to nanoseconds.
-  ns_from_boot = (TIM5->CNT);
-  return ns_from_boot;
-}
+//   // Get the current microseconds from TIM5
+//   //      and convert that to nanoseconds.
+//   ns_from_boot = (TIM5->CNT);
+//   return ns_from_boot;
+// }
 
-/**
- * Make the STM32 go honk shoo mimimi for set nanoseconds
- * I essentially stole this from the lf_nrf52 support
- */
-int lf_sleep(uint32_t sleep_duration)
-{
-  uint32_t target_time;
-  uint32_t current_time;
+// /**
+//  * Make the STM32 go honk shoo mimimi for set nanoseconds
+//  * I essentially stole this from the lf_nrf52 support
+//  */
+// int lf_sleep(uint32_t sleep_duration)
+// {
+//   uint32_t target_time;
+//   uint32_t current_time;
 
-  current_time = _lf_clock_now();
-  target_time = current_time + sleep_duration;
-  while (current_time <= target_time)
-  {
-    current_time = _lf_clock_now();
-  }
-  return 0;
-}
+//   current_time = _lf_clock_now();
+//   target_time = current_time + sleep_duration;
+//   while (current_time <= target_time)
+//   {
+//     current_time = _lf_clock_now();
+//   }
+//   return 0;
+// }
 
-void TIM5_IRQHandler(void){
-  if (TIM5->SR & (1 << 1)) {
-    TIM5->SR &= ~(1 << 1);
-    _lf_time_us_high += 1;
-  }
-}
+// void TIM5_IRQHandler(void){
+//   if (TIM5->SR & (1 << 1)) {
+//     TIM5->SR &= ~(1 << 1);
+//     _lf_time_us_high += 1;
+//   }
+// }
 
 /* USER CODE END 0 */
 
@@ -151,7 +151,7 @@ int STM_main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  _lf_initialize_clock();
+  // _lf_initialize_clock();
 
 /* USER CODE END 2 */
 
@@ -160,21 +160,29 @@ int STM_main(void)
 
   int count = 0;
   uint32_t curr_t = 0;
+  printf("--------- START------------ \r\n");
 
   while (1)
   {
     /* USER CODE END WHILE */
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 4; i++) {
       HAL_GPIO_TogglePin(LD5_GPIO_Port, LD5_Pin);
 
-      curr_t = (uint32_t)_lf_clock_now();
-      printf("TIME: %lu UPPER: %lu\r\n", curr_t, (_lf_time_us_high - 1));
-      count++;
+      printf("MESSAGE STM_main\r\n");
       HAL_Delay(500);
     }
-    main();
 
+    main();
+    HAL_Delay(3000);
+
+    for (int i = 0; i < 4; i++)
+    {
+      HAL_GPIO_TogglePin(LD5_GPIO_Port, LD5_Pin);
+
+      printf("MESSAGE STM_main_end\r\n");
+      HAL_Delay(500);
+    }
 
     while(1);
 

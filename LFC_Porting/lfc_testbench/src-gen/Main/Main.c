@@ -11,9 +11,18 @@
 #include "include/core/mixed_radix.h"
 #include "include/core/port.h"
 #include "include/core/environment.h"
+
+#include "STM_main.h"
 int lf_reactor_c_main(int argc, const char* argv[]);
+
 int main(void)
 {
+    for (int i = 0; i < 2; i++)
+    {
+        printf("MESSAGE LF_main\r\n");
+        HAL_GPIO_TogglePin(LD5_GPIO_Port, LD5_Pin);
+        HAL_Delay(500);
+    }
     return lf_reactor_c_main(0, NULL);
 }
 void _lf_set_default_command_line_options() {}

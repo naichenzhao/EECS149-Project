@@ -158,6 +158,8 @@ int main(void)
 
   int count = 0;
   uint32_t curr_t = 0;
+  __disable_irq();
+  __enable_irq();
 
   while (1)
   {

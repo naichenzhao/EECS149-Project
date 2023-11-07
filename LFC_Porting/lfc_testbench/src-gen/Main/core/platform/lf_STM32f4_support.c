@@ -1,4 +1,4 @@
-#ifdef defined(PLATFORM_STM32F4)
+// #ifdef defined(PLATFORM_STM32F4)
 /*************
  I hope this software works LOL
  ***************/
@@ -11,6 +11,12 @@
 //  + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
 //  | Important defines and global variables
 //  + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
+
+static volatile bool _lf_sleep_interrupted = false;
+static volatile bool _lf_async_event = false;
+
+#define LF_MAX_SLEEP_NS USEC(UINT32_MAX)
+#define LF_MIN_SLEEP_NS USEC(5)
 
 // nested critical section counter
 static uint32_t _lf_num_nested_crit_sec = 0;
@@ -32,8 +38,8 @@ static uint32_t _lf_time_us_high = 0;
 // We use timer 5 for our clock (probably better than fucking with sysTick)
 void _lf_initialize_clock(void) {
     // Standard initializations from generated code
-    HAL_Init();
-    SystemClock_Config();
+    // HAL_Init();
+    // SystemClock_Config();
 
     // Configure TIM5 as our 32-bit clock timer
     __HAL_RCC_TIM5_CLK_ENABLE(); // initialize counter
@@ -115,7 +121,7 @@ static void lf_busy_wait_until(instant_t wakeup_time) {
 // I am pretty sure this function doesnt work
 //      Ill try to fix it once i know what the fuck its supposed to do, LOL
 int _lf_interruptable_sleep_until_locked(environment_t *env, instant_t wakeup_time) {
-    // Get the current time and sleep time
+    // // Get the current time and sleep time
     instant_t now;
     _lf_clock_now(&now);
     interval_t duration = wakeup_time - now;
@@ -123,20 +129,20 @@ int _lf_interruptable_sleep_until_locked(environment_t *env, instant_t wakeup_ti
     // Edge case handling for super small duration
     if (duration <= 0) {
         return 0;
-    } else if (duration < LF_MIN_SLEEP_NS) {
+    } else if (duration < 10) {
         lf_busy_wait_until(wakeup_time);
         return 0;
     }
     
     // Enable interrupts and prepare to wait
     _lf_async_event = false;
-    instant_t now;
+    instant_t curr;
     lf_enable_interrupts_nested();
     
     do {
-        _lf_clock_now(&now);
+        _lf_clock_now(&curr);
 
-    // Exit wither when the timer is up or there is an exception
+        // Exit wither when the timer is up or there is an exception
     } while (!_lf_async_event && (now < wakeup_time));
 
     // Disable interrupts again on exit
@@ -200,51 +206,51 @@ int _lf_unthreaded_notify_of_event() {
 //  | Other functions I found -> taken from the generated main.c
 //  + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
 
-void SystemClock_Config(void) {
-    RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-    RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+// void SystemClock_Config(void) {
+//     RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+//     RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-    /** Configure the main internal regulator output voltage
-     */
-    __HAL_RCC_PWR_CLK_ENABLE();
-    __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
+//     /** Configure the main internal regulator output voltage
+//      */
+//     __HAL_RCC_PWR_CLK_ENABLE();
+//     __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
 
-    /** Initializes the RCC Oscillators according to the specified parameters
-     * in the RCC_OscInitTypeDef structure.
-     */
-    RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-    RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-    RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-    RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
-    if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-    {
-        Error_Handler();
-    }
+//     /** Initializes the RCC Oscillators according to the specified parameters
+//      * in the RCC_OscInitTypeDef structure.
+//      */
+//     RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+//     RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+//     RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+//     RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+//     if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+//     {
+//         Error_Handler();
+//     }
 
-    /** Initializes the CPU, AHB and APB buses clocks
-     */
-    RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
-    RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
-    RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
-    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+//     /** Initializes the CPU, AHB and APB buses clocks
+//      */
+//     RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+//     RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+//     RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+//     RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+//     RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
-    {
-        Error_Handler();
-    }
-}
+//     if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+//     {
+//         Error_Handler();
+//     }
+// }
 
 
-void Error_Handler(void)
-{
-    /* USER CODE BEGIN Error_Handler_Debug */
-/* User can add his own implementation to report the HAL error return state */
-__disable_irq();
-while (1)
-{
-    }
-    /* USER CODE END Error_Handler_Debug */
-}
+// void Error_Handler(void)
+// {
+//     /* USER CODE BEGIN Error_Handler_Debug */
+// /* User can add his own implementation to report the HAL error return state */
+// __disable_irq();
+// while (1)
+// {
+//     }
+//     /* USER CODE END Error_Handler_Debug */
+// }
 
-#endif
+// #endif

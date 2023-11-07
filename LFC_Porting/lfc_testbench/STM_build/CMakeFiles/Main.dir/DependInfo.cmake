@@ -44,6 +44,11 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/../include/core/modal_models"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/../include/core/threaded"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/../include/core/utils"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/../../Core/Inc"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/../../Drivers/STM32F4xx_HAL_Driver/Inc"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/../../Drivers/CMSIS/Include"
   )
 
 # The set of dependency files which are needed:

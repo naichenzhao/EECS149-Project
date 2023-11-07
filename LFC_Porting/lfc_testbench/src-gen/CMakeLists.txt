@@ -76,28 +76,15 @@ set(PROJECT_INCLUDE_DIRECTORIES
 file(GLOB_RECURSE STM32CUBEMX_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/Core/*.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/*.c)
-file(GLOB_RECURSE PROJECT_SOURCES FOLLOW_SYMLINKS
-    ${PROJECT_DIR}/*.c
-    ${PROJECT_DIR}/lib/*.c
-    ${PROJECT_DIR}/core/*.c
-    ${PROJECT_DIR}/core/federated/*.c
-    ${PROJECT_DIR}/core/federated/RTI/*.c
-    ${PROJECT_DIR}/core/modal_models/*.c
-    ${PROJECT_DIR}/core/platform/*.c
-    ${PROJECT_DIR}/core/threaded/*.c
-    ${PROJECT_DIR}/core/utils/*.c
-    ${PROJECT_DIR}/core/utils/hashset/*.c
-)
 
 # Executable files
 add_executable(${EXECUTABLE}
     ${STM32CUBEMX_SOURCES} 
-    # ${PROJECT_SOURCES}
     ${STARTUP_SCRIPT}
     ${PROJECT_DIR}/lib/schedule.c
     ${PROJECT_DIR}/_main_main.c
     ${PROJECT_DIR}/Main.c
-    )
+)
 
 # Embedded macros(defines)
 target_compile_definitions(${EXECUTABLE} PRIVATE
@@ -107,7 +94,6 @@ target_compile_definitions(${EXECUTABLE} PRIVATE
 # Add header directories (AFTER add_executable !!)
 target_include_directories(${EXECUTABLE} PRIVATE
     ${CUBEMX_INCLUDE_DIRECTORIES}
-    # ${PROJECT_INCLUDE_DIRECTORIES}
 )
 
 # Compiler and linker options

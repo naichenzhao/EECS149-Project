@@ -8,7 +8,7 @@ void _main_mainreaction_function_0(void* instance_args) {
     _main_main_main_self_t* self = (_main_main_main_self_t*)instance_args; SUPPRESS_UNUSED_WARNING(self);
     
     #line 21 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src/Main.lf"
-    printf("hello world\n");
+    printf("hello world\r\n");
 }
 #include "include/api/set_undef.h"
 #include "include/api/set.h"
@@ -16,7 +16,7 @@ void _main_mainreaction_function_1(void* instance_args) {
     _main_main_main_self_t* self = (_main_main_main_self_t*)instance_args; SUPPRESS_UNUSED_WARNING(self);
     
     #line 25 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src/Main.lf"
-    printf("Timer print\n");
+    printf("Timer print\r\n");
 }
 #include "include/api/set_undef.h"
 _main_main_main_self_t* new__main_main() {

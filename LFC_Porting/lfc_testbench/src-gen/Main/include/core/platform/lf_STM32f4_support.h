@@ -7,8 +7,8 @@
 #define NO_TTY
 
 // #include <../../../STM_Core/Inc/main.h>
-#include <../../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h>
-// #include <stm32f4xx_hal.h>
+// #include <../../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h>
+#include <stm32f4xx_hal.h>
 
 // src-gen/Main/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 
