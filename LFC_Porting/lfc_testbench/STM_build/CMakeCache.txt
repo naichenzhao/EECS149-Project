@@ -224,7 +224,7 @@ CMAKE_STRIP:FILEPATH=/usr/local/bin/arm-none-eabi-strip
 CMAKE_TAPI:FILEPATH=/Users/naichenzhao/opt/anaconda3/bin/tapi
 
 //The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/arm-none-eabi-gcc.cmake
+CMAKE_TOOLCHAIN_FILE:FILEPATH=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/arm-none-eabi-gcc.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -239,7 +239,7 @@ Main_BINARY_DIR:STATIC=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lf
 Main_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-Main_SOURCE_DIR:STATIC=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen
+Main_SOURCE_DIR:STATIC=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main
 
 
 ########################
@@ -337,7 +337,7 @@ CMAKE_GENERATOR_PLATFORM:INTERNAL=
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen
+CMAKE_HOME_DIRECTORY:INTERNAL=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM

@@ -52,86 +52,6 @@ target_include_directories(core PUBLIC ../include/core/threaded)
 target_include_directories(core PUBLIC ../include/core/utils)
 
 
-# ==========================================================
-# Stuff I added
-# ==========================================================
-
-set(CPU_PARAMETERS
-    -mcpu=cortex-m4
-    -mthumb
-    -mfpu=fpv4-sp-d16
-    -mfloat-abi=softfp)
-
-
-set(STARTUP_SCRIPT ../../CubeMX/startup_stm32f446xx.s)
-set(MCU_LINKER_SCRIPT ../../CubeMX/STM32F446RETx_FLASH.ld)
-# ##############################################################################
-
-enable_language(C CXX ASM)
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_C_EXTENSIONS ON)
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS ON)
-
-
-set(MCU_FAMILY STM32F4xx)
-set(MCU_MODEL STM32F446xx)
-
-
-# set(CMAKE_INCLUDE_PATH ../../Drivers/${MCU_FAMILY}_HAL_Driver/Inc)
-# set(CMAKE_INCLUDE_PATH ../../Drivers/${MCU_FAMILY}_HAL_Driver/Inc/Legacy)
-# set(CMAKE_INCLUDE_PATH ../../Drivers/CMSIS/Device/ST/${MCU_FAMILY}/Include)
-# set(CMAKE_INCLUDE_PATH ../../Drivers/CMSIS/Include)
-
-target_compile_definitions(core PRIVATE
-    ${MCU_MODEL}
-    USE_HAL_DRIVER)
-
-set(CUBEMX_INCLUDE_DIRECTORIES
-    ../../Core/Inc
-    ../../Drivers/${MCU_FAMILY}_HAL_Driver/Inc
-    ../../Drivers/${MCU_FAMILY}_HAL_Driver/Inc/Legacy
-    ../../Drivers/CMSIS/Device/ST/${MCU_FAMILY}/Include
-    ../../Drivers/CMSIS/Include
-)
-
-target_include_directories(core PUBLIC 
-    ${CUBEMX_INCLUDE_DIRECTORIES}
-)
-
-
-
-
-target_compile_options(core PRIVATE
-    ${CPU_PARAMETERS}
-    -Wall
-    -Wextra
-    -Wpedantic
-    -Wno-unused-parameter
-    $<$<COMPILE_LANGUAGE:CXX>:
-        -Wno-volatile
-        -Wold-style-cast
-        -Wuseless-cast
-        -Wsuggest-override>
-    $<$<CONFIG:Debug>:-Og -g3 -ggdb>
-    $<$<CONFIG:Release>:-Og -g0>)
-
-target_link_options(core PRIVATE
-    -T${MCU_LINKER_SCRIPT}
-    ${CPU_PARAMETERS}
-    -Wl,-Map=${CMAKE_PROJECT_NAME}.map
-    --specs=nosys.specs
-    -Wl,--start-group
-    -lc
-    -lm
-    -lstdc++
-    -Wl,--end-group
-    -Wl,--print-memory-usage)
-
-# ==========================================================
-
 if (APPLE)
     SET(CMAKE_C_ARCHIVE_CREATE   "<CMAKE_AR> Scr <TARGET> <LINK_FLAGS> <OBJECTS>")
     SET(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> Scr <TARGET> <LINK_FLAGS> <OBJECTS>")
@@ -205,3 +125,52 @@ define(SCHEDULER)
 define(LF_SOURCE_DIRECTORY)
 define(LF_PACKAGE_DIRECTORY)
 define(LF_FILE_SEPARATOR)
+
+
+
+
+# ==========================================================
+# Stuff I added
+# ==========================================================
+
+set(CPU_PARAMETERS
+    -mcpu=cortex-m4
+    -mthumb
+    -mfpu=fpv4-sp-d16
+    -mfloat-abi=softfp)
+
+set(MCU_FAMILY STM32F4xx)
+set(MCU_MODEL STM32F446xx)
+
+
+target_compile_definitions(core PRIVATE
+    ${MCU_MODEL}
+    USE_HAL_DRIVER)
+
+set(CUBEMX_INCLUDE_DIRECTORIES
+    ../STM_sdk/Core/Inc
+    ../STM_sdk/Drivers/${MCU_FAMILY}_HAL_Driver/Inc
+    ../STM_sdk/Drivers/${MCU_FAMILY}_HAL_Driver/Inc/Legacy
+    ../STM_sdk/Drivers/CMSIS/Device/ST/${MCU_FAMILY}/Include
+    ../STM_sdk/Drivers/CMSIS/Include
+)
+
+target_include_directories(core PUBLIC 
+    ${CUBEMX_INCLUDE_DIRECTORIES}
+)
+
+target_compile_options(core PRIVATE
+    ${CPU_PARAMETERS}
+    -Wall
+    -Wextra
+    -Wpedantic
+    -Wno-unused-parameter
+    $<$<COMPILE_LANGUAGE:CXX>:
+        -Wno-volatile
+        -Wold-style-cast
+        -Wuseless-cast
+        -Wsuggest-override>
+    $<$<CONFIG:Debug>:-Og -g3 -ggdb>
+    $<$<CONFIG:Release>:-Og -g0>)
+
+# ==========================================================

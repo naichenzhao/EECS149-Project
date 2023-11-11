@@ -11,13 +11,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.27.7/CMakeCCompiler.cmake"
   "CMakeFiles/3.27.7/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.27.7/CMakeSystem.cmake"
-  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/CMakeLists.txt"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/CMakeLists.txt"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/arm-none-eabi-gcc.cmake"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/CMakeLists.txt"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/modal_models/CMakeLists.txt"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/platform/CMakeLists.txt"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/utils/CMakeLists.txt"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/utils/hashset/CMakeLists.txt"
-  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/arm-none-eabi-gcc.cmake"
   "/usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeASMCompiler.cmake.in"
   "/usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeASMInformation.cmake"
   "/usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCCompiler.cmake.in"
@@ -127,11 +127,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.27.7/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.27.7/CMakeASMCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "Main/core/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "core/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Main.dir/DependInfo.cmake"
-  "Main/core/CMakeFiles/core.dir/DependInfo.cmake"
+  "core/CMakeFiles/core.dir/DependInfo.cmake"
   )

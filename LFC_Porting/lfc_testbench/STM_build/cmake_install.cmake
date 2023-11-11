@@ -1,4 +1,4 @@
-# Install script for directory: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen
+# Install script for directory: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,7 +49,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/Main/core/cmake_install.cmake")
+  include("/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/core/cmake_install.cmake")
 
 endif()
 

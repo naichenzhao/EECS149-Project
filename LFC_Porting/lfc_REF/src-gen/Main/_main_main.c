@@ -1,4 +1,5 @@
 #include "include/api/api.h"
+#include "include/core/platform.h"
 #include "include/Main/Main.h"
 #include "_main_main.h"
 // ***** Start of method declarations.

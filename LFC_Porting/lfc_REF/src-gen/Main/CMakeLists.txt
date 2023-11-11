@@ -28,7 +28,7 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(DEFAULT_BUILD_TYPE Release)
+set(DEFAULT_BUILD_TYPE Debug)
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     set(CMAKE_BUILD_TYPE ${DEFAULT_BUILD_TYPE} CACHE STRING "Choose the type of build." FORCE)
 endif()
@@ -39,14 +39,14 @@ set(CMAKE_INSTALL_MESSAGE NEVER)
 set(CMAKE_SYSTEM_NAME Rp2040)
 
 # Set default values for build parameters
-if (NOT DEFINED LF_REACTION_GRAPH_BREADTH)
-    set(LF_REACTION_GRAPH_BREADTH 1)
-endif()
-if (NOT DEFINED LF_THREADED AND NOT DEFINED LF_UNTHREADED)
-    set(LF_UNTHREADED 1)
+if (NOT DEFINED LF_SINGLE_THREADED)
+    set(LF_SINGLE_THREADED 1)
 endif()
 if (NOT DEFINED LOG_LEVEL)
     set(LOG_LEVEL 2)
+endif()
+if (NOT DEFINED LF_REACTION_GRAPH_BREADTH)
+    set(LF_REACTION_GRAPH_BREADTH 1)
 endif()
 pico_sdk_init()
 
@@ -81,7 +81,7 @@ target_include_directories(${LF_MAIN_TARGET} PUBLIC include/core/utils)
 pico_enable_stdio_usb(${LF_MAIN_TARGET} 1)
 pico_enable_stdio_uart(${LF_MAIN_TARGET} 1)
 # Set flag to indicate a single-threaded runtime
-target_compile_definitions( ${LF_MAIN_TARGET} PUBLIC LF_UNTHREADED=1)
+target_compile_definitions( ${LF_MAIN_TARGET} PUBLIC LF_SINGLE_THREADED=1)
 
 
     install(

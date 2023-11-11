@@ -34,12 +34,13 @@ CMakeFiles/Main.dir/_main_main.c.obj: \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include-fixed/limits.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/include/core/utils/vector.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/include/core/tag.h \
- /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/include/Main/Main.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/include/core/platform.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/assert.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/include/core/platform/lf_rp2040_support.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/common/pico_base/include/pico.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/common/pico_base/include/pico/types.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/common/pico_base/include/pico/assert.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/assert.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/build/generated/pico_base/pico/version.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/common/pico_base/include/pico/config.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/build/generated/pico_base/pico/config_autogen.h \
@@ -72,6 +73,13 @@ CMakeFiles/Main.dir/_main_main.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/common/pico_sync/include/pico/sync.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/common/pico_sync/include/pico/sem.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/pico-sdk/src/common/pico_sync/include/pico/critical_section.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/include/Main/Main.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/include/../include/api/api.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/include/../include/core/reactor.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/include/../include/core/lf_types.h \

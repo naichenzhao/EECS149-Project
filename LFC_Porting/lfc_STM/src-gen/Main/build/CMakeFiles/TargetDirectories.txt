@@ -1,0 +1,14 @@
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles/Main.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles/edit_cache.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles/rebuild_cache.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles/list_install_components.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles/install.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles/install/local.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles/install/strip.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core/CMakeFiles/core.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core/CMakeFiles/edit_cache.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core/CMakeFiles/rebuild_cache.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core/CMakeFiles/list_install_components.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core/CMakeFiles/install.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core/CMakeFiles/install/local.dir
+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core/CMakeFiles/install/strip.dir

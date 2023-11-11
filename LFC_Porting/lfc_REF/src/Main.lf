@@ -1,6 +1,6 @@
 // Other options: Python, Cpp, TypeScript, Rust.
 target C {
-  threading: false,
+  single-threaded: true,
   platform: {
     name: "rp2040",
     board: "pololu_3pi_2040_robot"

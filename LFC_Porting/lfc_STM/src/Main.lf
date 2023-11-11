@@ -1,0 +1,25 @@
+// Other options: Python, Cpp, TypeScript, Rust.
+target C {
+  single-threaded: true,
+  platform: {
+    name: "stm32"
+  }
+}
+
+preamble {=
+  #include "STM_main.h"
+  #include "stm32f4xx_hal.h"
+=}
+
+// Import and/or declare reactor classes.
+main reactor {
+  timer t(0, 250 ms)
+
+  reaction(startup) {=
+    printf("hello world\n");
+  =}
+
+  reaction(t) {=
+    printf("Timer print\n");
+  =}
+}

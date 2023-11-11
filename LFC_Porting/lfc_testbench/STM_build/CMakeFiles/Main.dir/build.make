@@ -53,7 +53,7 @@ RM = /usr/local/Cellar/cmake/3.27.7/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen
+CMAKE_SOURCE_DIR = /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build
@@ -69,429 +69,429 @@ include CMakeFiles/Main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Main.dir/flags.make
 
-CMakeFiles/Main.dir/Core/Src/STM_main.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Core/Src/STM_main.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/STM_main.c
-CMakeFiles/Main.dir/Core/Src/STM_main.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Main.dir/Core/Src/STM_main.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Core/Src/STM_main.c.obj -MF CMakeFiles/Main.dir/Core/Src/STM_main.c.obj.d -o CMakeFiles/Main.dir/Core/Src/STM_main.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/STM_main.c
-
-CMakeFiles/Main.dir/Core/Src/STM_main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Core/Src/STM_main.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/STM_main.c > CMakeFiles/Main.dir/Core/Src/STM_main.c.i
-
-CMakeFiles/Main.dir/Core/Src/STM_main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Core/Src/STM_main.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/STM_main.c -o CMakeFiles/Main.dir/Core/Src/STM_main.c.s
-
-CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/stm32f4xx_hal_msp.c
-CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.obj -MF CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.obj.d -o CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/stm32f4xx_hal_msp.c
-
-CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/stm32f4xx_hal_msp.c > CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.i
-
-CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/stm32f4xx_hal_msp.c -o CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.s
-
-CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/stm32f4xx_it.c
-CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.obj -MF CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.obj.d -o CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/stm32f4xx_it.c
-
-CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/stm32f4xx_it.c > CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.i
-
-CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/stm32f4xx_it.c -o CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.s
-
-CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/system_stm32f4xx.c
-CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.obj -MF CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.obj.d -o CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/system_stm32f4xx.c
-
-CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/system_stm32f4xx.c > CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.i
-
-CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Core/Src/system_stm32f4xx.c -o CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj -MF CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj.d -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c > CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i
-
-CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c -o CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s
-
-CMakeFiles/Main.dir/CubeMX/startup_stm32f446xx.s.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/CubeMX/startup_stm32f446xx.s.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/CubeMX/startup_stm32f446xx.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building ASM object CMakeFiles/Main.dir/CubeMX/startup_stm32f446xx.s.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/Main.dir/CubeMX/startup_stm32f446xx.s.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/CubeMX/startup_stm32f446xx.s
-
-CMakeFiles/Main.dir/CubeMX/startup_stm32f446xx.s.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing ASM source to CMakeFiles/Main.dir/CubeMX/startup_stm32f446xx.s.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/CubeMX/startup_stm32f446xx.s > CMakeFiles/Main.dir/CubeMX/startup_stm32f446xx.s.i
-
-CMakeFiles/Main.dir/CubeMX/startup_stm32f446xx.s.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling ASM source to assembly CMakeFiles/Main.dir/CubeMX/startup_stm32f446xx.s.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/CubeMX/startup_stm32f446xx.s -o CMakeFiles/Main.dir/CubeMX/startup_stm32f446xx.s.s
-
-CMakeFiles/Main.dir/Main/lib/schedule.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Main/lib/schedule.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/lib/schedule.c
-CMakeFiles/Main.dir/Main/lib/schedule.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/Main.dir/Main/lib/schedule.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Main/lib/schedule.c.obj -MF CMakeFiles/Main.dir/Main/lib/schedule.c.obj.d -o CMakeFiles/Main.dir/Main/lib/schedule.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/lib/schedule.c
-
-CMakeFiles/Main.dir/Main/lib/schedule.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Main/lib/schedule.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/lib/schedule.c > CMakeFiles/Main.dir/Main/lib/schedule.c.i
-
-CMakeFiles/Main.dir/Main/lib/schedule.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Main/lib/schedule.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/lib/schedule.c -o CMakeFiles/Main.dir/Main/lib/schedule.c.s
-
-CMakeFiles/Main.dir/Main/_main_main.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Main/_main_main.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/_main_main.c
-CMakeFiles/Main.dir/Main/_main_main.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/Main.dir/Main/_main_main.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Main/_main_main.c.obj -MF CMakeFiles/Main.dir/Main/_main_main.c.obj.d -o CMakeFiles/Main.dir/Main/_main_main.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/_main_main.c
-
-CMakeFiles/Main.dir/Main/_main_main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Main/_main_main.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/_main_main.c > CMakeFiles/Main.dir/Main/_main_main.c.i
-
-CMakeFiles/Main.dir/Main/_main_main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Main/_main_main.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/_main_main.c -o CMakeFiles/Main.dir/Main/_main_main.c.s
-
-CMakeFiles/Main.dir/Main/Main.c.obj: CMakeFiles/Main.dir/flags.make
-CMakeFiles/Main.dir/Main/Main.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/Main.c
-CMakeFiles/Main.dir/Main/Main.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/Main.dir/Main/Main.c.obj"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Main/Main.c.obj -MF CMakeFiles/Main.dir/Main/Main.c.obj.d -o CMakeFiles/Main.dir/Main/Main.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/Main.c
-
-CMakeFiles/Main.dir/Main/Main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Main/Main.c.i"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/Main.c > CMakeFiles/Main.dir/Main/Main.c.i
-
-CMakeFiles/Main.dir/Main/Main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Main/Main.c.s"
-	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/Main.c -o CMakeFiles/Main.dir/Main/Main.c.s
+CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/STM_main.c
+CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/STM_main.c
+
+CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/STM_main.c > CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/STM_main.c -o CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/stm32f4xx_hal_msp.c
+CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/stm32f4xx_hal_msp.c
+
+CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/stm32f4xx_hal_msp.c > CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/stm32f4xx_hal_msp.c -o CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/stm32f4xx_it.c
+CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/stm32f4xx_it.c
+
+CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/stm32f4xx_it.c > CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/stm32f4xx_it.c -o CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/system_stm32f4xx.c
+CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/system_stm32f4xx.c
+
+CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/system_stm32f4xx.c > CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/system_stm32f4xx.c -o CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj -MF CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj.d -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c > CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i
+
+CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c -o CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s
+
+CMakeFiles/Main.dir/STM_sdk/CubeMX/startup_stm32f446xx.s.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/STM_sdk/CubeMX/startup_stm32f446xx.s.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/CubeMX/startup_stm32f446xx.s
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building ASM object CMakeFiles/Main.dir/STM_sdk/CubeMX/startup_stm32f446xx.s.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/Main.dir/STM_sdk/CubeMX/startup_stm32f446xx.s.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/CubeMX/startup_stm32f446xx.s
+
+CMakeFiles/Main.dir/STM_sdk/CubeMX/startup_stm32f446xx.s.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing ASM source to CMakeFiles/Main.dir/STM_sdk/CubeMX/startup_stm32f446xx.s.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/CubeMX/startup_stm32f446xx.s > CMakeFiles/Main.dir/STM_sdk/CubeMX/startup_stm32f446xx.s.i
+
+CMakeFiles/Main.dir/STM_sdk/CubeMX/startup_stm32f446xx.s.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling ASM source to assembly CMakeFiles/Main.dir/STM_sdk/CubeMX/startup_stm32f446xx.s.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/CubeMX/startup_stm32f446xx.s -o CMakeFiles/Main.dir/STM_sdk/CubeMX/startup_stm32f446xx.s.s
+
+CMakeFiles/Main.dir/lib/schedule.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/lib/schedule.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/lib/schedule.c
+CMakeFiles/Main.dir/lib/schedule.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/Main.dir/lib/schedule.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/lib/schedule.c.obj -MF CMakeFiles/Main.dir/lib/schedule.c.obj.d -o CMakeFiles/Main.dir/lib/schedule.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/lib/schedule.c
+
+CMakeFiles/Main.dir/lib/schedule.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/lib/schedule.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/lib/schedule.c > CMakeFiles/Main.dir/lib/schedule.c.i
+
+CMakeFiles/Main.dir/lib/schedule.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/lib/schedule.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/lib/schedule.c -o CMakeFiles/Main.dir/lib/schedule.c.s
+
+CMakeFiles/Main.dir/_main_main.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/_main_main.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/_main_main.c
+CMakeFiles/Main.dir/_main_main.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/Main.dir/_main_main.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/_main_main.c.obj -MF CMakeFiles/Main.dir/_main_main.c.obj.d -o CMakeFiles/Main.dir/_main_main.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/_main_main.c
+
+CMakeFiles/Main.dir/_main_main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/_main_main.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/_main_main.c > CMakeFiles/Main.dir/_main_main.c.i
+
+CMakeFiles/Main.dir/_main_main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/_main_main.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/_main_main.c -o CMakeFiles/Main.dir/_main_main.c.s
+
+CMakeFiles/Main.dir/Main.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/Main.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/Main.c
+CMakeFiles/Main.dir/Main.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/Main.dir/Main.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Main.c.obj -MF CMakeFiles/Main.dir/Main.c.obj.d -o CMakeFiles/Main.dir/Main.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/Main.c
+
+CMakeFiles/Main.dir/Main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/Main.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/Main.c > CMakeFiles/Main.dir/Main.c.i
+
+CMakeFiles/Main.dir/Main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/Main.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/Main.c -o CMakeFiles/Main.dir/Main.c.s
 
 # Object files for target Main
 Main_OBJECTS = \
-"CMakeFiles/Main.dir/Core/Src/STM_main.c.obj" \
-"CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.obj" \
-"CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.obj" \
-"CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj" \
-"CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj" \
-"CMakeFiles/Main.dir/CubeMX/startup_stm32f446xx.s.obj" \
-"CMakeFiles/Main.dir/Main/lib/schedule.c.obj" \
-"CMakeFiles/Main.dir/Main/_main_main.c.obj" \
-"CMakeFiles/Main.dir/Main/Main.c.obj"
+"CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj" \
+"CMakeFiles/Main.dir/STM_sdk/CubeMX/startup_stm32f446xx.s.obj" \
+"CMakeFiles/Main.dir/lib/schedule.c.obj" \
+"CMakeFiles/Main.dir/_main_main.c.obj" \
+"CMakeFiles/Main.dir/Main.c.obj"
 
 # External object files for target Main
 Main_EXTERNAL_OBJECTS =
 
-Main.elf: CMakeFiles/Main.dir/Core/Src/STM_main.c.obj
-Main.elf: CMakeFiles/Main.dir/Core/Src/stm32f4xx_hal_msp.c.obj
-Main.elf: CMakeFiles/Main.dir/Core/Src/stm32f4xx_it.c.obj
-Main.elf: CMakeFiles/Main.dir/Core/Src/system_stm32f4xx.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
-Main.elf: CMakeFiles/Main.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-Main.elf: CMakeFiles/Main.dir/CubeMX/startup_stm32f446xx.s.obj
-Main.elf: CMakeFiles/Main.dir/Main/lib/schedule.c.obj
-Main.elf: CMakeFiles/Main.dir/Main/_main_main.c.obj
-Main.elf: CMakeFiles/Main.dir/Main/Main.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+Main.elf: CMakeFiles/Main.dir/STM_sdk/CubeMX/startup_stm32f446xx.s.obj
+Main.elf: CMakeFiles/Main.dir/lib/schedule.c.obj
+Main.elf: CMakeFiles/Main.dir/_main_main.c.obj
+Main.elf: CMakeFiles/Main.dir/Main.c.obj
 Main.elf: CMakeFiles/Main.dir/build.make
-Main.elf: Main/core/libcore.a
+Main.elf: core/libcore.a
 Main.elf: CMakeFiles/Main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking C executable Main.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Main.dir/link.txt --verbose=$(VERBOSE)
@@ -508,6 +508,6 @@ CMakeFiles/Main.dir/clean:
 .PHONY : CMakeFiles/Main.dir/clean
 
 CMakeFiles/Main.dir/depend:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles/Main.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/STM_build/CMakeFiles/Main.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/Main.dir/depend
 

@@ -1199,6 +1199,30 @@ modal_models/modes.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/modal_models/modes.c.s
 .PHONY : modal_models/modes.c.s
 
+platform/lf_STM32f4_support.obj: platform/lf_STM32f4_support.c.obj
+.PHONY : platform/lf_STM32f4_support.obj
+
+# target to build an object file
+platform/lf_STM32f4_support.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.obj
+.PHONY : platform/lf_STM32f4_support.c.obj
+
+platform/lf_STM32f4_support.i: platform/lf_STM32f4_support.c.i
+.PHONY : platform/lf_STM32f4_support.i
+
+# target to preprocess a source file
+platform/lf_STM32f4_support.c.i:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.i
+.PHONY : platform/lf_STM32f4_support.c.i
+
+platform/lf_STM32f4_support.s: platform/lf_STM32f4_support.c.s
+.PHONY : platform/lf_STM32f4_support.s
+
+# target to generate assembly for a file
+platform/lf_STM32f4_support.c.s:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.s
+.PHONY : platform/lf_STM32f4_support.c.s
+
 platform/lf_linux_support.obj: platform/lf_linux_support.c.obj
 .PHONY : platform/lf_linux_support.obj
 
@@ -1366,6 +1390,54 @@ platform/lf_windows_support.s: platform/lf_windows_support.c.s
 platform/lf_windows_support.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_windows_support.c.s
 .PHONY : platform/lf_windows_support.c.s
+
+platform/lf_zephyr_clock_counter.obj: platform/lf_zephyr_clock_counter.c.obj
+.PHONY : platform/lf_zephyr_clock_counter.obj
+
+# target to build an object file
+platform/lf_zephyr_clock_counter.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.obj
+.PHONY : platform/lf_zephyr_clock_counter.c.obj
+
+platform/lf_zephyr_clock_counter.i: platform/lf_zephyr_clock_counter.c.i
+.PHONY : platform/lf_zephyr_clock_counter.i
+
+# target to preprocess a source file
+platform/lf_zephyr_clock_counter.c.i:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.i
+.PHONY : platform/lf_zephyr_clock_counter.c.i
+
+platform/lf_zephyr_clock_counter.s: platform/lf_zephyr_clock_counter.c.s
+.PHONY : platform/lf_zephyr_clock_counter.s
+
+# target to generate assembly for a file
+platform/lf_zephyr_clock_counter.c.s:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.s
+.PHONY : platform/lf_zephyr_clock_counter.c.s
+
+platform/lf_zephyr_clock_kernel.obj: platform/lf_zephyr_clock_kernel.c.obj
+.PHONY : platform/lf_zephyr_clock_kernel.obj
+
+# target to build an object file
+platform/lf_zephyr_clock_kernel.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.obj
+.PHONY : platform/lf_zephyr_clock_kernel.c.obj
+
+platform/lf_zephyr_clock_kernel.i: platform/lf_zephyr_clock_kernel.c.i
+.PHONY : platform/lf_zephyr_clock_kernel.i
+
+# target to preprocess a source file
+platform/lf_zephyr_clock_kernel.c.i:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.i
+.PHONY : platform/lf_zephyr_clock_kernel.c.i
+
+platform/lf_zephyr_clock_kernel.s: platform/lf_zephyr_clock_kernel.c.s
+.PHONY : platform/lf_zephyr_clock_kernel.s
+
+# target to generate assembly for a file
+platform/lf_zephyr_clock_kernel.c.s:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_REF/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.s
+.PHONY : platform/lf_zephyr_clock_kernel.c.s
 
 platform/lf_zephyr_support.obj: platform/lf_zephyr_support.c.obj
 .PHONY : platform/lf_zephyr_support.obj
@@ -1772,6 +1844,9 @@ help:
 	@echo "... modal_models/modes.obj"
 	@echo "... modal_models/modes.i"
 	@echo "... modal_models/modes.s"
+	@echo "... platform/lf_STM32f4_support.obj"
+	@echo "... platform/lf_STM32f4_support.i"
+	@echo "... platform/lf_STM32f4_support.s"
 	@echo "... platform/lf_linux_support.obj"
 	@echo "... platform/lf_linux_support.i"
 	@echo "... platform/lf_linux_support.s"
@@ -1793,6 +1868,12 @@ help:
 	@echo "... platform/lf_windows_support.obj"
 	@echo "... platform/lf_windows_support.i"
 	@echo "... platform/lf_windows_support.s"
+	@echo "... platform/lf_zephyr_clock_counter.obj"
+	@echo "... platform/lf_zephyr_clock_counter.i"
+	@echo "... platform/lf_zephyr_clock_counter.s"
+	@echo "... platform/lf_zephyr_clock_kernel.obj"
+	@echo "... platform/lf_zephyr_clock_kernel.i"
+	@echo "... platform/lf_zephyr_clock_kernel.s"
 	@echo "... platform/lf_zephyr_support.obj"
 	@echo "... platform/lf_zephyr_support.i"
 	@echo "... platform/lf_zephyr_support.s"

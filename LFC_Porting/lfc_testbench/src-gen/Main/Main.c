@@ -17,9 +17,14 @@ int lf_reactor_c_main(int argc, const char* argv[]);
 
 int main(void)
 {
+    instant_t *time;
+    uint32_t curr = 5;
     for (int i = 0; i < 2; i++)
     {
-        printf("MESSAGE LF_main\r\n");
+        _lf_clock_now(&time);
+        curr = (uint32_t) time;
+
+        printf("MESSAGE LF_main)_21 %u\r\n", time);
         HAL_GPIO_TogglePin(LD5_GPIO_Port, LD5_Pin);
         HAL_Delay(500);
     }
