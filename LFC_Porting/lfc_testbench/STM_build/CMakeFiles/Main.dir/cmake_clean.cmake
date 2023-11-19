@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Main.dir/Main.c.obj"
   "CMakeFiles/Main.dir/Main.c.obj.d"
-  "CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj"
-  "CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj.d"
   "CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj"
   "CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj.d"
   "CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.obj"

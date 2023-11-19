@@ -12,8 +12,8 @@
 #include "include/core/port.h"
 #include "include/core/environment.h"
 int lf_reactor_c_main(int argc, const char* argv[]);
-int main(int argc, const char* argv[]) {
-    return lf_reactor_c_main(argc, argv);
+int main(void) {
+   return lf_reactor_c_main(0, NULL);
 }
 void _lf_set_default_command_line_options() {}
 #include "_main_main.h"
@@ -25,7 +25,7 @@ typedef enum {
 environment_t envs[_num_enclaves];
 // 'Create' and initialize the environments in the program
 void _lf_create_environments() {
-    environment_init(&envs[main_main],main_main,_lf_number_of_workers,1,1,0,0,0,0,0,NULL);
+    environment_init(&envs[main_main],main_main,_lf_number_of_workers,2,1,0,0,0,0,0,NULL);
 }
 // Update the pointer argument to point to the beginning of the environment array
 // and return the size of that array
@@ -56,15 +56,26 @@ void _lf_initialize_trigger_objects() {
     bank_index = 0; SUPPRESS_UNUSED_WARNING(bank_index);
     envs[main_main].startup_reactions[startup_reaction_count[main_main]++] = &main_main_self[0]->_lf__reaction_0;
     SUPPRESS_UNUSED_WARNING(_lf_watchdog_count);
+    { // For scoping
+        static int _initial = 0;
+        main_main_self[0]->counter = _initial;
+    } // End scoping.
     // Initiaizing timer Main.t.
-    main_main_self[0]->_lf__t.offset = 0;
-    main_main_self[0]->_lf__t.period = MSEC(250);
+    main_main_self[0]->_lf__t.offset = MSEC(250);
+    main_main_self[0]->_lf__t.period = MSEC(500);
     // Associate timer with the environment of its parent
     envs[main_main].timer_triggers[timer_triggers_count[main_main]++] = &main_main_self[0]->_lf__t;
     main_main_self[0]->_lf__t.mode = NULL;
+    // Initiaizing timer Main.t2.
+    main_main_self[0]->_lf__t2.offset = 0;
+    main_main_self[0]->_lf__t2.period = MSEC(500);
+    // Associate timer with the environment of its parent
+    envs[main_main].timer_triggers[timer_triggers_count[main_main]++] = &main_main_self[0]->_lf__t2;
+    main_main_self[0]->_lf__t2.mode = NULL;
     
     main_main_self[0]->_lf__reaction_0.deadline = NEVER;
     main_main_self[0]->_lf__reaction_1.deadline = NEVER;
+    main_main_self[0]->_lf__reaction_2.deadline = NEVER;
     //***** End initializing Main
     // **** Start deferred initialize for Main
     {
@@ -85,6 +96,14 @@ void _lf_initialize_trigger_objects() {
         }
         
         // ** End initialization for reaction 1 of Main
+        // Total number of outputs (single ports and multiport channels)
+        // produced by reaction_3 of Main.
+        main_main_self[0]->_lf__reaction_2.num_outputs = 0;
+        {
+            int count = 0; SUPPRESS_UNUSED_WARNING(count);
+        }
+        
+        // ** End initialization for reaction 2 of Main
     
     }
     // **** End of deferred initialize for Main
@@ -108,6 +127,10 @@ void _lf_initialize_trigger_objects() {
         // index is the OR of level 1 and 
         // deadline 9223372036854775807 shifted left 16 bits.
         main_main_self[0]->_lf__reaction_1.index = 0xffffffffffff0001LL;
+        main_main_self[0]->_lf__reaction_2.chain_id = 1;
+        // index is the OR of level 2 and 
+        // deadline 9223372036854775807 shifted left 16 bits.
+        main_main_self[0]->_lf__reaction_2.index = 0xffffffffffff0002LL;
     }
     
 

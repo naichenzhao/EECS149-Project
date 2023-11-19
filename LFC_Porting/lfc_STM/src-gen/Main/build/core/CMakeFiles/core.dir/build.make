@@ -69,412 +69,412 @@ include core/CMakeFiles/core.dir/progress.make
 # Include the compile flags for this target's objects.
 include core/CMakeFiles/core.dir/flags.make
 
-core/CMakeFiles/core.dir/tag.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/tag.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/tag.c
-core/CMakeFiles/core.dir/tag.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object core/CMakeFiles/core.dir/tag.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/tag.c.o -MF CMakeFiles/core.dir/tag.c.o.d -o CMakeFiles/core.dir/tag.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/tag.c
+core/CMakeFiles/core.dir/tag.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/tag.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/tag.c
+core/CMakeFiles/core.dir/tag.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object core/CMakeFiles/core.dir/tag.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/tag.c.obj -MF CMakeFiles/core.dir/tag.c.obj.d -o CMakeFiles/core.dir/tag.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/tag.c
 
 core/CMakeFiles/core.dir/tag.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/tag.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/tag.c > CMakeFiles/core.dir/tag.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/tag.c > CMakeFiles/core.dir/tag.c.i
 
 core/CMakeFiles/core.dir/tag.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/tag.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/tag.c -o CMakeFiles/core.dir/tag.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/tag.c -o CMakeFiles/core.dir/tag.c.s
 
-core/CMakeFiles/core.dir/port.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/port.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/port.c
-core/CMakeFiles/core.dir/port.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object core/CMakeFiles/core.dir/port.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/port.c.o -MF CMakeFiles/core.dir/port.c.o.d -o CMakeFiles/core.dir/port.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/port.c
+core/CMakeFiles/core.dir/port.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/port.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/port.c
+core/CMakeFiles/core.dir/port.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object core/CMakeFiles/core.dir/port.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/port.c.obj -MF CMakeFiles/core.dir/port.c.obj.d -o CMakeFiles/core.dir/port.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/port.c
 
 core/CMakeFiles/core.dir/port.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/port.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/port.c > CMakeFiles/core.dir/port.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/port.c > CMakeFiles/core.dir/port.c.i
 
 core/CMakeFiles/core.dir/port.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/port.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/port.c -o CMakeFiles/core.dir/port.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/port.c -o CMakeFiles/core.dir/port.c.s
 
-core/CMakeFiles/core.dir/mixed_radix.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/mixed_radix.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/mixed_radix.c
-core/CMakeFiles/core.dir/mixed_radix.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object core/CMakeFiles/core.dir/mixed_radix.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/mixed_radix.c.o -MF CMakeFiles/core.dir/mixed_radix.c.o.d -o CMakeFiles/core.dir/mixed_radix.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/mixed_radix.c
+core/CMakeFiles/core.dir/mixed_radix.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/mixed_radix.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/mixed_radix.c
+core/CMakeFiles/core.dir/mixed_radix.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object core/CMakeFiles/core.dir/mixed_radix.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/mixed_radix.c.obj -MF CMakeFiles/core.dir/mixed_radix.c.obj.d -o CMakeFiles/core.dir/mixed_radix.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/mixed_radix.c
 
 core/CMakeFiles/core.dir/mixed_radix.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/mixed_radix.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/mixed_radix.c > CMakeFiles/core.dir/mixed_radix.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/mixed_radix.c > CMakeFiles/core.dir/mixed_radix.c.i
 
 core/CMakeFiles/core.dir/mixed_radix.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/mixed_radix.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/mixed_radix.c -o CMakeFiles/core.dir/mixed_radix.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/mixed_radix.c -o CMakeFiles/core.dir/mixed_radix.c.s
 
-core/CMakeFiles/core.dir/reactor_common.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/reactor_common.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor_common.c
-core/CMakeFiles/core.dir/reactor_common.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object core/CMakeFiles/core.dir/reactor_common.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/reactor_common.c.o -MF CMakeFiles/core.dir/reactor_common.c.o.d -o CMakeFiles/core.dir/reactor_common.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor_common.c
+core/CMakeFiles/core.dir/reactor_common.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/reactor_common.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor_common.c
+core/CMakeFiles/core.dir/reactor_common.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object core/CMakeFiles/core.dir/reactor_common.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/reactor_common.c.obj -MF CMakeFiles/core.dir/reactor_common.c.obj.d -o CMakeFiles/core.dir/reactor_common.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor_common.c
 
 core/CMakeFiles/core.dir/reactor_common.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/reactor_common.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor_common.c > CMakeFiles/core.dir/reactor_common.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor_common.c > CMakeFiles/core.dir/reactor_common.c.i
 
 core/CMakeFiles/core.dir/reactor_common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/reactor_common.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor_common.c -o CMakeFiles/core.dir/reactor_common.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor_common.c -o CMakeFiles/core.dir/reactor_common.c.s
 
-core/CMakeFiles/core.dir/lf_token.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/lf_token.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/lf_token.c
-core/CMakeFiles/core.dir/lf_token.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object core/CMakeFiles/core.dir/lf_token.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/lf_token.c.o -MF CMakeFiles/core.dir/lf_token.c.o.d -o CMakeFiles/core.dir/lf_token.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/lf_token.c
+core/CMakeFiles/core.dir/lf_token.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/lf_token.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/lf_token.c
+core/CMakeFiles/core.dir/lf_token.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object core/CMakeFiles/core.dir/lf_token.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/lf_token.c.obj -MF CMakeFiles/core.dir/lf_token.c.obj.d -o CMakeFiles/core.dir/lf_token.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/lf_token.c
 
 core/CMakeFiles/core.dir/lf_token.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/lf_token.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/lf_token.c > CMakeFiles/core.dir/lf_token.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/lf_token.c > CMakeFiles/core.dir/lf_token.c.i
 
 core/CMakeFiles/core.dir/lf_token.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/lf_token.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/lf_token.c -o CMakeFiles/core.dir/lf_token.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/lf_token.c -o CMakeFiles/core.dir/lf_token.c.s
 
-core/CMakeFiles/core.dir/environment.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/environment.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/environment.c
-core/CMakeFiles/core.dir/environment.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object core/CMakeFiles/core.dir/environment.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/environment.c.o -MF CMakeFiles/core.dir/environment.c.o.d -o CMakeFiles/core.dir/environment.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/environment.c
+core/CMakeFiles/core.dir/environment.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/environment.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/environment.c
+core/CMakeFiles/core.dir/environment.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object core/CMakeFiles/core.dir/environment.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/environment.c.obj -MF CMakeFiles/core.dir/environment.c.obj.d -o CMakeFiles/core.dir/environment.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/environment.c
 
 core/CMakeFiles/core.dir/environment.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/environment.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/environment.c > CMakeFiles/core.dir/environment.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/environment.c > CMakeFiles/core.dir/environment.c.i
 
 core/CMakeFiles/core.dir/environment.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/environment.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/environment.c -o CMakeFiles/core.dir/environment.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/environment.c -o CMakeFiles/core.dir/environment.c.s
 
-core/CMakeFiles/core.dir/reactor.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/reactor.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor.c
-core/CMakeFiles/core.dir/reactor.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object core/CMakeFiles/core.dir/reactor.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/reactor.c.o -MF CMakeFiles/core.dir/reactor.c.o.d -o CMakeFiles/core.dir/reactor.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor.c
+core/CMakeFiles/core.dir/reactor.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/reactor.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor.c
+core/CMakeFiles/core.dir/reactor.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object core/CMakeFiles/core.dir/reactor.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/reactor.c.obj -MF CMakeFiles/core.dir/reactor.c.obj.d -o CMakeFiles/core.dir/reactor.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor.c
 
 core/CMakeFiles/core.dir/reactor.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/reactor.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor.c > CMakeFiles/core.dir/reactor.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor.c > CMakeFiles/core.dir/reactor.c.i
 
 core/CMakeFiles/core.dir/reactor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/reactor.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor.c -o CMakeFiles/core.dir/reactor.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/reactor.c -o CMakeFiles/core.dir/reactor.c.s
 
-core/CMakeFiles/core.dir/utils/vector.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/utils/vector.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/vector.c
-core/CMakeFiles/core.dir/utils/vector.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object core/CMakeFiles/core.dir/utils/vector.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/utils/vector.c.o -MF CMakeFiles/core.dir/utils/vector.c.o.d -o CMakeFiles/core.dir/utils/vector.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/vector.c
+core/CMakeFiles/core.dir/utils/vector.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/utils/vector.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/vector.c
+core/CMakeFiles/core.dir/utils/vector.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object core/CMakeFiles/core.dir/utils/vector.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/utils/vector.c.obj -MF CMakeFiles/core.dir/utils/vector.c.obj.d -o CMakeFiles/core.dir/utils/vector.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/vector.c
 
 core/CMakeFiles/core.dir/utils/vector.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/utils/vector.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/vector.c > CMakeFiles/core.dir/utils/vector.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/vector.c > CMakeFiles/core.dir/utils/vector.c.i
 
 core/CMakeFiles/core.dir/utils/vector.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/utils/vector.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/vector.c -o CMakeFiles/core.dir/utils/vector.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/vector.c -o CMakeFiles/core.dir/utils/vector.c.s
 
-core/CMakeFiles/core.dir/utils/pqueue.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/utils/pqueue.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/pqueue.c
-core/CMakeFiles/core.dir/utils/pqueue.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object core/CMakeFiles/core.dir/utils/pqueue.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/utils/pqueue.c.o -MF CMakeFiles/core.dir/utils/pqueue.c.o.d -o CMakeFiles/core.dir/utils/pqueue.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/pqueue.c
+core/CMakeFiles/core.dir/utils/pqueue.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/utils/pqueue.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/pqueue.c
+core/CMakeFiles/core.dir/utils/pqueue.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object core/CMakeFiles/core.dir/utils/pqueue.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/utils/pqueue.c.obj -MF CMakeFiles/core.dir/utils/pqueue.c.obj.d -o CMakeFiles/core.dir/utils/pqueue.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/pqueue.c
 
 core/CMakeFiles/core.dir/utils/pqueue.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/utils/pqueue.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/pqueue.c > CMakeFiles/core.dir/utils/pqueue.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/pqueue.c > CMakeFiles/core.dir/utils/pqueue.c.i
 
 core/CMakeFiles/core.dir/utils/pqueue.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/utils/pqueue.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/pqueue.c -o CMakeFiles/core.dir/utils/pqueue.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/pqueue.c -o CMakeFiles/core.dir/utils/pqueue.c.s
 
-core/CMakeFiles/core.dir/utils/util.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/utils/util.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/util.c
-core/CMakeFiles/core.dir/utils/util.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object core/CMakeFiles/core.dir/utils/util.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/utils/util.c.o -MF CMakeFiles/core.dir/utils/util.c.o.d -o CMakeFiles/core.dir/utils/util.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/util.c
+core/CMakeFiles/core.dir/utils/util.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/utils/util.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/util.c
+core/CMakeFiles/core.dir/utils/util.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object core/CMakeFiles/core.dir/utils/util.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/utils/util.c.obj -MF CMakeFiles/core.dir/utils/util.c.obj.d -o CMakeFiles/core.dir/utils/util.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/util.c
 
 core/CMakeFiles/core.dir/utils/util.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/utils/util.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/util.c > CMakeFiles/core.dir/utils/util.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/util.c > CMakeFiles/core.dir/utils/util.c.i
 
 core/CMakeFiles/core.dir/utils/util.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/utils/util.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/util.c -o CMakeFiles/core.dir/utils/util.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/util.c -o CMakeFiles/core.dir/utils/util.c.s
 
-core/CMakeFiles/core.dir/utils/semaphore.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/utils/semaphore.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/semaphore.c
-core/CMakeFiles/core.dir/utils/semaphore.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object core/CMakeFiles/core.dir/utils/semaphore.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/utils/semaphore.c.o -MF CMakeFiles/core.dir/utils/semaphore.c.o.d -o CMakeFiles/core.dir/utils/semaphore.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/semaphore.c
+core/CMakeFiles/core.dir/utils/semaphore.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/utils/semaphore.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/semaphore.c
+core/CMakeFiles/core.dir/utils/semaphore.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object core/CMakeFiles/core.dir/utils/semaphore.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/utils/semaphore.c.obj -MF CMakeFiles/core.dir/utils/semaphore.c.obj.d -o CMakeFiles/core.dir/utils/semaphore.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/semaphore.c
 
 core/CMakeFiles/core.dir/utils/semaphore.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/utils/semaphore.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/semaphore.c > CMakeFiles/core.dir/utils/semaphore.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/semaphore.c > CMakeFiles/core.dir/utils/semaphore.c.i
 
 core/CMakeFiles/core.dir/utils/semaphore.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/utils/semaphore.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/semaphore.c -o CMakeFiles/core.dir/utils/semaphore.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/semaphore.c -o CMakeFiles/core.dir/utils/semaphore.c.s
 
-core/CMakeFiles/core.dir/utils/hashset/hashset.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/utils/hashset/hashset.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset.c
-core/CMakeFiles/core.dir/utils/hashset/hashset.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object core/CMakeFiles/core.dir/utils/hashset/hashset.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/utils/hashset/hashset.c.o -MF CMakeFiles/core.dir/utils/hashset/hashset.c.o.d -o CMakeFiles/core.dir/utils/hashset/hashset.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset.c
+core/CMakeFiles/core.dir/utils/hashset/hashset.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/utils/hashset/hashset.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset.c
+core/CMakeFiles/core.dir/utils/hashset/hashset.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object core/CMakeFiles/core.dir/utils/hashset/hashset.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/utils/hashset/hashset.c.obj -MF CMakeFiles/core.dir/utils/hashset/hashset.c.obj.d -o CMakeFiles/core.dir/utils/hashset/hashset.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset.c
 
 core/CMakeFiles/core.dir/utils/hashset/hashset.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/utils/hashset/hashset.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset.c > CMakeFiles/core.dir/utils/hashset/hashset.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset.c > CMakeFiles/core.dir/utils/hashset/hashset.c.i
 
 core/CMakeFiles/core.dir/utils/hashset/hashset.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/utils/hashset/hashset.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset.c -o CMakeFiles/core.dir/utils/hashset/hashset.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset.c -o CMakeFiles/core.dir/utils/hashset/hashset.c.s
 
-core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset_itr.c
-core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.o -MF CMakeFiles/core.dir/utils/hashset/hashset_itr.c.o.d -o CMakeFiles/core.dir/utils/hashset/hashset_itr.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset_itr.c
+core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset_itr.c
+core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.obj -MF CMakeFiles/core.dir/utils/hashset/hashset_itr.c.obj.d -o CMakeFiles/core.dir/utils/hashset/hashset_itr.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset_itr.c
 
 core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/utils/hashset/hashset_itr.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset_itr.c > CMakeFiles/core.dir/utils/hashset/hashset_itr.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset_itr.c > CMakeFiles/core.dir/utils/hashset/hashset_itr.c.i
 
 core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/utils/hashset/hashset_itr.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset_itr.c -o CMakeFiles/core.dir/utils/hashset/hashset_itr.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/utils/hashset/hashset_itr.c -o CMakeFiles/core.dir/utils/hashset/hashset_itr.c.s
 
-core/CMakeFiles/core.dir/modal_models/modes.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/modal_models/modes.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/modal_models/modes.c
-core/CMakeFiles/core.dir/modal_models/modes.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object core/CMakeFiles/core.dir/modal_models/modes.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/modal_models/modes.c.o -MF CMakeFiles/core.dir/modal_models/modes.c.o.d -o CMakeFiles/core.dir/modal_models/modes.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/modal_models/modes.c
+core/CMakeFiles/core.dir/modal_models/modes.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/modal_models/modes.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/modal_models/modes.c
+core/CMakeFiles/core.dir/modal_models/modes.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object core/CMakeFiles/core.dir/modal_models/modes.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/modal_models/modes.c.obj -MF CMakeFiles/core.dir/modal_models/modes.c.obj.d -o CMakeFiles/core.dir/modal_models/modes.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/modal_models/modes.c
 
 core/CMakeFiles/core.dir/modal_models/modes.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/modal_models/modes.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/modal_models/modes.c > CMakeFiles/core.dir/modal_models/modes.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/modal_models/modes.c > CMakeFiles/core.dir/modal_models/modes.c.i
 
 core/CMakeFiles/core.dir/modal_models/modes.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/modal_models/modes.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/modal_models/modes.c -o CMakeFiles/core.dir/modal_models/modes.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/modal_models/modes.c -o CMakeFiles/core.dir/modal_models/modes.c.s
 
-core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_clock_support.c
-core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.o -MF CMakeFiles/core.dir/platform/lf_unix_clock_support.c.o.d -o CMakeFiles/core.dir/platform/lf_unix_clock_support.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_clock_support.c
+core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_clock_support.c
+core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.obj -MF CMakeFiles/core.dir/platform/lf_unix_clock_support.c.obj.d -o CMakeFiles/core.dir/platform/lf_unix_clock_support.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_clock_support.c
 
 core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/platform/lf_unix_clock_support.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_clock_support.c > CMakeFiles/core.dir/platform/lf_unix_clock_support.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_clock_support.c > CMakeFiles/core.dir/platform/lf_unix_clock_support.c.i
 
 core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/platform/lf_unix_clock_support.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_clock_support.c -o CMakeFiles/core.dir/platform/lf_unix_clock_support.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_clock_support.c -o CMakeFiles/core.dir/platform/lf_unix_clock_support.c.s
 
-core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_syscall_support.c
-core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.o -MF CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.o.d -o CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_syscall_support.c
+core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_syscall_support.c
+core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.obj -MF CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.obj.d -o CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_syscall_support.c
 
 core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_syscall_support.c > CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_syscall_support.c > CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.i
 
 core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_syscall_support.c -o CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_unix_syscall_support.c -o CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.s
 
-core/CMakeFiles/core.dir/platform/lf_linux_support.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/platform/lf_linux_support.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_linux_support.c
-core/CMakeFiles/core.dir/platform/lf_linux_support.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object core/CMakeFiles/core.dir/platform/lf_linux_support.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_linux_support.c.o -MF CMakeFiles/core.dir/platform/lf_linux_support.c.o.d -o CMakeFiles/core.dir/platform/lf_linux_support.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_linux_support.c
+core/CMakeFiles/core.dir/platform/lf_linux_support.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/platform/lf_linux_support.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_linux_support.c
+core/CMakeFiles/core.dir/platform/lf_linux_support.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object core/CMakeFiles/core.dir/platform/lf_linux_support.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_linux_support.c.obj -MF CMakeFiles/core.dir/platform/lf_linux_support.c.obj.d -o CMakeFiles/core.dir/platform/lf_linux_support.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_linux_support.c
 
 core/CMakeFiles/core.dir/platform/lf_linux_support.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/platform/lf_linux_support.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_linux_support.c > CMakeFiles/core.dir/platform/lf_linux_support.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_linux_support.c > CMakeFiles/core.dir/platform/lf_linux_support.c.i
 
 core/CMakeFiles/core.dir/platform/lf_linux_support.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/platform/lf_linux_support.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_linux_support.c -o CMakeFiles/core.dir/platform/lf_linux_support.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_linux_support.c -o CMakeFiles/core.dir/platform/lf_linux_support.c.s
 
-core/CMakeFiles/core.dir/platform/lf_macos_support.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/platform/lf_macos_support.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_macos_support.c
-core/CMakeFiles/core.dir/platform/lf_macos_support.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object core/CMakeFiles/core.dir/platform/lf_macos_support.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_macos_support.c.o -MF CMakeFiles/core.dir/platform/lf_macos_support.c.o.d -o CMakeFiles/core.dir/platform/lf_macos_support.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_macos_support.c
+core/CMakeFiles/core.dir/platform/lf_macos_support.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/platform/lf_macos_support.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_macos_support.c
+core/CMakeFiles/core.dir/platform/lf_macos_support.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object core/CMakeFiles/core.dir/platform/lf_macos_support.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_macos_support.c.obj -MF CMakeFiles/core.dir/platform/lf_macos_support.c.obj.d -o CMakeFiles/core.dir/platform/lf_macos_support.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_macos_support.c
 
 core/CMakeFiles/core.dir/platform/lf_macos_support.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/platform/lf_macos_support.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_macos_support.c > CMakeFiles/core.dir/platform/lf_macos_support.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_macos_support.c > CMakeFiles/core.dir/platform/lf_macos_support.c.i
 
 core/CMakeFiles/core.dir/platform/lf_macos_support.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/platform/lf_macos_support.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_macos_support.c -o CMakeFiles/core.dir/platform/lf_macos_support.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_macos_support.c -o CMakeFiles/core.dir/platform/lf_macos_support.c.s
 
-core/CMakeFiles/core.dir/platform/lf_windows_support.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/platform/lf_windows_support.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_windows_support.c
-core/CMakeFiles/core.dir/platform/lf_windows_support.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object core/CMakeFiles/core.dir/platform/lf_windows_support.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_windows_support.c.o -MF CMakeFiles/core.dir/platform/lf_windows_support.c.o.d -o CMakeFiles/core.dir/platform/lf_windows_support.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_windows_support.c
+core/CMakeFiles/core.dir/platform/lf_windows_support.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/platform/lf_windows_support.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_windows_support.c
+core/CMakeFiles/core.dir/platform/lf_windows_support.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object core/CMakeFiles/core.dir/platform/lf_windows_support.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_windows_support.c.obj -MF CMakeFiles/core.dir/platform/lf_windows_support.c.obj.d -o CMakeFiles/core.dir/platform/lf_windows_support.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_windows_support.c
 
 core/CMakeFiles/core.dir/platform/lf_windows_support.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/platform/lf_windows_support.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_windows_support.c > CMakeFiles/core.dir/platform/lf_windows_support.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_windows_support.c > CMakeFiles/core.dir/platform/lf_windows_support.c.i
 
 core/CMakeFiles/core.dir/platform/lf_windows_support.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/platform/lf_windows_support.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_windows_support.c -o CMakeFiles/core.dir/platform/lf_windows_support.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_windows_support.c -o CMakeFiles/core.dir/platform/lf_windows_support.c.s
 
-core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_nrf52_support.c
-core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.o -MF CMakeFiles/core.dir/platform/lf_nrf52_support.c.o.d -o CMakeFiles/core.dir/platform/lf_nrf52_support.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_nrf52_support.c
+core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_nrf52_support.c
+core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.obj -MF CMakeFiles/core.dir/platform/lf_nrf52_support.c.obj.d -o CMakeFiles/core.dir/platform/lf_nrf52_support.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_nrf52_support.c
 
 core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/platform/lf_nrf52_support.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_nrf52_support.c > CMakeFiles/core.dir/platform/lf_nrf52_support.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_nrf52_support.c > CMakeFiles/core.dir/platform/lf_nrf52_support.c.i
 
 core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/platform/lf_nrf52_support.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_nrf52_support.c -o CMakeFiles/core.dir/platform/lf_nrf52_support.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_nrf52_support.c -o CMakeFiles/core.dir/platform/lf_nrf52_support.c.s
 
-core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_support.c
-core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.o -MF CMakeFiles/core.dir/platform/lf_zephyr_support.c.o.d -o CMakeFiles/core.dir/platform/lf_zephyr_support.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_support.c
+core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_support.c
+core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.obj -MF CMakeFiles/core.dir/platform/lf_zephyr_support.c.obj.d -o CMakeFiles/core.dir/platform/lf_zephyr_support.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_support.c
 
 core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/platform/lf_zephyr_support.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_support.c > CMakeFiles/core.dir/platform/lf_zephyr_support.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_support.c > CMakeFiles/core.dir/platform/lf_zephyr_support.c.i
 
 core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/platform/lf_zephyr_support.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_support.c -o CMakeFiles/core.dir/platform/lf_zephyr_support.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_support.c -o CMakeFiles/core.dir/platform/lf_zephyr_support.c.s
 
-core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_counter.c
-core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.o -MF CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.o.d -o CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_counter.c
+core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_counter.c
+core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.obj -MF CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.obj.d -o CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_counter.c
 
 core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_counter.c > CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_counter.c > CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.i
 
 core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_counter.c -o CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_counter.c -o CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.s
 
-core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_kernel.c
-core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.o -MF CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.o.d -o CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_kernel.c
+core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_kernel.c
+core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.obj -MF CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.obj.d -o CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_kernel.c
 
 core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_kernel.c > CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_kernel.c > CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.i
 
 core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_kernel.c -o CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_zephyr_clock_kernel.c -o CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.s
 
-core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_rp2040_support.c
-core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.o -MF CMakeFiles/core.dir/platform/lf_rp2040_support.c.o.d -o CMakeFiles/core.dir/platform/lf_rp2040_support.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_rp2040_support.c
+core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_rp2040_support.c
+core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.obj -MF CMakeFiles/core.dir/platform/lf_rp2040_support.c.obj.d -o CMakeFiles/core.dir/platform/lf_rp2040_support.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_rp2040_support.c
 
 core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/platform/lf_rp2040_support.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_rp2040_support.c > CMakeFiles/core.dir/platform/lf_rp2040_support.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_rp2040_support.c > CMakeFiles/core.dir/platform/lf_rp2040_support.c.i
 
 core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/platform/lf_rp2040_support.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_rp2040_support.c -o CMakeFiles/core.dir/platform/lf_rp2040_support.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_rp2040_support.c -o CMakeFiles/core.dir/platform/lf_rp2040_support.c.s
 
-core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.o: core/CMakeFiles/core.dir/flags.make
-core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.o: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_STM32f4_support.c
-core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.o: core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.o"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.o -MF CMakeFiles/core.dir/platform/lf_STM32f4_support.c.o.d -o CMakeFiles/core.dir/platform/lf_STM32f4_support.c.o -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_STM32f4_support.c
+core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.obj: core/CMakeFiles/core.dir/flags.make
+core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_STM32f4_support.c
+core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.obj: core/CMakeFiles/core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.obj"
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.obj -MF CMakeFiles/core.dir/platform/lf_STM32f4_support.c.obj.d -o CMakeFiles/core.dir/platform/lf_STM32f4_support.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_STM32f4_support.c
 
 core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/platform/lf_STM32f4_support.c.i"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_STM32f4_support.c > CMakeFiles/core.dir/platform/lf_STM32f4_support.c.i
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_STM32f4_support.c > CMakeFiles/core.dir/platform/lf_STM32f4_support.c.i
 
 core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/platform/lf_STM32f4_support.c.s"
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_STM32f4_support.c -o CMakeFiles/core.dir/platform/lf_STM32f4_support.c.s
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/core && /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/core/platform/lf_STM32f4_support.c -o CMakeFiles/core.dir/platform/lf_STM32f4_support.c.s
 
 # Object files for target core
 core_OBJECTS = \
-"CMakeFiles/core.dir/tag.c.o" \
-"CMakeFiles/core.dir/port.c.o" \
-"CMakeFiles/core.dir/mixed_radix.c.o" \
-"CMakeFiles/core.dir/reactor_common.c.o" \
-"CMakeFiles/core.dir/lf_token.c.o" \
-"CMakeFiles/core.dir/environment.c.o" \
-"CMakeFiles/core.dir/reactor.c.o" \
-"CMakeFiles/core.dir/utils/vector.c.o" \
-"CMakeFiles/core.dir/utils/pqueue.c.o" \
-"CMakeFiles/core.dir/utils/util.c.o" \
-"CMakeFiles/core.dir/utils/semaphore.c.o" \
-"CMakeFiles/core.dir/utils/hashset/hashset.c.o" \
-"CMakeFiles/core.dir/utils/hashset/hashset_itr.c.o" \
-"CMakeFiles/core.dir/modal_models/modes.c.o" \
-"CMakeFiles/core.dir/platform/lf_unix_clock_support.c.o" \
-"CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.o" \
-"CMakeFiles/core.dir/platform/lf_linux_support.c.o" \
-"CMakeFiles/core.dir/platform/lf_macos_support.c.o" \
-"CMakeFiles/core.dir/platform/lf_windows_support.c.o" \
-"CMakeFiles/core.dir/platform/lf_nrf52_support.c.o" \
-"CMakeFiles/core.dir/platform/lf_zephyr_support.c.o" \
-"CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.o" \
-"CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.o" \
-"CMakeFiles/core.dir/platform/lf_rp2040_support.c.o" \
-"CMakeFiles/core.dir/platform/lf_STM32f4_support.c.o"
+"CMakeFiles/core.dir/tag.c.obj" \
+"CMakeFiles/core.dir/port.c.obj" \
+"CMakeFiles/core.dir/mixed_radix.c.obj" \
+"CMakeFiles/core.dir/reactor_common.c.obj" \
+"CMakeFiles/core.dir/lf_token.c.obj" \
+"CMakeFiles/core.dir/environment.c.obj" \
+"CMakeFiles/core.dir/reactor.c.obj" \
+"CMakeFiles/core.dir/utils/vector.c.obj" \
+"CMakeFiles/core.dir/utils/pqueue.c.obj" \
+"CMakeFiles/core.dir/utils/util.c.obj" \
+"CMakeFiles/core.dir/utils/semaphore.c.obj" \
+"CMakeFiles/core.dir/utils/hashset/hashset.c.obj" \
+"CMakeFiles/core.dir/utils/hashset/hashset_itr.c.obj" \
+"CMakeFiles/core.dir/modal_models/modes.c.obj" \
+"CMakeFiles/core.dir/platform/lf_unix_clock_support.c.obj" \
+"CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.obj" \
+"CMakeFiles/core.dir/platform/lf_linux_support.c.obj" \
+"CMakeFiles/core.dir/platform/lf_macos_support.c.obj" \
+"CMakeFiles/core.dir/platform/lf_windows_support.c.obj" \
+"CMakeFiles/core.dir/platform/lf_nrf52_support.c.obj" \
+"CMakeFiles/core.dir/platform/lf_zephyr_support.c.obj" \
+"CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.obj" \
+"CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.obj" \
+"CMakeFiles/core.dir/platform/lf_rp2040_support.c.obj" \
+"CMakeFiles/core.dir/platform/lf_STM32f4_support.c.obj"
 
 # External object files for target core
 core_EXTERNAL_OBJECTS =
 
-core/libcore.a: core/CMakeFiles/core.dir/tag.c.o
-core/libcore.a: core/CMakeFiles/core.dir/port.c.o
-core/libcore.a: core/CMakeFiles/core.dir/mixed_radix.c.o
-core/libcore.a: core/CMakeFiles/core.dir/reactor_common.c.o
-core/libcore.a: core/CMakeFiles/core.dir/lf_token.c.o
-core/libcore.a: core/CMakeFiles/core.dir/environment.c.o
-core/libcore.a: core/CMakeFiles/core.dir/reactor.c.o
-core/libcore.a: core/CMakeFiles/core.dir/utils/vector.c.o
-core/libcore.a: core/CMakeFiles/core.dir/utils/pqueue.c.o
-core/libcore.a: core/CMakeFiles/core.dir/utils/util.c.o
-core/libcore.a: core/CMakeFiles/core.dir/utils/semaphore.c.o
-core/libcore.a: core/CMakeFiles/core.dir/utils/hashset/hashset.c.o
-core/libcore.a: core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.o
-core/libcore.a: core/CMakeFiles/core.dir/modal_models/modes.c.o
-core/libcore.a: core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.o
-core/libcore.a: core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.o
-core/libcore.a: core/CMakeFiles/core.dir/platform/lf_linux_support.c.o
-core/libcore.a: core/CMakeFiles/core.dir/platform/lf_macos_support.c.o
-core/libcore.a: core/CMakeFiles/core.dir/platform/lf_windows_support.c.o
-core/libcore.a: core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.o
-core/libcore.a: core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.o
-core/libcore.a: core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.o
-core/libcore.a: core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.o
-core/libcore.a: core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.o
-core/libcore.a: core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.o
+core/libcore.a: core/CMakeFiles/core.dir/tag.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/port.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/mixed_radix.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/reactor_common.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/lf_token.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/environment.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/reactor.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/utils/vector.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/utils/pqueue.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/utils/util.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/utils/semaphore.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/utils/hashset/hashset.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/modal_models/modes.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/platform/lf_linux_support.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/platform/lf_macos_support.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/platform/lf_windows_support.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.obj
+core/libcore.a: core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.obj
 core/libcore.a: core/CMakeFiles/core.dir/build.make
 core/libcore.a: core/CMakeFiles/core.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking C static library libcore.a"

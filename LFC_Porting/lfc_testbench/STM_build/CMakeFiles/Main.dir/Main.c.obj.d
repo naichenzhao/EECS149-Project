@@ -76,5 +76,4 @@ CMakeFiles/Main.dir/Main.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/include/core/mixed_radix.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/include/core/port.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/include/core/environment.h \
- /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/../STM_sdk/Core/Inc/STM_main.h \
  /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/_main_main.h

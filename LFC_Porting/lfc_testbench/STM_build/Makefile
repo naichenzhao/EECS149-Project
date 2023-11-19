@@ -211,30 +211,6 @@ Main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/Main.c.s
 .PHONY : Main.c.s
 
-STM_sdk/Core/Src/STM_main.obj: STM_sdk/Core/Src/STM_main.c.obj
-.PHONY : STM_sdk/Core/Src/STM_main.obj
-
-# target to build an object file
-STM_sdk/Core/Src/STM_main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj
-.PHONY : STM_sdk/Core/Src/STM_main.c.obj
-
-STM_sdk/Core/Src/STM_main.i: STM_sdk/Core/Src/STM_main.c.i
-.PHONY : STM_sdk/Core/Src/STM_main.i
-
-# target to preprocess a source file
-STM_sdk/Core/Src/STM_main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.i
-.PHONY : STM_sdk/Core/Src/STM_main.c.i
-
-STM_sdk/Core/Src/STM_main.s: STM_sdk/Core/Src/STM_main.c.s
-.PHONY : STM_sdk/Core/Src/STM_main.s
-
-# target to generate assembly for a file
-STM_sdk/Core/Src/STM_main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.s
-.PHONY : STM_sdk/Core/Src/STM_main.c.s
-
 STM_sdk/Core/Src/stm32f4xx_hal_msp.obj: STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
 .PHONY : STM_sdk/Core/Src/stm32f4xx_hal_msp.obj
 
@@ -812,9 +788,6 @@ help:
 	@echo "... Main.obj"
 	@echo "... Main.i"
 	@echo "... Main.s"
-	@echo "... STM_sdk/Core/Src/STM_main.obj"
-	@echo "... STM_sdk/Core/Src/STM_main.i"
-	@echo "... STM_sdk/Core/Src/STM_main.s"
 	@echo "... STM_sdk/Core/Src/stm32f4xx_hal_msp.obj"
 	@echo "... STM_sdk/Core/Src/stm32f4xx_hal_msp.i"
 	@echo "... STM_sdk/Core/Src/stm32f4xx_hal_msp.s"

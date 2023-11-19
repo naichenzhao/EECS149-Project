@@ -13,8 +13,13 @@ BUILD_DIR = ../../STM_build
 #######################################
 # Generate cmake
 #######################################
+# cmake -B$(BUILD_DIR) -DCMAKE_TOOLCHAIN_FILE=arm-none-eabi-gcc.cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=true
+# cmake --build . --target install --parallel 16 --config Debug
+# TOOLCHAIN FILES:+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/arm-none-eabi-gcc.cmake
+# TOOLCHAIN FILES:+/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/arm-none-eabi-gcc.cmake
 gen: clean
-	cmake -B$(BUILD_DIR) -DCMAKE_TOOLCHAIN_FILE=arm-none-eabi-gcc.cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=true
+	clear
+	cmake -B$(BUILD_DIR) -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=true
 
 #######################################
 # Generate cmake

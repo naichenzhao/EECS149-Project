@@ -3,6 +3,9 @@
 #define LOG_LEVEL 2
 #define TARGET_FILES_DIRECTORY "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main"
 
+#define LD5_Pin GPIO_PIN_5
+#define LD5_GPIO_Port GPIOA
+
 #include <limits.h>
 #include "include/core/platform.h"
 #include "include/api/api.h"
@@ -12,22 +15,71 @@
 #include "include/core/port.h"
 #include "include/core/environment.h"
 
-#include "STM_main.h"
+
 int lf_reactor_c_main(int argc, const char* argv[]);
+UART_HandleTypeDef huart2;
+
+int _write(int file, char *ptr, int len)
+{
+    HAL_UART_Transmit(&huart2, (uint8_t *)ptr, len, HAL_MAX_DELAY);
+    return len;
+}
+
+static void MX_USART2_UART_Init(void)
+{
+
+    /* USER CODE BEGIN USART2_Init 0 */
+
+    /* USER CODE END USART2_Init 0 */
+
+    /* USER CODE BEGIN USART2_Init 1 */
+
+    /* USER CODE END USART2_Init 1 */
+    huart2.Instance = USART2;
+    huart2.Init.BaudRate = 115200;
+    huart2.Init.WordLength = UART_WORDLENGTH_8B;
+    huart2.Init.StopBits = UART_STOPBITS_1;
+    huart2.Init.Parity = UART_PARITY_NONE;
+    huart2.Init.Mode = UART_MODE_TX_RX;
+    huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+    huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+    if (HAL_UART_Init(&huart2) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    /* USER CODE BEGIN USART2_Init 2 */
+
+    /* USER CODE END USART2_Init 2 */
+}
+
+static void MX_GPIO_Init(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    /* USER CODE BEGIN MX_GPIO_Init_1 */
+    /* USER CODE END MX_GPIO_Init_1 */
+
+    /* GPIO Ports Clock Enable */
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+
+    /*Configure GPIO pin Output Level */
+    HAL_GPIO_WritePin(LD5_GPIO_Port, LD5_Pin, GPIO_PIN_RESET);
+
+    /*Configure GPIO pin : LD5_Pin */
+    GPIO_InitStruct.Pin = LD5_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(LD5_GPIO_Port, &GPIO_InitStruct);
+
+    /* USER CODE BEGIN MX_GPIO_Init_2 */
+    /* USER CODE END MX_GPIO_Init_2 */
+}
 
 int main(void)
 {
-    instant_t *time;
-    uint32_t curr = 5;
-    for (int i = 0; i < 2; i++)
-    {
-        _lf_clock_now(&time);
-        curr = (uint32_t) time;
 
-        printf("MESSAGE LF_main)_21 %u\r\n", time);
-        HAL_GPIO_TogglePin(LD5_GPIO_Port, LD5_Pin);
-        HAL_Delay(500);
-    }
+    MX_GPIO_Init();
+    MX_USART2_UART_Init();
     return lf_reactor_c_main(0, NULL);
 }
 void _lf_set_default_command_line_options() {}

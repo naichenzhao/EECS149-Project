@@ -38,8 +38,6 @@ static uint32_t _lf_time_us_high = 0;
 // We use timer 5 for our clock (probably better than fucking with sysTick)
 void _lf_initialize_clock(void) {
     // Standard initializations from generated code
-    // HAL_Init();
-    // SystemClock_Config();
 
     // Configure TIM5 as our 32-bit clock timer
     __HAL_RCC_TIM5_CLK_ENABLE(); // initialize counter

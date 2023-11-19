@@ -25,7 +25,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
-  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/."
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/include"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/include/api"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/include/core"
@@ -44,12 +44,18 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/../STM_sdk/Drivers/CMSIS/Device/ST/STM32F4xx/Include"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/core/../STM_sdk/Drivers/CMSIS/Include"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/include/Main"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Inc"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/CMSIS/Device/ST/STM32F4xx/Include"
+  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Drivers/CMSIS/Include"
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/Main.c" "CMakeFiles/Main.dir/Main.c.obj" "gcc" "CMakeFiles/Main.dir/Main.c.obj.d"
-  "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/STM_main.c" "CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj" "gcc" "CMakeFiles/Main.dir/STM_sdk/Core/Src/STM_main.c.obj.d"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/stm32f4xx_hal_msp.c" "CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj" "gcc" "CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj.d"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/stm32f4xx_it.c" "CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.obj" "gcc" "CMakeFiles/Main.dir/STM_sdk/Core/Src/stm32f4xx_it.c.obj.d"
   "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_testbench/src-gen/Main/STM_sdk/Core/Src/system_stm32f4xx.c" "CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.obj" "gcc" "CMakeFiles/Main.dir/STM_sdk/Core/Src/system_stm32f4xx.c.obj.d"

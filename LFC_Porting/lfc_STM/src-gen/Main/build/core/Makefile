@@ -175,13 +175,13 @@ core/fast:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/build
 .PHONY : core/fast
 
-environment.o: environment.c.o
-.PHONY : environment.o
+environment.obj: environment.c.obj
+.PHONY : environment.obj
 
 # target to build an object file
-environment.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/environment.c.o
-.PHONY : environment.c.o
+environment.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/environment.c.obj
+.PHONY : environment.c.obj
 
 environment.i: environment.c.i
 .PHONY : environment.i
@@ -199,13 +199,13 @@ environment.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/environment.c.s
 .PHONY : environment.c.s
 
-lf_token.o: lf_token.c.o
-.PHONY : lf_token.o
+lf_token.obj: lf_token.c.obj
+.PHONY : lf_token.obj
 
 # target to build an object file
-lf_token.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/lf_token.c.o
-.PHONY : lf_token.c.o
+lf_token.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/lf_token.c.obj
+.PHONY : lf_token.c.obj
 
 lf_token.i: lf_token.c.i
 .PHONY : lf_token.i
@@ -223,13 +223,13 @@ lf_token.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/lf_token.c.s
 .PHONY : lf_token.c.s
 
-mixed_radix.o: mixed_radix.c.o
-.PHONY : mixed_radix.o
+mixed_radix.obj: mixed_radix.c.obj
+.PHONY : mixed_radix.obj
 
 # target to build an object file
-mixed_radix.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/mixed_radix.c.o
-.PHONY : mixed_radix.c.o
+mixed_radix.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/mixed_radix.c.obj
+.PHONY : mixed_radix.c.obj
 
 mixed_radix.i: mixed_radix.c.i
 .PHONY : mixed_radix.i
@@ -247,13 +247,13 @@ mixed_radix.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/mixed_radix.c.s
 .PHONY : mixed_radix.c.s
 
-modal_models/modes.o: modal_models/modes.c.o
-.PHONY : modal_models/modes.o
+modal_models/modes.obj: modal_models/modes.c.obj
+.PHONY : modal_models/modes.obj
 
 # target to build an object file
-modal_models/modes.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/modal_models/modes.c.o
-.PHONY : modal_models/modes.c.o
+modal_models/modes.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/modal_models/modes.c.obj
+.PHONY : modal_models/modes.c.obj
 
 modal_models/modes.i: modal_models/modes.c.i
 .PHONY : modal_models/modes.i
@@ -271,13 +271,13 @@ modal_models/modes.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/modal_models/modes.c.s
 .PHONY : modal_models/modes.c.s
 
-platform/lf_STM32f4_support.o: platform/lf_STM32f4_support.c.o
-.PHONY : platform/lf_STM32f4_support.o
+platform/lf_STM32f4_support.obj: platform/lf_STM32f4_support.c.obj
+.PHONY : platform/lf_STM32f4_support.obj
 
 # target to build an object file
-platform/lf_STM32f4_support.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.o
-.PHONY : platform/lf_STM32f4_support.c.o
+platform/lf_STM32f4_support.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.obj
+.PHONY : platform/lf_STM32f4_support.c.obj
 
 platform/lf_STM32f4_support.i: platform/lf_STM32f4_support.c.i
 .PHONY : platform/lf_STM32f4_support.i
@@ -295,13 +295,13 @@ platform/lf_STM32f4_support.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_STM32f4_support.c.s
 .PHONY : platform/lf_STM32f4_support.c.s
 
-platform/lf_linux_support.o: platform/lf_linux_support.c.o
-.PHONY : platform/lf_linux_support.o
+platform/lf_linux_support.obj: platform/lf_linux_support.c.obj
+.PHONY : platform/lf_linux_support.obj
 
 # target to build an object file
-platform/lf_linux_support.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_linux_support.c.o
-.PHONY : platform/lf_linux_support.c.o
+platform/lf_linux_support.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_linux_support.c.obj
+.PHONY : platform/lf_linux_support.c.obj
 
 platform/lf_linux_support.i: platform/lf_linux_support.c.i
 .PHONY : platform/lf_linux_support.i
@@ -319,13 +319,13 @@ platform/lf_linux_support.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_linux_support.c.s
 .PHONY : platform/lf_linux_support.c.s
 
-platform/lf_macos_support.o: platform/lf_macos_support.c.o
-.PHONY : platform/lf_macos_support.o
+platform/lf_macos_support.obj: platform/lf_macos_support.c.obj
+.PHONY : platform/lf_macos_support.obj
 
 # target to build an object file
-platform/lf_macos_support.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_macos_support.c.o
-.PHONY : platform/lf_macos_support.c.o
+platform/lf_macos_support.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_macos_support.c.obj
+.PHONY : platform/lf_macos_support.c.obj
 
 platform/lf_macos_support.i: platform/lf_macos_support.c.i
 .PHONY : platform/lf_macos_support.i
@@ -343,13 +343,13 @@ platform/lf_macos_support.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_macos_support.c.s
 .PHONY : platform/lf_macos_support.c.s
 
-platform/lf_nrf52_support.o: platform/lf_nrf52_support.c.o
-.PHONY : platform/lf_nrf52_support.o
+platform/lf_nrf52_support.obj: platform/lf_nrf52_support.c.obj
+.PHONY : platform/lf_nrf52_support.obj
 
 # target to build an object file
-platform/lf_nrf52_support.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.o
-.PHONY : platform/lf_nrf52_support.c.o
+platform/lf_nrf52_support.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.obj
+.PHONY : platform/lf_nrf52_support.c.obj
 
 platform/lf_nrf52_support.i: platform/lf_nrf52_support.c.i
 .PHONY : platform/lf_nrf52_support.i
@@ -367,13 +367,13 @@ platform/lf_nrf52_support.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_nrf52_support.c.s
 .PHONY : platform/lf_nrf52_support.c.s
 
-platform/lf_rp2040_support.o: platform/lf_rp2040_support.c.o
-.PHONY : platform/lf_rp2040_support.o
+platform/lf_rp2040_support.obj: platform/lf_rp2040_support.c.obj
+.PHONY : platform/lf_rp2040_support.obj
 
 # target to build an object file
-platform/lf_rp2040_support.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.o
-.PHONY : platform/lf_rp2040_support.c.o
+platform/lf_rp2040_support.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.obj
+.PHONY : platform/lf_rp2040_support.c.obj
 
 platform/lf_rp2040_support.i: platform/lf_rp2040_support.c.i
 .PHONY : platform/lf_rp2040_support.i
@@ -391,13 +391,13 @@ platform/lf_rp2040_support.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_rp2040_support.c.s
 .PHONY : platform/lf_rp2040_support.c.s
 
-platform/lf_unix_clock_support.o: platform/lf_unix_clock_support.c.o
-.PHONY : platform/lf_unix_clock_support.o
+platform/lf_unix_clock_support.obj: platform/lf_unix_clock_support.c.obj
+.PHONY : platform/lf_unix_clock_support.obj
 
 # target to build an object file
-platform/lf_unix_clock_support.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.o
-.PHONY : platform/lf_unix_clock_support.c.o
+platform/lf_unix_clock_support.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.obj
+.PHONY : platform/lf_unix_clock_support.c.obj
 
 platform/lf_unix_clock_support.i: platform/lf_unix_clock_support.c.i
 .PHONY : platform/lf_unix_clock_support.i
@@ -415,13 +415,13 @@ platform/lf_unix_clock_support.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_unix_clock_support.c.s
 .PHONY : platform/lf_unix_clock_support.c.s
 
-platform/lf_unix_syscall_support.o: platform/lf_unix_syscall_support.c.o
-.PHONY : platform/lf_unix_syscall_support.o
+platform/lf_unix_syscall_support.obj: platform/lf_unix_syscall_support.c.obj
+.PHONY : platform/lf_unix_syscall_support.obj
 
 # target to build an object file
-platform/lf_unix_syscall_support.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.o
-.PHONY : platform/lf_unix_syscall_support.c.o
+platform/lf_unix_syscall_support.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.obj
+.PHONY : platform/lf_unix_syscall_support.c.obj
 
 platform/lf_unix_syscall_support.i: platform/lf_unix_syscall_support.c.i
 .PHONY : platform/lf_unix_syscall_support.i
@@ -439,13 +439,13 @@ platform/lf_unix_syscall_support.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.s
 .PHONY : platform/lf_unix_syscall_support.c.s
 
-platform/lf_windows_support.o: platform/lf_windows_support.c.o
-.PHONY : platform/lf_windows_support.o
+platform/lf_windows_support.obj: platform/lf_windows_support.c.obj
+.PHONY : platform/lf_windows_support.obj
 
 # target to build an object file
-platform/lf_windows_support.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_windows_support.c.o
-.PHONY : platform/lf_windows_support.c.o
+platform/lf_windows_support.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_windows_support.c.obj
+.PHONY : platform/lf_windows_support.c.obj
 
 platform/lf_windows_support.i: platform/lf_windows_support.c.i
 .PHONY : platform/lf_windows_support.i
@@ -463,13 +463,13 @@ platform/lf_windows_support.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_windows_support.c.s
 .PHONY : platform/lf_windows_support.c.s
 
-platform/lf_zephyr_clock_counter.o: platform/lf_zephyr_clock_counter.c.o
-.PHONY : platform/lf_zephyr_clock_counter.o
+platform/lf_zephyr_clock_counter.obj: platform/lf_zephyr_clock_counter.c.obj
+.PHONY : platform/lf_zephyr_clock_counter.obj
 
 # target to build an object file
-platform/lf_zephyr_clock_counter.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.o
-.PHONY : platform/lf_zephyr_clock_counter.c.o
+platform/lf_zephyr_clock_counter.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.obj
+.PHONY : platform/lf_zephyr_clock_counter.c.obj
 
 platform/lf_zephyr_clock_counter.i: platform/lf_zephyr_clock_counter.c.i
 .PHONY : platform/lf_zephyr_clock_counter.i
@@ -487,13 +487,13 @@ platform/lf_zephyr_clock_counter.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_clock_counter.c.s
 .PHONY : platform/lf_zephyr_clock_counter.c.s
 
-platform/lf_zephyr_clock_kernel.o: platform/lf_zephyr_clock_kernel.c.o
-.PHONY : platform/lf_zephyr_clock_kernel.o
+platform/lf_zephyr_clock_kernel.obj: platform/lf_zephyr_clock_kernel.c.obj
+.PHONY : platform/lf_zephyr_clock_kernel.obj
 
 # target to build an object file
-platform/lf_zephyr_clock_kernel.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.o
-.PHONY : platform/lf_zephyr_clock_kernel.c.o
+platform/lf_zephyr_clock_kernel.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.obj
+.PHONY : platform/lf_zephyr_clock_kernel.c.obj
 
 platform/lf_zephyr_clock_kernel.i: platform/lf_zephyr_clock_kernel.c.i
 .PHONY : platform/lf_zephyr_clock_kernel.i
@@ -511,13 +511,13 @@ platform/lf_zephyr_clock_kernel.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_clock_kernel.c.s
 .PHONY : platform/lf_zephyr_clock_kernel.c.s
 
-platform/lf_zephyr_support.o: platform/lf_zephyr_support.c.o
-.PHONY : platform/lf_zephyr_support.o
+platform/lf_zephyr_support.obj: platform/lf_zephyr_support.c.obj
+.PHONY : platform/lf_zephyr_support.obj
 
 # target to build an object file
-platform/lf_zephyr_support.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.o
-.PHONY : platform/lf_zephyr_support.c.o
+platform/lf_zephyr_support.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.obj
+.PHONY : platform/lf_zephyr_support.c.obj
 
 platform/lf_zephyr_support.i: platform/lf_zephyr_support.c.i
 .PHONY : platform/lf_zephyr_support.i
@@ -535,13 +535,13 @@ platform/lf_zephyr_support.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/platform/lf_zephyr_support.c.s
 .PHONY : platform/lf_zephyr_support.c.s
 
-port.o: port.c.o
-.PHONY : port.o
+port.obj: port.c.obj
+.PHONY : port.obj
 
 # target to build an object file
-port.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/port.c.o
-.PHONY : port.c.o
+port.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/port.c.obj
+.PHONY : port.c.obj
 
 port.i: port.c.i
 .PHONY : port.i
@@ -559,13 +559,13 @@ port.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/port.c.s
 .PHONY : port.c.s
 
-reactor.o: reactor.c.o
-.PHONY : reactor.o
+reactor.obj: reactor.c.obj
+.PHONY : reactor.obj
 
 # target to build an object file
-reactor.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/reactor.c.o
-.PHONY : reactor.c.o
+reactor.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/reactor.c.obj
+.PHONY : reactor.c.obj
 
 reactor.i: reactor.c.i
 .PHONY : reactor.i
@@ -583,13 +583,13 @@ reactor.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/reactor.c.s
 .PHONY : reactor.c.s
 
-reactor_common.o: reactor_common.c.o
-.PHONY : reactor_common.o
+reactor_common.obj: reactor_common.c.obj
+.PHONY : reactor_common.obj
 
 # target to build an object file
-reactor_common.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/reactor_common.c.o
-.PHONY : reactor_common.c.o
+reactor_common.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/reactor_common.c.obj
+.PHONY : reactor_common.c.obj
 
 reactor_common.i: reactor_common.c.i
 .PHONY : reactor_common.i
@@ -607,13 +607,13 @@ reactor_common.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/reactor_common.c.s
 .PHONY : reactor_common.c.s
 
-tag.o: tag.c.o
-.PHONY : tag.o
+tag.obj: tag.c.obj
+.PHONY : tag.obj
 
 # target to build an object file
-tag.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/tag.c.o
-.PHONY : tag.c.o
+tag.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/tag.c.obj
+.PHONY : tag.c.obj
 
 tag.i: tag.c.i
 .PHONY : tag.i
@@ -631,13 +631,13 @@ tag.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/tag.c.s
 .PHONY : tag.c.s
 
-utils/hashset/hashset.o: utils/hashset/hashset.c.o
-.PHONY : utils/hashset/hashset.o
+utils/hashset/hashset.obj: utils/hashset/hashset.c.obj
+.PHONY : utils/hashset/hashset.obj
 
 # target to build an object file
-utils/hashset/hashset.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/hashset/hashset.c.o
-.PHONY : utils/hashset/hashset.c.o
+utils/hashset/hashset.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/hashset/hashset.c.obj
+.PHONY : utils/hashset/hashset.c.obj
 
 utils/hashset/hashset.i: utils/hashset/hashset.c.i
 .PHONY : utils/hashset/hashset.i
@@ -655,13 +655,13 @@ utils/hashset/hashset.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/hashset/hashset.c.s
 .PHONY : utils/hashset/hashset.c.s
 
-utils/hashset/hashset_itr.o: utils/hashset/hashset_itr.c.o
-.PHONY : utils/hashset/hashset_itr.o
+utils/hashset/hashset_itr.obj: utils/hashset/hashset_itr.c.obj
+.PHONY : utils/hashset/hashset_itr.obj
 
 # target to build an object file
-utils/hashset/hashset_itr.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.o
-.PHONY : utils/hashset/hashset_itr.c.o
+utils/hashset/hashset_itr.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.obj
+.PHONY : utils/hashset/hashset_itr.c.obj
 
 utils/hashset/hashset_itr.i: utils/hashset/hashset_itr.c.i
 .PHONY : utils/hashset/hashset_itr.i
@@ -679,13 +679,13 @@ utils/hashset/hashset_itr.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.s
 .PHONY : utils/hashset/hashset_itr.c.s
 
-utils/pqueue.o: utils/pqueue.c.o
-.PHONY : utils/pqueue.o
+utils/pqueue.obj: utils/pqueue.c.obj
+.PHONY : utils/pqueue.obj
 
 # target to build an object file
-utils/pqueue.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/pqueue.c.o
-.PHONY : utils/pqueue.c.o
+utils/pqueue.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/pqueue.c.obj
+.PHONY : utils/pqueue.c.obj
 
 utils/pqueue.i: utils/pqueue.c.i
 .PHONY : utils/pqueue.i
@@ -703,13 +703,13 @@ utils/pqueue.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/pqueue.c.s
 .PHONY : utils/pqueue.c.s
 
-utils/semaphore.o: utils/semaphore.c.o
-.PHONY : utils/semaphore.o
+utils/semaphore.obj: utils/semaphore.c.obj
+.PHONY : utils/semaphore.obj
 
 # target to build an object file
-utils/semaphore.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/semaphore.c.o
-.PHONY : utils/semaphore.c.o
+utils/semaphore.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/semaphore.c.obj
+.PHONY : utils/semaphore.c.obj
 
 utils/semaphore.i: utils/semaphore.c.i
 .PHONY : utils/semaphore.i
@@ -727,13 +727,13 @@ utils/semaphore.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/semaphore.c.s
 .PHONY : utils/semaphore.c.s
 
-utils/util.o: utils/util.c.o
-.PHONY : utils/util.o
+utils/util.obj: utils/util.c.obj
+.PHONY : utils/util.obj
 
 # target to build an object file
-utils/util.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/util.c.o
-.PHONY : utils/util.c.o
+utils/util.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/util.c.obj
+.PHONY : utils/util.c.obj
 
 utils/util.i: utils/util.c.i
 .PHONY : utils/util.i
@@ -751,13 +751,13 @@ utils/util.c.s:
 	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/util.c.s
 .PHONY : utils/util.c.s
 
-utils/vector.o: utils/vector.c.o
-.PHONY : utils/vector.o
+utils/vector.obj: utils/vector.c.obj
+.PHONY : utils/vector.obj
 
 # target to build an object file
-utils/vector.c.o:
-	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/vector.c.o
-.PHONY : utils/vector.c.o
+utils/vector.c.obj:
+	cd /Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src-gen/Main/build && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/core.dir/build.make core/CMakeFiles/core.dir/utils/vector.c.obj
+.PHONY : utils/vector.c.obj
 
 utils/vector.i: utils/vector.c.i
 .PHONY : utils/vector.i
@@ -788,79 +788,79 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... core"
-	@echo "... environment.o"
+	@echo "... environment.obj"
 	@echo "... environment.i"
 	@echo "... environment.s"
-	@echo "... lf_token.o"
+	@echo "... lf_token.obj"
 	@echo "... lf_token.i"
 	@echo "... lf_token.s"
-	@echo "... mixed_radix.o"
+	@echo "... mixed_radix.obj"
 	@echo "... mixed_radix.i"
 	@echo "... mixed_radix.s"
-	@echo "... modal_models/modes.o"
+	@echo "... modal_models/modes.obj"
 	@echo "... modal_models/modes.i"
 	@echo "... modal_models/modes.s"
-	@echo "... platform/lf_STM32f4_support.o"
+	@echo "... platform/lf_STM32f4_support.obj"
 	@echo "... platform/lf_STM32f4_support.i"
 	@echo "... platform/lf_STM32f4_support.s"
-	@echo "... platform/lf_linux_support.o"
+	@echo "... platform/lf_linux_support.obj"
 	@echo "... platform/lf_linux_support.i"
 	@echo "... platform/lf_linux_support.s"
-	@echo "... platform/lf_macos_support.o"
+	@echo "... platform/lf_macos_support.obj"
 	@echo "... platform/lf_macos_support.i"
 	@echo "... platform/lf_macos_support.s"
-	@echo "... platform/lf_nrf52_support.o"
+	@echo "... platform/lf_nrf52_support.obj"
 	@echo "... platform/lf_nrf52_support.i"
 	@echo "... platform/lf_nrf52_support.s"
-	@echo "... platform/lf_rp2040_support.o"
+	@echo "... platform/lf_rp2040_support.obj"
 	@echo "... platform/lf_rp2040_support.i"
 	@echo "... platform/lf_rp2040_support.s"
-	@echo "... platform/lf_unix_clock_support.o"
+	@echo "... platform/lf_unix_clock_support.obj"
 	@echo "... platform/lf_unix_clock_support.i"
 	@echo "... platform/lf_unix_clock_support.s"
-	@echo "... platform/lf_unix_syscall_support.o"
+	@echo "... platform/lf_unix_syscall_support.obj"
 	@echo "... platform/lf_unix_syscall_support.i"
 	@echo "... platform/lf_unix_syscall_support.s"
-	@echo "... platform/lf_windows_support.o"
+	@echo "... platform/lf_windows_support.obj"
 	@echo "... platform/lf_windows_support.i"
 	@echo "... platform/lf_windows_support.s"
-	@echo "... platform/lf_zephyr_clock_counter.o"
+	@echo "... platform/lf_zephyr_clock_counter.obj"
 	@echo "... platform/lf_zephyr_clock_counter.i"
 	@echo "... platform/lf_zephyr_clock_counter.s"
-	@echo "... platform/lf_zephyr_clock_kernel.o"
+	@echo "... platform/lf_zephyr_clock_kernel.obj"
 	@echo "... platform/lf_zephyr_clock_kernel.i"
 	@echo "... platform/lf_zephyr_clock_kernel.s"
-	@echo "... platform/lf_zephyr_support.o"
+	@echo "... platform/lf_zephyr_support.obj"
 	@echo "... platform/lf_zephyr_support.i"
 	@echo "... platform/lf_zephyr_support.s"
-	@echo "... port.o"
+	@echo "... port.obj"
 	@echo "... port.i"
 	@echo "... port.s"
-	@echo "... reactor.o"
+	@echo "... reactor.obj"
 	@echo "... reactor.i"
 	@echo "... reactor.s"
-	@echo "... reactor_common.o"
+	@echo "... reactor_common.obj"
 	@echo "... reactor_common.i"
 	@echo "... reactor_common.s"
-	@echo "... tag.o"
+	@echo "... tag.obj"
 	@echo "... tag.i"
 	@echo "... tag.s"
-	@echo "... utils/hashset/hashset.o"
+	@echo "... utils/hashset/hashset.obj"
 	@echo "... utils/hashset/hashset.i"
 	@echo "... utils/hashset/hashset.s"
-	@echo "... utils/hashset/hashset_itr.o"
+	@echo "... utils/hashset/hashset_itr.obj"
 	@echo "... utils/hashset/hashset_itr.i"
 	@echo "... utils/hashset/hashset_itr.s"
-	@echo "... utils/pqueue.o"
+	@echo "... utils/pqueue.obj"
 	@echo "... utils/pqueue.i"
 	@echo "... utils/pqueue.s"
-	@echo "... utils/semaphore.o"
+	@echo "... utils/semaphore.obj"
 	@echo "... utils/semaphore.i"
 	@echo "... utils/semaphore.s"
-	@echo "... utils/util.o"
+	@echo "... utils/util.obj"
 	@echo "... utils/util.i"
 	@echo "... utils/util.s"
-	@echo "... utils/vector.o"
+	@echo "... utils/vector.obj"
 	@echo "... utils/vector.i"
 	@echo "... utils/vector.s"
 .PHONY : help
