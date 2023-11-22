@@ -33,10 +33,6 @@ main reactor {
         huart2.Init.Mode = UART_MODE_TX_RX;
         huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
         huart2.Init.OverSampling = UART_OVERSAMPLING_16;
-        if (HAL_UART_Init(&huart2) != HAL_OK)
-        {
-            Error_Handler();
-        }
     }
 
     static void MX_GPIO_Init(void)
@@ -57,8 +53,8 @@ main reactor {
     }
   =}
 
-  timer t(250 ms, 500 ms)
-  timer t2(0, 500 ms)
+  timer t(500 ms, 1000 ms)
+  timer t2(0, 1000 ms)
   state counter: int = 0
 
   reaction(startup) {=

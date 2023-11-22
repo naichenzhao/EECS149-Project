@@ -61,14 +61,14 @@ void _lf_initialize_trigger_objects() {
         main_main_self[0]->counter = _initial;
     } // End scoping.
     // Initiaizing timer Main.t.
-    main_main_self[0]->_lf__t.offset = MSEC(250);
-    main_main_self[0]->_lf__t.period = MSEC(500);
+    main_main_self[0]->_lf__t.offset = MSEC(500);
+    main_main_self[0]->_lf__t.period = MSEC(1000);
     // Associate timer with the environment of its parent
     envs[main_main].timer_triggers[timer_triggers_count[main_main]++] = &main_main_self[0]->_lf__t;
     main_main_self[0]->_lf__t.mode = NULL;
     // Initiaizing timer Main.t2.
     main_main_self[0]->_lf__t2.offset = 0;
-    main_main_self[0]->_lf__t2.period = MSEC(500);
+    main_main_self[0]->_lf__t2.period = MSEC(1000);
     // Associate timer with the environment of its parent
     envs[main_main].timer_triggers[timer_triggers_count[main_main]++] = &main_main_self[0]->_lf__t2;
     main_main_self[0]->_lf__t2.mode = NULL;

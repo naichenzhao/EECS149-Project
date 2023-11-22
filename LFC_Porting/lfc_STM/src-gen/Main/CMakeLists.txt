@@ -65,11 +65,11 @@ set(MCU_FAMILY STM32F4xx)
 set(MCU_MODEL STM32F446xx)
 set(CPU_PARAMETERS -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp)
 
-set(STARTUP_SCRIPT ${STM_DIR}/CubeMX/startup_stm32f446xx.s)
-set(MCU_LINKER_SCRIPT ${STM_DIR}/CubeMX/STM32F446RETx_FLASH.ld)
+set(STARTUP_SCRIPT ${STM_DIR}/startup_stm32f446xx.s)
+set(MCU_LINKER_SCRIPT ${STM_DIR}/STM32F446RETx_FLASH.ld)
 
 set(PROJECT_INCLUDE_DIRECTORIES . /include/api )
-file(GLOB_RECURSE STM32CUBEMX_SOURCES ${STM_DIR}/Core/*.c ${STM_DIR}/Drivers/*.c)
+file(GLOB_RECURSE STM32CUBEMX_SOURCES ${STM_DIR}/Core/*.c ${STM_DIR}/Drivers/${MCU_FAMILY}_HAL_Driver/*.c)
 
 # Declare a new executable target and list all its sources
 add_executable(
@@ -93,14 +93,14 @@ set(CUBEMX_INCLUDE_DIRECTORIES
 target_include_directories(core PUBLIC ${CUBEMX_INCLUDE_DIRECTORIES})
 
 
-target_compile_definitions(${LF_MAIN_TARGET} PRIVATE
+target_compile_definitions(core PUBLIC
 ${MCU_MODEL}
 USE_HAL_DRIVER)
 
 
 
 # Compiler definitions for the STM32
-target_compile_options(${LF_MAIN_TARGET} PRIVATE
+target_compile_options(core PUBLIC
     ${CPU_PARAMETERS}
     -Wall
     -Wextra

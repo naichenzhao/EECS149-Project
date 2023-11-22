@@ -12,21 +12,21 @@
 typedef struct {
     struct self_base_t base;
     
-    #line 62 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
+    #line 58 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
     int counter;
-    #line 64 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
+    #line 60 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
     reaction_t _lf__reaction_0;
-    #line 73 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
+    #line 69 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
     reaction_t _lf__reaction_1;
-    #line 77 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
+    #line 73 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
     reaction_t _lf__reaction_2;
-    #line 60 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
+    #line 56 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
     trigger_t _lf__t;
-    #line 60 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
+    #line 56 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
     reaction_t* _lf__t_reactions[1];
-    #line 61 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
+    #line 57 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
     trigger_t _lf__t2;
-    #line 61 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
+    #line 57 "/Users/naichenzhao/Desktop/EECS149-Project/LFC_Porting/lfc_STM/src/Main.lf"
     reaction_t* _lf__t2_reactions[1];
     trigger_t _lf__startup;
     reaction_t* _lf__startup_reactions[1];
