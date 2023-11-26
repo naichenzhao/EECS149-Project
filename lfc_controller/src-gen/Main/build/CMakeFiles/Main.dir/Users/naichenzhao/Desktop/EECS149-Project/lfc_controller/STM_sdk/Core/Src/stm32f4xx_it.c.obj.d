@@ -1,24 +1,6 @@
 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/Main/main.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdio.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/_ansi.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/newlib-nano/newlib.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/_newlib_version.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/config.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/ieeefp.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/features.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/cdefs.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/_default_types.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include/stddef.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include/stdarg.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/reent.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/_ansi.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/_types.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/_types.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/lock.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/assert.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/stdio.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Core/Inc/stm32f4xx_hal_conf.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -29,6 +11,9 @@ CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/CMSIS/Include/core_cm4.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include/stdint.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdint.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/_default_types.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/features.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/_newlib_version.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/_intsup.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/CMSIS/Include/cmsis_version.h \
@@ -36,6 +21,7 @@ CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/CMSIS/Include/cmsis_gcc.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/CMSIS/Include/mpu_armv7.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include/stddef.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
@@ -61,6 +47,20 @@ CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdio.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/_ansi.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/newlib-nano/newlib.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/config.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/ieeefp.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/cdefs.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include/stdarg.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/reent.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/_ansi.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/_types.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/_types.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/lock.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/assert.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/stdio.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Core/Inc/stm32_startup.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/../include/api/api.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/lf_types.h \

@@ -90,4 +90,7 @@ CMakeFiles/Main.dir/Main.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/environment.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_serial.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Core/Inc/stm32_startup.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_qdec.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_dac.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_pid_controller.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_main_main.h

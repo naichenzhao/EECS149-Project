@@ -586,10 +586,52 @@ CMakeFiles/Main.dir/_serial.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/_serial.c.s"
 	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_serial.c -o CMakeFiles/Main.dir/_serial.c.s
 
+CMakeFiles/Main.dir/_qdec.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/_qdec.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_qdec.c
+CMakeFiles/Main.dir/_qdec.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/Main.dir/_qdec.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/_qdec.c.obj -MF CMakeFiles/Main.dir/_qdec.c.obj.d -o CMakeFiles/Main.dir/_qdec.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_qdec.c
+
+CMakeFiles/Main.dir/_qdec.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/_qdec.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_qdec.c > CMakeFiles/Main.dir/_qdec.c.i
+
+CMakeFiles/Main.dir/_qdec.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/_qdec.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_qdec.c -o CMakeFiles/Main.dir/_qdec.c.s
+
+CMakeFiles/Main.dir/_dac.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/_dac.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_dac.c
+CMakeFiles/Main.dir/_dac.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/Main.dir/_dac.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/_dac.c.obj -MF CMakeFiles/Main.dir/_dac.c.obj.d -o CMakeFiles/Main.dir/_dac.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_dac.c
+
+CMakeFiles/Main.dir/_dac.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/_dac.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_dac.c > CMakeFiles/Main.dir/_dac.c.i
+
+CMakeFiles/Main.dir/_dac.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/_dac.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_dac.c -o CMakeFiles/Main.dir/_dac.c.s
+
+CMakeFiles/Main.dir/_pid_controller.c.obj: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/_pid_controller.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_pid_controller.c
+CMakeFiles/Main.dir/_pid_controller.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/Main.dir/_pid_controller.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/_pid_controller.c.obj -MF CMakeFiles/Main.dir/_pid_controller.c.obj.d -o CMakeFiles/Main.dir/_pid_controller.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_pid_controller.c
+
+CMakeFiles/Main.dir/_pid_controller.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/_pid_controller.c.i"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_pid_controller.c > CMakeFiles/Main.dir/_pid_controller.c.i
+
+CMakeFiles/Main.dir/_pid_controller.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/_pid_controller.c.s"
+	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_pid_controller.c -o CMakeFiles/Main.dir/_pid_controller.c.s
+
 CMakeFiles/Main.dir/Main.c.obj: CMakeFiles/Main.dir/flags.make
 CMakeFiles/Main.dir/Main.c.obj: /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/Main.c
 CMakeFiles/Main.dir/Main.c.obj: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/Main.dir/Main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/Main.dir/Main.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/Main.c.obj -MF CMakeFiles/Main.dir/Main.c.obj.d -o CMakeFiles/Main.dir/Main.c.obj -c /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/Main.c
 
 CMakeFiles/Main.dir/Main.c.i: cmake_force
@@ -639,6 +681,9 @@ Main_OBJECTS = \
 "CMakeFiles/Main.dir/lib/schedule.c.obj" \
 "CMakeFiles/Main.dir/_main_main.c.obj" \
 "CMakeFiles/Main.dir/_serial.c.obj" \
+"CMakeFiles/Main.dir/_qdec.c.obj" \
+"CMakeFiles/Main.dir/_dac.c.obj" \
+"CMakeFiles/Main.dir/_pid_controller.c.obj" \
 "CMakeFiles/Main.dir/Main.c.obj"
 
 # External object files for target Main
@@ -681,11 +726,14 @@ Main.elf: CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_cont
 Main.elf: CMakeFiles/Main.dir/lib/schedule.c.obj
 Main.elf: CMakeFiles/Main.dir/_main_main.c.obj
 Main.elf: CMakeFiles/Main.dir/_serial.c.obj
+Main.elf: CMakeFiles/Main.dir/_qdec.c.obj
+Main.elf: CMakeFiles/Main.dir/_dac.c.obj
+Main.elf: CMakeFiles/Main.dir/_pid_controller.c.obj
 Main.elf: CMakeFiles/Main.dir/Main.c.obj
 Main.elf: CMakeFiles/Main.dir/build.make
 Main.elf: core/libcore.a
 Main.elf: CMakeFiles/Main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Linking C executable Main.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Linking C executable Main.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Main.dir/link.txt --verbose=$(VERBOSE)
 	arm-none-eabi-size /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/Main.elf
 	arm-none-eabi-objcopy -O ihex /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/Main.elf Main.hex

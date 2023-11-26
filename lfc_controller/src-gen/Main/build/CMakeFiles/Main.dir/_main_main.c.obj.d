@@ -89,5 +89,8 @@ CMakeFiles/Main.dir/_main_main.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_main_main.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/reactor.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_serial.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_dac.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_pid_controller.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_qdec.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/api/set.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/api/set_undef.h

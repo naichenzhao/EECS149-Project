@@ -7,9 +7,9 @@ target C {
 }
 
 preamble {=
-  #include <stdio.h>
   #include "stm32f4xx_hal.h"
   #include "stm32_startup.h"
+  #include <stdio.h>
 =}
 
 reactor Serial {
@@ -23,15 +23,8 @@ reactor Serial {
 
     void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
-      
-
-
-
       printf("recieved %c \r\n", rx_data[0]);
       HAL_UART_Receive_IT(&huart2, rx_data, 1);
-
-
-
 
     }
   =}

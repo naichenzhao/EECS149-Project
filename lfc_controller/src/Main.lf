@@ -7,134 +7,96 @@ target C {
 }
 
 import Serial from "lib/Serial.lf"
+import QDEC from "lib/Encoder.lf"
+import DAC from "lib/DAC.lf"
+import PID_Controller from "lib/PID.lf"
 
 preamble {=
   #include <stdio.h>
   #include "stm32f4xx_hal.h"
   #include "stm32_startup.h"
-
-  #define LD5_Pin GPIO_PIN_5
-  #define LD5_GPIO_Port GPIOA
 =}
 
 // Import and/or declare reactor classes.
 main reactor {
   preamble {=
-    DAC_HandleTypeDef hdac;
-    TIM_HandleTypeDef htim2;
-
-
-    static void MX_TIM2_Init(void) {
-      TIM_Encoder_InitTypeDef sConfig = {0};
-      TIM_MasterConfigTypeDef sMasterConfig = {0};
-
-      htim2.Instance = TIM2;
-      htim2.Init.Prescaler = 0;
-      htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-      htim2.Init.Period = 4294967295;
-      htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-      htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
-      sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
-      sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
-      sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
-      sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
-      sConfig.IC1Filter = 0;
-      sConfig.IC2Polarity = TIM_ICPOLARITY_RISING;
-      sConfig.IC2Selection = TIM_ICSELECTION_DIRECTTI;
-      sConfig.IC2Prescaler = TIM_ICPSC_DIV1;
-      sConfig.IC2Filter = 10;
-      if (HAL_TIM_Encoder_Init(&htim2, &sConfig) != HAL_OK) {
-        Error_Handler();
-      }
-      sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-      sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-      if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK) {
-        Error_Handler();
-      }
-    }
-
     static void MX_GPIO_Init(void) {
         GPIO_InitTypeDef GPIO_InitStruct = {0};
 
         __HAL_RCC_GPIOH_CLK_ENABLE();
         __HAL_RCC_GPIOA_CLK_ENABLE();
 
-        // /*Configure GPIO pin Output Level */
-        // HAL_GPIO_WritePin(LD5_GPIO_Port, LD5_Pin, GPIO_PIN_RESET);
+        /*Configure GPIO pin Output Level */
+        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
 
-        // /*Configure GPIO pin : LD5_Pin */
-        // GPIO_InitStruct.Pin = LD5_Pin;
-        // GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-        // GPIO_InitStruct.Pull = GPIO_NOPULL;
-        // GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-        // HAL_GPIO_Init(LD5_GPIO_Port, &GPIO_InitStruct);
-    }
-
-    static void MX_DAC_Init(void) {
-      DAC_ChannelConfTypeDef sConfig = {0};
-      hdac.Instance = DAC1;
-      if (HAL_DAC_Init(&hdac) != HAL_OK) {
-        Error_Handler();
-      }
-
-      sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
-      sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
-      if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_1) != HAL_OK) {
-        Error_Handler();
-      }
+        /*Configure GPIO pin : LD5_Pin */
+        GPIO_InitStruct.Pin = GPIO_PIN_4;
+        GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+        GPIO_InitStruct.Pull = GPIO_NOPULL;
+        GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+        HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
     }
   =}
 
-  timer t(500 ms, 10 ms)
-  timer t2(0, 100 ms)
+  timer t(0 ms, 10 ms)  // Define timers
+  timer update(0 ms, 100 ms)
+
+  ser = new Serial()    // Define external reactors
+  qdec = new QDEC()
+  dac = new DAC()
+  pid_controller = new PID_Controller()
+
   state counter: int = 0
+  state encoder_count: int32_t = 0
   state sign: int = 1
 
-  s = new Serial()
-  state curr: uint8_t*
+  qdec.read -> pid_controller.current_pos
+  pid_controller.out -> dac.setvalue
 
   reaction(startup) {=
     // Initialize GPIOs
     MX_GPIO_Init();
-    MX_TIM2_Init();
-    MX_DAC_Init();
-
-    // Start Peripherals
-    HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
-    HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
 
     // Initial print
     printf("hello world\r\n");
   =}
 
-  reaction(t2) -> s.trigger {=
-    // lf_set(s.trigger, true);
-    printf("encoder: %d\r\n", TIM2->CNT);
-
-    // HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 0);
-    // HAL_UART_Receive (&huart2, Rx_data, 4, 100);
-  =}
-
-  reaction(t) {=
-    // printf("PRINT! counter: %d\r\n", self->counter);
+  // Timer Reactors
+  reaction(t) -> pid_controller.target_pos {=
     if (self->sign == 1) {
       self->counter = self->counter + 10;
     } else {
       self->counter = self->counter - 10;
     }
 
-    HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, self->counter);
+    lf_set(pid_controller.target_pos, 0);
+    // lf_set(dac.setvalue, self->counter);
+
+
+    // printf("counter: %d\r\n", self->counter);
 
     if(self->counter >= 4090) {
       self->sign = 0;
     }
-
     if(self->counter <= 0) {
       self->sign = 1;
     }
   =}
 
-  reaction(s.read) {=
-    self->curr = s.read->value;
+  // Getter /Setter Reactions
+  reaction(update) -> qdec.trigger {=
+    lf_set(qdec.trigger, true);
+    // printf("encoder: %d\r\n", qdec.read->value);
+  =}
+
+  reaction(pid_controller.out) {=
+    bool val = pid_controller.out->value < 0;
+    printf("out: %ld\r\n", pid_controller.out->value);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, val);
+  =}
+
+  reaction(qdec.read) {=
+    self->encoder_count = qdec.read->value;
+    // printf("encoder: %ld\r\n", self->encoder_count);
   =}
 }

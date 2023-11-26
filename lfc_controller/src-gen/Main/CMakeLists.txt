@@ -43,7 +43,7 @@ if (NOT DEFINED LOG_LEVEL)
     set(LOG_LEVEL 2)
 endif()
 if (NOT DEFINED LF_REACTION_GRAPH_BREADTH)
-    set(LF_REACTION_GRAPH_BREADTH 2)
+    set(LF_REACTION_GRAPH_BREADTH 4)
 endif()
 
 # ########################################################
@@ -85,6 +85,9 @@ add_executable(
     lib/schedule.c
     _main_main.c
     _serial.c
+    _qdec.c
+    _dac.c
+    _pid_controller.c
     Main.c
 )
 

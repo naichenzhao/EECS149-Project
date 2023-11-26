@@ -16,7 +16,7 @@ set(CMAKE_ASM_COMPILER_ID "GNU")
 set(CMAKE_TARGET_DEFINITIONS_ASM
   "LF_FILE_SEPARATOR=\"/\""
   "LF_PACKAGE_DIRECTORY=\"/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller\""
-  "LF_REACTION_GRAPH_BREADTH=2"
+  "LF_REACTION_GRAPH_BREADTH=4"
   "LF_SINGLE_THREADED=1"
   "LF_SOURCE_DIRECTORY=\"/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src\""
   "LOG_LEVEL=2"
@@ -87,7 +87,10 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c" "CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c.obj" "gcc" "CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c.obj.d"
   "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_spi.c" "CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_spi.c.obj" "gcc" "CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_spi.c.obj.d"
   "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.c" "CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.c.obj" "gcc" "CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.c.obj.d"
+  "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_dac.c" "CMakeFiles/Main.dir/_dac.c.obj" "gcc" "CMakeFiles/Main.dir/_dac.c.obj.d"
   "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_main_main.c" "CMakeFiles/Main.dir/_main_main.c.obj" "gcc" "CMakeFiles/Main.dir/_main_main.c.obj.d"
+  "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_pid_controller.c" "CMakeFiles/Main.dir/_pid_controller.c.obj" "gcc" "CMakeFiles/Main.dir/_pid_controller.c.obj.d"
+  "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_qdec.c" "CMakeFiles/Main.dir/_qdec.c.obj" "gcc" "CMakeFiles/Main.dir/_qdec.c.obj.d"
   "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_serial.c" "CMakeFiles/Main.dir/_serial.c.obj" "gcc" "CMakeFiles/Main.dir/_serial.c.obj.d"
   "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/lib/schedule.c" "CMakeFiles/Main.dir/lib/schedule.c.obj" "gcc" "CMakeFiles/Main.dir/lib/schedule.c.obj.d"
   )

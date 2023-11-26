@@ -1011,6 +1011,30 @@ Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/startup_stm32f4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/startup_stm32f446xx.s.obj
 .PHONY : Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/startup_stm32f446xx.s.obj
 
+_dac.obj: _dac.c.obj
+.PHONY : _dac.obj
+
+# target to build an object file
+_dac.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_dac.c.obj
+.PHONY : _dac.c.obj
+
+_dac.i: _dac.c.i
+.PHONY : _dac.i
+
+# target to preprocess a source file
+_dac.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_dac.c.i
+.PHONY : _dac.c.i
+
+_dac.s: _dac.c.s
+.PHONY : _dac.s
+
+# target to generate assembly for a file
+_dac.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_dac.c.s
+.PHONY : _dac.c.s
+
 _main_main.obj: _main_main.c.obj
 .PHONY : _main_main.obj
 
@@ -1034,6 +1058,54 @@ _main_main.s: _main_main.c.s
 _main_main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_main_main.c.s
 .PHONY : _main_main.c.s
+
+_pid_controller.obj: _pid_controller.c.obj
+.PHONY : _pid_controller.obj
+
+# target to build an object file
+_pid_controller.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_pid_controller.c.obj
+.PHONY : _pid_controller.c.obj
+
+_pid_controller.i: _pid_controller.c.i
+.PHONY : _pid_controller.i
+
+# target to preprocess a source file
+_pid_controller.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_pid_controller.c.i
+.PHONY : _pid_controller.c.i
+
+_pid_controller.s: _pid_controller.c.s
+.PHONY : _pid_controller.s
+
+# target to generate assembly for a file
+_pid_controller.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_pid_controller.c.s
+.PHONY : _pid_controller.c.s
+
+_qdec.obj: _qdec.c.obj
+.PHONY : _qdec.obj
+
+# target to build an object file
+_qdec.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_qdec.c.obj
+.PHONY : _qdec.c.obj
+
+_qdec.i: _qdec.c.i
+.PHONY : _qdec.i
+
+# target to preprocess a source file
+_qdec.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_qdec.c.i
+.PHONY : _qdec.c.i
+
+_qdec.s: _qdec.c.s
+.PHONY : _qdec.s
+
+# target to generate assembly for a file
+_qdec.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_qdec.c.s
+.PHONY : _qdec.c.s
 
 _serial.obj: _serial.c.obj
 .PHONY : _serial.obj
@@ -1200,9 +1272,18 @@ help:
 	@echo "... Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.i"
 	@echo "... Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.s"
 	@echo "... Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/startup_stm32f446xx.obj"
+	@echo "... _dac.obj"
+	@echo "... _dac.i"
+	@echo "... _dac.s"
 	@echo "... _main_main.obj"
 	@echo "... _main_main.i"
 	@echo "... _main_main.s"
+	@echo "... _pid_controller.obj"
+	@echo "... _pid_controller.i"
+	@echo "... _pid_controller.s"
+	@echo "... _qdec.obj"
+	@echo "... _qdec.i"
+	@echo "... _qdec.s"
 	@echo "... _serial.obj"
 	@echo "... _serial.i"
 	@echo "... _serial.s"
