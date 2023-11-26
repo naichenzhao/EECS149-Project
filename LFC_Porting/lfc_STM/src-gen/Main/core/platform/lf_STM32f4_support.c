@@ -119,14 +119,8 @@ static void lf_busy_wait_until(instant_t wakeup_time) {
 
 // I am pretty sure this function doesnt work
 //      Ill try to fix it once i know what the fuck its supposed to do, LOL
-
-
-/*
-    sleep until wakeup time
+/*  sleep until wakeup time
     But, wake up if there is an async event
-
-
-
 
 */
 int _lf_interruptable_sleep_until_locked(environment_t *env, instant_t wakeup_time) {
@@ -163,11 +157,6 @@ int _lf_interruptable_sleep_until_locked(environment_t *env, instant_t wakeup_ti
         return -1;
     }
 
-    // instant_t now;
-    // do {
-    //     _lf_clock_now(&now);
-    // } while (now < wakeup_time);
-    // return 0;
 }
 
 //  + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +

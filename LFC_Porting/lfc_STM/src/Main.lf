@@ -2,7 +2,8 @@
 target C {
   single-threaded: true,
   platform: {
-    name: "stm32"
+    name: "stm32",
+    board: "F446RE"
   }
 }
 

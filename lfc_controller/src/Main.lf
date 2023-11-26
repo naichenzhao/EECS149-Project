@@ -1,0 +1,111 @@
+// Other options: Python, Cpp, TypeScript, Rust.
+target C {
+  single-threaded: true,
+  platform: {
+    name: "stm32",
+    board: "F446RE"
+  }
+}
+
+preamble {=
+  #include <stdio.h>
+  #include "stm32f4xx_hal.h"
+  #include "stm32_startup.h"
+
+  #define LD5_Pin GPIO_PIN_5
+  #define LD5_GPIO_Port GPIOA
+=}
+
+// Import and/or declare reactor classes.
+main reactor {
+  preamble {=
+    DAC_HandleTypeDef hdac;
+    extern UART_HandleTypeDef huart2;
+
+    static uint8_t rx_data[6];
+
+    static void MX_GPIO_Init(void) {
+        GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+        __HAL_RCC_GPIOH_CLK_ENABLE();
+        __HAL_RCC_GPIOA_CLK_ENABLE();
+
+        // /*Configure GPIO pin Output Level */
+        // HAL_GPIO_WritePin(LD5_GPIO_Port, LD5_Pin, GPIO_PIN_RESET);
+
+        // /*Configure GPIO pin : LD5_Pin */
+        // GPIO_InitStruct.Pin = LD5_Pin;
+        // GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+        // GPIO_InitStruct.Pull = GPIO_NOPULL;
+        // GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+        // HAL_GPIO_Init(LD5_GPIO_Port, &GPIO_InitStruct);
+    }
+
+    static void MX_DAC_Init(void) {
+      DAC_ChannelConfTypeDef sConfig = {0};
+      hdac.Instance = DAC1;
+      if (HAL_DAC_Init(&hdac) != HAL_OK) {
+        Error_Handler();
+      }
+
+      sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
+      sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
+      if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_1) != HAL_OK) {
+        Error_Handler();
+      }
+    }
+
+    void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+      printf("recieved %c \r\n", rx_data[0]);
+      // HAL_UART_Transmit(&huart2, rx_data, 6, 10);
+      // HAL_UART_Receive_DMA(&huart2, UART2_rxBuffer, 12);
+
+      // HAL_UART_Transmit(&huart2, rx_data, 6, 100);
+      HAL_UART_Receive_IT(&huart2, rx_data, 1);
+    }
+  =}
+
+  timer t(500 ms, 1000 ms)
+  timer t2(0, 200 ms)
+  state counter: int = 0
+  state sign: int = 1
+
+  reaction(startup) {=
+    // Initialize GPIOs
+    MX_GPIO_Init();
+    MX_DAC_Init();
+
+
+    HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
+    HAL_UART_Receive_IT(&huart2, rx_data, 1);
+
+
+    // Initial print
+    printf("hello world\r\n");
+  =}
+
+  reaction(t) {=
+    // HAL_GPIO_TogglePin(LD5_GPIO_Port, LD5_Pin);
+    // HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 0);
+    // HAL_UART_Receive (&huart2, Rx_data, 4, 100);
+  =}
+
+  reaction(t2) {=
+    // printf("PRINT! counter: %d\r\n", self->counter);
+    // if (self->sign == 1) {
+    //   self->counter = self->counter + 100;
+    // } else {
+    //   self->counter = self->counter - 100;
+    // }
+
+    // HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, self->counter);
+
+    // if(self->counter >= 4090) {
+    //   self->sign = 0;
+    // }
+
+    // if(self->counter <= 0) {
+    //   self->sign = 1;
+    // }
+  =}
+}

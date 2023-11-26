@@ -1,0 +1,1 @@
+/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/bin/Main.elf

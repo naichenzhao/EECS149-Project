@@ -46,16 +46,14 @@ if (NOT DEFINED LF_REACTION_GRAPH_BREADTH)
     set(LF_REACTION_GRAPH_BREADTH 1)
 endif()
 
-# ######################################################## 
+# ########################################################
 
-# ############## [ Start STM32 main target] ############## 
+# ############## [ Start STM32 main target] ##############
 
-# ######################################################## 
+# ########################################################
 
 
 add_subdirectory(core)
-
-set(tools arm-none-eabi-gcc)
 
 set(LF_MAIN_TARGET Main)
 set(PROJECT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
@@ -68,8 +66,16 @@ set(CPU_PARAMETERS -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp)
 set(STARTUP_SCRIPT ${STM_DIR}/startup_stm32f446xx.s)
 set(MCU_LINKER_SCRIPT ${STM_DIR}/STM32F446RETx_FLASH.ld)
 
-set(PROJECT_INCLUDE_DIRECTORIES . /include/api )
 file(GLOB_RECURSE STM32CUBEMX_SOURCES ${STM_DIR}/Core/*.c ${STM_DIR}/Drivers/${MCU_FAMILY}_HAL_Driver/*.c)
+set(CUBEMX_INCLUDE_DIRECTORIES
+    ${PROJECT_DIR}
+    ${PROJECT_DIR}/include/Main
+    STM_sdk/Core/Inc
+    STM_sdk/Drivers/${MCU_FAMILY}_HAL_Driver/Inc
+    STM_sdk/Drivers/${MCU_FAMILY}_HAL_Driver/Inc/Legacy
+    STM_sdk/Drivers/CMSIS/Device/ST/${MCU_FAMILY}/Include
+    STM_sdk/Drivers/CMSIS/Include
+)
 
 # Declare a new executable target and list all its sources
 add_executable(
@@ -81,21 +87,8 @@ add_executable(
     Main.c
 )
 
-set(CUBEMX_INCLUDE_DIRECTORIES
-    ${PROJECT_DIR}
-    ${PROJECT_DIR}/include/Main
-    STM_sdk/Core/Inc
-    STM_sdk/Drivers/${MCU_FAMILY}_HAL_Driver/Inc
-    STM_sdk/Drivers/${MCU_FAMILY}_HAL_Driver/Inc/Legacy
-    STM_sdk/Drivers/CMSIS/Device/ST/${MCU_FAMILY}/Include
-    STM_sdk/Drivers/CMSIS/Include
-)
 target_include_directories(core PUBLIC ${CUBEMX_INCLUDE_DIRECTORIES})
-
-
-target_compile_definitions(core PUBLIC
-${MCU_MODEL}
-USE_HAL_DRIVER)
+target_compile_definitions(core PUBLIC ${MCU_MODEL} USE_HAL_DRIVER)
 
 
 
@@ -135,12 +128,11 @@ add_custom_command(TARGET ${LF_MAIN_TARGET} POST_BUILD
     ${LF_MAIN_TARGET}.bin)
 
 
-# ###################################################### 
+# ######################################################
 
-# ############## [ End STM32 main target] ############## 
+# ############## [ End STM32 main target] ##############
 
-# ###################################################### 
-
+# ######################################################
 
 find_library(MATH_LIBRARY m)
 if(MATH_LIBRARY)
