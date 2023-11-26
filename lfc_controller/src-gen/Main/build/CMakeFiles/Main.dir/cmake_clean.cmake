@@ -70,6 +70,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/startup_stm32f446xx.s.obj"
   "CMakeFiles/Main.dir/_main_main.c.obj"
   "CMakeFiles/Main.dir/_main_main.c.obj.d"
+  "CMakeFiles/Main.dir/_serial.c.obj"
+  "CMakeFiles/Main.dir/_serial.c.obj.d"
   "CMakeFiles/Main.dir/lib/schedule.c.obj"
   "CMakeFiles/Main.dir/lib/schedule.c.obj.d"
   "Main.elf"

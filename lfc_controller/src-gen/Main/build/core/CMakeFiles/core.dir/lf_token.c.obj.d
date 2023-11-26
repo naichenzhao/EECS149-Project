@@ -73,6 +73,8 @@ core/CMakeFiles/core.dir/lf_token.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/lf_types.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/utils/hashset/hashset_itr.h \

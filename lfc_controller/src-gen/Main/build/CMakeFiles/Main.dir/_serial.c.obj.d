@@ -1,39 +1,42 @@
-core/CMakeFiles/core.dir/utils/pqueue.c.obj: \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/utils/pqueue.c \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdlib.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/ieeefp.h \
+CMakeFiles/Main.dir/_serial.c.obj: \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_serial.c \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/api/api.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdio.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/_ansi.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/newlib-nano/newlib.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/_newlib_version.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/config.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/ieeefp.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/features.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/cdefs.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/_default_types.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include/stddef.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include/stdarg.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/reent.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/_ansi.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/_types.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/_types.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/_default_types.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/lock.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/assert.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/cdefs.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/stdio.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/lf_types.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include/stdbool.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/modal_models/modes.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/utils/pqueue.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/lf_token.h \
+ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdlib.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/stdlib.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/alloca.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdio.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include/stdarg.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/stdio.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/string.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/_locale.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/strings.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/string.h \
- /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include/stdbool.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/platform.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/tag.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/tag.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include/stdint.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdint.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/_intsup.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include-fixed/limits.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/platform/lf_STM32f4_support.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/utils/vector.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/tag.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/platform.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/platform/lf_STM32f4_support.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Core/Inc/stm32f4xx_hal_conf.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -72,10 +75,18 @@ core/CMakeFiles/core.dir/utils/pqueue.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/utils/pqueue.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/utils/util.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/lf_types.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/modal_models/modes.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/utils/pqueue.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/lf_token.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/utils/vector.h
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/Serial/Serial.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Core/Inc/stm32_startup.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/../include/api/api.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/../include/core/reactor.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/../include/core/lf_types.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/modal_models/modes.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/../include/core/port.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/../include/core/lf_token.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/../include/core/tag.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/../include/core/trace.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/utils/util.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_serial.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/reactor.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/api/set.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/api/set_undef.h

@@ -52,6 +52,8 @@ CMakeFiles/Main.dir/Main.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/api/api.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdio.h \
@@ -86,5 +88,6 @@ CMakeFiles/Main.dir/Main.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/mixed_radix.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/port.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/environment.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_main_main.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Core/Inc/stm32_startup.h
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_serial.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Core/Inc/stm32_startup.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_main_main.h

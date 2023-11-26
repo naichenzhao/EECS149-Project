@@ -72,6 +72,8 @@ CMakeFiles/Main.dir/_main_main.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/Main/Main.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Core/Inc/stm32_startup.h \
@@ -86,5 +88,6 @@ CMakeFiles/Main.dir/_main_main.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/utils/util.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_main_main.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/reactor.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_serial.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/api/set.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/api/set_undef.h
