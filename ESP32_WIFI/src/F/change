@@ -1,0 +1,66 @@
+p2_z2 = np.array([-0.197883,
+-0.043182,
+-0.066253,
+-6.9233-5,
+-3.8568-5,
+-0.000130309])
+
+p3_z2 = np.array([-0.199244,
+-0.043272,
+-0.065711,
+-6.9233-5,
+-3.7937-5,
+-0.000130309])
+
+p4_z2 = np.array([-0.199697,
+-0.043545,
+-0.067518,
+-6.9414-5,
+-3.6225-5,
+-0.000130219])
+
+p5_z2 = np.array([-0.199244,
+-0.043454,
+-0.068241,
+-6.9504-5,
+-3.6766-5,
+-0.000130219])
+
+p6_z2 = np.array([-0.198064,
+-0.043545,
+-0.067518,
+-6.9414-5,
+-3.6225-5,
+-0.000130219])
+
+p7_z2 = np.array([-0.19752,
+-0.043363,
+-0.067609,
+-6.9865-5,
+-3.8117-5,
+-0.000130399])
+
+
+original_list = [1, 0.035, 0]
+multiplied_list = np.array([x * 0.64 for x in original_list])
+p2_in_z2 = np.concatenate([p2_z2[:2], multiplied_list, p2_z2[-1:]])
+
+original_list = [1, 0.0175, 0.03031]
+multiplied_list = np.array([x * 0.64 for x in original_list])
+p3_in_z2 = np.concatenate([p3_z2[:2], multiplied_list, p3_z2[-1:]])
+
+original_list = [1, -0.0175,0.03031]
+multiplied_list = np.array([x * 0.64 for x in original_list])
+p4_in_z2 = np.concatenate([p4_z2[:2], multiplied_list, p4_z2[-1:]])
+
+original_list = [1, -0.035, 0]
+multiplied_list = np.array([x * 0.64 for x in original_list])
+p5_in_z2 = np.concatenate([p5_z2[:2], multiplied_list, p5_z2[-1:]])
+
+original_list = [1, -0.0175, -0.03031]
+multiplied_list = np.array([x * 0.64 for x in original_list])
+p6_in_z2 = np.concatenate([p6_z2[:2], multiplied_list, p6_z2[-1:]])
+
+original_list = [1, 0.0175, -0.03031]
+multiplied_list = np.array([x * 0.64 for x in original_list])
+p7_in_z2 = np.concatenate([p7_z2[:2], multiplied_list, p7_z2[-1:]])
