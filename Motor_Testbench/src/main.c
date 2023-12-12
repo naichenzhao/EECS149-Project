@@ -58,11 +58,6 @@ void startup();
  ******************************************************************************/
 
 // Set Other Ports
-#define EN_SWITCH DT_ALIAS(en0)
-#define EN_SWITCH_LABEL DT_GPIO_LABEL(EN_SWITCH, gpios)
-#define EN_SWITCH_PIN DT_GPIO_PIN(EN_SWITCH, gpios)
-
-const struct device *en_switch_dev;
 
 
 /*******************************************************************************
@@ -86,25 +81,20 @@ void main(void) {
 		return;
 	}
 	
-	en_switch_dev = device_get_binding(EN_SWITCH_LABEL);
-	gpio_pin_configure(en_switch_dev, EN_SWITCH_PIN, GPIO_INPUT);
-	if (!en_switch_dev)
-	{
-		printk("\nCannot find EN_SWITCH device!\n");
-		return;
-	}
+	
 
 	int count = 0;
 	setup_pid();
 	set_target(0);
 	int target = 0;
 
-	while(1) {	
+	while(1) {
+		
 
-		if (count >= 1000) {
-			printk("SWITCH!\n");
+		if (count >= 30000) {
+			// printk("SWITCH!\n");
 			if (target == 0) {
-				target = 180;
+				target = 200;
 			} else {
 				target = 0;
 
@@ -115,9 +105,10 @@ void main(void) {
 		count ++;
 
 		int pid_val = get_pid();
-		printk("encoers: %f, pid_val:%d\n", read_deg(), pid_val);
+		// printk("encoers: %f, pid_val:%d\n", read_deg(), pid_val);
 		setMotorSpeed(pid_val);
-		k_msleep(1);
+		k_msleep(0.5);
+
 	}
 }
 

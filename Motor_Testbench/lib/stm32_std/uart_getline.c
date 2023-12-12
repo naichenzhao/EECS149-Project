@@ -10,6 +10,8 @@
 #include "stm32f4xx_ll_usart.h"
 #include <sys/printk.h>
 #include <zephyr.h>
+#include "../../src/pid.h"
+#include <drivers/gpio.h>
 
 #define UART_BUFFER_SIZE 128
 // USART needs to be high priority to avoid missing input at 150 char/sec = every 6.6 us
@@ -18,6 +20,10 @@
 #define USART2_Priority (2)
 #define USART2_IRQ_FLAGS 0
 #define USART2_ISR_ARG 0
+
+#define USART1_Priority (2)
+#define USART1_IRQ_FLAGS 0
+#define USART1_ISR_ARG 0
 
 /*******************************************************************************
  * Prototypes
@@ -34,6 +40,13 @@ char line1_read, line2_read; // line1 buffer has been read, and is ready to be o
 volatile uint8_t rxBuffer[UART_BUFFER_SIZE];
 volatile uint8_t rxIndex = 0;
 
+int last_count = 0;
+
+#define EN_SWITCH DT_ALIAS(en0)
+#define EN_SWITCH_LABEL DT_GPIO_LABEL(EN_SWITCH, gpios)
+#define EN_SWITCH_PIN DT_GPIO_PIN(EN_SWITCH, gpios)
+
+const struct device *en_switch_dev;
 
 /* polling based console_getchar()*/
 /* 
@@ -70,13 +83,10 @@ ISR_DIRECT_DECLARE(USART2_IRQHandler)
       LL_USART_ClearFlag_ORE(USART2);
     }
     if (LL_USART_IsActiveFlag_RXNE(USART2))  // can be non-empty, and over run at same time
-    {   rxData =  LL_USART_ReceiveData8(USART2);
-        rxBuffer[rxIndex++] = rxData;
-        if (rxIndex >=  UART_BUFFER_SIZE) 
-        {  rxIndex = 0; // ring Buffer wrap around handling
-      //    printk("# ring buffer wrap\n");
-        } 
-         //       printk("USART2_IRQHandler: char=0x%x rxIndex=%d \t", rxData, rxIndex);
+    {   LL_USART_ClearFlag_ORE(USART2);
+      if (gpio_pin_get(en_switch_dev, EN_SWITCH_PIN)) {
+          set_target(0);
+      } 
     }
     
     irq_enable(USART2_IRQn);
@@ -84,11 +94,18 @@ ISR_DIRECT_DECLARE(USART2_IRQHandler)
 }
 
 
-
 void uart_interrupt_init()
 {   // uint32_t int_vector;
-    LL_USART_InitTypeDef USART_InitStruct; 
-    USART_InitStruct.BaudRate = 230400;
+
+    en_switch_dev = device_get_binding(EN_SWITCH_LABEL);
+    gpio_pin_configure(en_switch_dev, EN_SWITCH_PIN, GPIO_INPUT);
+    if (!en_switch_dev)
+    {
+      printk("\nCannot find EN_SWITCH device!\n");
+      return;
+    }
+    LL_USART_InitTypeDef USART_InitStruct;
+    USART_InitStruct.BaudRate = 115200;
     USART_InitStruct.DataWidth = LL_USART_DATAWIDTH_8B;
     USART_InitStruct.StopBits = LL_USART_STOPBITS_1;
     USART_InitStruct.Parity = LL_USART_PARITY_NONE;
@@ -105,15 +122,6 @@ void uart_interrupt_init()
  //   IRQ_CONNECT(USART2_IRQn, USART2_Priority, USART2_IRQHandler, USART2_ISR_ARG, USART2_IRQ_FLAGS);
     irq_enable(USART2_IRQn);
 
-/* low level CMSIS interrupts NOT USED*/
-   /*  NVIC_ClearPendingIRQ(USART2_IRQn);
-    NVIC_SetPriority(USART2_IRQn,24); // make sure priority is lower than FreeRTOS queue
-    // NVIC_SetVector(USART2_IRQn, USART2_IRQHandler);
-    int_vector = NVIC_GetVector(USART2_IRQn);
-    printk("Interrupt vector address %x\n", int_vector);
-    USART2_IRQHandlerA(); // test run once
-    NVIC_EnableIRQ(USART2_IRQn);  // Enable USART2 interrupt in NVIC
-     */
 }
 
 

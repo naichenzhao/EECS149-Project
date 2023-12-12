@@ -256,7 +256,7 @@
 //     return decodeDataPacket( buffer, 140 ); 
 // }
 
-
+#define PIN 19
 
 // HardwareSerial mySerial(1); // Use UART1 (pins defined below)
 
@@ -273,6 +273,7 @@ void setup() {
   // udp.begin(udpPort); // Begin listening on the specified UDP port
   pinMode(13, INPUT);
   Serial2.begin(115200);
+  pinMode(PIN, OUTPUT);
 }
 
 int last_data = 0;
@@ -295,13 +296,30 @@ void loop() {
 
   //   delay(50); // Send data every second
   // }
+
+  // if(Serial2.available() > 0) {
+  //   Serial.println(Serial2.read());
+  // }
+  // Serial2.write(2);
+
   int data = analogRead(13);
   if(last_data < data) {
     Serial2.write(last_data);
+    if(last_data > 100) {
+      digitalWrite(PIN, HIGH);
+    } else {
+      digitalWrite(PIN, LOW);
+    }
     Serial.print(last_data);
     Serial.print(" ");
     Serial.println(millis());
   } else {
+
+    if(data > 100) {
+      digitalWrite(PIN, HIGH);
+    } else {
+      digitalWrite(PIN, LOW);
+    }
     Serial2.write(data);
     Serial.print(data);
     Serial.print(" ");
@@ -309,5 +327,5 @@ void loop() {
   }
   last_data = data;
 
-  // delay(4);
+  // delay(1000);
 }

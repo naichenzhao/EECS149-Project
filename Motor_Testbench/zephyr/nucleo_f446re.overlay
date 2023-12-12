@@ -77,11 +77,31 @@
 			status = "okay";
 			label = "UART_2";
 			pinctrl-0 = < &usart2_tx_pa2 &usart2_rx_pa3 >;
-			current-speed = < 230400 >;
+			current-speed = < 115200 >;
+		};
+
+
+		usart3: serial@40004800 {
+			compatible = "st,stm32-usart", "st,stm32-uart";
+			reg = < 0x40004800 0x400 >;
+			clocks = < &rcc 0x2 0x20000 >;
+			interrupts = < 0x39 0x0 >;
+			status = "okay";
+			label = "UART_3";
+			pinctrl-0 = < &usart3_tx_pc10 &usart3_rx_pc11 >;
+			current-speed = < 115200 >;
 		};
 	};
 };
 
+&usart1 {
+	compatible = "st,stm32-usart", "st,stm32-uart";
+	interrupts = < 0x26 0x0 >;
+	pinctrl-0 = < &usart1_tx_pa9 &usart1_rx_pa10 >;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+	status = "okay";
+};
 
 / {
 	leds {
@@ -112,7 +132,7 @@
 		};
 
 		digital_m: led_m {
-			gpios = <&gpiob 7 GPIO_ACTIVE_HIGH>;
+			gpios = <&gpioc 13 GPIO_ACTIVE_HIGH>;
 			label = "User LDA0";
 		};
 	};

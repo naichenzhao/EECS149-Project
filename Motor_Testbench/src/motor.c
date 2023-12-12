@@ -48,16 +48,16 @@ int setupMotors() {
 void setMotorSpeed(double speed) {
     // printk("%d\n", speed);
 
-    if (speed > 100) {
-        speed = 100;
-    } else if(speed < -100) {
-        speed = -100;
+    if (speed > 50) {
+        speed = 50;
+    } else if(speed < -50) {
+        speed = -50;
     }
 
     int converted_speed = ((speed > 0 ? speed : -speed) * 4095) / 100;
 
     gpio_pin_set(set_dir_dev, SET_DIR_PIN, (speed < 0));
-    gpio_pin_set(set_en_dev, SET_EN_PIN, (speed < 1 & speed > -1));
+    gpio_pin_set(set_en_dev, SET_EN_PIN, (speed < 2 & speed > -2));
     set_dac(converted_speed);
 }
 
