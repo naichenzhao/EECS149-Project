@@ -68,13 +68,13 @@ CMakeFiles/Main.dir/Main.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/lf_types.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/12.3.1/include/stdbool.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/modal_models/modes.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/tag.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/utils/pqueue.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/lf_token.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdlib.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/stdlib.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/alloca.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/utils/vector.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/tag.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/reactor.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/lf_types.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/modal_models/modes.h \
@@ -88,9 +88,8 @@ CMakeFiles/Main.dir/Main.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/mixed_radix.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/port.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/include/core/environment.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_serial.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Core/Inc/stm32_startup.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_qdec.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_dac.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_pid_controller.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_main_main.h
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_main_main.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/../../STM_sdk/Core/Inc/stm32_startup.h

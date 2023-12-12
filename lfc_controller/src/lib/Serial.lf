@@ -39,7 +39,7 @@ reactor Serial {
 
     void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
-      printf("recieved %d \r\n", rx_data[0]);
+      printf("recieved % \r\n", rx_data[0]);
       HAL_UART_Receive_IT(&huart1, rx_data, 1);
 
     }

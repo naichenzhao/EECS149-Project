@@ -15,8 +15,11 @@ int lf_reactor_c_main(int argc, const char* argv[]);
 int main(void) {
    return lf_reactor_c_main(0, NULL);
 }
-void _lf_set_default_command_line_options() {}
-#include "_serial.h"
+const char* _lf_default_argv[] = { "dummy", "-k", "true" };
+void _lf_set_default_command_line_options() {
+        default_argc = 3;
+        default_argv = _lf_default_argv;
+}
 #include "_qdec.h"
 #include "_dac.h"
 #include "_pid_controller.h"
@@ -29,7 +32,7 @@ typedef enum {
 environment_t envs[_num_enclaves];
 // 'Create' and initialize the environments in the program
 void _lf_create_environments() {
-    environment_init(&envs[main_main],main_main,_lf_number_of_workers,2,4,0,0,5,0,0,NULL);
+    environment_init(&envs[main_main],main_main,_lf_number_of_workers,2,4,0,0,5,1,0,NULL);
 }
 // Update the pointer argument to point to the beginning of the environment array
 // and return the size of that array
@@ -54,8 +57,6 @@ void _lf_initialize_trigger_objects() {
     SUPPRESS_UNUSED_WARNING(watchdog_number);
     _main_main_main_self_t* main_main_self[1];
     SUPPRESS_UNUSED_WARNING(main_main_self);
-    _serial_self_t* main_ser_self[1];
-    SUPPRESS_UNUSED_WARNING(main_ser_self);
     _qdec_self_t* main_qdec_self[1];
     SUPPRESS_UNUSED_WARNING(main_qdec_self);
     _dac_self_t* main_dac_self[1];
@@ -67,10 +68,11 @@ void _lf_initialize_trigger_objects() {
     main_main_self[0]->base.environment = &envs[main_main];
     bank_index = 0; SUPPRESS_UNUSED_WARNING(bank_index);
     envs[main_main].startup_reactions[startup_reaction_count[main_main]++] = &main_main_self[0]->_lf__reaction_0;
+    envs[main_main].startup_reactions[startup_reaction_count[main_main]++] = &main_main_self[0]->_lf__reaction_1;
     SUPPRESS_UNUSED_WARNING(_lf_watchdog_count);
     { // For scoping
-        static int _initial = 0;
-        main_main_self[0]->counter = _initial;
+        static int _initial = 10000;
+        main_main_self[0]->pos = _initial;
     } // End scoping.
     { // For scoping
         static int32_t _initial = 0;
@@ -80,41 +82,36 @@ void _lf_initialize_trigger_objects() {
         static int _initial = 1;
         main_main_self[0]->sign = _initial;
     } // End scoping.
-    // Initiaizing timer Main.t.
-    main_main_self[0]->_lf__t.offset = MSEC(0);
-    main_main_self[0]->_lf__t.period = MSEC(15000);
+    // Initiaizing timer Main.change_pos.
+    main_main_self[0]->_lf__change_pos.offset = MSEC(0);
+    main_main_self[0]->_lf__change_pos.period = MSEC(5000);
     // Associate timer with the environment of its parent
-    envs[main_main].timer_triggers[timer_triggers_count[main_main]++] = &main_main_self[0]->_lf__t;
-    main_main_self[0]->_lf__t.mode = NULL;
+    envs[main_main].timer_triggers[timer_triggers_count[main_main]++] = &main_main_self[0]->_lf__change_pos;
+    main_main_self[0]->_lf__change_pos.mode = NULL;
     // Initiaizing timer Main.update.
     main_main_self[0]->_lf__update.offset = MSEC(0);
     main_main_self[0]->_lf__update.period = MSEC(10);
     // Associate timer with the environment of its parent
     envs[main_main].timer_triggers[timer_triggers_count[main_main]++] = &main_main_self[0]->_lf__update;
     main_main_self[0]->_lf__update.mode = NULL;
-    
+    // Initializing action Main.force_triggered
+    main_main_self[0]->_lf__force_triggered.offset = 0;
+    main_main_self[0]->_lf__force_triggered.period = -1;
+    main_main_self[0]->_lf__force_triggered.mode = NULL;
+    _lf_initialize_template((token_template_t*)
+            &(main_main_self[0]->_lf__force_triggered),
+    0);
+    main_main_self[0]->_lf__force_triggered.status = absent;
     main_main_self[0]->_lf__reaction_0.deadline = NEVER;
     main_main_self[0]->_lf__reaction_1.deadline = NEVER;
     main_main_self[0]->_lf__reaction_2.deadline = NEVER;
     main_main_self[0]->_lf__reaction_3.deadline = NEVER;
     main_main_self[0]->_lf__reaction_4.deadline = NEVER;
-    {
-        _main_main_main_self_t *self = main_main_self[0];
-        // ***** Start initializing Main.ser of class Serial
-        main_ser_self[0] = new__serial();
-        main_ser_self[0]->base.environment = &envs[main_main];
-        bank_index = 0; SUPPRESS_UNUSED_WARNING(bank_index);
-        // width of -2 indicates that it is not a multiport.
-        main_ser_self[0]->_lf_read_width = -2;
-        // width of -2 indicates that it is not a multiport.
-        main_ser_self[0]->_lf_trigger_width = -2;
-        envs[main_main].startup_reactions[startup_reaction_count[main_main]++] = &main_ser_self[0]->_lf__reaction_0;
-        SUPPRESS_UNUSED_WARNING(_lf_watchdog_count);
-    
-        main_ser_self[0]->_lf__reaction_0.deadline = NEVER;
-        main_ser_self[0]->_lf__reaction_1.deadline = NEVER;
-        //***** End initializing Main.ser
-    }
+    main_main_self[0]->_lf__reaction_5.deadline = NEVER;
+    main_main_self[0]->_lf__reaction_6.deadline = NEVER;
+    main_main_self[0]->_lf__reaction_7.deadline = NEVER;
+    // Register for transition handling
+    envs[main_main].modes->modal_reactor_states[modal_reactor_count[main_main]++] = &((self_base_t*)main_main_self[0])->_lf__mode_state;
     {
         _main_main_main_self_t *self = main_main_self[0];
         // ***** Start initializing Main.qdec of class QDEC
@@ -194,47 +191,17 @@ void _lf_initialize_trigger_objects() {
         // ** End initialization for reaction 0 of Main
         // Total number of outputs (single ports and multiport channels)
         // produced by reaction_2 of Main.
-        main_main_self[0]->_lf__reaction_1.num_outputs = 1;
-        // Allocate memory for triggers[] and triggered_sizes[] on the reaction_t
-        // struct for this reaction.
-        main_main_self[0]->_lf__reaction_1.triggers = (trigger_t***)_lf_allocate(
-                1, sizeof(trigger_t**),
-                &main_main_self[0]->base.allocations);
-        main_main_self[0]->_lf__reaction_1.triggered_sizes = (int*)_lf_allocate(
-                1, sizeof(int),
-                &main_main_self[0]->base.allocations);
-        main_main_self[0]->_lf__reaction_1.output_produced = (bool**)_lf_allocate(
-                1, sizeof(bool*),
-                &main_main_self[0]->base.allocations);
+        main_main_self[0]->_lf__reaction_1.num_outputs = 0;
         {
             int count = 0; SUPPRESS_UNUSED_WARNING(count);
-            // Reaction writes to an input of a contained reactor.
-            {
-                main_main_self[0]->_lf__reaction_1.output_produced[count++] = &main_main_self[0]->_lf_pid_controller.target_pos.is_present;
-            }
         }
         
         // ** End initialization for reaction 1 of Main
         // Total number of outputs (single ports and multiport channels)
         // produced by reaction_3 of Main.
-        main_main_self[0]->_lf__reaction_2.num_outputs = 1;
-        // Allocate memory for triggers[] and triggered_sizes[] on the reaction_t
-        // struct for this reaction.
-        main_main_self[0]->_lf__reaction_2.triggers = (trigger_t***)_lf_allocate(
-                1, sizeof(trigger_t**),
-                &main_main_self[0]->base.allocations);
-        main_main_self[0]->_lf__reaction_2.triggered_sizes = (int*)_lf_allocate(
-                1, sizeof(int),
-                &main_main_self[0]->base.allocations);
-        main_main_self[0]->_lf__reaction_2.output_produced = (bool**)_lf_allocate(
-                1, sizeof(bool*),
-                &main_main_self[0]->base.allocations);
+        main_main_self[0]->_lf__reaction_2.num_outputs = 0;
         {
             int count = 0; SUPPRESS_UNUSED_WARNING(count);
-            // Reaction writes to an input of a contained reactor.
-            {
-                main_main_self[0]->_lf__reaction_2.output_produced[count++] = &main_main_self[0]->_lf_qdec.trigger.is_present;
-            }
         }
         
         // ** End initialization for reaction 2 of Main
@@ -254,45 +221,61 @@ void _lf_initialize_trigger_objects() {
         }
         
         // ** End initialization for reaction 4 of Main
-    
-        // **** Start deferred initialize for Main.ser
+        // Total number of outputs (single ports and multiport channels)
+        // produced by reaction_6 of Main.
+        main_main_self[0]->_lf__reaction_5.num_outputs = 1;
+        // Allocate memory for triggers[] and triggered_sizes[] on the reaction_t
+        // struct for this reaction.
+        main_main_self[0]->_lf__reaction_5.triggers = (trigger_t***)_lf_allocate(
+                1, sizeof(trigger_t**),
+                &main_main_self[0]->base.allocations);
+        main_main_self[0]->_lf__reaction_5.triggered_sizes = (int*)_lf_allocate(
+                1, sizeof(int),
+                &main_main_self[0]->base.allocations);
+        main_main_self[0]->_lf__reaction_5.output_produced = (bool**)_lf_allocate(
+                1, sizeof(bool*),
+                &main_main_self[0]->base.allocations);
         {
-        
-            // Total number of outputs (single ports and multiport channels)
-            // produced by reaction_1 of Main.ser.
-            main_ser_self[0]->_lf__reaction_0.num_outputs = 0;
+            int count = 0; SUPPRESS_UNUSED_WARNING(count);
+            // Reaction writes to an input of a contained reactor.
             {
-                int count = 0; SUPPRESS_UNUSED_WARNING(count);
+                main_main_self[0]->_lf__reaction_5.output_produced[count++] = &main_main_self[0]->_lf_pid_controller.target_pos.is_present;
             }
-            
-            // ** End initialization for reaction 0 of Main.ser
-            // Total number of outputs (single ports and multiport channels)
-            // produced by reaction_2 of Main.ser.
-            main_ser_self[0]->_lf__reaction_1.num_outputs = 1;
-            // Allocate memory for triggers[] and triggered_sizes[] on the reaction_t
-            // struct for this reaction.
-            main_ser_self[0]->_lf__reaction_1.triggers = (trigger_t***)_lf_allocate(
-                    1, sizeof(trigger_t**),
-                    &main_ser_self[0]->base.allocations);
-            main_ser_self[0]->_lf__reaction_1.triggered_sizes = (int*)_lf_allocate(
-                    1, sizeof(int),
-                    &main_ser_self[0]->base.allocations);
-            main_ser_self[0]->_lf__reaction_1.output_produced = (bool**)_lf_allocate(
-                    1, sizeof(bool*),
-                    &main_ser_self[0]->base.allocations);
-            {
-                int count = 0; SUPPRESS_UNUSED_WARNING(count);
-                {
-                    main_ser_self[0]->_lf__reaction_1.output_produced[count++] = &main_ser_self[0]->_lf_read.is_present;
-                }
-            }
-            
-            // ** End initialization for reaction 1 of Main.ser
-            _lf_initialize_template((token_template_t*)
-                    &(main_ser_self[0]->_lf_read),
-            sizeof(uint8_t));
         }
-        // **** End of deferred initialize for Main.ser
+        
+        // ** End initialization for reaction 5 of Main
+        // Total number of outputs (single ports and multiport channels)
+        // produced by reaction_7 of Main.
+        main_main_self[0]->_lf__reaction_6.num_outputs = 1;
+        // Allocate memory for triggers[] and triggered_sizes[] on the reaction_t
+        // struct for this reaction.
+        main_main_self[0]->_lf__reaction_6.triggers = (trigger_t***)_lf_allocate(
+                1, sizeof(trigger_t**),
+                &main_main_self[0]->base.allocations);
+        main_main_self[0]->_lf__reaction_6.triggered_sizes = (int*)_lf_allocate(
+                1, sizeof(int),
+                &main_main_self[0]->base.allocations);
+        main_main_self[0]->_lf__reaction_6.output_produced = (bool**)_lf_allocate(
+                1, sizeof(bool*),
+                &main_main_self[0]->base.allocations);
+        {
+            int count = 0; SUPPRESS_UNUSED_WARNING(count);
+            // Reaction writes to an input of a contained reactor.
+            {
+                main_main_self[0]->_lf__reaction_6.output_produced[count++] = &main_main_self[0]->_lf_qdec.trigger.is_present;
+            }
+        }
+        
+        // ** End initialization for reaction 6 of Main
+        // Total number of outputs (single ports and multiport channels)
+        // produced by reaction_8 of Main.
+        main_main_self[0]->_lf__reaction_7.num_outputs = 0;
+        {
+            int count = 0; SUPPRESS_UNUSED_WARNING(count);
+        }
+        
+        // ** End initialization for reaction 7 of Main
+    
         // **** Start deferred initialize for Main.qdec
         {
         
@@ -411,15 +394,15 @@ void _lf_initialize_trigger_objects() {
                 int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
                 int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
                 int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
-                // Reaction 1 of Main triggers 1 downstream reactions
+                // Reaction 5 of Main triggers 1 downstream reactions
                 // through port Main.pid_controller.target_pos.
-                main_main_self[src_runtime]->_lf__reaction_1.triggered_sizes[triggers_index[src_runtime]] = 1;
-                // For reaction 1 of Main, allocate an
+                main_main_self[src_runtime]->_lf__reaction_5.triggered_sizes[triggers_index[src_runtime]] = 1;
+                // For reaction 5 of Main, allocate an
                 // array of trigger pointers for downstream reactions through port Main.pid_controller.target_pos
                 trigger_t** trigger_array = (trigger_t**)_lf_allocate(
                         1, sizeof(trigger_t*),
                         &main_main_self[src_runtime]->base.allocations); 
-                main_main_self[src_runtime]->_lf__reaction_1.triggers[triggers_index[src_runtime]++] = trigger_array;
+                main_main_self[src_runtime]->_lf__reaction_5.triggers[triggers_index[src_runtime]++] = trigger_array;
             }
             for (int i = 0; i < 1; i++) triggers_index[i] = 0;
             // Iterate over ranges Main.pid_controller.target_pos(0,1)->[Main.pid_controller.target_pos(0,1)] and Main.pid_controller.target_pos(0,1).
@@ -437,7 +420,7 @@ void _lf_initialize_trigger_objects() {
                     int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
                     int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
                     // Point to destination port Main.pid_controller.target_pos's trigger struct.
-                    main_main_self[src_runtime]->_lf__reaction_1.triggers[triggers_index[src_runtime] + src_channel][0] = &main_pid_controller_self[dst_runtime]->_lf__target_pos;
+                    main_main_self[src_runtime]->_lf__reaction_5.triggers[triggers_index[src_runtime] + src_channel][0] = &main_pid_controller_self[dst_runtime]->_lf__target_pos;
                 }
             }
         }
@@ -449,15 +432,15 @@ void _lf_initialize_trigger_objects() {
                 int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
                 int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
                 int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
-                // Reaction 2 of Main triggers 1 downstream reactions
+                // Reaction 6 of Main triggers 1 downstream reactions
                 // through port Main.qdec.trigger.
-                main_main_self[src_runtime]->_lf__reaction_2.triggered_sizes[triggers_index[src_runtime]] = 1;
-                // For reaction 2 of Main, allocate an
+                main_main_self[src_runtime]->_lf__reaction_6.triggered_sizes[triggers_index[src_runtime]] = 1;
+                // For reaction 6 of Main, allocate an
                 // array of trigger pointers for downstream reactions through port Main.qdec.trigger
                 trigger_t** trigger_array = (trigger_t**)_lf_allocate(
                         1, sizeof(trigger_t*),
                         &main_main_self[src_runtime]->base.allocations); 
-                main_main_self[src_runtime]->_lf__reaction_2.triggers[triggers_index[src_runtime]++] = trigger_array;
+                main_main_self[src_runtime]->_lf__reaction_6.triggers[triggers_index[src_runtime]++] = trigger_array;
             }
             for (int i = 0; i < 1; i++) triggers_index[i] = 0;
             // Iterate over ranges Main.qdec.trigger(0,1)->[Main.qdec.trigger(0,1)] and Main.qdec.trigger(0,1).
@@ -475,21 +458,11 @@ void _lf_initialize_trigger_objects() {
                     int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
                     int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
                     // Point to destination port Main.qdec.trigger's trigger struct.
-                    main_main_self[src_runtime]->_lf__reaction_2.triggers[triggers_index[src_runtime] + src_channel][0] = &main_qdec_self[dst_runtime]->_lf__trigger;
+                    main_main_self[src_runtime]->_lf__reaction_6.triggers[triggers_index[src_runtime] + src_channel][0] = &main_qdec_self[dst_runtime]->_lf__trigger;
                 }
             }
         }
     
-        // **** Start non-nested deferred initialize for Main.ser
-        {
-        
-            for (int index486184027c8990b = 0; index486184027c8990b < 1; index486184027c8990b++) { main_ser_self[0]->_lf_read._base.source_reactor = (self_base_t*)main_ser_self[0]; }
-            {
-                int triggers_index[1] = { 0 }; // Number of bank members with the reaction.
-            }
-        
-        }
-        // **** End of non-nested deferred initialize for Main.ser
         // **** Start non-nested deferred initialize for Main.qdec
         {
         
@@ -575,54 +548,35 @@ void _lf_initialize_trigger_objects() {
         {
         
             // For reference counting, set num_destinations for port Main.pid_controller.out.
-            // Iterate over range Main.pid_controller.out(0,1)->[Main.pid_controller.out(0,1), Main.dac.setvalue(0,1)].
+            // Iterate over range Main.pid_controller.out(0,1)->[Main.dac.setvalue(0,1)].
             {
                 int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
                 int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
                 int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
                 int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
-                main_pid_controller_self[src_runtime]->_lf_out._base.num_destinations = 2;
+                main_pid_controller_self[src_runtime]->_lf_out._base.num_destinations = 1;
                 main_pid_controller_self[src_runtime]->_lf_out._base.source_reactor = (self_base_t*)main_pid_controller_self[src_runtime];
             }
             {
                 int triggers_index[1] = { 0 }; // Number of bank members with the reaction.
-                // Iterate over range Main.pid_controller.out(0,1)->[Main.pid_controller.out(0,1), Main.dac.setvalue(0,1)].
+                // Iterate over range Main.pid_controller.out(0,1)->[Main.dac.setvalue(0,1)].
                 {
                     int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
                     int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
                     int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
                     int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
-                    // Reaction 0 of Main.pid_controller triggers 2 downstream reactions
+                    // Reaction 0 of Main.pid_controller triggers 1 downstream reactions
                     // through port Main.pid_controller.out.
-                    main_pid_controller_self[src_runtime]->_lf__reaction_0.triggered_sizes[triggers_index[src_runtime]] = 2;
+                    main_pid_controller_self[src_runtime]->_lf__reaction_0.triggered_sizes[triggers_index[src_runtime]] = 1;
                     // For reaction 0 of Main.pid_controller, allocate an
                     // array of trigger pointers for downstream reactions through port Main.pid_controller.out
                     trigger_t** trigger_array = (trigger_t**)_lf_allocate(
-                            2, sizeof(trigger_t*),
+                            1, sizeof(trigger_t*),
                             &main_pid_controller_self[src_runtime]->base.allocations); 
                     main_pid_controller_self[src_runtime]->_lf__reaction_0.triggers[triggers_index[src_runtime]++] = trigger_array;
                 }
                 for (int i = 0; i < 1; i++) triggers_index[i] = 0;
-                // Iterate over ranges Main.pid_controller.out(0,1)->[Main.pid_controller.out(0,1), Main.dac.setvalue(0,1)] and Main.pid_controller.out(0,1).
-                {
-                    int src_runtime = 0; // Runtime index.
-                    SUPPRESS_UNUSED_WARNING(src_runtime);
-                    int src_channel = 0; // Channel index.
-                    SUPPRESS_UNUSED_WARNING(src_channel);
-                    int src_bank = 0; // Bank index.
-                    SUPPRESS_UNUSED_WARNING(src_bank);
-                    // Iterate over range Main.pid_controller.out(0,1).
-                    {
-                        int dst_runtime = 0; SUPPRESS_UNUSED_WARNING(dst_runtime); // Runtime index.
-                        int dst_channel = 0; SUPPRESS_UNUSED_WARNING(dst_channel); // Channel index.
-                        int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
-                        int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
-                        // Port Main.pid_controller.out has reactions in its parent's parent.
-                        // Point to the trigger struct for those reactions.
-                        main_pid_controller_self[src_runtime]->_lf__reaction_0.triggers[triggers_index[src_runtime] + src_channel][0] = &main_main_self[dst_runtime]->_lf_pid_controller.out_trigger;
-                    }
-                }
-                // Iterate over ranges Main.pid_controller.out(0,1)->[Main.pid_controller.out(0,1), Main.dac.setvalue(0,1)] and Main.dac.setvalue(0,1).
+                // Iterate over ranges Main.pid_controller.out(0,1)->[Main.dac.setvalue(0,1)] and Main.dac.setvalue(0,1).
                 {
                     int src_runtime = 0; // Runtime index.
                     SUPPRESS_UNUSED_WARNING(src_runtime);
@@ -637,7 +591,7 @@ void _lf_initialize_trigger_objects() {
                         int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
                         int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
                         // Point to destination port Main.dac.setvalue's trigger struct.
-                        main_pid_controller_self[src_runtime]->_lf__reaction_0.triggers[triggers_index[src_runtime] + src_channel][1] = &main_dac_self[dst_runtime]->_lf__setvalue;
+                        main_pid_controller_self[src_runtime]->_lf__reaction_0.triggers[triggers_index[src_runtime] + src_channel][0] = &main_dac_self[dst_runtime]->_lf__setvalue;
                     }
                 }
             }
@@ -647,8 +601,6 @@ void _lf_initialize_trigger_objects() {
     }
     // **** End of non-nested deferred initialize for Main
     // Connect inputs and outputs for reactor Main.
-    // Connect inputs and outputs for reactor Main.ser.
-    
     // Connect inputs and outputs for reactor Main.qdec.
     // Connect Main.qdec.trigger(0,1)->[Main.qdec.trigger(0,1)] to port Main.qdec.trigger(0,1)
     // Iterate over ranges Main.qdec.trigger(0,1)->[Main.qdec.trigger(0,1)] and Main.qdec.trigger(0,1).
@@ -724,26 +676,8 @@ void _lf_initialize_trigger_objects() {
             main_pid_controller_self[dst_runtime]->_lf_target_pos = (_pid_controller_target_pos_t*)&main_main_self[src_runtime]->_lf_pid_controller.target_pos;
         }
     }
-    // Connect Main.pid_controller.out(0,1)->[Main.pid_controller.out(0,1), Main.dac.setvalue(0,1)] to port Main.pid_controller.out(0,1)
-    // Iterate over ranges Main.pid_controller.out(0,1)->[Main.pid_controller.out(0,1), Main.dac.setvalue(0,1)] and Main.pid_controller.out(0,1).
-    {
-        int src_runtime = 0; // Runtime index.
-        SUPPRESS_UNUSED_WARNING(src_runtime);
-        int src_channel = 0; // Channel index.
-        SUPPRESS_UNUSED_WARNING(src_channel);
-        int src_bank = 0; // Bank index.
-        SUPPRESS_UNUSED_WARNING(src_bank);
-        // Iterate over range Main.pid_controller.out(0,1).
-        {
-            int dst_runtime = 0; SUPPRESS_UNUSED_WARNING(dst_runtime); // Runtime index.
-            int dst_channel = 0; SUPPRESS_UNUSED_WARNING(dst_channel); // Channel index.
-            int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
-            int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
-            main_main_self[dst_runtime]->_lf_pid_controller.out = (_pid_controller_out_t*)&main_pid_controller_self[src_runtime]->_lf_out;
-        }
-    }
-    // Connect Main.pid_controller.out(0,1)->[Main.pid_controller.out(0,1), Main.dac.setvalue(0,1)] to port Main.dac.setvalue(0,1)
-    // Iterate over ranges Main.pid_controller.out(0,1)->[Main.pid_controller.out(0,1), Main.dac.setvalue(0,1)] and Main.dac.setvalue(0,1).
+    // Connect Main.pid_controller.out(0,1)->[Main.dac.setvalue(0,1)] to port Main.dac.setvalue(0,1)
+    // Iterate over ranges Main.pid_controller.out(0,1)->[Main.dac.setvalue(0,1)] and Main.dac.setvalue(0,1).
     {
         int src_runtime = 0; // Runtime index.
         SUPPRESS_UNUSED_WARNING(src_runtime);
@@ -759,8 +693,6 @@ void _lf_initialize_trigger_objects() {
             int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
             main_dac_self[dst_runtime]->_lf_setvalue = (_dac_setvalue_t*)&main_pid_controller_self[src_runtime]->_lf_out;
         }
-    }
-    {
     }
     {
     }
@@ -795,16 +727,14 @@ void _lf_initialize_trigger_objects() {
         }
     }
     {
-        int count = 0; SUPPRESS_UNUSED_WARNING(count);
-        {
-            // Add port Main.ser.read to array of is_present fields.
-            envs[main_main].is_present_fields[2 + count] = &main_ser_self[0]->_lf_read.is_present;
-            #ifdef FEDERATED_DECENTRALIZED
-            // Add port Main.ser.read to array of intended_tag fields.
-            envs[main_main]._lf_intended_tag_fields[2 + count] = &main_ser_self[0]->_lf_read.intended_tag;
-            #endif // FEDERATED_DECENTRALIZED
-            count++;
-        }
+        // Add action Main.force_triggered to array of is_present fields.
+        envs[main_main].is_present_fields[2] 
+                = &main_main_self[0]->_lf_force_triggered.is_present;
+        #ifdef FEDERATED_DECENTRALIZED
+        // Add action Main.force_triggered to array of intended_tag fields.
+        envs[main_main]._lf_intended_tag_fields[2] 
+                = &main_main_self[0]->_lf_force_triggered.intended_tag;
+        #endif // FEDERATED_DECENTRALIZED
     }
     {
         int count = 0; SUPPRESS_UNUSED_WARNING(count);
@@ -846,26 +776,25 @@ void _lf_initialize_trigger_objects() {
         // deadline 9223372036854775807 shifted left 16 bits.
         main_main_self[0]->_lf__reaction_2.index = 0xffffffffffff0002LL;
         main_main_self[0]->_lf__reaction_3.chain_id = 1;
+        // index is the OR of level 3 and 
+        // deadline 9223372036854775807 shifted left 16 bits.
+        main_main_self[0]->_lf__reaction_3.index = 0xffffffffffff0003LL;
+        main_main_self[0]->_lf__reaction_4.chain_id = 1;
+        // index is the OR of level 4 and 
+        // deadline 9223372036854775807 shifted left 16 bits.
+        main_main_self[0]->_lf__reaction_4.index = 0xffffffffffff0004LL;
+        main_main_self[0]->_lf__reaction_5.chain_id = 1;
         // index is the OR of level 5 and 
         // deadline 9223372036854775807 shifted left 16 bits.
-        main_main_self[0]->_lf__reaction_3.index = 0xffffffffffff0005LL;
-        main_main_self[0]->_lf__reaction_4.chain_id = 1;
+        main_main_self[0]->_lf__reaction_5.index = 0xffffffffffff0005LL;
+        main_main_self[0]->_lf__reaction_6.chain_id = 1;
         // index is the OR of level 6 and 
         // deadline 9223372036854775807 shifted left 16 bits.
-        main_main_self[0]->_lf__reaction_4.index = 0xffffffffffff0006LL;
-    
-        // Set reaction priorities for ReactorInstance Main.ser
-        {
-            main_ser_self[0]->_lf__reaction_0.chain_id = 1;
-            // index is the OR of level 0 and 
-            // deadline 9223372036854775807 shifted left 16 bits.
-            main_ser_self[0]->_lf__reaction_0.index = 0xffffffffffff0000LL;
-            main_ser_self[0]->_lf__reaction_1.chain_id = 1;
-            // index is the OR of level 1 and 
-            // deadline 9223372036854775807 shifted left 16 bits.
-            main_ser_self[0]->_lf__reaction_1.index = 0xffffffffffff0001LL;
-        }
-    
+        main_main_self[0]->_lf__reaction_6.index = 0xffffffffffff0006LL;
+        main_main_self[0]->_lf__reaction_7.chain_id = 1;
+        // index is the OR of level 8 and 
+        // deadline 9223372036854775807 shifted left 16 bits.
+        main_main_self[0]->_lf__reaction_7.index = 0xffffffffffff0008LL;
     
         // Set reaction priorities for ReactorInstance Main.qdec
         {
@@ -874,9 +803,9 @@ void _lf_initialize_trigger_objects() {
             // deadline 9223372036854775807 shifted left 16 bits.
             main_qdec_self[0]->_lf__reaction_0.index = 0xffffffffffff0000LL;
             main_qdec_self[0]->_lf__reaction_1.chain_id = 1;
-            // index is the OR of level 3 and 
+            // index is the OR of level 7 and 
             // deadline 9223372036854775807 shifted left 16 bits.
-            main_qdec_self[0]->_lf__reaction_1.index = 0xffffffffffff0003LL;
+            main_qdec_self[0]->_lf__reaction_1.index = 0xffffffffffff0007LL;
         }
     
     
@@ -887,18 +816,18 @@ void _lf_initialize_trigger_objects() {
             // deadline 9223372036854775807 shifted left 16 bits.
             main_dac_self[0]->_lf__reaction_0.index = 0xffffffffffff0000LL;
             main_dac_self[0]->_lf__reaction_1.chain_id = 1;
-            // index is the OR of level 5 and 
+            // index is the OR of level 9 and 
             // deadline 9223372036854775807 shifted left 16 bits.
-            main_dac_self[0]->_lf__reaction_1.index = 0xffffffffffff0005LL;
+            main_dac_self[0]->_lf__reaction_1.index = 0xffffffffffff0009LL;
         }
     
     
         // Set reaction priorities for ReactorInstance Main.pid_controller
         {
             main_pid_controller_self[0]->_lf__reaction_0.chain_id = 1;
-            // index is the OR of level 4 and 
+            // index is the OR of level 8 and 
             // deadline 9223372036854775807 shifted left 16 bits.
-            main_pid_controller_self[0]->_lf__reaction_0.index = 0xffffffffffff0004LL;
+            main_pid_controller_self[0]->_lf__reaction_0.index = 0xffffffffffff0008LL;
         }
     
     }

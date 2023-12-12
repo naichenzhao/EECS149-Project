@@ -76,8 +76,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Main.dir/_pid_controller.c.obj.d"
   "CMakeFiles/Main.dir/_qdec.c.obj"
   "CMakeFiles/Main.dir/_qdec.c.obj.d"
-  "CMakeFiles/Main.dir/_serial.c.obj"
-  "CMakeFiles/Main.dir/_serial.c.obj.d"
   "CMakeFiles/Main.dir/lib/schedule.c.obj"
   "CMakeFiles/Main.dir/lib/schedule.c.obj.d"
   "Main.elf"

@@ -275,6 +275,8 @@ void setup() {
   Serial2.begin(115200);
 }
 
+int last_data = 0;
+
 void loop() {
 
   // udpStartStreaming();
@@ -294,7 +296,12 @@ void loop() {
   //   delay(50); // Send data every second
   // }
   int data = analogRead(13);
-  Serial2.write(data);
+  if(last_data < data) {
+    Serial2.write(last_data);
+  } else {
+    Serial2.write(data);
+  }
+  last_data = data;
   Serial.println(data);
-  delay(50);
+  // delay(4);
 }

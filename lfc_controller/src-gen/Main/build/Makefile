@@ -1107,30 +1107,6 @@ _qdec.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_qdec.c.s
 .PHONY : _qdec.c.s
 
-_serial.obj: _serial.c.obj
-.PHONY : _serial.obj
-
-# target to build an object file
-_serial.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_serial.c.obj
-.PHONY : _serial.c.obj
-
-_serial.i: _serial.c.i
-.PHONY : _serial.i
-
-# target to preprocess a source file
-_serial.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_serial.c.i
-.PHONY : _serial.c.i
-
-_serial.s: _serial.c.s
-.PHONY : _serial.s
-
-# target to generate assembly for a file
-_serial.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/_serial.c.s
-.PHONY : _serial.c.s
-
 lib/schedule.obj: lib/schedule.c.obj
 .PHONY : lib/schedule.obj
 
@@ -1284,9 +1260,6 @@ help:
 	@echo "... _qdec.obj"
 	@echo "... _qdec.i"
 	@echo "... _qdec.s"
-	@echo "... _serial.obj"
-	@echo "... _serial.i"
-	@echo "... _serial.s"
 	@echo "... lib/schedule.obj"
 	@echo "... lib/schedule.i"
 	@echo "... lib/schedule.s"

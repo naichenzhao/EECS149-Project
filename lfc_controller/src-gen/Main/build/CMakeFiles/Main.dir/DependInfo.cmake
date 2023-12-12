@@ -16,10 +16,11 @@ set(CMAKE_ASM_COMPILER_ID "GNU")
 set(CMAKE_TARGET_DEFINITIONS_ASM
   "LF_FILE_SEPARATOR=\"/\""
   "LF_PACKAGE_DIRECTORY=\"/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller\""
-  "LF_REACTION_GRAPH_BREADTH=4"
+  "LF_REACTION_GRAPH_BREADTH=3"
   "LF_SINGLE_THREADED=1"
   "LF_SOURCE_DIRECTORY=\"/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src\""
   "LOG_LEVEL=2"
+  "MODAL_REACTORS=TRUE"
   "PLATFORM_STM32F4"
   "PLATFORM_Stm32"
   "STM32F446xx"
@@ -91,7 +92,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_main_main.c" "CMakeFiles/Main.dir/_main_main.c.obj" "gcc" "CMakeFiles/Main.dir/_main_main.c.obj.d"
   "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_pid_controller.c" "CMakeFiles/Main.dir/_pid_controller.c.obj" "gcc" "CMakeFiles/Main.dir/_pid_controller.c.obj.d"
   "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_qdec.c" "CMakeFiles/Main.dir/_qdec.c.obj" "gcc" "CMakeFiles/Main.dir/_qdec.c.obj.d"
-  "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/_serial.c" "CMakeFiles/Main.dir/_serial.c.obj" "gcc" "CMakeFiles/Main.dir/_serial.c.obj.d"
   "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/lib/schedule.c" "CMakeFiles/Main.dir/lib/schedule.c.obj" "gcc" "CMakeFiles/Main.dir/lib/schedule.c.obj.d"
   )
 

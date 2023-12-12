@@ -7,8 +7,7 @@ target C {
   keepalive: true
 }
 
-import Serial from "lib/Serial.lf"
-import QDEC from "lib/Encoder.lf"
+import QDEC from "lib/Encoder.lf"  // import Serial from "lib/Serial.lf"
 import DAC from "lib/DAC.lf"
 import PID_Controller from "lib/PID.lf"
 
@@ -21,6 +20,12 @@ preamble {=
 // Import and/or declare reactor classes.
 main reactor {
   preamble {=
+    UART_HandleTypeDef huart1;
+    static void* action;
+
+    uint8_t rx_data[6];
+    uint8_t rx_buffer[100];
+
     static void MX_GPIO_Init(void) {
         GPIO_InitTypeDef GPIO_InitStruct = {0, 0};
 
@@ -37,22 +42,50 @@ main reactor {
         GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
         HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
     }
+
+    static void MX_USART1_UART_Init(void) {
+      huart1.Instance = USART1;
+      huart1.Init.BaudRate = 115200;
+      huart1.Init.WordLength = UART_WORDLENGTH_8B;
+      huart1.Init.StopBits = UART_STOPBITS_1;
+      huart1.Init.Parity = UART_PARITY_NONE;
+      huart1.Init.Mode = UART_MODE_TX_RX;
+      huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+      if (HAL_UART_Init(&huart1) != HAL_OK)
+      {
+        Error_Handler();
+      }
+    }
+
+    void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+      // printf("recieved %d \r\n", rx_data[0]);
+      HAL_UART_Receive_IT(&huart1, rx_data, 1);
+
+      if (rx_data[0] > 200) {
+        change_FC();
+      }
+
+    }
+
+    void change_FC() {
+      printf("Triggered Action \r\n");
+      lf_schedule(action, 0);
+    }
   =}
 
-  timer t(0 ms, 15000 ms)  // Define timers
+  timer change_pos(0 ms, 5000 ms)  // Define timers
   timer update(0 ms, 10 ms)
 
-  ser = new Serial()       // Define external reactors
-  qdec = new QDEC()
+  qdec = new QDEC()                 // ser = new Serial()                // Define external reactors
   dac = new DAC()
   pid_controller = new PID_Controller()
 
-  state counter: int = 0
+  state pos: int = 10000
   state encoder_count: int32_t = 0
   state sign: int = 1
 
   qdec.read -> pid_controller.current_pos
-
   pid_controller.out -> dac.setvalue
 
   physical action force_triggered
@@ -60,59 +93,51 @@ main reactor {
   reaction(startup) {=
     // Initialize GPIOs
     MX_GPIO_Init();
+    MX_USART1_UART_Init();
+    HAL_UART_Receive_IT(&huart1, rx_data, 1);
 
     // Initial print
-    printf("hello world\r\n");
+    printf("Starting up...\r\n");
+  =}
+
+  reaction(startup) -> force_triggered {=
+    action = force_triggered;
+  =}
+
+  initial mode POS_CONTROL {
+    reaction(force_triggered) -> reset(FORCE_CONTROL) {=
+      lf_set_mode(FORCE_CONTROL);
+      self->pos = 0;
+      printf("Force Detected \r\n");
+    =}
+  }
+
+  mode FORCE_CONTROL {
+    reaction(change_pos) -> reset(POS_CONTROL) {=
+      lf_set_mode(POS_CONTROL);
+      printf("Returning State \r\n");
+    =}
+  }
+
+  reaction(change_pos) {=
+    if (self->pos < 0) {
+      self->pos = 0;
+    } else {
+      self->pos = -10000;
+    }
+    printf("current state: %d \r\n", self->pos);
   =}
 
   // Timer Reactors
-  reaction(t) -> pid_controller.target_pos {=
-    // if (self->sign == 1) {
-    //   self->counter = self->counter + 10;
-    // } else {
-    //   self->counter = self->counter - 10;
-    // }
-
-    if (self->counter == 0) {
-      self->counter = 10000;
-    } else {
-      self->counter = 0;
-    }
-
-    lf_set(pid_controller.target_pos, self->counter);
-
-
-
-    // lf_set(dac.setvalue, self->counter);
-    // HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, self->counter > 0);
-
-
-    // printf("counter: %d\r\n", self->counter);
-
-    // if(self->counter >= 4090) {
-    //   self->sign = 0;
-    // }
-    // if(self->counter <= -4090) {
-    //   self->sign = 1;
-    // }
+  reaction(update) -> pid_controller.target_pos {=
+    lf_set(pid_controller.target_pos, self->pos);
   =}
 
-  // Getter /Setter Reactions
   reaction(update) -> qdec.trigger {=
     lf_set(qdec.trigger, true);
-    // printf("encoder: %d\r\n", qdec.read->value);
-  =}
-
-  reaction(pid_controller.out) {=
-    bool dir = pid_controller.out->value > 0;
-    bool lim = pid_controller.out->value > -10 && pid_controller.out->value < 10;
-    // printf("out: %ld\r\n", pid_controller.out->value);
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, dir);
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, lim);
   =}
 
   reaction(qdec.read) {=
     self->encoder_count = qdec.read->value;
-    // printf("encoder: %ld dac: %d\r\n", self->encoder_count, self->counter);
   =}
 }

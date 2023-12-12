@@ -1,19 +1,16 @@
 #ifndef _main_main_H
 #define _main_main_H
-#ifndef TOP_LEVEL_PREAMBLE_2005776325_H
-#define TOP_LEVEL_PREAMBLE_2005776325_H
+#ifndef TOP_LEVEL_PREAMBLE_836782867_H
+#define TOP_LEVEL_PREAMBLE_836782867_H
 /*Correspondence: Range: [(9, 2), (10, 18)) -> Range: [(0, 0), (1, 18)) (verbatim=true; src=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/lib/PID.lf)*/#include "stm32f4xx_hal.h"
 #include <stdio.h>
-/*Correspondence: Range: [(9, 2), (11, 18)) -> Range: [(0, 0), (2, 18)) (verbatim=true; src=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/lib/Serial.lf)*/#include "stm32f4xx_hal.h"
-#include "stm32_startup.h"
-#include <stdio.h>
-/*Correspondence: Range: [(14, 2), (16, 26)) -> Range: [(0, 0), (2, 26)) (verbatim=true; src=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf)*/#include <stdio.h>
-#include "stm32f4xx_hal.h"
-#include "stm32_startup.h"
 /*Correspondence: Range: [(9, 2), (10, 18)) -> Range: [(0, 0), (1, 18)) (verbatim=true; src=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/lib/DAC.lf)*/#include "stm32f4xx_hal.h"
 #include <stdio.h>
 /*Correspondence: Range: [(9, 4), (10, 18)) -> Range: [(0, 0), (1, 18)) (verbatim=true; src=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/lib/Encoder.lf)*/#include "stm32f4xx_hal.h"
 #include <stdio.h>
+/*Correspondence: Range: [(14, 2), (16, 26)) -> Range: [(0, 0), (2, 26)) (verbatim=true; src=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf)*/#include <stdio.h>
+#include "stm32f4xx_hal.h"
+#include "stm32_startup.h"
 #endif
 #ifdef __cplusplus
 extern "C" {
@@ -25,7 +22,7 @@ extern "C" {
 #endif
 typedef struct main_self_t{
     self_base_t base; // This field is only to be used by the runtime, not the user.
-    int counter;
+    int pos;
     int32_t encoder_count;
     int sign;
     int end[0]; // placeholder; MSVC does not compile empty structs
@@ -35,19 +32,17 @@ typedef struct {
     lf_token_t* token;
     size_t length;
     bool is_present;
-    lf_port_internal_t _base;
-    bool value;
+    lf_action_internal_t _base;
+    self_base_t* parent;
+    bool has_value;
 
-} serial_trigger_t;
-typedef struct {
-    token_type_t type;
-    lf_token_t* token;
-    size_t length;
-    bool is_present;
-    lf_port_internal_t _base;
-    uint8_t* value;
-
-} serial_read_t;
+    #ifdef FEDERATED
+    #ifdef FEDERATED_DECENTRALIZED
+    tag_t intended_tag;
+    #endif
+    interval_t physical_time_of_arrival;
+    #endif
+} main_force_triggered_t;
 typedef struct {
     token_type_t type;
     lf_token_t* token;

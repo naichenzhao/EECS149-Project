@@ -74,6 +74,7 @@ core/CMakeFiles/core.dir/tag.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/environment.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/lf_types.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/modal_models/modes.h \
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/lf_types.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/utils/pqueue.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/lf_token.h \
  /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/arm-none-eabi/include/stdlib.h \
@@ -84,5 +85,4 @@ core/CMakeFiles/core.dir/tag.c.obj: \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/reactor.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/modal_models/modes.h \
  /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/port.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/trace.h \
- /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/lf_types.h
+ /Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/core/../include/core/trace.h

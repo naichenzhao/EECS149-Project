@@ -36,14 +36,17 @@ set(CMAKE_INSTALL_MESSAGE NEVER)
 set(CMAKE_SYSTEM_NAME Stm32)
 
 # Set default values for build parameters
+if (NOT DEFINED MODAL_REACTORS)
+    set(MODAL_REACTORS TRUE)
+endif()
+if (NOT DEFINED LF_REACTION_GRAPH_BREADTH)
+    set(LF_REACTION_GRAPH_BREADTH 3)
+endif()
 if (NOT DEFINED LF_SINGLE_THREADED)
     set(LF_SINGLE_THREADED 1)
 endif()
 if (NOT DEFINED LOG_LEVEL)
     set(LOG_LEVEL 2)
-endif()
-if (NOT DEFINED LF_REACTION_GRAPH_BREADTH)
-    set(LF_REACTION_GRAPH_BREADTH 4)
 endif()
 
 # ########################################################
@@ -84,7 +87,6 @@ add_executable(
     ${STARTUP_SCRIPT} 
     lib/schedule.c
     _main_main.c
-    _serial.c
     _qdec.c
     _dac.c
     _pid_controller.c

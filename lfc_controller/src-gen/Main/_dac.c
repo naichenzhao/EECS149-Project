@@ -37,6 +37,10 @@ void _dacreaction_function_1(void* instance_args) {
     _dac_setvalue_t* setvalue = self->_lf_setvalue;
     int setvalue_width = self->_lf_setvalue_width; SUPPRESS_UNUSED_WARNING(setvalue_width);
     #line 40 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/lib/DAC.lf"
+    bool dir = setvalue->value > 0;
+    bool lim = setvalue->value > -10 && setvalue->value < 10;
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, dir);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, lim);
     if(setvalue->value < 0) {
         HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, -setvalue->value);
     } else {

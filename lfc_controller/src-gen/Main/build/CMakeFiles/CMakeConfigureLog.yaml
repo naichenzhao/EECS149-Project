@@ -60,8 +60,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-od9iIU"
-      binary: "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-od9iIU"
+      source: "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-4qbn76"
+      binary: "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-4qbn76"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -70,14 +70,14 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-od9iIU'
+        Change Dir: '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-4qbn76'
         
-        Run Build Command(s): /usr/local/Cellar/cmake/3.27.7/bin/cmake -E env VERBOSE=1 /usr/local/bin/gmake -f Makefile cmTC_0f7c5/fast
-        gmake[1]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-od9iIU'
-        /usr/local/bin/gmake  -f CMakeFiles/cmTC_0f7c5.dir/build.make CMakeFiles/cmTC_0f7c5.dir/build
-        gmake[2]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-od9iIU'
-        Building C object CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj
-        /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections   -v -o CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj -c /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/local/Cellar/cmake/3.27.7/bin/cmake -E env VERBOSE=1 /usr/local/bin/gmake -f Makefile cmTC_1c1a1/fast
+        gmake[1]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-4qbn76'
+        /usr/local/bin/gmake  -f CMakeFiles/cmTC_1c1a1.dir/build.make CMakeFiles/cmTC_1c1a1.dir/build
+        gmake[2]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-4qbn76'
+        Building C object CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj
+        /usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections   -v -o CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj -c /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         Reading specs from /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/nano.specs
         rename spec link to nano_link
@@ -89,8 +89,8 @@ events:
         Thread model: single
         Supported LTO compression algorithms: zlib
         gcc version 12.3.1 20230626 (Arm GNU Toolchain 12.3.Rel1 (Build arm-12.35)) 
-        COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_0f7c5.dir/'
-         /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/12.3.1/cc1 -isystem =/include/newlib-nano -quiet -v -iprefix /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/ -isysroot /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../arm-none-eabi -D__USES_INITFINI__ /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_0f7c5.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdata-sections -ffunction-sections -o /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//cc7xMbRA.s
+        COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_1c1a1.dir/'
+         /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/12.3.1/cc1 -isystem =/include/newlib-nano -quiet -v -iprefix /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/ -isysroot /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../arm-none-eabi -D__USES_INITFINI__ /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_1c1a1.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdata-sections -ffunction-sections -o /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//cclBd30i.s
         GNU C17 (Arm GNU Toolchain 12.3.Rel1 (Build arm-12.35)) version 12.3.1 20230626 (arm-none-eabi)
         	compiled by GNU C version Apple LLVM 13.0.0 (clang-1300.0.29.30), GMP version 6.2.1, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.15-1-g835ea3a-GMP
         
@@ -112,19 +112,19 @@ events:
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
         Compiler executable checksum: 338e5601125023c3867f2e5d2c0b7a27
-        COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_0f7c5.dir/'
-         /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/as -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//cc7xMbRA.s
+        COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_1c1a1.dir/'
+         /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/as -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//cclBd30i.s
         GNU assembler version 2.40.0 (arm-none-eabi) using BFD version (Arm GNU Toolchain 12.3.Rel1 (Build arm-12.35)) 2.40.0.20230627
         COMPILER_PATH=/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/12.3.1/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.'
-        Linking C static library libcmTC_0f7c5.a
-        /usr/local/Cellar/cmake/3.27.7/bin/cmake -P CMakeFiles/cmTC_0f7c5.dir/cmake_clean_target.cmake
-        /usr/local/Cellar/cmake/3.27.7/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f7c5.dir/link.txt --verbose=1
-        /usr/local/bin/arm-none-eabi-ar qc libcmTC_0f7c5.a CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj
-        /usr/local/bin/arm-none-eabi-ranlib libcmTC_0f7c5.a
-        gmake[2]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-od9iIU'
-        gmake[1]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-od9iIU'
+        COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.'
+        Linking C static library libcmTC_1c1a1.a
+        /usr/local/Cellar/cmake/3.27.7/bin/cmake -P CMakeFiles/cmTC_1c1a1.dir/cmake_clean_target.cmake
+        /usr/local/Cellar/cmake/3.27.7/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c1a1.dir/link.txt --verbose=1
+        /usr/local/bin/arm-none-eabi-ar qc libcmTC_1c1a1.a CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj
+        /usr/local/bin/arm-none-eabi-ranlib libcmTC_1c1a1.a
+        gmake[2]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-4qbn76'
+        gmake[1]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-4qbn76'
         
       exitCode: 0
   -
@@ -158,14 +158,14 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(arm-none-eabi-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-od9iIU']
+        ignore line: [Change Dir: '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-4qbn76']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/local/Cellar/cmake/3.27.7/bin/cmake -E env VERBOSE=1 /usr/local/bin/gmake -f Makefile cmTC_0f7c5/fast]
-        ignore line: [gmake[1]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-od9iIU']
-        ignore line: [/usr/local/bin/gmake  -f CMakeFiles/cmTC_0f7c5.dir/build.make CMakeFiles/cmTC_0f7c5.dir/build]
-        ignore line: [gmake[2]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-od9iIU']
-        ignore line: [Building C object CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj]
-        ignore line: [/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl --gc-sections   -v -o CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj -c /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/local/Cellar/cmake/3.27.7/bin/cmake -E env VERBOSE=1 /usr/local/bin/gmake -f Makefile cmTC_1c1a1/fast]
+        ignore line: [gmake[1]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-4qbn76']
+        ignore line: [/usr/local/bin/gmake  -f CMakeFiles/cmTC_1c1a1.dir/build.make CMakeFiles/cmTC_1c1a1.dir/build]
+        ignore line: [gmake[2]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-4qbn76']
+        ignore line: [Building C object CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [/usr/local/bin/arm-none-eabi-gcc -fdata-sections -ffunction-sections     --specs=nano.specs -Wl --gc-sections   -v -o CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj -c /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [Reading specs from /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/nano.specs]
         ignore line: [rename spec link to nano_link]
@@ -177,8 +177,8 @@ events:
         ignore line: [Thread model: single]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 12.3.1 20230626 (Arm GNU Toolchain 12.3.Rel1 (Build arm-12.35)) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_0f7c5.dir/']
-        ignore line: [ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/12.3.1/cc1 -isystem =/include/newlib-nano -quiet -v -iprefix /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/ -isysroot /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../arm-none-eabi -D__USES_INITFINI__ /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_0f7c5.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdata-sections -ffunction-sections -o /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//cc7xMbRA.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_1c1a1.dir/']
+        ignore line: [ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/12.3.1/cc1 -isystem =/include/newlib-nano -quiet -v -iprefix /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/ -isysroot /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../arm-none-eabi -D__USES_INITFINI__ /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_1c1a1.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdata-sections -ffunction-sections -o /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//cclBd30i.s]
         ignore line: [GNU C17 (Arm GNU Toolchain 12.3.Rel1 (Build arm-12.35)) version 12.3.1 20230626 (arm-none-eabi)]
         ignore line: [	compiled by GNU C version Apple LLVM 13.0.0 (clang-1300.0.29.30)  GMP version 6.2.1  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.15-1-g835ea3a-GMP]
         ignore line: []
@@ -200,19 +200,19 @@ events:
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
         ignore line: [Compiler executable checksum: 338e5601125023c3867f2e5d2c0b7a27]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_0f7c5.dir/']
-        ignore line: [ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/as -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//cc7xMbRA.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_1c1a1.dir/']
+        ignore line: [ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/as -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//cclBd30i.s]
         ignore line: [GNU assembler version 2.40.0 (arm-none-eabi) using BFD version (Arm GNU Toolchain 12.3.Rel1 (Build arm-12.35)) 2.40.0.20230627]
         ignore line: [COMPILER_PATH=/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/12.3.1/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/]
         ignore line: [LIBRARY_PATH=/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C static library libcmTC_0f7c5.a]
-        ignore line: [/usr/local/Cellar/cmake/3.27.7/bin/cmake -P CMakeFiles/cmTC_0f7c5.dir/cmake_clean_target.cmake]
-        ignore line: [/usr/local/Cellar/cmake/3.27.7/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f7c5.dir/link.txt --verbose=1]
-        ignore line: [/usr/local/bin/arm-none-eabi-ar qc libcmTC_0f7c5.a CMakeFiles/cmTC_0f7c5.dir/CMakeCCompilerABI.c.obj]
-        ignore line: [/usr/local/bin/arm-none-eabi-ranlib libcmTC_0f7c5.a]
-        ignore line: [gmake[2]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-od9iIU']
-        ignore line: [gmake[1]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-od9iIU']
+        ignore line: [COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C static library libcmTC_1c1a1.a]
+        ignore line: [/usr/local/Cellar/cmake/3.27.7/bin/cmake -P CMakeFiles/cmTC_1c1a1.dir/cmake_clean_target.cmake]
+        ignore line: [/usr/local/Cellar/cmake/3.27.7/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c1a1.dir/link.txt --verbose=1]
+        ignore line: [/usr/local/bin/arm-none-eabi-ar qc libcmTC_1c1a1.a CMakeFiles/cmTC_1c1a1.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [/usr/local/bin/arm-none-eabi-ranlib libcmTC_1c1a1.a]
+        ignore line: [gmake[2]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-4qbn76']
+        ignore line: [gmake[1]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-4qbn76']
         ignore line: []
         ignore line: []
         implicit libs: []
@@ -285,8 +285,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-adjRSF"
-      binary: "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-adjRSF"
+      source: "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-oR4GXN"
+      binary: "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-oR4GXN"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -295,14 +295,14 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-adjRSF'
+        Change Dir: '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-oR4GXN'
         
-        Run Build Command(s): /usr/local/Cellar/cmake/3.27.7/bin/cmake -E env VERBOSE=1 /usr/local/bin/gmake -f Makefile cmTC_3bf0b/fast
-        gmake[1]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-adjRSF'
-        /usr/local/bin/gmake  -f CMakeFiles/cmTC_3bf0b.dir/build.make CMakeFiles/cmTC_3bf0b.dir/build
-        gmake[2]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-adjRSF'
-        Building CXX object CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj
-        /usr/local/bin/arm-none-eabi-g++ -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections -fno-rtti -fno-exceptions     -fno-threadsafe-statics   -v -o CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/local/Cellar/cmake/3.27.7/bin/cmake -E env VERBOSE=1 /usr/local/bin/gmake -f Makefile cmTC_db5d3/fast
+        gmake[1]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-oR4GXN'
+        /usr/local/bin/gmake  -f CMakeFiles/cmTC_db5d3.dir/build.make CMakeFiles/cmTC_db5d3.dir/build
+        gmake[2]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-oR4GXN'
+        Building CXX object CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj
+        /usr/local/bin/arm-none-eabi-g++ -fdata-sections -ffunction-sections     --specs=nano.specs -Wl,--gc-sections -fno-rtti -fno-exceptions     -fno-threadsafe-statics   -v -o CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         Reading specs from /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/nano.specs
         rename spec link to nano_link
@@ -314,8 +314,8 @@ events:
         Thread model: single
         Supported LTO compression algorithms: zlib
         gcc version 12.3.1 20230626 (Arm GNU Toolchain 12.3.Rel1 (Build arm-12.35)) 
-        COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-fno-rtti' '-fno-exceptions' '-fno-threadsafe-statics' '-v' '-o' 'CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_3bf0b.dir/'
-         /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/12.3.1/cc1plus -isystem =/include/newlib-nano -quiet -v -iprefix /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/ -isysroot /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../arm-none-eabi -D__USES_INITFINI__ /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_3bf0b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdata-sections -ffunction-sections -fno-rtti -fno-exceptions -fno-threadsafe-statics -o /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//cc8Wf5J1.s
+        COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-fno-rtti' '-fno-exceptions' '-fno-threadsafe-statics' '-v' '-o' 'CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_db5d3.dir/'
+         /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/12.3.1/cc1plus -isystem =/include/newlib-nano -quiet -v -iprefix /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/ -isysroot /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../arm-none-eabi -D__USES_INITFINI__ /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_db5d3.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdata-sections -ffunction-sections -fno-rtti -fno-exceptions -fno-threadsafe-statics -o /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccwehfZ9.s
         GNU C++17 (Arm GNU Toolchain 12.3.Rel1 (Build arm-12.35)) version 12.3.1 20230626 (arm-none-eabi)
         	compiled by GNU C version Apple LLVM 13.0.0 (clang-1300.0.29.30), GMP version 6.2.1, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.15-1-g835ea3a-GMP
         
@@ -343,19 +343,19 @@ events:
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
         Compiler executable checksum: a4076647d60eb39067ae5d0d867359a4
-        COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-fno-rtti' '-fno-exceptions' '-fno-threadsafe-statics' '-v' '-o' 'CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_3bf0b.dir/'
-         /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/as -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//cc8Wf5J1.s
+        COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-fno-rtti' '-fno-exceptions' '-fno-threadsafe-statics' '-v' '-o' 'CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_db5d3.dir/'
+         /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/as -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccwehfZ9.s
         GNU assembler version 2.40.0 (arm-none-eabi) using BFD version (Arm GNU Toolchain 12.3.Rel1 (Build arm-12.35)) 2.40.0.20230627
         COMPILER_PATH=/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/12.3.1/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-fno-rtti' '-fno-exceptions' '-fno-threadsafe-statics' '-v' '-o' 'CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX static library libcmTC_3bf0b.a
-        /usr/local/Cellar/cmake/3.27.7/bin/cmake -P CMakeFiles/cmTC_3bf0b.dir/cmake_clean_target.cmake
-        /usr/local/Cellar/cmake/3.27.7/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3bf0b.dir/link.txt --verbose=1
-        /usr/local/bin/arm-none-eabi-ar qc libcmTC_3bf0b.a CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj
-        /usr/local/bin/arm-none-eabi-ranlib libcmTC_3bf0b.a
-        gmake[2]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-adjRSF'
-        gmake[1]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-adjRSF'
+        COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-fno-rtti' '-fno-exceptions' '-fno-threadsafe-statics' '-v' '-o' 'CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX static library libcmTC_db5d3.a
+        /usr/local/Cellar/cmake/3.27.7/bin/cmake -P CMakeFiles/cmTC_db5d3.dir/cmake_clean_target.cmake
+        /usr/local/Cellar/cmake/3.27.7/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db5d3.dir/link.txt --verbose=1
+        /usr/local/bin/arm-none-eabi-ar qc libcmTC_db5d3.a CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj
+        /usr/local/bin/arm-none-eabi-ranlib libcmTC_db5d3.a
+        gmake[2]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-oR4GXN'
+        gmake[1]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-oR4GXN'
         
       exitCode: 0
   -
@@ -395,14 +395,14 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(arm-none-eabi-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-adjRSF']
+        ignore line: [Change Dir: '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-oR4GXN']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/local/Cellar/cmake/3.27.7/bin/cmake -E env VERBOSE=1 /usr/local/bin/gmake -f Makefile cmTC_3bf0b/fast]
-        ignore line: [gmake[1]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-adjRSF']
-        ignore line: [/usr/local/bin/gmake  -f CMakeFiles/cmTC_3bf0b.dir/build.make CMakeFiles/cmTC_3bf0b.dir/build]
-        ignore line: [gmake[2]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-adjRSF']
-        ignore line: [Building CXX object CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj]
-        ignore line: [/usr/local/bin/arm-none-eabi-g++ -fdata-sections -ffunction-sections     --specs=nano.specs -Wl --gc-sections -fno-rtti -fno-exceptions     -fno-threadsafe-statics   -v -o CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/local/Cellar/cmake/3.27.7/bin/cmake -E env VERBOSE=1 /usr/local/bin/gmake -f Makefile cmTC_db5d3/fast]
+        ignore line: [gmake[1]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-oR4GXN']
+        ignore line: [/usr/local/bin/gmake  -f CMakeFiles/cmTC_db5d3.dir/build.make CMakeFiles/cmTC_db5d3.dir/build]
+        ignore line: [gmake[2]: Entering directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-oR4GXN']
+        ignore line: [Building CXX object CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [/usr/local/bin/arm-none-eabi-g++ -fdata-sections -ffunction-sections     --specs=nano.specs -Wl --gc-sections -fno-rtti -fno-exceptions     -fno-threadsafe-statics   -v -o CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [Reading specs from /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/nano.specs]
         ignore line: [rename spec link to nano_link]
@@ -414,8 +414,8 @@ events:
         ignore line: [Thread model: single]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 12.3.1 20230626 (Arm GNU Toolchain 12.3.Rel1 (Build arm-12.35)) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-fno-rtti' '-fno-exceptions' '-fno-threadsafe-statics' '-v' '-o' 'CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_3bf0b.dir/']
-        ignore line: [ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/12.3.1/cc1plus -isystem =/include/newlib-nano -quiet -v -iprefix /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/ -isysroot /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../arm-none-eabi -D__USES_INITFINI__ /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_3bf0b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdata-sections -ffunction-sections -fno-rtti -fno-exceptions -fno-threadsafe-statics -o /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//cc8Wf5J1.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-fno-rtti' '-fno-exceptions' '-fno-threadsafe-statics' '-v' '-o' 'CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_db5d3.dir/']
+        ignore line: [ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/12.3.1/cc1plus -isystem =/include/newlib-nano -quiet -v -iprefix /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/ -isysroot /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../arm-none-eabi -D__USES_INITFINI__ /usr/local/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_db5d3.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdata-sections -ffunction-sections -fno-rtti -fno-exceptions -fno-threadsafe-statics -o /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccwehfZ9.s]
         ignore line: [GNU C++17 (Arm GNU Toolchain 12.3.Rel1 (Build arm-12.35)) version 12.3.1 20230626 (arm-none-eabi)]
         ignore line: [	compiled by GNU C version Apple LLVM 13.0.0 (clang-1300.0.29.30)  GMP version 6.2.1  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.15-1-g835ea3a-GMP]
         ignore line: []
@@ -443,19 +443,19 @@ events:
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
         ignore line: [Compiler executable checksum: a4076647d60eb39067ae5d0d867359a4]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-fno-rtti' '-fno-exceptions' '-fno-threadsafe-statics' '-v' '-o' 'CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_3bf0b.dir/']
-        ignore line: [ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/as -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//cc8Wf5J1.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-fno-rtti' '-fno-exceptions' '-fno-threadsafe-statics' '-v' '-o' 'CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_db5d3.dir/']
+        ignore line: [ /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/as -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T//ccwehfZ9.s]
         ignore line: [GNU assembler version 2.40.0 (arm-none-eabi) using BFD version (Arm GNU Toolchain 12.3.Rel1 (Build arm-12.35)) 2.40.0.20230627]
         ignore line: [COMPILER_PATH=/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/12.3.1/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../libexec/gcc/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/]
         ignore line: [LIBRARY_PATH=/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/:/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-fno-rtti' '-fno-exceptions' '-fno-threadsafe-statics' '-v' '-o' 'CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX static library libcmTC_3bf0b.a]
-        ignore line: [/usr/local/Cellar/cmake/3.27.7/bin/cmake -P CMakeFiles/cmTC_3bf0b.dir/cmake_clean_target.cmake]
-        ignore line: [/usr/local/Cellar/cmake/3.27.7/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3bf0b.dir/link.txt --verbose=1]
-        ignore line: [/usr/local/bin/arm-none-eabi-ar qc libcmTC_3bf0b.a CMakeFiles/cmTC_3bf0b.dir/CMakeCXXCompilerABI.cpp.obj]
-        ignore line: [/usr/local/bin/arm-none-eabi-ranlib libcmTC_3bf0b.a]
-        ignore line: [gmake[2]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-adjRSF']
-        ignore line: [gmake[1]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-adjRSF']
+        ignore line: [COLLECT_GCC_OPTIONS='-fdata-sections' '-ffunction-sections' '-specs=nano.specs' '-fno-rtti' '-fno-exceptions' '-fno-threadsafe-statics' '-v' '-o' 'CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX static library libcmTC_db5d3.a]
+        ignore line: [/usr/local/Cellar/cmake/3.27.7/bin/cmake -P CMakeFiles/cmTC_db5d3.dir/cmake_clean_target.cmake]
+        ignore line: [/usr/local/Cellar/cmake/3.27.7/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db5d3.dir/link.txt --verbose=1]
+        ignore line: [/usr/local/bin/arm-none-eabi-ar qc libcmTC_db5d3.a CMakeFiles/cmTC_db5d3.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [/usr/local/bin/arm-none-eabi-ranlib libcmTC_db5d3.a]
+        ignore line: [gmake[2]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-oR4GXN']
+        ignore line: [gmake[1]: Leaving directory '/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src-gen/Main/build/CMakeFiles/CMakeScratch/TryCompile-oR4GXN']
         ignore line: []
         ignore line: []
         implicit libs: []
