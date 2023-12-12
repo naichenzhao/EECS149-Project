@@ -5,16 +5,16 @@
 // *********** From the preamble, verbatim:
 #line 23 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
 static void MX_GPIO_Init(void) {
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    GPIO_InitTypeDef GPIO_InitStruct = {0, 0};
 
     __HAL_RCC_GPIOH_CLK_ENABLE();
     __HAL_RCC_GPIOA_CLK_ENABLE();
 
     /*Configure GPIO pin Output Level */
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6 | GPIO_PIN_7, GPIO_PIN_RESET);
 
     /*Configure GPIO pin : LD5_Pin */
-    GPIO_InitStruct.Pin = GPIO_PIN_4;
+    GPIO_InitStruct.Pin = GPIO_PIN_6 | GPIO_PIN_7;
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -28,7 +28,7 @@ static void MX_GPIO_Init(void) {
 void _main_mainreaction_function_0(void* instance_args) {
     _main_main_main_self_t* self = (_main_main_main_self_t*)instance_args; SUPPRESS_UNUSED_WARNING(self);
     
-    #line 57 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 58 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     // Initialize GPIOs
     MX_GPIO_Init();
     
@@ -44,25 +44,35 @@ void _main_mainreaction_function_1(void* instance_args) {
     
     } pid_controller;
     pid_controller.target_pos = &(self->_lf_pid_controller.target_pos);
-    #line 66 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
-    if (self->sign == 1) {
-      self->counter = self->counter + 10;
+    #line 67 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    // if (self->sign == 1) {
+    //   self->counter = self->counter + 10;
+    // } else {
+    //   self->counter = self->counter - 10;
+    // }
+    
+    if (self->counter == 0) {
+      self->counter = 10000;
     } else {
-      self->counter = self->counter - 10;
+      self->counter = 0;
     }
     
-    lf_set(pid_controller.target_pos, 0);
+    lf_set(pid_controller.target_pos, self->counter);
+    
+    
+    
     // lf_set(dac.setvalue, self->counter);
+    // HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, self->counter > 0);
     
     
     // printf("counter: %d\r\n", self->counter);
     
-    if(self->counter >= 4090) {
-      self->sign = 0;
-    }
-    if(self->counter <= 0) {
-      self->sign = 1;
-    }
+    // if(self->counter >= 4090) {
+    //   self->sign = 0;
+    // }
+    // if(self->counter <= -4090) {
+    //   self->sign = 1;
+    // }
 }
 #include "include/api/set_undef.h"
 #include "include/api/set.h"
@@ -73,7 +83,7 @@ void _main_mainreaction_function_2(void* instance_args) {
     
     } qdec;
     qdec.trigger = &(self->_lf_qdec.trigger);
-    #line 88 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 99 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     lf_set(qdec.trigger, true);
     // printf("encoder: %d\r\n", qdec.read->value);
 }
@@ -86,10 +96,12 @@ void _main_mainreaction_function_3(void* instance_args) {
     
     } pid_controller;
     pid_controller.out = self->_lf_pid_controller.out;
-    #line 93 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
-    bool val = pid_controller.out->value < 0;
-    printf("out: %ld\r\n", pid_controller.out->value);
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, val);
+    #line 104 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    bool dir = pid_controller.out->value > 0;
+    bool lim = pid_controller.out->value > -10 && pid_controller.out->value < 10;
+    // printf("out: %ld\r\n", pid_controller.out->value);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, dir);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, lim);
 }
 #include "include/api/set_undef.h"
 #include "include/api/set.h"
@@ -100,9 +112,9 @@ void _main_mainreaction_function_4(void* instance_args) {
     
     } qdec;
     qdec.read = self->_lf_qdec.read;
-    #line 99 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 112 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->encoder_count = qdec.read->value;
-    // printf("encoder: %ld\r\n", self->encoder_count);
+    // printf("encoder: %ld dac: %d\r\n", self->encoder_count, self->counter);
 }
 #include "include/api/set_undef.h"
 _main_main_main_self_t* new__main_main() {
@@ -153,75 +165,75 @@ _main_main_main_self_t* new__main_main() {
     self->_lf_qdec.read_trigger.physical_time_of_arrival = NEVER;
     #line 16 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/lib/Encoder.lf"
     #endif // FEDERATED
-    #line 56 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 57 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_0.number = 0;
-    #line 56 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 57 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_0.function = _main_mainreaction_function_0;
-    #line 56 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 57 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_0.self = self;
-    #line 56 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 57 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_0.deadline_violation_handler = NULL;
-    #line 56 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 57 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_0.STP_handler = NULL;
-    #line 56 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 57 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_0.name = "?";
-    #line 56 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 57 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_0.mode = NULL;
-    #line 65 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 66 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_1.number = 1;
-    #line 65 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 66 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_1.function = _main_mainreaction_function_1;
-    #line 65 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 66 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_1.self = self;
-    #line 65 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 66 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_1.deadline_violation_handler = NULL;
-    #line 65 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 66 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_1.STP_handler = NULL;
-    #line 65 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 66 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_1.name = "?";
-    #line 65 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 66 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_1.mode = NULL;
-    #line 87 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_2.number = 2;
-    #line 87 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_2.function = _main_mainreaction_function_2;
-    #line 87 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_2.self = self;
-    #line 87 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_2.deadline_violation_handler = NULL;
-    #line 87 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_2.STP_handler = NULL;
-    #line 87 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_2.name = "?";
-    #line 87 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_2.mode = NULL;
-    #line 92 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 103 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_3.number = 3;
-    #line 92 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 103 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_3.function = _main_mainreaction_function_3;
-    #line 92 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 103 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_3.self = self;
-    #line 92 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 103 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_3.deadline_violation_handler = NULL;
-    #line 92 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 103 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_3.STP_handler = NULL;
-    #line 92 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 103 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_3.name = "?";
-    #line 92 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 103 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_3.mode = NULL;
-    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 111 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_4.number = 4;
-    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 111 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_4.function = _main_mainreaction_function_4;
-    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 111 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_4.self = self;
-    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 111 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_4.deadline_violation_handler = NULL;
-    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 111 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_4.STP_handler = NULL;
-    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 111 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_4.name = "?";
-    #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 111 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__reaction_4.mode = NULL;
     #line 41 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     self->_lf__t.last = NULL;

@@ -5,9 +5,12 @@
 #include "_dac.h"
 #include "_pid_controller.h"
 #include "_qdec.h"
-#ifndef TOP_LEVEL_PREAMBLE_678801430_H
-#define TOP_LEVEL_PREAMBLE_678801430_H
+#ifndef TOP_LEVEL_PREAMBLE_2005776325_H
+#define TOP_LEVEL_PREAMBLE_2005776325_H
 #include "stm32f4xx_hal.h"
+#include <stdio.h>
+#include "stm32f4xx_hal.h"
+#include "stm32_startup.h"
 #include <stdio.h>
 #include <stdio.h>
 #include "stm32f4xx_hal.h"
@@ -15,9 +18,6 @@
 #include "stm32f4xx_hal.h"
 #include <stdio.h>
 #include "stm32f4xx_hal.h"
-#include <stdio.h>
-#include "stm32f4xx_hal.h"
-#include "stm32_startup.h"
 #include <stdio.h>
 #endif
 typedef struct {
@@ -51,15 +51,15 @@ typedef struct {
         reaction_t* read_reactions[1];
     } _lf_qdec;
     int _lf_qdec_width;
-    #line 56 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 57 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     reaction_t _lf__reaction_0;
-    #line 65 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    #line 66 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     reaction_t _lf__reaction_1;
-    #line 87 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
-    reaction_t _lf__reaction_2;
-    #line 92 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
-    reaction_t _lf__reaction_3;
     #line 98 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    reaction_t _lf__reaction_2;
+    #line 103 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
+    reaction_t _lf__reaction_3;
+    #line 111 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     reaction_t _lf__reaction_4;
     #line 41 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/Main.lf"
     trigger_t _lf__t;

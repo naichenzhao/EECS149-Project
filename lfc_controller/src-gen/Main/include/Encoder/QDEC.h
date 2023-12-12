@@ -1,7 +1,7 @@
 #ifndef _qdec_H
 #define _qdec_H
-#ifndef TOP_LEVEL_PREAMBLE_783218541_H
-#define TOP_LEVEL_PREAMBLE_783218541_H
+#ifndef TOP_LEVEL_PREAMBLE_1601702534_H
+#define TOP_LEVEL_PREAMBLE_1601702534_H
 /*Correspondence: Range: [(9, 4), (10, 18)) -> Range: [(0, 0), (1, 18)) (verbatim=true; src=/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/lib/Encoder.lf)*/#include "stm32f4xx_hal.h"
 #include <stdio.h>
 #endif

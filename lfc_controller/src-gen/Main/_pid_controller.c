@@ -16,11 +16,21 @@ void _pid_controllerreaction_function_0(void* instance_args) {
     instant_t now = lf_time_logical();
     interval_t interval = now - self->prev_time;
     
-    float error_p = target_pos->value - current_pos->value;
-    float error_d = (current_pos->value - self->last_pos) / interval;
+    float error_p = (target_pos->value/10) - (current_pos->value/10);
+    float error_d = ((current_pos->value/10) - self->last_pos) / interval;
     self->error_i = error_p + (self->Kw * self->error_i);
     
     float pid_out = self->Kp * error_p + self->Ki * self->error_i + self->Kd * error_d;
+    // float pid_out = self->Kp * error_p;
+    // float pid_out = self->Kp * error_p;
+    
+    if(pid_out > 4000) {
+      pid_out = 4000;
+    } else if(pid_out < -4000) {
+      pid_out = -4000;
+    } else if (pid_out < 100 && pid_out > -100) {
+      pid_out = 0;
+    }
     lf_set(out, pid_out);
     
     self->last_pos = current_pos->value;

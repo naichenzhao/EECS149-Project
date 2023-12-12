@@ -95,7 +95,7 @@ core/libcore.a(lf_STM32f4_support.c.obj)
 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-makebuf.o)
                               /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-wsetup.o) (__smakebuf_r)
 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-printf.o)
-                              CMakeFiles/Main.dir/_main_main.c.obj (printf)
+                              CMakeFiles/Main.dir/_serial.c.obj (printf)
 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-puts.o)
                               CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32_startup.c.obj (puts)
 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strncmp.o)
@@ -266,10 +266,14 @@ Discarded input sections
  .bss           0x00000000        0x0 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
  .text.HAL_DAC_MspDeInit
                 0x00000000       0x2c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
+ .text.HAL_ADC_MspInit
+                0x00000000       0x68 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
+ .text.HAL_ADC_MspDeInit
+                0x00000000       0x2c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
  .text.HAL_UART_MspDeInit
-                0x00000000       0x34 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
+                0x00000000       0x5c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
  .text.HAL_TIM_Encoder_MspDeInit
-                0x00000000       0x28 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
+                0x00000000       0x4c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
  .text          0x00000000        0x0 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
  .data          0x00000000        0x0 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
  .bss           0x00000000        0x0 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
@@ -2011,7 +2015,7 @@ LOAD /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x08000000                g_pfnVectors
                 0x080001c4                        . = ALIGN (0x4)
 
-.text           0x080001d0     0x65dc
+.text           0x080001d0     0x674c
                 0x080001d0                        . = ALIGN (0x4)
  *(.text)
  .text          0x080001d0      0x21c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_arm_addsubsf3.o)
@@ -2142,956 +2146,958 @@ LOAD /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x08000d30       0x68 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
                 0x08000d30                HAL_DAC_MspInit
  .text.HAL_UART_MspInit
-                0x08000d98       0x7c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
+                0x08000d98       0xe8 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
                 0x08000d98                HAL_UART_MspInit
  .text.HAL_TIM_Encoder_MspInit
-                0x08000e14       0x68 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
-                0x08000e14                HAL_TIM_Encoder_MspInit
+                0x08000e80       0xb8 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_hal_msp.c.obj
+                0x08000e80                HAL_TIM_Encoder_MspInit
  .text.NMI_Handler
-                0x08000e7c        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
-                0x08000e7c                NMI_Handler
+                0x08000f38        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
+                0x08000f38                NMI_Handler
  .text.HardFault_Handler
-                0x08000e7e        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
-                0x08000e7e                HardFault_Handler
+                0x08000f3a        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
+                0x08000f3a                HardFault_Handler
  .text.MemManage_Handler
-                0x08000e80        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
-                0x08000e80                MemManage_Handler
+                0x08000f3c        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
+                0x08000f3c                MemManage_Handler
  .text.BusFault_Handler
-                0x08000e82        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
-                0x08000e82                BusFault_Handler
+                0x08000f3e        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
+                0x08000f3e                BusFault_Handler
  .text.UsageFault_Handler
-                0x08000e84        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
-                0x08000e84                UsageFault_Handler
+                0x08000f40        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
+                0x08000f40                UsageFault_Handler
  .text.SVC_Handler
-                0x08000e86        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
-                0x08000e86                SVC_Handler
+                0x08000f42        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
+                0x08000f42                SVC_Handler
  .text.DebugMon_Handler
-                0x08000e88        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
-                0x08000e88                DebugMon_Handler
+                0x08000f44        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
+                0x08000f44                DebugMon_Handler
  .text.PendSV_Handler
-                0x08000e8a        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
-                0x08000e8a                PendSV_Handler
+                0x08000f46        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
+                0x08000f46                PendSV_Handler
  .text.SysTick_Handler
-                0x08000e8c        0x8 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
-                0x08000e8c                SysTick_Handler
+                0x08000f48        0x8 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
+                0x08000f48                SysTick_Handler
  .text.USART2_IRQHandler
-                0x08000e94       0x10 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
-                0x08000e94                USART2_IRQHandler
+                0x08000f50       0x10 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
+                0x08000f50                USART2_IRQHandler
+ .text.USART1_IRQHandler
+                0x08000f60       0x10 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32f4xx_it.c.obj
+                0x08000f60                USART1_IRQHandler
  .text.SystemInit
-                0x08000ea4       0x14 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/system_stm32f4xx.c.obj
-                0x08000ea4                SystemInit
+                0x08000f70       0x14 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/system_stm32f4xx.c.obj
+                0x08000f70                SystemInit
  .text.HAL_InitTick
-                0x08000eb8       0x4c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08000eb8                HAL_InitTick
+                0x08000f84       0x4c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x08000f84                HAL_InitTick
  .text.HAL_Init
-                0x08000f04       0x34 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08000f04                HAL_Init
+                0x08000fd0       0x34 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x08000fd0                HAL_Init
  .text.HAL_IncTick
-                0x08000f38       0x18 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08000f38                HAL_IncTick
+                0x08001004       0x18 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x08001004                HAL_IncTick
  .text.HAL_GetTick
-                0x08000f50        0xc CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08000f50                HAL_GetTick
+                0x0800101c        0xc CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x0800101c                HAL_GetTick
  .text.__NVIC_SetPriority
-                0x08000f5c       0x28 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08001028       0x28 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.NVIC_EncodePriority
-                0x08000f84       0x3e CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- *fill*         0x08000fc2        0x2 
+                0x08001050       0x3e CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ *fill*         0x0800108e        0x2 
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08000fc4       0x24 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08000fc4                HAL_NVIC_SetPriorityGrouping
+                0x08001090       0x24 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08001090                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x08000fe8       0x20 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08000fe8                HAL_NVIC_SetPriority
+                0x080010b4       0x20 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x080010b4                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x08001008       0x1c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08001008                HAL_NVIC_EnableIRQ
+                0x080010d4       0x1c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x080010d4                HAL_NVIC_EnableIRQ
  .text.HAL_SYSTICK_Config
-                0x08001024       0x28 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08001024                HAL_SYSTICK_Config
+                0x080010f0       0x28 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x080010f0                HAL_SYSTICK_Config
  .text.HAL_DAC_Init
-                0x0800104c       0x24 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
-                0x0800104c                HAL_DAC_Init
+                0x08001118       0x24 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+                0x08001118                HAL_DAC_Init
  .text.HAL_DAC_Start
-                0x08001070       0x68 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
-                0x08001070                HAL_DAC_Start
+                0x0800113c       0x68 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+                0x0800113c                HAL_DAC_Start
  .text.HAL_DAC_SetValue
-                0x080010d8       0x2e CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
-                0x080010d8                HAL_DAC_SetValue
+                0x080011a4       0x2e CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+                0x080011a4                HAL_DAC_SetValue
  .text.HAL_DAC_ConfigChannel
-                0x08001106       0x58 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
-                0x08001106                HAL_DAC_ConfigChannel
+                0x080011d2       0x58 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+                0x080011d2                HAL_DAC_ConfigChannel
  .text.HAL_DMA_Abort
-                0x0800115e       0x94 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x0800115e                HAL_DMA_Abort
+                0x0800122a       0x94 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x0800122a                HAL_DMA_Abort
  .text.HAL_DMA_Abort_IT
-                0x080011f2       0x26 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x080011f2                HAL_DMA_Abort_IT
+                0x080012be       0x26 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x080012be                HAL_DMA_Abort_IT
  .text.HAL_GPIO_Init
-                0x08001218      0x1e0 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x08001218                HAL_GPIO_Init
+                0x080012e4      0x1e0 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+                0x080012e4                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x080013f8        0xc CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x080013f8                HAL_GPIO_WritePin
+                0x080014c4        0xc CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+                0x080014c4                HAL_GPIO_WritePin
  .text.HAL_RCC_ClockConfig
-                0x08001404      0x160 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08001404                HAL_RCC_ClockConfig
+                0x080014d0      0x160 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x080014d0                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetHCLKFreq
-                0x08001564        0xc CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08001564                HAL_RCC_GetHCLKFreq
+                0x08001630        0xc CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x08001630                HAL_RCC_GetHCLKFreq
  .text.HAL_RCC_GetPCLK1Freq
-                0x08001570       0x20 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08001570                HAL_RCC_GetPCLK1Freq
+                0x0800163c       0x20 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x0800163c                HAL_RCC_GetPCLK1Freq
  .text.HAL_RCC_GetPCLK2Freq
-                0x08001590       0x20 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08001590                HAL_RCC_GetPCLK2Freq
+                0x0800165c       0x20 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x0800165c                HAL_RCC_GetPCLK2Freq
  .text.HAL_RCC_GetSysClockFreq
-                0x080015b0      0x128 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
-                0x080015b0                HAL_RCC_GetSysClockFreq
+                0x0800167c      0x128 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+                0x0800167c                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_OscConfig
-                0x080016d8      0x444 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
-                0x080016d8                HAL_RCC_OscConfig
+                0x080017a4      0x444 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+                0x080017a4                HAL_RCC_OscConfig
  .text.TIM_Base_SetConfig
-                0x08001b1c       0xc8 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08001b1c                TIM_Base_SetConfig
+                0x08001be8       0xc8 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08001be8                TIM_Base_SetConfig
  .text.HAL_TIM_Encoder_Init
-                0x08001be4       0xb0 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08001be4                HAL_TIM_Encoder_Init
+                0x08001cb0       0xb0 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08001cb0                HAL_TIM_Encoder_Init
  .text.TIM_CCxChannelCmd
-                0x08001c94       0x1e CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08001c94                TIM_CCxChannelCmd
+                0x08001d60       0x1e CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08001d60                TIM_CCxChannelCmd
  .text.HAL_TIM_Encoder_Start
-                0x08001cb2       0xcc CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08001cb2                HAL_TIM_Encoder_Start
- *fill*         0x08001d7e        0x2 
+                0x08001d7e       0xcc CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08001d7e                HAL_TIM_Encoder_Start
+ *fill*         0x08001e4a        0x2 
  .text.HAL_TIMEx_MasterConfigSynchronization
-                0x08001d80       0x8c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
-                0x08001d80                HAL_TIMEx_MasterConfigSynchronization
+                0x08001e4c       0x8c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+                0x08001e4c                HAL_TIMEx_MasterConfigSynchronization
  .text.UART_EndRxTransfer
-                0x08001e0c       0x5c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x08001ed8       0x5c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.UART_Transmit_IT
-                0x08001e68       0x60 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x08001f34       0x60 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.UART_SetConfig
-                0x08001ec8      0x110 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x08001f94      0x110 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.UART_WaitOnFlagUntilTimeout
-                0x08001fd8       0x84 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x080020a4       0x84 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.HAL_UART_Init
-                0x0800205c       0x5e CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x0800205c                HAL_UART_Init
+                0x08002128       0x5e CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x08002128                HAL_UART_Init
  .text.HAL_UART_Transmit
-                0x080020ba       0xd8 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x080020ba                HAL_UART_Transmit
+                0x08002186       0xd8 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x08002186                HAL_UART_Transmit
  .text.HAL_UART_TxCpltCallback
-                0x08002192        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x08002192                HAL_UART_TxCpltCallback
+                0x0800225e        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x0800225e                HAL_UART_TxCpltCallback
  .text.UART_EndTransmit_IT
-                0x08002194       0x1a CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x08002260       0x1a CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.HAL_UART_ErrorCallback
-                0x080021ae        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x080021ae                HAL_UART_ErrorCallback
+                0x0800227a        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x0800227a                HAL_UART_ErrorCallback
  .text.UART_DMAAbortOnError
-                0x080021b0       0x10 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x0800227c       0x10 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.HAL_UARTEx_RxEventCallback
-                0x080021c0        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x080021c0                HAL_UARTEx_RxEventCallback
+                0x0800228c        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x0800228c                HAL_UARTEx_RxEventCallback
  .text.UART_Receive_IT
-                0x080021c2       0xe2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x0800228e       0xe2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.HAL_UART_IRQHandler
-                0x080022a4      0x27c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x080022a4                HAL_UART_IRQHandler
+                0x08002370      0x27c CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x08002370                HAL_UART_IRQHandler
  .text.UART_Start_Receive_IT
-                0x08002520       0x36 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x08002520                UART_Start_Receive_IT
+                0x080025ec       0x36 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x080025ec                UART_Start_Receive_IT
  .text.HAL_UART_Receive_IT
-                0x08002556       0x38 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x08002556                HAL_UART_Receive_IT
- *fill*         0x0800258e        0x2 
+                0x08002622       0x38 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x08002622                HAL_UART_Receive_IT
+ *fill*         0x0800265a        0x2 
  .text.Reset_Handler
-                0x08002590       0x50 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/startup_stm32f446xx.s.obj
-                0x08002590                Reset_Handler
+                0x0800265c       0x50 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/startup_stm32f446xx.s.obj
+                0x0800265c                Reset_Handler
  .text.Default_Handler
-                0x080025e0        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/startup_stm32f446xx.s.obj
-                0x080025e0                DMA1_Stream3_IRQHandler
-                0x080025e0                EXTI2_IRQHandler
-                0x080025e0                TIM8_CC_IRQHandler
-                0x080025e0                FMPI2C1_EV_IRQHandler
-                0x080025e0                SPI4_IRQHandler
-                0x080025e0                TIM1_CC_IRQHandler
-                0x080025e0                DMA2_Stream5_IRQHandler
-                0x080025e0                DMA1_Stream5_IRQHandler
-                0x080025e0                PVD_IRQHandler
-                0x080025e0                SDIO_IRQHandler
-                0x080025e0                TAMP_STAMP_IRQHandler
-                0x080025e0                CAN2_RX1_IRQHandler
-                0x080025e0                EXTI3_IRQHandler
-                0x080025e0                TIM8_TRG_COM_TIM14_IRQHandler
-                0x080025e0                TIM1_UP_TIM10_IRQHandler
-                0x080025e0                TIM8_UP_TIM13_IRQHandler
-                0x080025e0                I2C3_ER_IRQHandler
-                0x080025e0                EXTI0_IRQHandler
-                0x080025e0                I2C2_EV_IRQHandler
-                0x080025e0                DMA1_Stream2_IRQHandler
-                0x080025e0                CAN1_RX0_IRQHandler
-                0x080025e0                FPU_IRQHandler
-                0x080025e0                OTG_HS_WKUP_IRQHandler
-                0x080025e0                CAN2_SCE_IRQHandler
-                0x080025e0                DMA2_Stream2_IRQHandler
-                0x080025e0                SPI1_IRQHandler
-                0x080025e0                TIM6_DAC_IRQHandler
-                0x080025e0                TIM1_BRK_TIM9_IRQHandler
-                0x080025e0                DCMI_IRQHandler
-                0x080025e0                CAN2_RX0_IRQHandler
-                0x080025e0                DMA2_Stream3_IRQHandler
-                0x080025e0                SAI2_IRQHandler
-                0x080025e0                USART6_IRQHandler
-                0x080025e0                USART3_IRQHandler
-                0x080025e0                CAN1_RX1_IRQHandler
-                0x080025e0                UART5_IRQHandler
-                0x080025e0                DMA2_Stream0_IRQHandler
-                0x080025e0                TIM4_IRQHandler
-                0x080025e0                QUADSPI_IRQHandler
-                0x080025e0                I2C1_EV_IRQHandler
-                0x080025e0                DMA1_Stream6_IRQHandler
-                0x080025e0                DMA1_Stream1_IRQHandler
-                0x080025e0                UART4_IRQHandler
-                0x080025e0                TIM3_IRQHandler
-                0x080025e0                RCC_IRQHandler
-                0x080025e0                TIM8_BRK_TIM12_IRQHandler
-                0x080025e0                Default_Handler
-                0x080025e0                CEC_IRQHandler
-                0x080025e0                EXTI15_10_IRQHandler
-                0x080025e0                ADC_IRQHandler
-                0x080025e0                DMA1_Stream7_IRQHandler
-                0x080025e0                TIM7_IRQHandler
-                0x080025e0                CAN2_TX_IRQHandler
-                0x080025e0                DMA2_Stream7_IRQHandler
-                0x080025e0                I2C3_EV_IRQHandler
-                0x080025e0                EXTI9_5_IRQHandler
-                0x080025e0                RTC_WKUP_IRQHandler
-                0x080025e0                SPDIF_RX_IRQHandler
-                0x080025e0                SPI2_IRQHandler
-                0x080025e0                OTG_HS_EP1_IN_IRQHandler
-                0x080025e0                DMA1_Stream0_IRQHandler
-                0x080025e0                CAN1_TX_IRQHandler
-                0x080025e0                FMPI2C1_ER_IRQHandler
-                0x080025e0                EXTI4_IRQHandler
-                0x080025e0                OTG_HS_EP1_OUT_IRQHandler
-                0x080025e0                WWDG_IRQHandler
-                0x080025e0                TIM2_IRQHandler
-                0x080025e0                OTG_FS_WKUP_IRQHandler
-                0x080025e0                TIM1_TRG_COM_TIM11_IRQHandler
-                0x080025e0                OTG_HS_IRQHandler
-                0x080025e0                EXTI1_IRQHandler
-                0x080025e0                I2C2_ER_IRQHandler
-                0x080025e0                DMA2_Stream1_IRQHandler
-                0x080025e0                CAN1_SCE_IRQHandler
-                0x080025e0                FLASH_IRQHandler
-                0x080025e0                DMA2_Stream4_IRQHandler
-                0x080025e0                USART1_IRQHandler
-                0x080025e0                OTG_FS_IRQHandler
-                0x080025e0                SPI3_IRQHandler
-                0x080025e0                DMA1_Stream4_IRQHandler
-                0x080025e0                I2C1_ER_IRQHandler
-                0x080025e0                FMC_IRQHandler
-                0x080025e0                DMA2_Stream6_IRQHandler
-                0x080025e0                SAI1_IRQHandler
-                0x080025e0                RTC_Alarm_IRQHandler
+                0x080026ac        0x2 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/startup_stm32f446xx.s.obj
+                0x080026ac                DMA1_Stream3_IRQHandler
+                0x080026ac                EXTI2_IRQHandler
+                0x080026ac                TIM8_CC_IRQHandler
+                0x080026ac                FMPI2C1_EV_IRQHandler
+                0x080026ac                SPI4_IRQHandler
+                0x080026ac                TIM1_CC_IRQHandler
+                0x080026ac                DMA2_Stream5_IRQHandler
+                0x080026ac                DMA1_Stream5_IRQHandler
+                0x080026ac                PVD_IRQHandler
+                0x080026ac                SDIO_IRQHandler
+                0x080026ac                TAMP_STAMP_IRQHandler
+                0x080026ac                CAN2_RX1_IRQHandler
+                0x080026ac                EXTI3_IRQHandler
+                0x080026ac                TIM8_TRG_COM_TIM14_IRQHandler
+                0x080026ac                TIM1_UP_TIM10_IRQHandler
+                0x080026ac                TIM8_UP_TIM13_IRQHandler
+                0x080026ac                I2C3_ER_IRQHandler
+                0x080026ac                EXTI0_IRQHandler
+                0x080026ac                I2C2_EV_IRQHandler
+                0x080026ac                DMA1_Stream2_IRQHandler
+                0x080026ac                CAN1_RX0_IRQHandler
+                0x080026ac                FPU_IRQHandler
+                0x080026ac                OTG_HS_WKUP_IRQHandler
+                0x080026ac                CAN2_SCE_IRQHandler
+                0x080026ac                DMA2_Stream2_IRQHandler
+                0x080026ac                SPI1_IRQHandler
+                0x080026ac                TIM6_DAC_IRQHandler
+                0x080026ac                TIM1_BRK_TIM9_IRQHandler
+                0x080026ac                DCMI_IRQHandler
+                0x080026ac                CAN2_RX0_IRQHandler
+                0x080026ac                DMA2_Stream3_IRQHandler
+                0x080026ac                SAI2_IRQHandler
+                0x080026ac                USART6_IRQHandler
+                0x080026ac                USART3_IRQHandler
+                0x080026ac                CAN1_RX1_IRQHandler
+                0x080026ac                UART5_IRQHandler
+                0x080026ac                DMA2_Stream0_IRQHandler
+                0x080026ac                TIM4_IRQHandler
+                0x080026ac                QUADSPI_IRQHandler
+                0x080026ac                I2C1_EV_IRQHandler
+                0x080026ac                DMA1_Stream6_IRQHandler
+                0x080026ac                DMA1_Stream1_IRQHandler
+                0x080026ac                UART4_IRQHandler
+                0x080026ac                TIM3_IRQHandler
+                0x080026ac                RCC_IRQHandler
+                0x080026ac                TIM8_BRK_TIM12_IRQHandler
+                0x080026ac                Default_Handler
+                0x080026ac                CEC_IRQHandler
+                0x080026ac                EXTI15_10_IRQHandler
+                0x080026ac                ADC_IRQHandler
+                0x080026ac                DMA1_Stream7_IRQHandler
+                0x080026ac                TIM7_IRQHandler
+                0x080026ac                CAN2_TX_IRQHandler
+                0x080026ac                DMA2_Stream7_IRQHandler
+                0x080026ac                I2C3_EV_IRQHandler
+                0x080026ac                EXTI9_5_IRQHandler
+                0x080026ac                RTC_WKUP_IRQHandler
+                0x080026ac                SPDIF_RX_IRQHandler
+                0x080026ac                SPI2_IRQHandler
+                0x080026ac                OTG_HS_EP1_IN_IRQHandler
+                0x080026ac                DMA1_Stream0_IRQHandler
+                0x080026ac                CAN1_TX_IRQHandler
+                0x080026ac                FMPI2C1_ER_IRQHandler
+                0x080026ac                EXTI4_IRQHandler
+                0x080026ac                OTG_HS_EP1_OUT_IRQHandler
+                0x080026ac                WWDG_IRQHandler
+                0x080026ac                TIM2_IRQHandler
+                0x080026ac                OTG_FS_WKUP_IRQHandler
+                0x080026ac                TIM1_TRG_COM_TIM11_IRQHandler
+                0x080026ac                OTG_HS_IRQHandler
+                0x080026ac                EXTI1_IRQHandler
+                0x080026ac                I2C2_ER_IRQHandler
+                0x080026ac                DMA2_Stream1_IRQHandler
+                0x080026ac                CAN1_SCE_IRQHandler
+                0x080026ac                FLASH_IRQHandler
+                0x080026ac                DMA2_Stream4_IRQHandler
+                0x080026ac                OTG_FS_IRQHandler
+                0x080026ac                SPI3_IRQHandler
+                0x080026ac                DMA1_Stream4_IRQHandler
+                0x080026ac                I2C1_ER_IRQHandler
+                0x080026ac                FMC_IRQHandler
+                0x080026ac                DMA2_Stream6_IRQHandler
+                0x080026ac                SAI1_IRQHandler
+                0x080026ac                RTC_Alarm_IRQHandler
  .text._main_mainreaction_function_4
-                0x080025e2        0xa CMakeFiles/Main.dir/_main_main.c.obj
-                0x080025e2                _main_mainreaction_function_4
- .text.MX_GPIO_Init
-                0x080025ec       0x68 CMakeFiles/Main.dir/_main_main.c.obj
- .text._main_mainreaction_function_0
-                0x08002654       0x14 CMakeFiles/Main.dir/_main_main.c.obj
-                0x08002654                _main_mainreaction_function_0
- .text._main_mainreaction_function_1
-                0x08002668       0x4e CMakeFiles/Main.dir/_main_main.c.obj
-                0x08002668                _main_mainreaction_function_1
- .text._main_mainreaction_function_2
-                0x080026b6       0x22 CMakeFiles/Main.dir/_main_main.c.obj
-                0x080026b6                _main_mainreaction_function_2
+                0x080026ae        0xa CMakeFiles/Main.dir/_main_main.c.obj
+                0x080026ae                _main_mainreaction_function_4
  .text._main_mainreaction_function_3
-                0x080026d8       0x24 CMakeFiles/Main.dir/_main_main.c.obj
-                0x080026d8                _main_mainreaction_function_3
+                0x080026b8       0x34 CMakeFiles/Main.dir/_main_main.c.obj
+                0x080026b8                _main_mainreaction_function_3
+ .text.MX_GPIO_Init
+                0x080026ec       0x68 CMakeFiles/Main.dir/_main_main.c.obj
+ .text._main_mainreaction_function_0
+                0x08002754       0x14 CMakeFiles/Main.dir/_main_main.c.obj
+                0x08002754                _main_mainreaction_function_0
+ .text._main_mainreaction_function_1
+                0x08002768       0x30 CMakeFiles/Main.dir/_main_main.c.obj
+                0x08002768                _main_mainreaction_function_1
+ .text._main_mainreaction_function_2
+                0x08002798       0x22 CMakeFiles/Main.dir/_main_main.c.obj
+                0x08002798                _main_mainreaction_function_2
+ *fill*         0x080027ba        0x2 
  .text.new__main_main
-                0x080026fc      0x150 CMakeFiles/Main.dir/_main_main.c.obj
-                0x080026fc                new__main_main
+                0x080027bc      0x150 CMakeFiles/Main.dir/_main_main.c.obj
+                0x080027bc                new__main_main
+ .text.MX_USART1_UART_Init
+                0x0800290c       0x34 CMakeFiles/Main.dir/_serial.c.obj
  .text._serialreaction_function_0
-                0x0800284c       0x18 CMakeFiles/Main.dir/_serial.c.obj
-                0x0800284c                _serialreaction_function_0
+                0x08002940       0x1c CMakeFiles/Main.dir/_serial.c.obj
+                0x08002940                _serialreaction_function_0
  .text._serialreaction_function_1
-                0x08002864       0x34 CMakeFiles/Main.dir/_serial.c.obj
-                0x08002864                _serialreaction_function_1
+                0x0800295c       0x34 CMakeFiles/Main.dir/_serial.c.obj
+                0x0800295c                _serialreaction_function_1
  .text.HAL_UART_RxCpltCallback
-                0x08002898       0x24 CMakeFiles/Main.dir/_serial.c.obj
-                0x08002898                HAL_UART_RxCpltCallback
+                0x08002990       0x24 CMakeFiles/Main.dir/_serial.c.obj
+                0x08002990                HAL_UART_RxCpltCallback
  .text.new__serial
-                0x080028bc       0x94 CMakeFiles/Main.dir/_serial.c.obj
-                0x080028bc                new__serial
+                0x080029b4       0x94 CMakeFiles/Main.dir/_serial.c.obj
+                0x080029b4                new__serial
  .text.MX_TIM2_Init
-                0x08002950       0x68 CMakeFiles/Main.dir/_qdec.c.obj
+                0x08002a48       0x68 CMakeFiles/Main.dir/_qdec.c.obj
  .text._qdecreaction_function_0
-                0x080029b8       0x14 CMakeFiles/Main.dir/_qdec.c.obj
-                0x080029b8                _qdecreaction_function_0
+                0x08002ab0       0x14 CMakeFiles/Main.dir/_qdec.c.obj
+                0x08002ab0                _qdecreaction_function_0
  .text._qdecreaction_function_1
-                0x080029cc       0x26 CMakeFiles/Main.dir/_qdec.c.obj
-                0x080029cc                _qdecreaction_function_1
- *fill*         0x080029f2        0x2 
+                0x08002ac4       0x26 CMakeFiles/Main.dir/_qdec.c.obj
+                0x08002ac4                _qdecreaction_function_1
+ *fill*         0x08002aea        0x2 
  .text.new__qdec
-                0x080029f4       0x94 CMakeFiles/Main.dir/_qdec.c.obj
-                0x080029f4                new__qdec
+                0x08002aec       0x94 CMakeFiles/Main.dir/_qdec.c.obj
+                0x08002aec                new__qdec
  .text.MX_DAC_Init
-                0x08002a88       0x44 CMakeFiles/Main.dir/_dac.c.obj
+                0x08002b80       0x40 CMakeFiles/Main.dir/_dac.c.obj
  .text._dacreaction_function_0
-                0x08002acc       0x14 CMakeFiles/Main.dir/_dac.c.obj
-                0x08002acc                _dacreaction_function_0
+                0x08002bc0       0x14 CMakeFiles/Main.dir/_dac.c.obj
+                0x08002bc0                _dacreaction_function_0
  .text._dacreaction_function_1
-                0x08002ae0       0x28 CMakeFiles/Main.dir/_dac.c.obj
-                0x08002ae0                _dacreaction_function_1
+                0x08002bd4       0x28 CMakeFiles/Main.dir/_dac.c.obj
+                0x08002bd4                _dacreaction_function_1
  .text.new__dac
-                0x08002b08       0x98 CMakeFiles/Main.dir/_dac.c.obj
-                0x08002b08                new__dac
+                0x08002bfc       0x98 CMakeFiles/Main.dir/_dac.c.obj
+                0x08002bfc                new__dac
  .text._pid_controllerreaction_function_0
-                0x08002ba0       0xb4 CMakeFiles/Main.dir/_pid_controller.c.obj
-                0x08002ba0                _pid_controllerreaction_function_0
+                0x08002c94      0x130 CMakeFiles/Main.dir/_pid_controller.c.obj
+                0x08002c94                _pid_controllerreaction_function_0
  .text.new__pid_controller
-                0x08002c54       0x80 CMakeFiles/Main.dir/_pid_controller.c.obj
-                0x08002c54                new__pid_controller
- .text.main     0x08002cd4        0xc CMakeFiles/Main.dir/Main.c.obj
-                0x08002cd4                main
+                0x08002dc4       0x80 CMakeFiles/Main.dir/_pid_controller.c.obj
+                0x08002dc4                new__pid_controller
+ .text.main     0x08002e44        0xc CMakeFiles/Main.dir/Main.c.obj
+                0x08002e44                main
  .text._lf_set_default_command_line_options
-                0x08002ce0        0x2 CMakeFiles/Main.dir/Main.c.obj
-                0x08002ce0                _lf_set_default_command_line_options
- *fill*         0x08002ce2        0x2 
+                0x08002e50        0x2 CMakeFiles/Main.dir/Main.c.obj
+                0x08002e50                _lf_set_default_command_line_options
+ *fill*         0x08002e52        0x2 
  .text._lf_create_environments
-                0x08002ce4       0x34 CMakeFiles/Main.dir/Main.c.obj
-                0x08002ce4                _lf_create_environments
+                0x08002e54       0x34 CMakeFiles/Main.dir/Main.c.obj
+                0x08002e54                _lf_create_environments
  .text._lf_get_environments
-                0x08002d18        0xc CMakeFiles/Main.dir/Main.c.obj
-                0x08002d18                _lf_get_environments
- *fill*         0x08002d24        0x4 
+                0x08002e88        0xc CMakeFiles/Main.dir/Main.c.obj
+                0x08002e88                _lf_get_environments
+ *fill*         0x08002e94        0x4 
  .text._lf_initialize_trigger_objects
-                0x08002d28      0x4e0 CMakeFiles/Main.dir/Main.c.obj
-                0x08002d28                _lf_initialize_trigger_objects
+                0x08002e98      0x4e0 CMakeFiles/Main.dir/Main.c.obj
+                0x08002e98                _lf_initialize_trigger_objects
  .text.terminate_execution
-                0x08003208        0x2 CMakeFiles/Main.dir/Main.c.obj
-                0x08003208                terminate_execution
- *fill*         0x0800320a        0x2 
+                0x08003378        0x2 CMakeFiles/Main.dir/Main.c.obj
+                0x08003378                terminate_execution
+ *fill*         0x0800337a        0x2 
  .text._lf_physical_time
-                0x0800320c       0x60 core/libcore.a(tag.c.obj)
-                0x0800320c                _lf_physical_time
+                0x0800337c       0x60 core/libcore.a(tag.c.obj)
+                0x0800337c                _lf_physical_time
  .text.lf_tag_compare
-                0x0800326c       0x44 core/libcore.a(tag.c.obj)
-                0x0800326c                lf_tag_compare
+                0x080033dc       0x44 core/libcore.a(tag.c.obj)
+                0x080033dc                lf_tag_compare
  .text.lf_time_logical
-                0x080032b0        0x6 core/libcore.a(tag.c.obj)
-                0x080032b0                lf_time_logical
- *fill*         0x080032b6        0x2 
+                0x08003420        0x6 core/libcore.a(tag.c.obj)
+                0x08003420                lf_time_logical
+ *fill*         0x08003426        0x2 
  .text.lf_time_logical_elapsed
-                0x080032b8       0x18 core/libcore.a(tag.c.obj)
-                0x080032b8                lf_time_logical_elapsed
+                0x08003428       0x18 core/libcore.a(tag.c.obj)
+                0x08003428                lf_time_logical_elapsed
  .text.lf_time_physical
-                0x080032d0        0x8 core/libcore.a(tag.c.obj)
-                0x080032d0                lf_time_physical
+                0x08003440        0x8 core/libcore.a(tag.c.obj)
+                0x08003440                lf_time_physical
  .text.lf_time_physical_elapsed
-                0x080032d8       0x18 core/libcore.a(tag.c.obj)
-                0x080032d8                lf_time_physical_elapsed
+                0x08003448       0x18 core/libcore.a(tag.c.obj)
+                0x08003448                lf_time_physical_elapsed
  .text.lf_comma_separated_time
-                0x080032f0       0xec core/libcore.a(tag.c.obj)
-                0x080032f0                lf_comma_separated_time
+                0x08003460       0xec core/libcore.a(tag.c.obj)
+                0x08003460                lf_comma_separated_time
  .text._lf_get_new_event
-                0x080033dc       0x2c core/libcore.a(reactor_common.c.obj)
+                0x0800354c       0x2c core/libcore.a(reactor_common.c.obj)
  .text._lf_replace_token
-                0x08003408       0x14 core/libcore.a(reactor_common.c.obj)
+                0x08003578       0x14 core/libcore.a(reactor_common.c.obj)
  .text._lf_allocate
-                0x0800341c       0x3c core/libcore.a(reactor_common.c.obj)
-                0x0800341c                _lf_allocate
+                0x0800358c       0x3c core/libcore.a(reactor_common.c.obj)
+                0x0800358c                _lf_allocate
  .text._lf_new_reactor
-                0x08003458       0x14 core/libcore.a(reactor_common.c.obj)
-                0x08003458                _lf_new_reactor
+                0x080035c8       0x14 core/libcore.a(reactor_common.c.obj)
+                0x080035c8                _lf_new_reactor
  .text._lf_free
-                0x0800346c       0x26 core/libcore.a(reactor_common.c.obj)
-                0x0800346c                _lf_free
+                0x080035dc       0x26 core/libcore.a(reactor_common.c.obj)
+                0x080035dc                _lf_free
  .text._lf_free_reactor
-                0x08003492       0x10 core/libcore.a(reactor_common.c.obj)
-                0x08003492                _lf_free_reactor
- *fill*         0x080034a2        0x2 
+                0x08003602       0x10 core/libcore.a(reactor_common.c.obj)
+                0x08003602                _lf_free_reactor
+ *fill*         0x08003612        0x2 
  .text._lf_free_all_reactors
-                0x080034a4       0x28 core/libcore.a(reactor_common.c.obj)
-                0x080034a4                _lf_free_all_reactors
+                0x08003614       0x28 core/libcore.a(reactor_common.c.obj)
+                0x08003614                _lf_free_all_reactors
  .text._lf_set_stop_tag
-                0x080034cc       0x3a core/libcore.a(reactor_common.c.obj)
-                0x080034cc                _lf_set_stop_tag
+                0x0800363c       0x3a core/libcore.a(reactor_common.c.obj)
+                0x0800363c                _lf_set_stop_tag
  .text._lf_start_time_step
-                0x08003506       0x5e core/libcore.a(reactor_common.c.obj)
-                0x08003506                _lf_start_time_step
+                0x08003676       0x5e core/libcore.a(reactor_common.c.obj)
+                0x08003676                _lf_start_time_step
  .text._lf_is_tag_after_stop_tag
-                0x08003564       0x2e core/libcore.a(reactor_common.c.obj)
-                0x08003564                _lf_is_tag_after_stop_tag
+                0x080036d4       0x2e core/libcore.a(reactor_common.c.obj)
+                0x080036d4                _lf_is_tag_after_stop_tag
  .text._lf_initialize_timer
-                0x08003592       0x62 core/libcore.a(reactor_common.c.obj)
-                0x08003592                _lf_initialize_timer
+                0x08003702       0x62 core/libcore.a(reactor_common.c.obj)
+                0x08003702                _lf_initialize_timer
  .text._lf_initialize_timers
-                0x080035f4       0x24 core/libcore.a(reactor_common.c.obj)
-                0x080035f4                _lf_initialize_timers
+                0x08003764       0x24 core/libcore.a(reactor_common.c.obj)
+                0x08003764                _lf_initialize_timers
  .text._lf_trigger_startup_reactions
-                0x08003618       0x2e core/libcore.a(reactor_common.c.obj)
-                0x08003618                _lf_trigger_startup_reactions
+                0x08003788       0x2e core/libcore.a(reactor_common.c.obj)
+                0x08003788                _lf_trigger_startup_reactions
  .text._lf_trigger_shutdown_reactions
-                0x08003646       0x2e core/libcore.a(reactor_common.c.obj)
-                0x08003646                _lf_trigger_shutdown_reactions
- *fill*         0x08003674        0x4 
+                0x080037b6       0x2e core/libcore.a(reactor_common.c.obj)
+                0x080037b6                _lf_trigger_shutdown_reactions
+ *fill*         0x080037e4        0x4 
  .text._lf_recycle_event
-                0x08003678       0x28 core/libcore.a(reactor_common.c.obj)
-                0x08003678                _lf_recycle_event
+                0x080037e8       0x28 core/libcore.a(reactor_common.c.obj)
+                0x080037e8                _lf_recycle_event
  .text._lf_schedule
-                0x080036a0      0x274 core/libcore.a(reactor_common.c.obj)
-                0x080036a0                _lf_schedule
+                0x08003810      0x274 core/libcore.a(reactor_common.c.obj)
+                0x08003810                _lf_schedule
  .text._lf_pop_events
-                0x08003914       0xe6 core/libcore.a(reactor_common.c.obj)
-                0x08003914                _lf_pop_events
- *fill*         0x080039fa        0x2 
+                0x08003a84       0xe6 core/libcore.a(reactor_common.c.obj)
+                0x08003a84                _lf_pop_events
+ *fill*         0x08003b6a        0x2 
  .text._lf_advance_logical_time
-                0x080039fc       0x34 core/libcore.a(reactor_common.c.obj)
-                0x080039fc                _lf_advance_logical_time
+                0x08003b6c       0x34 core/libcore.a(reactor_common.c.obj)
+                0x08003b6c                _lf_advance_logical_time
  .text._lf_invoke_reaction
-                0x08003a30       0x16 core/libcore.a(reactor_common.c.obj)
-                0x08003a30                _lf_invoke_reaction
+                0x08003ba0       0x16 core/libcore.a(reactor_common.c.obj)
+                0x08003ba0                _lf_invoke_reaction
  .text.schedule_output_reactions
-                0x08003a46      0x110 core/libcore.a(reactor_common.c.obj)
-                0x08003a46                schedule_output_reactions
- *fill*         0x08003b56        0x2 
- .text.usage    0x08003b58       0xac core/libcore.a(reactor_common.c.obj)
-                0x08003b58                usage
+                0x08003bb6      0x110 core/libcore.a(reactor_common.c.obj)
+                0x08003bb6                schedule_output_reactions
+ *fill*         0x08003cc6        0x2 
+ .text.usage    0x08003cc8       0xac core/libcore.a(reactor_common.c.obj)
+                0x08003cc8                usage
  .text.process_args
-                0x08003c04      0x3c0 core/libcore.a(reactor_common.c.obj)
-                0x08003c04                process_args
+                0x08003d74      0x3c0 core/libcore.a(reactor_common.c.obj)
+                0x08003d74                process_args
  .text.initialize_global
-                0x08003fc4       0x30 core/libcore.a(reactor_common.c.obj)
-                0x08003fc4                initialize_global
+                0x08004134       0x30 core/libcore.a(reactor_common.c.obj)
+                0x08004134                initialize_global
  .text.termination
-                0x08003ff4      0x13c core/libcore.a(reactor_common.c.obj)
-                0x08003ff4                termination
+                0x08004164      0x13c core/libcore.a(reactor_common.c.obj)
+                0x08004164                termination
  .text._lf_free_token_value
-                0x08004130       0x30 core/libcore.a(lf_token.c.obj)
-                0x08004130                _lf_free_token_value
+                0x080042a0       0x30 core/libcore.a(lf_token.c.obj)
+                0x080042a0                _lf_free_token_value
  .text._lf_free_token
-                0x08004160       0xa4 core/libcore.a(lf_token.c.obj)
-                0x08004160                _lf_free_token
+                0x080042d0       0xa4 core/libcore.a(lf_token.c.obj)
+                0x080042d0                _lf_free_token
  .text._lf_new_token
-                0x08004204       0x88 core/libcore.a(lf_token.c.obj)
-                0x08004204                _lf_new_token
+                0x08004374       0x88 core/libcore.a(lf_token.c.obj)
+                0x08004374                _lf_new_token
  .text._lf_done_using
-                0x0800428c       0x28 core/libcore.a(lf_token.c.obj)
-                0x0800428c                _lf_done_using
+                0x080043fc       0x28 core/libcore.a(lf_token.c.obj)
+                0x080043fc                _lf_done_using
  .text._lf_get_token
-                0x080042b4       0x2e core/libcore.a(lf_token.c.obj)
-                0x080042b4                _lf_get_token
- *fill*         0x080042e2        0x2 
+                0x08004424       0x2e core/libcore.a(lf_token.c.obj)
+                0x08004424                _lf_get_token
+ *fill*         0x08004452        0x2 
  .text._lf_initialize_token_with_value
-                0x080042e4       0x1c core/libcore.a(lf_token.c.obj)
-                0x080042e4                _lf_initialize_token_with_value
+                0x08004454       0x1c core/libcore.a(lf_token.c.obj)
+                0x08004454                _lf_initialize_token_with_value
  .text._lf_initialize_template
-                0x08004300       0x88 core/libcore.a(lf_token.c.obj)
-                0x08004300                _lf_initialize_template
+                0x08004470       0x88 core/libcore.a(lf_token.c.obj)
+                0x08004470                _lf_initialize_template
  .text._lf_free_all_tokens
-                0x08004388       0xa4 core/libcore.a(lf_token.c.obj)
-                0x08004388                _lf_free_all_tokens
+                0x080044f8       0xa4 core/libcore.a(lf_token.c.obj)
+                0x080044f8                _lf_free_all_tokens
  .text._lf_replace_template_token
-                0x0800442c       0x1e core/libcore.a(lf_token.c.obj)
-                0x0800442c                _lf_replace_template_token
- *fill*         0x0800444a        0x2 
+                0x0800459c       0x1e core/libcore.a(lf_token.c.obj)
+                0x0800459c                _lf_replace_template_token
+ *fill*         0x080045ba        0x2 
  .text._lf_free_token_copies
-                0x0800444c       0x24 core/libcore.a(lf_token.c.obj)
-                0x0800444c                _lf_free_token_copies
+                0x080045bc       0x24 core/libcore.a(lf_token.c.obj)
+                0x080045bc                _lf_free_token_copies
  .text.environment_free_single_threaded
-                0x08004470        0xc core/libcore.a(environment.c.obj)
+                0x080045e0        0xc core/libcore.a(environment.c.obj)
  .text.environment_init_single_threaded
-                0x0800447c       0x40 core/libcore.a(environment.c.obj)
+                0x080045ec       0x40 core/libcore.a(environment.c.obj)
  .text.environment_init_tags
-                0x080044bc       0x4c core/libcore.a(environment.c.obj)
-                0x080044bc                environment_init_tags
+                0x0800462c       0x4c core/libcore.a(environment.c.obj)
+                0x0800462c                environment_init_tags
  .text.environment_free
-                0x08004508       0x42 core/libcore.a(environment.c.obj)
-                0x08004508                environment_free
- *fill*         0x0800454a        0x2 
+                0x08004678       0x42 core/libcore.a(environment.c.obj)
+                0x08004678                environment_free
+ *fill*         0x080046ba        0x2 
  .text.environment_init
-                0x0800454c      0x15c core/libcore.a(environment.c.obj)
-                0x0800454c                environment_init
+                0x080046bc      0x15c core/libcore.a(environment.c.obj)
+                0x080046bc                environment_init
  .text._lf_set_present
-                0x080046a8       0x58 core/libcore.a(reactor.c.obj)
-                0x080046a8                _lf_set_present
+                0x08004818       0x58 core/libcore.a(reactor.c.obj)
+                0x08004818                _lf_set_present
  .text.wait_until
-                0x08004700       0x18 core/libcore.a(reactor.c.obj)
-                0x08004700                wait_until
+                0x08004870       0x18 core/libcore.a(reactor.c.obj)
+                0x08004870                wait_until
  .text._lf_trigger_reaction
-                0x08004718       0x28 core/libcore.a(reactor.c.obj)
-                0x08004718                _lf_trigger_reaction
+                0x08004888       0x28 core/libcore.a(reactor.c.obj)
+                0x08004888                _lf_trigger_reaction
  .text._lf_do_step
-                0x08004740       0x98 core/libcore.a(reactor.c.obj)
-                0x08004740                _lf_do_step
+                0x080048b0       0x98 core/libcore.a(reactor.c.obj)
+                0x080048b0                _lf_do_step
  .text.lf_critical_section_enter
-                0x080047d8        0x8 core/libcore.a(reactor.c.obj)
-                0x080047d8                lf_critical_section_enter
+                0x08004948        0x8 core/libcore.a(reactor.c.obj)
+                0x08004948                lf_critical_section_enter
  .text.lf_critical_section_exit
-                0x080047e0        0x8 core/libcore.a(reactor.c.obj)
-                0x080047e0                lf_critical_section_exit
- .text.next     0x080047e8      0x124 core/libcore.a(reactor.c.obj)
-                0x080047e8                next
+                0x08004950        0x8 core/libcore.a(reactor.c.obj)
+                0x08004950                lf_critical_section_exit
+ .text.next     0x08004958      0x124 core/libcore.a(reactor.c.obj)
+                0x08004958                next
  .text.lf_reactor_c_main
-                0x0800490c       0xec core/libcore.a(reactor.c.obj)
-                0x0800490c                lf_reactor_c_main
+                0x08004a7c       0xec core/libcore.a(reactor.c.obj)
+                0x08004a7c                lf_reactor_c_main
  .text.vector_resize
-                0x080049f8       0x26 core/libcore.a(vector.c.obj)
+                0x08004b68       0x26 core/libcore.a(vector.c.obj)
  .text.vector_at
-                0x08004a1e       0x3e core/libcore.a(vector.c.obj)
-                0x08004a1e                vector_at
+                0x08004b8e       0x3e core/libcore.a(vector.c.obj)
+                0x08004b8e                vector_at
  .text.vector_size
-                0x08004a5c        0xa core/libcore.a(vector.c.obj)
-                0x08004a5c                vector_size
+                0x08004bcc        0xa core/libcore.a(vector.c.obj)
+                0x08004bcc                vector_size
  .text.maxchild
-                0x08004a66       0x4a core/libcore.a(pqueue.c.obj)
+                0x08004bd6       0x4a core/libcore.a(pqueue.c.obj)
  .text.bubble_up
-                0x08004ab0       0x66 core/libcore.a(pqueue.c.obj)
+                0x08004c20       0x66 core/libcore.a(pqueue.c.obj)
  .text.percolate_down
-                0x08004b16       0x6c core/libcore.a(pqueue.c.obj)
- *fill*         0x08004b82        0x2 
+                0x08004c86       0x6c core/libcore.a(pqueue.c.obj)
+ *fill*         0x08004cf2        0x2 
  .text.find_equal_same_priority
-                0x08004b84       0x9c core/libcore.a(pqueue.c.obj)
-                0x08004b84                find_equal_same_priority
+                0x08004cf4       0x9c core/libcore.a(pqueue.c.obj)
+                0x08004cf4                find_equal_same_priority
  .text.pqueue_init
-                0x08004c20       0x52 core/libcore.a(pqueue.c.obj)
-                0x08004c20                pqueue_init
+                0x08004d90       0x52 core/libcore.a(pqueue.c.obj)
+                0x08004d90                pqueue_init
  .text.pqueue_free
-                0x08004c72       0x12 core/libcore.a(pqueue.c.obj)
-                0x08004c72                pqueue_free
+                0x08004de2       0x12 core/libcore.a(pqueue.c.obj)
+                0x08004de2                pqueue_free
  .text.pqueue_size
-                0x08004c84        0xc core/libcore.a(pqueue.c.obj)
-                0x08004c84                pqueue_size
+                0x08004df4        0xc core/libcore.a(pqueue.c.obj)
+                0x08004df4                pqueue_size
  .text.pqueue_find_equal_same_priority
-                0x08004c90        0xa core/libcore.a(pqueue.c.obj)
-                0x08004c90                pqueue_find_equal_same_priority
+                0x08004e00        0xa core/libcore.a(pqueue.c.obj)
+                0x08004e00                pqueue_find_equal_same_priority
  .text.pqueue_insert
-                0x08004c9a       0x40 core/libcore.a(pqueue.c.obj)
-                0x08004c9a                pqueue_insert
+                0x08004e0a       0x40 core/libcore.a(pqueue.c.obj)
+                0x08004e0a                pqueue_insert
  .text.pqueue_pop
-                0x08004cda       0x2a core/libcore.a(pqueue.c.obj)
-                0x08004cda                pqueue_pop
+                0x08004e4a       0x2a core/libcore.a(pqueue.c.obj)
+                0x08004e4a                pqueue_pop
  .text.pqueue_peek
-                0x08004d04       0x14 core/libcore.a(pqueue.c.obj)
-                0x08004d04                pqueue_peek
+                0x08004e74       0x14 core/libcore.a(pqueue.c.obj)
+                0x08004e74                pqueue_peek
  .text.in_reverse_order
-                0x08004d18        0xc core/libcore.a(pqueue.c.obj)
-                0x08004d18                in_reverse_order
+                0x08004e88        0xc core/libcore.a(pqueue.c.obj)
+                0x08004e88                in_reverse_order
  .text.in_no_particular_order
-                0x08004d24        0x4 core/libcore.a(pqueue.c.obj)
-                0x08004d24                in_no_particular_order
+                0x08004e94        0x4 core/libcore.a(pqueue.c.obj)
+                0x08004e94                in_no_particular_order
  .text.event_matches
-                0x08004d28        0xe core/libcore.a(pqueue.c.obj)
-                0x08004d28                event_matches
+                0x08004e98        0xe core/libcore.a(pqueue.c.obj)
+                0x08004e98                event_matches
  .text.reaction_matches
-                0x08004d36        0xa core/libcore.a(pqueue.c.obj)
-                0x08004d36                reaction_matches
+                0x08004ea6        0xa core/libcore.a(pqueue.c.obj)
+                0x08004ea6                reaction_matches
  .text.get_event_time
-                0x08004d40        0x6 core/libcore.a(pqueue.c.obj)
-                0x08004d40                get_event_time
+                0x08004eb0        0x6 core/libcore.a(pqueue.c.obj)
+                0x08004eb0                get_event_time
  .text.get_reaction_index
-                0x08004d46        0x6 core/libcore.a(pqueue.c.obj)
-                0x08004d46                get_reaction_index
+                0x08004eb6        0x6 core/libcore.a(pqueue.c.obj)
+                0x08004eb6                get_reaction_index
  .text.get_event_position
-                0x08004d4c        0x4 core/libcore.a(pqueue.c.obj)
-                0x08004d4c                get_event_position
+                0x08004ebc        0x4 core/libcore.a(pqueue.c.obj)
+                0x08004ebc                get_event_position
  .text.get_reaction_position
-                0x08004d50        0x4 core/libcore.a(pqueue.c.obj)
-                0x08004d50                get_reaction_position
+                0x08004ec0        0x4 core/libcore.a(pqueue.c.obj)
+                0x08004ec0                get_reaction_position
  .text.set_event_position
-                0x08004d54        0x4 core/libcore.a(pqueue.c.obj)
-                0x08004d54                set_event_position
+                0x08004ec4        0x4 core/libcore.a(pqueue.c.obj)
+                0x08004ec4                set_event_position
  .text.set_reaction_position
-                0x08004d58        0x4 core/libcore.a(pqueue.c.obj)
-                0x08004d58                set_reaction_position
+                0x08004ec8        0x4 core/libcore.a(pqueue.c.obj)
+                0x08004ec8                set_reaction_position
  .text.print_reaction
-                0x08004d5c        0x2 core/libcore.a(pqueue.c.obj)
-                0x08004d5c                print_reaction
+                0x08004ecc        0x2 core/libcore.a(pqueue.c.obj)
+                0x08004ecc                print_reaction
  .text.print_event
-                0x08004d5e        0x2 core/libcore.a(pqueue.c.obj)
-                0x08004d5e                print_event
+                0x08004ece        0x2 core/libcore.a(pqueue.c.obj)
+                0x08004ece                print_event
  .text._lf_message_print
-                0x08004d60       0xbc core/libcore.a(util.c.obj)
-                0x08004d60                _lf_message_print
+                0x08004ed0       0xbc core/libcore.a(util.c.obj)
+                0x08004ed0                _lf_message_print
  .text.lf_vprint
-                0x08004e1c       0x20 core/libcore.a(util.c.obj)
-                0x08004e1c                lf_vprint
+                0x08004f8c       0x20 core/libcore.a(util.c.obj)
+                0x08004f8c                lf_vprint
  .text.lf_print
-                0x08004e3c       0x1c core/libcore.a(util.c.obj)
-                0x08004e3c                lf_print
+                0x08004fac       0x1c core/libcore.a(util.c.obj)
+                0x08004fac                lf_print
  .text.lf_vprint_error
-                0x08004e58       0x20 core/libcore.a(util.c.obj)
-                0x08004e58                lf_vprint_error
+                0x08004fc8       0x20 core/libcore.a(util.c.obj)
+                0x08004fc8                lf_vprint_error
  .text.lf_print_error
-                0x08004e78       0x1c core/libcore.a(util.c.obj)
-                0x08004e78                lf_print_error
+                0x08004fe8       0x1c core/libcore.a(util.c.obj)
+                0x08004fe8                lf_print_error
  .text.lf_vprint_warning
-                0x08004e94       0x1c core/libcore.a(util.c.obj)
-                0x08004e94                lf_vprint_warning
+                0x08005004       0x1c core/libcore.a(util.c.obj)
+                0x08005004                lf_vprint_warning
  .text.lf_print_warning
-                0x08004eb0       0x1c core/libcore.a(util.c.obj)
-                0x08004eb0                lf_print_warning
+                0x08005020       0x1c core/libcore.a(util.c.obj)
+                0x08005020                lf_print_warning
  .text.lf_vprint_error_and_exit
-                0x08004ecc       0x20 core/libcore.a(util.c.obj)
-                0x08004ecc                lf_vprint_error_and_exit
+                0x0800503c       0x20 core/libcore.a(util.c.obj)
+                0x0800503c                lf_vprint_error_and_exit
  .text.lf_print_error_and_exit
-                0x08004eec       0x18 core/libcore.a(util.c.obj)
-                0x08004eec                lf_print_error_and_exit
+                0x0800505c       0x18 core/libcore.a(util.c.obj)
+                0x0800505c                lf_print_error_and_exit
  .text.lf_assert
-                0x08004f04       0x1a core/libcore.a(util.c.obj)
-                0x08004f04                lf_assert
+                0x08005074       0x1a core/libcore.a(util.c.obj)
+                0x08005074                lf_assert
  .text.hashset_add_member
-                0x08004f1e       0x6a core/libcore.a(hashset.c.obj)
+                0x0800508e       0x6a core/libcore.a(hashset.c.obj)
  .text.maybe_rehash
-                0x08004f88       0x70 core/libcore.a(hashset.c.obj)
+                0x080050f8       0x70 core/libcore.a(hashset.c.obj)
  .text.hashset_num_items
-                0x08004ff8        0x4 core/libcore.a(hashset.c.obj)
-                0x08004ff8                hashset_num_items
+                0x08005168        0x4 core/libcore.a(hashset.c.obj)
+                0x08005168                hashset_num_items
  .text.hashset_destroy
-                0x08004ffc       0x16 core/libcore.a(hashset.c.obj)
-                0x08004ffc                hashset_destroy
+                0x0800516c       0x16 core/libcore.a(hashset.c.obj)
+                0x0800516c                hashset_destroy
  .text.hashset_create
-                0x08005012       0x3e core/libcore.a(hashset.c.obj)
-                0x08005012                hashset_create
+                0x08005182       0x3e core/libcore.a(hashset.c.obj)
+                0x08005182                hashset_create
  .text.hashset_add
-                0x08005050       0x14 core/libcore.a(hashset.c.obj)
-                0x08005050                hashset_add
+                0x080051c0       0x14 core/libcore.a(hashset.c.obj)
+                0x080051c0                hashset_add
  .text.hashset_remove
-                0x08005064       0x44 core/libcore.a(hashset.c.obj)
-                0x08005064                hashset_remove
+                0x080051d4       0x44 core/libcore.a(hashset.c.obj)
+                0x080051d4                hashset_remove
  .text.hashset_iterator
-                0x080050a8       0x1c core/libcore.a(hashset_itr.c.obj)
-                0x080050a8                hashset_iterator
+                0x08005218       0x1c core/libcore.a(hashset_itr.c.obj)
+                0x08005218                hashset_iterator
  .text.hashset_iterator_next
-                0x080050c4       0x42 core/libcore.a(hashset_itr.c.obj)
-                0x080050c4                hashset_iterator_next
+                0x08005234       0x42 core/libcore.a(hashset_itr.c.obj)
+                0x08005234                hashset_iterator_next
  .text.hashset_iterator_value
-                0x08005106        0xc core/libcore.a(hashset_itr.c.obj)
-                0x08005106                hashset_iterator_value
- *fill*         0x08005112        0x2 
+                0x08005276        0xc core/libcore.a(hashset_itr.c.obj)
+                0x08005276                hashset_iterator_value
+ *fill*         0x08005282        0x2 
  .text.TIM5_IRQHandler
-                0x08005114       0x28 core/libcore.a(lf_STM32f4_support.c.obj)
-                0x08005114                TIM5_IRQHandler
+                0x08005284       0x28 core/libcore.a(lf_STM32f4_support.c.obj)
+                0x08005284                TIM5_IRQHandler
  .text._lf_clock_now
-                0x0800513c       0x4c core/libcore.a(lf_STM32f4_support.c.obj)
-                0x0800513c                _lf_clock_now
+                0x080052ac       0x4c core/libcore.a(lf_STM32f4_support.c.obj)
+                0x080052ac                _lf_clock_now
  .text.lf_busy_wait_until
-                0x08005188       0x1c core/libcore.a(lf_STM32f4_support.c.obj)
+                0x080052f8       0x1c core/libcore.a(lf_STM32f4_support.c.obj)
  .text.lf_disable_interrupts_nested
-                0x080051a4       0x18 core/libcore.a(lf_STM32f4_support.c.obj)
-                0x080051a4                lf_disable_interrupts_nested
+                0x08005314       0x18 core/libcore.a(lf_STM32f4_support.c.obj)
+                0x08005314                lf_disable_interrupts_nested
  .text.lf_enable_interrupts_nested
-                0x080051bc       0x20 core/libcore.a(lf_STM32f4_support.c.obj)
-                0x080051bc                lf_enable_interrupts_nested
+                0x0800532c       0x20 core/libcore.a(lf_STM32f4_support.c.obj)
+                0x0800532c                lf_enable_interrupts_nested
  .text._lf_interruptable_sleep_until_locked
-                0x080051dc       0x74 core/libcore.a(lf_STM32f4_support.c.obj)
-                0x080051dc                _lf_interruptable_sleep_until_locked
+                0x0800534c       0x74 core/libcore.a(lf_STM32f4_support.c.obj)
+                0x0800534c                _lf_interruptable_sleep_until_locked
  .text.Error_Handler
-                0x08005250        0x4 core/libcore.a(lf_STM32f4_support.c.obj)
-                0x08005250                Error_Handler
+                0x080053c0        0x4 core/libcore.a(lf_STM32f4_support.c.obj)
+                0x080053c0                Error_Handler
  .text.lf_SystemClock_Config
-                0x08005254       0x8c core/libcore.a(lf_STM32f4_support.c.obj)
-                0x08005254                lf_SystemClock_Config
+                0x080053c4       0x8c core/libcore.a(lf_STM32f4_support.c.obj)
+                0x080053c4                lf_SystemClock_Config
  .text._lf_initialize_clock
-                0x080052e0       0x58 core/libcore.a(lf_STM32f4_support.c.obj)
-                0x080052e0                _lf_initialize_clock
+                0x08005450       0x58 core/libcore.a(lf_STM32f4_support.c.obj)
+                0x08005450                _lf_initialize_clock
  .text.__udivmoddi4
-                0x08005338      0x2bc /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
-                0x08005338                __udivmoddi4
- .text.atexit   0x080055f4        0xc /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-atexit.o)
-                0x080055f4                atexit
- .text.atoi     0x08005600        0x8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-atoi.o)
-                0x08005600                atoi
- .text.calloc   0x08005608       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-calloc.o)
-                0x08005608                calloc
+                0x080054a8      0x2bc /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
+                0x080054a8                __udivmoddi4
+ .text.atexit   0x08005764        0xc /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-atexit.o)
+                0x08005764                atexit
+ .text.atoi     0x08005770        0x8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-atoi.o)
+                0x08005770                atoi
+ .text.calloc   0x08005778       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-calloc.o)
+                0x08005778                calloc
  .text._calloc_r
-                0x08005618       0x28 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-callocr.o)
-                0x08005618                _calloc_r
+                0x08005788       0x28 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-callocr.o)
+                0x08005788                _calloc_r
  .text.__sfputc_r
-                0x08005640       0x2e /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf.o)
+                0x080057b0       0x2e /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x0800566e       0x24 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf.o)
-                0x0800566e                __sfputs_r
- *fill*         0x08005692        0x2 
+                0x080057de       0x24 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf.o)
+                0x080057de                __sfputs_r
+ *fill*         0x08005802        0x2 
  .text._vfprintf_r
-                0x08005694      0x230 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf.o)
-                0x08005694                _vfiprintf_r
-                0x08005694                _vfprintf_r
+                0x08005804      0x230 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf.o)
+                0x08005804                _vfiprintf_r
+                0x08005804                _vfprintf_r
  .text.vfprintf
-                0x080058c4       0x14 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf.o)
-                0x080058c4                vfiprintf
-                0x080058c4                vfprintf
- .text.malloc   0x080058d8       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-malloc.o)
-                0x080058d8                malloc
- .text.free     0x080058e8       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-malloc.o)
-                0x080058e8                free
+                0x08005a34       0x14 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf.o)
+                0x08005a34                vfiprintf
+                0x08005a34                vfprintf
+ .text.malloc   0x08005a48       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-malloc.o)
+                0x08005a48                malloc
+ .text.free     0x08005a58       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-malloc.o)
+                0x08005a58                free
  .text._printf_common
-                0x080058f8       0xda /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x080058f8                _printf_common
- *fill*         0x080059d2        0x2 
+                0x08005a68       0xda /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x08005a68                _printf_common
+ *fill*         0x08005b42        0x2 
  .text._printf_i
-                0x080059d4      0x258 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x080059d4                _printf_i
+                0x08005b44      0x258 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x08005b44                _printf_i
  .text.snprintf
-                0x08005c2c       0x68 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-snprintf.o)
-                0x08005c2c                snprintf
-                0x08005c2c                sniprintf
- .text.realloc  0x08005c94       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-realloc.o)
-                0x08005c94                realloc
+                0x08005d9c       0x68 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-snprintf.o)
+                0x08005d9c                snprintf
+                0x08005d9c                sniprintf
+ .text.realloc  0x08005e04       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-realloc.o)
+                0x08005e04                realloc
  .text._realloc_r
-                0x08005ca4       0x5c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-reallocr.o)
-                0x08005ca4                _realloc_r
+                0x08005e14       0x5c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-reallocr.o)
+                0x08005e14                _realloc_r
  .text._strtol_l.constprop.0
-                0x08005d00       0xfc /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strtol.o)
- .text.strtol   0x08005dfc       0x14 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strtol.o)
-                0x08005dfc                strtol
+                0x08005e70       0xfc /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strtol.o)
+ .text.strtol   0x08005f6c       0x14 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strtol.o)
+                0x08005f6c                strtol
  .text.__swbuf_r
-                0x08005e10       0x7c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-wbuf.o)
-                0x08005e10                __swbuf_r
+                0x08005f80       0x7c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-wbuf.o)
+                0x08005f80                __swbuf_r
  .text.__swsetup_r
-                0x08005e8c       0xac /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-wsetup.o)
-                0x08005e8c                __swsetup_r
+                0x08005ffc       0xac /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-wsetup.o)
+                0x08005ffc                __swsetup_r
  .text.__swhatbuf_r
-                0x08005f38       0x4c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-makebuf.o)
-                0x08005f38                __swhatbuf_r
+                0x080060a8       0x4c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-makebuf.o)
+                0x080060a8                __swhatbuf_r
  .text.__smakebuf_r
-                0x08005f84       0x78 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-makebuf.o)
-                0x08005f84                __smakebuf_r
- .text.printf   0x08005ffc       0x24 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-printf.o)
-                0x08005ffc                printf
-                0x08005ffc                iprintf
- .text._puts_r  0x08006020       0xaa /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-puts.o)
-                0x08006020                _puts_r
- *fill*         0x080060ca        0x2 
- .text.puts     0x080060cc       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-puts.o)
-                0x080060cc                puts
- .text.strncmp  0x080060dc       0x24 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strncmp.o)
-                0x080060dc                strncmp
- .text.memmove  0x08006100       0x34 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-memmove.o)
-                0x08006100                memmove
+                0x080060f4       0x78 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-makebuf.o)
+                0x080060f4                __smakebuf_r
+ .text.printf   0x0800616c       0x24 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-printf.o)
+                0x0800616c                printf
+                0x0800616c                iprintf
+ .text._puts_r  0x08006190       0xaa /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-puts.o)
+                0x08006190                _puts_r
+ *fill*         0x0800623a        0x2 
+ .text.puts     0x0800623c       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-puts.o)
+                0x0800623c                puts
+ .text.strncmp  0x0800624c       0x24 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strncmp.o)
+                0x0800624c                strncmp
+ .text.memmove  0x08006270       0x34 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-memmove.o)
+                0x08006270                memmove
  .text._fstat_r
-                0x08006134       0x24 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-fstatr.o)
-                0x08006134                _fstat_r
+                0x080062a4       0x24 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-fstatr.o)
+                0x080062a4                _fstat_r
  .text._isatty_r
-                0x08006158       0x20 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-isattyr.o)
-                0x08006158                _isatty_r
- .text.__errno  0x08006178        0xc /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-errno.o)
-                0x08006178                __errno
- .text.memcpy   0x08006184       0x1c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-memcpy-stub.o)
-                0x08006184                memcpy
- .text.atoll    0x080061a0        0x8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-atoll.o)
-                0x080061a0                atoll
+                0x080062c8       0x20 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-isattyr.o)
+                0x080062c8                _isatty_r
+ .text.__errno  0x080062e8        0xc /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-errno.o)
+                0x080062e8                __errno
+ .text.memcpy   0x080062f4       0x1c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-memcpy-stub.o)
+                0x080062f4                memcpy
+ .text.atoll    0x08006310        0x8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-atoll.o)
+                0x08006310                atoll
  .text.__register_exitproc
-                0x080061a8       0xb8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-__atexit.o)
-                0x080061a8                __register_exitproc
+                0x08006318       0xb8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-__atexit.o)
+                0x08006318                __register_exitproc
  .text.__call_exitprocs
-                0x08006260       0xc8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-__call_atexit.o)
-                0x08006260                __call_exitprocs
+                0x080063d0       0xc8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-__call_atexit.o)
+                0x080063d0                __call_exitprocs
  .text.__ssputs_r
-                0x08006328       0xb6 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-svfprintf.o)
-                0x08006328                __ssputs_r
- *fill*         0x080063de        0x2 
+                0x08006498       0xb6 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-svfprintf.o)
+                0x08006498                __ssputs_r
+ *fill*         0x0800654e        0x2 
  .text._svfprintf_r
-                0x080063e0      0x1f8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-svfprintf.o)
-                0x080063e0                _svfprintf_r
-                0x080063e0                _svfiprintf_r
+                0x08006550      0x1f8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-svfprintf.o)
+                0x08006550                _svfprintf_r
+                0x08006550                _svfiprintf_r
  .text._malloc_usable_size_r
-                0x080065d8       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-msizer.o)
-                0x080065d8                _malloc_usable_size_r
+                0x08006748       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-msizer.o)
+                0x08006748                _malloc_usable_size_r
  .text._strtoll_l.constprop.0
-                0x080065e8      0x128 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strtoll.o)
- .text.strtoll  0x08006710       0x14 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strtoll.o)
-                0x08006710                strtoll
- .text._close   0x08006724       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(close.o)
-                0x08006724                _close
- .text._fstat   0x08006734       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(fstat.o)
-                0x08006734                _fstat
- .text._isatty  0x08006744       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(isatty.o)
-                0x08006744                _isatty
- .text._lseek   0x08006754       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(lseek.o)
-                0x08006754                _lseek
- .text._read    0x08006764       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(read.o)
-                0x08006764                _read
- .text._sbrk    0x08006774       0x1c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(sbrk.o)
-                0x08006774                _sbrk
- .text._exit    0x08006790        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(_exit.o)
-                0x08006790                _exit
+                0x08006758      0x128 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strtoll.o)
+ .text.strtoll  0x08006880       0x14 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strtoll.o)
+                0x08006880                strtoll
+ .text._close   0x08006894       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(close.o)
+                0x08006894                _close
+ .text._fstat   0x080068a4       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(fstat.o)
+                0x080068a4                _fstat
+ .text._isatty  0x080068b4       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(isatty.o)
+                0x080068b4                _isatty
+ .text._lseek   0x080068c4       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(lseek.o)
+                0x080068c4                _lseek
+ .text._read    0x080068d4       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(read.o)
+                0x080068d4                _read
+ .text._sbrk    0x080068e4       0x1c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(sbrk.o)
+                0x080068e4                _sbrk
+ .text._exit    0x08006900        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(_exit.o)
+                0x08006900                _exit
  *(.glue_7)
- .glue_7        0x08006794        0x0 linker stubs
+ .glue_7        0x08006904        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08006794        0x0 linker stubs
+ .glue_7t       0x08006904        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x08006794        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtbegin.o
+ .eh_frame      0x08006904        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtbegin.o
  *(.init)
- .init          0x08006794        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crti.o
-                0x08006794                _init
- .init          0x08006798        0x8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtn.o
+ .init          0x08006904        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crti.o
+                0x08006904                _init
+ .init          0x08006908        0x8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtn.o
  *(.fini)
- .fini          0x080067a0        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crti.o
-                0x080067a0                _fini
- .fini          0x080067a4        0x8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtn.o
-                0x080067ac                        . = ALIGN (0x4)
-                0x080067ac                        _etext = .
+ .fini          0x08006910        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crti.o
+                0x08006910                _fini
+ .fini          0x08006914        0x8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtn.o
+                0x0800691c                        . = ALIGN (0x4)
+                0x0800691c                        _etext = .
 
-.vfp11_veneer   0x080067ac        0x0
- .vfp11_veneer  0x080067ac        0x0 linker stubs
+.vfp11_veneer   0x0800691c        0x0
+ .vfp11_veneer  0x0800691c        0x0 linker stubs
 
-.v4_bx          0x080067ac        0x0
- .v4_bx         0x080067ac        0x0 linker stubs
+.v4_bx          0x0800691c        0x0
+ .v4_bx         0x0800691c        0x0 linker stubs
 
-.iplt           0x080067ac        0x0
- .iplt          0x080067ac        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtbegin.o
+.iplt           0x0800691c        0x0
+ .iplt          0x0800691c        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtbegin.o
 
-.rodata         0x080067b0      0xaf0
-                0x080067b0                        . = ALIGN (0x4)
+.rodata         0x08006920      0xae4
+                0x08006920                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x080067b0       0x10 core/libcore.a(environment.c.obj)
- .rodata        0x080067c0       0x10 core/libcore.a(reactor.c.obj)
+ .rodata        0x08006920       0x10 core/libcore.a(environment.c.obj)
+ .rodata        0x08006930       0x10 core/libcore.a(reactor.c.obj)
  *(.rodata*)
  .rodata.stm32_startup.str1.4
-                0x080067d0       0x24 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32_startup.c.obj
+                0x08006940       0x24 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/stm32_startup.c.obj
  .rodata.APBPrescTable
-                0x080067f4        0x8 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/system_stm32f4xx.c.obj
-                0x080067f4                APBPrescTable
+                0x08006964        0x8 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/system_stm32f4xx.c.obj
+                0x08006964                APBPrescTable
  .rodata.AHBPrescTable
-                0x080067fc       0x10 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/system_stm32f4xx.c.obj
-                0x080067fc                AHBPrescTable
+                0x0800696c       0x10 CMakeFiles/Main.dir/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/STM_sdk/Core/Src/system_stm32f4xx.c.obj
+                0x0800696c                AHBPrescTable
  .rodata._main_mainreaction_function_0.str1.4
-                0x0800680c        0xd CMakeFiles/Main.dir/_main_main.c.obj
- *fill*         0x08006819        0x3 
- .rodata._main_mainreaction_function_3.str1.4
-                0x0800681c        0xb CMakeFiles/Main.dir/_main_main.c.obj
- *fill*         0x08006827        0x1 
+                0x0800697c        0xd CMakeFiles/Main.dir/_main_main.c.obj
+ *fill*         0x08006989        0x3 
  .rodata.new__main_main.str1.4
-                0x08006828        0x2 CMakeFiles/Main.dir/_main_main.c.obj
- *fill*         0x0800682a        0x2 
+                0x0800698c        0x2 CMakeFiles/Main.dir/_main_main.c.obj
+ *fill*         0x0800698e        0x2 
  .rodata._serialreaction_function_1.str1.4
-                0x0800682c       0x11 CMakeFiles/Main.dir/_serial.c.obj
- *fill*         0x0800683d        0x3 
+                0x08006990       0x11 CMakeFiles/Main.dir/_serial.c.obj
+ *fill*         0x080069a1        0x3 
  .rodata.HAL_UART_RxCpltCallback.str1.4
-                0x08006840        0xf CMakeFiles/Main.dir/_serial.c.obj
+                0x080069a4        0xf CMakeFiles/Main.dir/_serial.c.obj
  .rodata.new__serial.str1.4
-                0x0800684f        0x2 CMakeFiles/Main.dir/_serial.c.obj
+                0x080069b3        0x2 CMakeFiles/Main.dir/_serial.c.obj
  .rodata.new__qdec.str1.4
-                0x0800684f        0x2 CMakeFiles/Main.dir/_qdec.c.obj
+                0x080069b3        0x2 CMakeFiles/Main.dir/_qdec.c.obj
  .rodata.new__dac.str1.4
-                0x0800684f        0x2 CMakeFiles/Main.dir/_dac.c.obj
+                0x080069b3        0x2 CMakeFiles/Main.dir/_dac.c.obj
  .rodata.new__pid_controller.str1.4
-                0x0800684f        0x2 CMakeFiles/Main.dir/_pid_controller.c.obj
- *fill*         0x0800684f        0x1 
+                0x080069b3        0x2 CMakeFiles/Main.dir/_pid_controller.c.obj
+ *fill*         0x080069b3        0x1 
  .rodata._lf_physical_time.str1.4
-                0x08006850       0x23 core/libcore.a(tag.c.obj)
- *fill*         0x08006873        0x1 
+                0x080069b4       0x23 core/libcore.a(tag.c.obj)
+ *fill*         0x080069d7        0x1 
  .rodata.lf_comma_separated_time.str1.4
-                0x08006874       0x18 core/libcore.a(tag.c.obj)
+                0x080069d8       0x18 core/libcore.a(tag.c.obj)
  .rodata._lf_get_new_event.str1.4
-                0x0800688c        0xf core/libcore.a(reactor_common.c.obj)
- *fill*         0x0800689b        0x1 
+                0x080069f0        0xf core/libcore.a(reactor_common.c.obj)
+ *fill*         0x080069ff        0x1 
  .rodata._lf_schedule.str1.4
-                0x0800689c       0x6f core/libcore.a(reactor_common.c.obj)
- *fill*         0x0800690b        0x1 
+                0x08006a00       0x6f core/libcore.a(reactor_common.c.obj)
+ *fill*         0x08006a6f        0x1 
  .rodata._lf_advance_logical_time.str1.4
-                0x0800690c       0x40 core/libcore.a(reactor_common.c.obj)
+                0x08006a70       0x40 core/libcore.a(reactor_common.c.obj)
  .rodata.usage.str1.4
-                0x0800694c      0x248 core/libcore.a(reactor_common.c.obj)
+                0x08006ab0      0x248 core/libcore.a(reactor_common.c.obj)
                                 0x24a (size before relaxing)
  .rodata.process_args.str1.4
-                0x08006b94      0x1df core/libcore.a(reactor_common.c.obj)
- *fill*         0x08006d73        0x1 
+                0x08006cf8      0x1df core/libcore.a(reactor_common.c.obj)
+ *fill*         0x08006ed7        0x1 
  .rodata.termination.str1.4
-                0x08006d74      0x1ce core/libcore.a(reactor_common.c.obj)
- *fill*         0x08006f42        0x2 
+                0x08006ed8      0x1ce core/libcore.a(reactor_common.c.obj)
+ *fill*         0x080070a6        0x2 
  .rodata._lf_free_token.str1.4
-                0x08006f44       0xbd core/libcore.a(lf_token.c.obj)
- *fill*         0x08007001        0x3 
+                0x080070a8       0xbd core/libcore.a(lf_token.c.obj)
+ *fill*         0x08007165        0x3 
  .rodata._lf_done_using.str1.4
-                0x08007004       0x32 core/libcore.a(lf_token.c.obj)
- *fill*         0x08007036        0x2 
+                0x08007168       0x32 core/libcore.a(lf_token.c.obj)
+ *fill*         0x0800719a        0x2 
  .rodata.environment_init.str1.4
-                0x08007038        0xe core/libcore.a(environment.c.obj)
- *fill*         0x08007046        0x2 
+                0x0800719c        0xe core/libcore.a(environment.c.obj)
+ *fill*         0x080071aa        0x2 
  .rodata._lf_trigger_reaction.str1.4
-                0x08007048       0x2a core/libcore.a(reactor.c.obj)
+                0x080071ac       0x2a core/libcore.a(reactor.c.obj)
  .rodata.next.str1.4
-                0x08007072       0x45 core/libcore.a(reactor.c.obj)
- *fill*         0x08007072        0x2 
+                0x080071d6       0x45 core/libcore.a(reactor.c.obj)
+ *fill*         0x080071d6        0x2 
  .rodata.lf_reactor_c_main.str1.4
-                0x08007074       0x77 core/libcore.a(reactor.c.obj)
- *fill*         0x080070eb        0x1 
+                0x080071d8       0x77 core/libcore.a(reactor.c.obj)
+ *fill*         0x0800724f        0x1 
  .rodata.find_equal_same_priority.str1.4
-                0x080070ec       0x3d core/libcore.a(pqueue.c.obj)
- *fill*         0x08007129        0x3 
+                0x08007250       0x3d core/libcore.a(pqueue.c.obj)
+ *fill*         0x0800728d        0x3 
  .rodata._lf_message_print.str1.4
-                0x0800712c       0x1b core/libcore.a(util.c.obj)
+                0x08007290       0x1b core/libcore.a(util.c.obj)
  .rodata.lf_vprint.str1.4
-                0x08007147       0x1b core/libcore.a(util.c.obj)
+                0x080072ab       0x1b core/libcore.a(util.c.obj)
                                   0x1 (size before relaxing)
- *fill*         0x08007147        0x1 
+ *fill*         0x080072ab        0x1 
  .rodata.lf_vprint_error.str1.4
-                0x08007148        0x8 core/libcore.a(util.c.obj)
+                0x080072ac        0x8 core/libcore.a(util.c.obj)
  .rodata.lf_vprint_warning.str1.4
-                0x08007150        0xa core/libcore.a(util.c.obj)
- *fill*         0x0800715a        0x2 
+                0x080072b4        0xa core/libcore.a(util.c.obj)
+ *fill*         0x080072be        0x2 
  .rodata.lf_vprint_error_and_exit.str1.4
-                0x0800715c        0xe core/libcore.a(util.c.obj)
+                0x080072c0        0xe core/libcore.a(util.c.obj)
  .rodata._vfprintf_r.str1.1
-                0x0800716a       0x11 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf.o)
+                0x080072ce       0x11 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf.o)
  .rodata._printf_i.str1.1
-                0x0800717b       0x22 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x080072df       0x22 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-vfprintf_i.o)
  .rodata._ctype_
-                0x0800719d      0x101 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-ctype_.o)
-                0x0800719d                _ctype_
+                0x08007301      0x101 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-ctype_.o)
+                0x08007301                _ctype_
  .rodata._svfprintf_r.str1.1
-                0x0800729e       0x11 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-svfprintf.o)
-                0x080072b0                        . = ALIGN (0x4)
- *fill*         0x0800729e        0x2 
+                0x08007402       0x11 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-nano-svfprintf.o)
+                0x08007414                        . = ALIGN (0x4)
+ *fill*         0x08007402        0x2 
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x080072a0        0x8
-                0x080072a0                        __exidx_start = .
+.ARM            0x08007404        0x8
+                0x08007404                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x080072a0        0x8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-memchr.o)
- .ARM.exidx     0x080072a8        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strlen.o)
+ .ARM.exidx     0x08007404        0x8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-memchr.o)
+ .ARM.exidx     0x0800740c        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strlen.o)
                                   0x8 (size before relaxing)
- .ARM.exidx     0x080072a8        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strcmp.o)
+ .ARM.exidx     0x0800740c        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-strcmp.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text.__udivmoddi4
-                0x080072a8        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
+                0x0800740c        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
                                   0x8 (size before relaxing)
-                0x080072a8                        __exidx_end = .
+                0x0800740c                        __exidx_end = .
 
-.rel.dyn        0x080072a8        0x0
- .rel.iplt      0x080072a8        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtbegin.o
+.rel.dyn        0x0800740c        0x0
+ .rel.iplt      0x0800740c        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtbegin.o
 
-.preinit_array  0x080072a8        0x0
-                0x080072a8                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0800740c        0x0
+                0x0800740c                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x080072a8                        PROVIDE (__preinit_array_end = .)
+                0x0800740c                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x080072a8        0x4
-                0x080072a8                        PROVIDE (__init_array_start = .)
+.init_array     0x0800740c        0x4
+                0x0800740c                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x080072a8        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtbegin.o
-                0x080072ac                        PROVIDE (__init_array_end = .)
+ .init_array    0x0800740c        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtbegin.o
+                0x08007410                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x080072ac        0x4
+.fini_array     0x08007410        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x080072ac        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtbegin.o
+ .fini_array    0x08007410        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x080072b0                        _sidata = LOADADDR (.data)
+                0x08007414                        _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x8c load address 0x080072b0
+.data           0x20000000       0x8c load address 0x08007414
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -3136,17 +3142,17 @@ LOAD /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x2000008c                        _edata = .
 
 .tm_clone_table
-                0x2000008c        0x0 load address 0x0800733c
+                0x2000008c        0x0 load address 0x080074a0
  .tm_clone_table
                 0x2000008c        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtbegin.o
  .tm_clone_table
                 0x2000008c        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtend.o
 
-.igot.plt       0x2000008c        0x0 load address 0x0800733c
+.igot.plt       0x2000008c        0x0 load address 0x080074a0
  .igot.plt      0x2000008c        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/softfp/crtbegin.o
                 0x2000008c                        . = ALIGN (0x4)
 
-.bss            0x20000090      0x388 load address 0x0800733c
+.bss            0x20000090      0x3c8 load address 0x080074a0
                 0x20000090                        _sbss = .
                 0x20000090                        __bss_start__ = _sbss
  *(.bss)
@@ -3185,89 +3191,90 @@ LOAD /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  .bss.rx_data   0x20000240        0x6 CMakeFiles/Main.dir/_serial.c.obj
                 0x20000240                rx_data
  *fill*         0x20000246        0x2 
- .bss.htim2     0x20000248       0x48 CMakeFiles/Main.dir/_qdec.c.obj
-                0x20000248                htim2
- .bss.hdac      0x20000290       0x14 CMakeFiles/Main.dir/_dac.c.obj
-                0x20000290                hdac
- *fill*         0x200002a4        0x4 
- .bss.envs      0x200002a8       0x88 CMakeFiles/Main.dir/Main.c.obj
-                0x200002a8                envs
+ .bss.huart1    0x20000248       0x44 CMakeFiles/Main.dir/_serial.c.obj
+                0x20000248                huart1
+ .bss.htim2     0x2000028c       0x48 CMakeFiles/Main.dir/_qdec.c.obj
+                0x2000028c                htim2
+ .bss.hdac      0x200002d4       0x14 CMakeFiles/Main.dir/_dac.c.obj
+                0x200002d4                hdac
+ .bss.envs      0x200002e8       0x88 CMakeFiles/Main.dir/Main.c.obj
+                0x200002e8                envs
  .bss._lf_last_reported_physical_time_ns
-                0x20000330        0x8 core/libcore.a(tag.c.obj)
-                0x20000330                _lf_last_reported_physical_time_ns
+                0x20000370        0x8 core/libcore.a(tag.c.obj)
+                0x20000370                _lf_last_reported_physical_time_ns
  .bss._lf_time_test_physical_clock_offset
-                0x20000338        0x8 core/libcore.a(tag.c.obj)
-                0x20000338                _lf_time_test_physical_clock_offset
+                0x20000378        0x8 core/libcore.a(tag.c.obj)
+                0x20000378                _lf_time_test_physical_clock_offset
  .bss._lf_time_physical_clock_offset
-                0x20000340        0x8 core/libcore.a(tag.c.obj)
-                0x20000340                _lf_time_physical_clock_offset
+                0x20000380        0x8 core/libcore.a(tag.c.obj)
+                0x20000380                _lf_time_physical_clock_offset
  .bss.default_argv
-                0x20000348        0x4 core/libcore.a(reactor_common.c.obj)
-                0x20000348                default_argv
+                0x20000388        0x4 core/libcore.a(reactor_common.c.obj)
+                0x20000388                default_argv
  .bss.default_argc
-                0x2000034c        0x4 core/libcore.a(reactor_common.c.obj)
-                0x2000034c                default_argc
+                0x2000038c        0x4 core/libcore.a(reactor_common.c.obj)
+                0x2000038c                default_argc
  .bss._lf_reactors_to_free
-                0x20000350        0x4 core/libcore.a(reactor_common.c.obj)
-                0x20000350                _lf_reactors_to_free
+                0x20000390        0x4 core/libcore.a(reactor_common.c.obj)
+                0x20000390                _lf_reactors_to_free
  .bss.keepalive_specified
-                0x20000354        0x1 core/libcore.a(reactor_common.c.obj)
-                0x20000354                keepalive_specified
+                0x20000394        0x1 core/libcore.a(reactor_common.c.obj)
+                0x20000394                keepalive_specified
  .bss._lf_execution_started
-                0x20000355        0x1 core/libcore.a(reactor_common.c.obj)
-                0x20000355                _lf_execution_started
- *fill*         0x20000356        0x2 
+                0x20000395        0x1 core/libcore.a(reactor_common.c.obj)
+                0x20000395                _lf_execution_started
+ *fill*         0x20000396        0x2 
  .bss._lf_number_of_workers
-                0x20000358        0x4 core/libcore.a(reactor_common.c.obj)
-                0x20000358                _lf_number_of_workers
- .bss.fast      0x2000035c        0x1 core/libcore.a(reactor_common.c.obj)
-                0x2000035c                fast
- *fill*         0x2000035d        0x3 
+                0x20000398        0x4 core/libcore.a(reactor_common.c.obj)
+                0x20000398                _lf_number_of_workers
+ .bss.fast      0x2000039c        0x1 core/libcore.a(reactor_common.c.obj)
+                0x2000039c                fast
+ *fill*         0x2000039d        0x3 
  .bss._lf_token_templates
-                0x20000360        0x4 core/libcore.a(lf_token.c.obj)
+                0x200003a0        0x4 core/libcore.a(lf_token.c.obj)
  .bss._lf_token_recycling_bin
-                0x20000364        0x4 core/libcore.a(lf_token.c.obj)
+                0x200003a4        0x4 core/libcore.a(lf_token.c.obj)
  .bss._lf_tokens_allocated_in_reactions
-                0x20000368        0x4 core/libcore.a(lf_token.c.obj)
-                0x20000368                _lf_tokens_allocated_in_reactions
+                0x200003a8        0x4 core/libcore.a(lf_token.c.obj)
+                0x200003a8                _lf_tokens_allocated_in_reactions
  .bss._lf_count_token_allocations
-                0x2000036c        0x4 core/libcore.a(lf_token.c.obj)
-                0x2000036c                _lf_count_token_allocations
+                0x200003ac        0x4 core/libcore.a(lf_token.c.obj)
+                0x200003ac                _lf_count_token_allocations
  .bss._lf_count_payload_allocations
-                0x20000370        0x4 core/libcore.a(lf_token.c.obj)
-                0x20000370                _lf_count_payload_allocations
+                0x200003b0        0x4 core/libcore.a(lf_token.c.obj)
+                0x200003b0                _lf_count_payload_allocations
  .bss.print_message_function
-                0x20000374        0x4 core/libcore.a(util.c.obj)
-                0x20000374                print_message_function
+                0x200003b4        0x4 core/libcore.a(util.c.obj)
+                0x200003b4                print_message_function
  .bss._lf_time_us_high
-                0x20000378        0x4 core/libcore.a(lf_STM32f4_support.c.obj)
+                0x200003b8        0x4 core/libcore.a(lf_STM32f4_support.c.obj)
  .bss._lf_num_nested_crit_sec
-                0x2000037c        0x4 core/libcore.a(lf_STM32f4_support.c.obj)
+                0x200003bc        0x4 core/libcore.a(lf_STM32f4_support.c.obj)
  .bss._lf_async_event
-                0x20000380        0x1 core/libcore.a(lf_STM32f4_support.c.obj)
- *fill*         0x20000381        0x3 
+                0x200003c0        0x1 core/libcore.a(lf_STM32f4_support.c.obj)
+ *fill*         0x200003c1        0x3 
  .bss.__atexit0
-                0x20000384       0x8c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-__atexit.o)
-                0x20000384                __atexit0
- .bss.__atexit  0x20000410        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-__call_atexit.o)
-                0x20000410                __atexit
+                0x200003c4       0x8c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-__atexit.o)
+                0x200003c4                __atexit0
+ .bss.__atexit  0x20000450        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(libc_a-__call_atexit.o)
+                0x20000450                __atexit
  .bss.heap_end.0
-                0x20000414        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(sbrk.o)
+                0x20000454        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libnosys.a(sbrk.o)
  *(COMMON)
-                0x20000418                        . = ALIGN (0x4)
-                0x20000418                        _ebss = .
-                0x20000418                        __bss_end__ = _ebss
+                0x20000458                        . = ALIGN (0x4)
+                0x20000458                        _ebss = .
+                0x20000458                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20000418      0x600 load address 0x0800733c
-                0x20000418                        . = ALIGN (0x8)
-                0x20000418                        PROVIDE (end = .)
+                0x20000458      0x600 load address 0x080074a0
+                0x20000458                        . = ALIGN (0x8)
+                0x20000458                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x20000618                        . = (. + _Min_Heap_Size)
- *fill*         0x20000418      0x200 
-                0x20000a18                        . = (. + _Min_Stack_Size)
- *fill*         0x20000618      0x400 
-                0x20000a18                        . = ALIGN (0x8)
+                0x20000658                        . = (. + _Min_Heap_Size)
+ *fill*         0x20000458      0x200 
+                0x20000a58                        . = (. + _Min_Stack_Size)
+ *fill*         0x20000658      0x400 
+                0x20000a58                        . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)

@@ -14,7 +14,7 @@ static void MX_DAC_Init(void) {
 
     sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
     sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
-    if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_2) != HAL_OK) {
+    if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_1) != HAL_OK) {
       Error_Handler();
     }
 }
@@ -28,7 +28,7 @@ void _dacreaction_function_0(void* instance_args) {
     
     #line 35 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/lib/DAC.lf"
     MX_DAC_Init();
-    HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
+    HAL_DAC_Start(&hdac, DAC_CHANNEL_1);
 }
 #include "include/api/set_undef.h"
 #include "include/api/set.h"
@@ -38,9 +38,9 @@ void _dacreaction_function_1(void* instance_args) {
     int setvalue_width = self->_lf_setvalue_width; SUPPRESS_UNUSED_WARNING(setvalue_width);
     #line 40 "/Users/naichenzhao/Desktop/EECS149-Project/lfc_controller/src/lib/DAC.lf"
     if(setvalue->value < 0) {
-        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, -setvalue->value);
+        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, -setvalue->value);
     } else {
-        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, setvalue->value);
+        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, setvalue->value);
     }
 }
 #include "include/api/set_undef.h"

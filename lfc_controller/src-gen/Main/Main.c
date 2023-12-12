@@ -82,13 +82,13 @@ void _lf_initialize_trigger_objects() {
     } // End scoping.
     // Initiaizing timer Main.t.
     main_main_self[0]->_lf__t.offset = MSEC(0);
-    main_main_self[0]->_lf__t.period = MSEC(10);
+    main_main_self[0]->_lf__t.period = MSEC(15000);
     // Associate timer with the environment of its parent
     envs[main_main].timer_triggers[timer_triggers_count[main_main]++] = &main_main_self[0]->_lf__t;
     main_main_self[0]->_lf__t.mode = NULL;
     // Initiaizing timer Main.update.
     main_main_self[0]->_lf__update.offset = MSEC(0);
-    main_main_self[0]->_lf__update.period = MSEC(100);
+    main_main_self[0]->_lf__update.period = MSEC(10);
     // Associate timer with the environment of its parent
     envs[main_main].timer_triggers[timer_triggers_count[main_main]++] = &main_main_self[0]->_lf__update;
     main_main_self[0]->_lf__update.mode = NULL;
@@ -153,7 +153,7 @@ void _lf_initialize_trigger_objects() {
         main_pid_controller_self[0] = new__pid_controller();
         main_pid_controller_self[0]->base.environment = &envs[main_main];
         bank_index = 0; SUPPRESS_UNUSED_WARNING(bank_index);
-        main_pid_controller_self[0]->Kp = 0.2;
+        main_pid_controller_self[0]->Kp = 0.8;
         main_pid_controller_self[0]->Ki = 0.1;
         main_pid_controller_self[0]->Kd = 0.1;
         // width of -2 indicates that it is not a multiport.

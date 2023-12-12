@@ -25,7 +25,7 @@ reactor DAC {
 
         sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
         sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
-        if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_2) != HAL_OK) {
+        if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_1) != HAL_OK) {
           Error_Handler();
         }
     }
@@ -33,14 +33,14 @@ reactor DAC {
 
   reaction(startup) {=
     MX_DAC_Init();
-    HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
+    HAL_DAC_Start(&hdac, DAC_CHANNEL_1);
   =}
 
   reaction(setvalue) {=
     if(setvalue->value < 0) {
-        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, -setvalue->value);
+        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, -setvalue->value);
     } else {
-        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, setvalue->value);
+        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, setvalue->value);
     }
   =}
 }
