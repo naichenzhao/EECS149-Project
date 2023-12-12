@@ -62,7 +62,7 @@ main reactor {
       // printf("recieved %d \r\n", rx_data[0]);
       HAL_UART_Receive_IT(&huart1, rx_data, 1);
 
-      if (rx_data[0] > 200) {
+      if (rx_data[0] > 100) {
         change_FC();
       }
 
@@ -74,10 +74,10 @@ main reactor {
     }
   =}
 
-  timer change_pos(0 ms, 5000 ms)  // Define timers
+  timer change_pos(0 ms, 3000 ms)  // Define timers
   timer update(0 ms, 10 ms)
 
-  qdec = new QDEC()                 // ser = new Serial()                // Define external reactors
+  qdec = new QDEC()                // ser = new Serial()                // Define external reactors
   dac = new DAC()
   pid_controller = new PID_Controller()
 
@@ -123,7 +123,7 @@ main reactor {
     if (self->pos < 0) {
       self->pos = 0;
     } else {
-      self->pos = -10000;
+      self->pos = -20000;
     }
     printf("current state: %d \r\n", self->pos);
   =}

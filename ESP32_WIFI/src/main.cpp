@@ -298,10 +298,16 @@ void loop() {
   int data = analogRead(13);
   if(last_data < data) {
     Serial2.write(last_data);
+    Serial.print(last_data);
+    Serial.print(" ");
+    Serial.println(millis());
   } else {
     Serial2.write(data);
+    Serial.print(data);
+    Serial.print(" ");
+    Serial.println(millis());
   }
   last_data = data;
-  Serial.println(data);
+
   // delay(4);
 }

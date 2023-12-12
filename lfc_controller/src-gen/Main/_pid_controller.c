@@ -24,10 +24,10 @@ void _pid_controllerreaction_function_0(void* instance_args) {
     // float pid_out = self->Kp * error_p;
     // float pid_out = self->Kp * error_p;
     
-    if(pid_out > 4000) {
-      pid_out = 4000;
-    } else if(pid_out < -4000) {
-      pid_out = -4000;
+    if(pid_out > 2000) {
+      pid_out = 2000;
+    } else if(pid_out < -2000) {
+      pid_out = -2000;
     } else if (pid_out < 100 && pid_out > -100) {
       pid_out = 0;
     }

@@ -46,7 +46,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
   // printf("recieved %d \r\n", rx_data[0]);
   HAL_UART_Receive_IT(&huart1, rx_data, 1);
 
-  if (rx_data[0] > 200) {
+  if (rx_data[0] > 100) {
     change_FC();
   }
 
@@ -119,7 +119,7 @@ void _main_mainreaction_function_4(void* instance_args) {
     if (self->pos < 0) {
       self->pos = 0;
     } else {
-      self->pos = -10000;
+      self->pos = -20000;
     }
     printf("current state: %d \r\n", self->pos);
 }

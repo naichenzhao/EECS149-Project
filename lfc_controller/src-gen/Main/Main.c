@@ -84,7 +84,7 @@ void _lf_initialize_trigger_objects() {
     } // End scoping.
     // Initiaizing timer Main.change_pos.
     main_main_self[0]->_lf__change_pos.offset = MSEC(0);
-    main_main_self[0]->_lf__change_pos.period = MSEC(5000);
+    main_main_self[0]->_lf__change_pos.period = MSEC(3000);
     // Associate timer with the environment of its parent
     envs[main_main].timer_triggers[timer_triggers_count[main_main]++] = &main_main_self[0]->_lf__change_pos;
     main_main_self[0]->_lf__change_pos.mode = NULL;
